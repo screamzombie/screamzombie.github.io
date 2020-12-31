@@ -1,9 +1,3 @@
-layout	title	description	keywords	comments	menu	permalink
-page
-关于
-キボウの道をジグザグ進もう
-yescafe, Yestercafe, Ivan Chien, self
-true
 关于
 /about/
 关于我
