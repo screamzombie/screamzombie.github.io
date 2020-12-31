@@ -57,13 +57,13 @@ navs:
     href: /categories/
     label: 分类
 
-#   -
-#     href: /archives/
-#     label: 归档
+  -
+    href: /archives/
+    label: 归档
 
-#   -
-#     href: /open-source/
-#     label: 开源
+  -
+    href: /open-source/
+    label: 开源
 
   -
     href: /wiki/
@@ -125,12 +125,12 @@ gitment:
     oauth:
         client_id: d2e1cbbd298958076462
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# https://github.com/gitalk/gitalk#install
+#! https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
-    repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    owner: screamzombie
+    repo: screamzombie.github.io
+    clientID: #!! 填充
+    clientSecret: #!! 填充
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
