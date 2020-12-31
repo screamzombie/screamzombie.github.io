@@ -1,12 +1,11 @@
-layout	title	description	keywords	comments	menu	permalink
-page
-关于
-キボウの道をジグザグ進もう
-yescafe, Yestercafe, Ivan Chien, self
-true
-关于
-/about/
-关于我
+---
+layout: page
+title: 关于
+menu: 关于
+permalink: /about/
+---
+
+## 关于我
 姓名:
   林登万
 英文名:
