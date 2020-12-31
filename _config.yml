@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://screamzombie.github.io/
+url: https://screamzombie.github.io
 date_format: "ordinal"
 title: Alea iacta est！
 subtitle: "任何一个伟大的目标都有一个微不足道的开始"
