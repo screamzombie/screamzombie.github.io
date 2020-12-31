@@ -1,6 +1,11 @@
-关于
-/about/
-关于我
+---
+layout: page
+title: 关于
+menu: 关于
+permalink: /about/
+---
+
+## 关于我
 姓名:
   林登万
 英文名:
