@@ -8,31 +8,36 @@ permalink: /about/
 ## 关于我
 姓名:
   林登万
+
 英文名:
   Leader One
+
 常用昵称:
   Rainbow,ScreamZombie
+
 性别:
   男
+
 生日:
   2001.9.23
+
 职业:
   coder
+
 QQ:
   1525025692
+
 电子邮箱:
   sudorainbowcat@gmail.com
   1525025692@qq.com
+
 坐标:
   Heifei, Anhui
-  ACM校队精神领袖,530实验室卑微守夜人，421实验室看门大爷
 
 爱好：
-写代码
-看番
-吹逼
-搞事情
-演讲
+
+写代码,看番,吹逼,搞事情,演讲
+
 联系
 {% for website in site.data.social %}
 
