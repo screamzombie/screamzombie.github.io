@@ -6,7 +6,7 @@ description: 手搓链表
 keywords: C++
 ---
 
-```
+```c++
 #ifndef QW_Mylinklist_H_
 #define QW_Mylinklist_H_
 
