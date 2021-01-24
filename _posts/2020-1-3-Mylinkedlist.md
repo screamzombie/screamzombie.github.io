@@ -6,6 +6,7 @@ description: 手搓链表
 keywords: C++
 ---
 
+# Mylinklist 模拟一个vector
 ```c++
 #ifndef QW_Mylinklist_H_
 #define QW_Mylinklist_H_
