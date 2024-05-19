@@ -76,6 +76,16 @@
             <span>&ensp;Archives</span>
         </a>
         
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
     </nav>
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
@@ -100,6 +110,24 @@
                             <i class="fa-solid fa-box-archive fa-fw"></i>
                         </div>
                         <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
                     </div>
                 </a>
                 
@@ -137,13 +165,13 @@
     </div>
     
     <div class="content" v-pre>
-        <span id="more"></span>
-<h1 id="MATLAB-的安装"><a href="#MATLAB-的安装" class="headerlink" title="MATLAB 的安装"></a>MATLAB 的安装</h1><p>MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。</p>
+        <h1 id="MATLAB-的安装"><a href="#MATLAB-的安装" class="headerlink" title="MATLAB 的安装"></a>MATLAB 的安装</h1><p>MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。</p>
 <p>安装的方式很简单，基本在教程里都有说了。下面是软件的下载链接</p>
 <pre><code>链接：https://pan.baidu.com/s/1K0RDDru1wVK92CMbwRL_NQ
 提取码：bu3f
 复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
 </code></pre>
+<span id="more"></span>
 <h1 id="勇敢的第一步"><a href="#勇敢的第一步" class="headerlink" title="勇敢的第一步"></a>勇敢的第一步</h1><h2 id="使用-MATLAB-进行第一个运算"><a href="#使用-MATLAB-进行第一个运算" class="headerlink" title="使用 MATLAB 进行第一个运算"></a>使用 MATLAB 进行第一个运算</h2><p>创建变量</p>
 <pre><code>a = 1;
 b = [1,2,3;4,5,6;7,8,9];

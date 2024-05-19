@@ -76,6 +76,16 @@
             <span>&ensp;Archives</span>
         </a>
         
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
     </nav>
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
@@ -100,6 +110,24 @@
                             <i class="fa-solid fa-box-archive fa-fw"></i>
                         </div>
                         <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
                     </div>
                 </a>
                 
@@ -137,12 +165,12 @@
     </div>
     
     <div class="content" v-pre>
-        <span id="more"></span>
-<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="Django安装"><a href="#Django安装" class="headerlink" title="Django安装"></a>Django安装</h2><p>python 3.11之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
+        <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="Django安装"><a href="#Django安装" class="headerlink" title="Django安装"></a>Django安装</h2><p>python 3.11之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
 <p>首先使用这个命令创建一个python虚拟环境 <code>venv</code>是虚拟环境名字 后面的是路径可以自己找一个目录放进去</p>
 <pre><code class="shell">python -m venv /path/to/new/virtual/environment
 </code></pre>
 <p>接着进去这个刚刚创建好的目录去source它</p>
+<span id="more"></span>
 <p>比如我的电脑目前的虚拟环境地址在</p>
 <pre><code class="shell">~/.venv/
 </code></pre>
