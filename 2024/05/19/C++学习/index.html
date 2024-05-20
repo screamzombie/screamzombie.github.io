@@ -137,7 +137,64 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <p>任何一个伟大的目标，都有一个微不足道的开始。</p>
+<span id="more"></span>
+<h1 id="using关键字"><a href="#using关键字" class="headerlink" title="using关键字"></a>using关键字</h1><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>using 声明 (using declaration) 是将命名空间中单个名字注入到当前作用域的机制，使得在当前作用域下访问另一个作用域下的成员时无需使用限定符 ::</p>
+<p>比如</p>
+<pre><code class="cpp">void function()&#123;
+    using std::cout; //仅仅导入某个函数
+    cout &lt;&lt; &quot;Hello&quot;;
+&#125;
+
+void otherFunction()&#123;
+    cout &lt;&lt; &quot;Hello&quot;; //error;
+&#125;
+int main()&#123;
+    using namespace std; //如果using 某个明明空间是在某个函数内，那么它仅仅在该函数内生效
+&#125;
+
+</code></pre>
+<h2 id="类型重定义"><a href="#类型重定义" class="headerlink" title="类型重定义"></a>类型重定义</h2><pre><code class="cpp">using alias = typename
+</code></pre>
+<p>举例</p>
+<pre><code class="cpp">using fun = void (*)(int, int);
+//typedef void (*fun)(int, int); //与上一句等价
+using int16 = short;
+//typedef short int16; //与上一句等价
+ 
+int main()&#123;
+    std::cout&lt;&lt;sizeof(int16)&lt;&lt;std::endl;
+&#125;
+</code></pre>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>加入我们有这样的想法</p>
+<pre><code class="cpp">typedef std::map&lt;int, int&gt; map_int_t;
+typedef std::map&lt;int, std::string&gt; map_str_t;
+typedef std::map&lt;int, bool&gt; map_b_t;
+</code></pre>
+<p>C++98&#x2F;03</p>
+<pre><code class="cpp">template&lt;typename Val&gt;
+struct int_map&#123;
+    typedef std::map&lt;int, Val&gt; type;
+&#125;;
+ 
+int main()&#123;
+    int_map&lt;int&gt;::type imap;
+ 
+    return 0;
+&#125;
+</code></pre>
+<p>C++11之后</p>
+<pre><code class="cpp">template&lt;typename Val&gt;
+using int_map_t = std::map&lt;int, Val&gt;;
+ 
+int main()&#123;
+    int_map_t&lt;int&gt; imap;
+ 
+    return 0;
+&#125;
+</code></pre>
+<p>简化了一点,聊胜于无</p>
+
     </div>
     
     
