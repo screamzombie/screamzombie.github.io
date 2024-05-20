@@ -76,6 +76,11 @@
             <span>&ensp;Archives</span>
         </a>
         
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
     </nav>
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
@@ -100,6 +105,15 @@
                             <i class="fa-solid fa-box-archive fa-fw"></i>
                         </div>
                         <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
                     </div>
                 </a>
                 
@@ -194,6 +208,35 @@ int main()&#123;
 &#125;
 </code></pre>
 <p>简化了一点,聊胜于无</p>
+<h1 id="几个数据类型大小与范围"><a href="#几个数据类型大小与范围" class="headerlink" title="几个数据类型大小与范围"></a>几个数据类型大小与范围</h1><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>1</td>
+<td>-128 到 127 或者 0 到 255</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4</td>
+<td>-2147483648 到 2147483647</td>
+</tr>
+<tr>
+<td>unsigned short int</td>
+<td>2</td>
+<td>0 到 65535</td>
+</tr>
+</tbody></table>
+<p>和int不同的是char在默认情况下既不是有符号也不是没有符号,是否有符号由C++决定<br>可以通过</p>
+<pre><code class="cpp">char ch1; //可能有也可能没有
+unsigned char ch2; // 无符号
+signed char ch3; //有符号
+</code></pre>
 
     </div>
     
