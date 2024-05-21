@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: 苹果 | rainbow 的小窝</title>
+    <title>概率论与数理统计 | rainbow 的小窝</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="sudo kill -9 past" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -127,60 +131,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
+            <div class="article">
+    <div>
+        <h1>概率论与数理统计</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/21
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E5%BC%80%E5%A7%8B/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                开始
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%85%8D%E7%BD%AE/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                配置
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%95%B0%E5%AD%A6/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/%E6%95%B0%E5%AD%A6/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -191,28 +155,41 @@
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2024/5/19</div>
-            <a href="/2024/05/19/only_apple_can_do/">
-                <h3>only apple can do</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E8%8B%B9%E6%9E%9C/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        苹果
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p><img src="/../images/Probability.png" alt="概率论与数理统计"></p>
+<span id="more"></span>
+<h1 id="常见一维分布"><a href="#常见一维分布" class="headerlink" title="常见一维分布"></a>常见一维分布</h1><h2 id="伯努利分布"><a href="#伯努利分布" class="headerlink" title="伯努利分布"></a>伯努利分布</h2><p>可以将“伯努利分布”想象为扔可能不均匀的硬币.</p>
+<h2 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h2><p>有多个结果，所有结果发生概率相等的分布，则是均匀分布。想象抛掷一枚匀质骰子，结果为1点到6点，出现每种点数的可能性相同。均匀分布可以由任意数目n的结果定义，甚至可以是连续分布。</p>
+<h2 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h2><p>二项分布可以看成遵循伯努利分布的事件的结果之和。抛掷一枚均质硬币，扔20次，有多少次扔出正面</p>
+<h2 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h2><p>泊松分布适合于描述单位时间内随机事件发生的次数的概率分布。如某一服务设施在一定时间内受到的服务请求的次数，电话交换机接到呼叫的次数、汽车站台的候客人数、机器出现的故障数、自然灾害发生的次数、DNA序列的变异数、放射性原子核的衰变数、激光的光子数分布等等。</p>
+<p><img src="/../images/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/image.png" alt="泊松分布">   </p>
+<p>$${\displaystyle P(X&#x3D;k)&#x3D;{\frac {e^{-\lambda }\lambda ^{k}}{k!}}}$$</p>
+<h2 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h2><p>几何分布（英语：Geometric distribution）指的是以下两种离散型概率分布中的一种：</p>
+<ul>
+<li><p>在伯努利试验中，得到一次成功所需要的试验次数得到一次成功所需要的试验次数𝑋，X的值域是{ 1, 2, 3, … }</p>
+</li>
+<li><p>在得到第一次成功之前所经历的失败次数𝑌&#x3D;𝑋−1。<em>Y</em>的值域是{ 0, 1, 2, 3, … }</p>
+</li>
+</ul>
+<p>这两种分布不应该混淆。前一种形式经常被称作shifted geometric distribution；但是，为了避免歧义，最好明确地说明取值范围。</p>
+<p>$$P(X&#x3D;k)&#x3D;(1-p)^{k-1} p, k&#x3D;1,2, \ldots$$</p>
+<p>说人话就是，前面都是失败的，直到那一次成功了，因此用这个公式。</p>
+<h2 id="超几何分布"><a href="#超几何分布" class="headerlink" title="超几何分布"></a>超几何分布</h2><p>公式</p>
+<p>$${p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}} $$</p>
+<p>例子</p>
+<p>设有N件产品，其中有M件次品，现在从中任取n件，问其中恰有k(k≤M)件次品的概率是多少？</p>
+<p>解释</p>
+<p>设N件产品中任取n件为事件A，则事件A共包含 $C_{N}^{n}$恰好取出k个残次品$C_{N}^{k}$因此在剩下的正品中你只能取$n-k$个 因此是$C_{N-k}^{n-k}$</p>
+<p>tips</p>
+<p>虽然几何分布和超几何分布名字相似但是他们有很大的不同,二项分布就像一件事在平面上重复多次。而超几何分布就像，一件事在每个维度上都只做一次</p>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -244,6 +221,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
