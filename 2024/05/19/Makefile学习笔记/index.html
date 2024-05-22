@@ -156,7 +156,26 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <span id="more"></span>
+<p>编译运行src下到所有cpp</p>
+<pre><code class="shell">CC = clang++
+CCFLAGS = -std=c++2b -Wall
+TARGET = test
+SRCS = $(wildcard ./src/*.cpp)
+OBJS = $(patsubst %.cpp,%.o,$(SRCS))
+all:$(TARGET)
+    mv $(TARGET) ./bin
+    mv $(OBJS) ./build
+$(TARGET): $(OBJS)
+    $(CC) $(CCFLAGS) -o $@ $^
+
+%.o: %.cpp
+    $(CC) $(CCFLAGS) -c $&lt; -o $@
+.PHONY:clean
+clean:
+    rm -f bin/* build/*%
+</code></pre>
+
     </div>
     
     
