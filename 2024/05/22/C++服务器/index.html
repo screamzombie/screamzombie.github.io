@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: ACM | rainbow 的小窝</title>
+    <title>C++服务器 | rainbow 的小窝</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -127,71 +131,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
+            <div class="article">
+    <div>
+        <h1>C++服务器</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/22
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/ACM/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                ACM
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%85%8D%E7%BD%AE/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                配置
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%95%B0%E5%AD%A6/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                数学
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background: #ff7d73">
+        <span class="category">
+            <a href="/categories/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -200,41 +153,36 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/Markdown/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Markdown
-            </a>
-        </span>
-        
-        
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2020/4/3</div>
-            <a href="/2020/04/03/P2036/">
-                <h3>P2036</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/ACM/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        ACM
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>Keep it simple stupid</p>
+<span id="more"></span>
+<h1 id="Hello-Socket"><a href="#Hello-Socket" class="headerlink" title="Hello Socket"></a>Hello Socket</h1><h2 id="套接字起源"><a href="#套接字起源" class="headerlink" title="套接字起源"></a>套接字起源</h2><blockquote>
+<p>由于每个主机系统都有各自命名进程的方法，而且常常是不兼容的，因此，要在全网范围内硬把进程名字统一起来是不现实的。所以，每个计算机网络中都要引入一种起介质作用的、全网一致的标准命名空间。<br>这种标准名字，在ARPA网中称作套接字，而在很多其他计算机网中称作信口。更确切地说，进程之间的连接是通过套接字或信口构成的</p>
+</blockquote>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;sys/socket.h&gt;
+int main(int argc, const char * argv[]) &#123;
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    int sockfd2 = socket(AF_INET6, SOCK_STREAM, 0);
+    std::cout &lt;&lt; sockfd &lt;&lt;&quot; &quot; &lt;&lt; sockfd2&lt;&lt;std::endl; // 输出是3 4
+    return 0;
+&#125;
+</code></pre>
+<ul>
+<li>第一个参数：IP地址类型，AF_INET表示使用IPv4，如果使用IPv6请使用AF_INET6。</li>
+<li>第二个参数：数据传输方式，SOCK_STREAM表示流格式、面向连接，多用于TCP。SOCK_DGRAM表示数据报格式、无连接，多用于UDP。</li>
+<li>第三个参数：协议，0表示根据前面的两个参数自动推导协议类型。设置为IPPROTO_TCP和IPPTOTO_UDP，分别表示TCP和UDP。</li>
+</ul>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -266,6 +214,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
