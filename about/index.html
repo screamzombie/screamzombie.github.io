@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>关于 | rainbow 的小窝</title>
+    <title>About | rainbow 的小窝</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -86,6 +86,11 @@
             <span>&ensp;Categories</span>
         </a>
         
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
     </nav>
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
@@ -122,6 +127,15 @@
                     </div>
                 </a>
                 
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
             </div>
         </transition>
     </nav>
@@ -133,7 +147,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>关于</h1>
+        <h1>About</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -147,7 +161,12 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1><p>world</p>
+        <h1 id="WHO-AM-I"><a href="#WHO-AM-I" class="headerlink" title="WHO AM I?"></a>WHO AM I?</h1><h4 id="2-two-4-four-6-six-0-O-1-one"><a href="#2-two-4-four-6-six-0-O-1-one" class="headerlink" title="2(two)4(four)6(six)0(O)1(one)"></a><del>2(two)4(four)6(six)0(O)1(one)</del></h4><blockquote>
+<p>Red, the blood of angry men!</p>
+<p>Black the dark of ages past!</p>
+<p>Red, a world about to dawn!</p>
+<p>Black, the night that ends at last!</p>
+</blockquote>
 
     </div>
     
