@@ -172,7 +172,8 @@
     <div class="content" v-pre>
         <p>任何一个伟大的目标，都有一个微不足道的开始。</p>
 <span id="more"></span>
-<h1 id="using关键字"><a href="#using关键字" class="headerlink" title="using关键字"></a>using关键字</h1><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>using 声明 (using declaration) 是将命名空间中单个名字注入到当前作用域的机制，使得在当前作用域下访问另一个作用域下的成员时无需使用限定符 ::</p>
+
+<h1 id="using-关键字"><a href="#using-关键字" class="headerlink" title="using 关键字"></a>using 关键字</h1><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>using 声明 (using declaration) 是将命名空间中单个名字注入到当前作用域的机制，使得在当前作用域下访问另一个作用域下的成员时无需使用限定符 ::</p>
 <p>比如</p>
 <pre><code class="cpp">void function()&#123;
     using std::cout; //仅仅导入某个函数
@@ -185,7 +186,6 @@ void otherFunction()&#123;
 int main()&#123;
     using namespace std; //如果using 某个明明空间是在某个函数内，那么它仅仅在该函数内生效
 &#125;
-
 </code></pre>
 <h2 id="类型重定义"><a href="#类型重定义" class="headerlink" title="类型重定义"></a>类型重定义</h2><pre><code class="cpp">using alias = typename
 </code></pre>
@@ -194,7 +194,7 @@ int main()&#123;
 //typedef void (*fun)(int, int); //与上一句等价
 using int16 = short;
 //typedef short int16; //与上一句等价
- 
+
 int main()&#123;
     std::cout&lt;&lt;sizeof(int16)&lt;&lt;std::endl;
 &#125;
@@ -209,20 +209,20 @@ typedef std::map&lt;int, bool&gt; map_b_t;
 struct int_map&#123;
     typedef std::map&lt;int, Val&gt; type;
 &#125;;
- 
+
 int main()&#123;
     int_map&lt;int&gt;::type imap;
- 
+
     return 0;
 &#125;
 </code></pre>
-<p>C++11之后</p>
+<p>C++11 之后</p>
 <pre><code class="cpp">template&lt;typename Val&gt;
 using int_map_t = std::map&lt;int, Val&gt;;
- 
+
 int main()&#123;
     int_map_t&lt;int&gt; imap;
- 
+
     return 0;
 &#125;
 </code></pre>
@@ -251,21 +251,60 @@ int main()&#123;
 <td>0 到 65535</td>
 </tr>
 </tbody></table>
-<p>和int不同的是char在默认情况下既不是有符号也不是没有符号,是否有符号由C++决定<br>可以通过</p>
+<p>和 int 不同的是 char 在默认情况下既不是有符号也不是没有符号,是否有符号由 C++决定<br>可以通过</p>
 <pre><code class="cpp">char ch1; //可能有也可能没有
 unsigned char ch2; // 无符号
 signed char ch3; //有符号
 </code></pre>
-<h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><h2 id="const-int-与-int-const"><a href="#const-int-与-int-const" class="headerlink" title="const int * 与 int * const"></a>const int * 与 int * const</h2><blockquote>
-<p>不管const写成如何，读懂别人写的const和*满天飞的类型的金科玉律是const默认<br>作用于其左边的东西，否则作用于其右边的东西：</p>
+<h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><h2 id="const-int-与-int-const"><a href="#const-int-与-int-const" class="headerlink" title="const int _ 与 int _ const"></a>const int _ 与 int _ const</h2><blockquote>
+<p>不管 const 写成如何，读懂别人写的 const 和*满天飞的类型的金科玉律是 const 默认<br>作用于其左边的东西，否则作用于其右边的东西：</p>
 </blockquote>
-<p>例如，<code>const int* </code>const只有右边有东西，所以const修饰int成为常量整型，然后*再作用于常量整型。所以这是a pointer to a constant integer（指向一个整型，不可通过该指针改变其指向的内容，但可改变指针本身所指向的地址）</p>
-<p><code>int const *</code>再看这个，const左边有东西，所以const作用于int，*再作用于int const所以这还是 a pointer to a constant integer（同上）</p>
-<p><code>int* const</code><br>这个const的左边是*，所以const作用于指针（不可改变指向的地址），所以这是a constant pointer to an integer，可以通过指针改变其所指向的内容但只能指向该地址，不可指向别的地址。</p>
-<p><code>const int* const</code><br>这里有两个const。左边的const 的左边没东西，右边有int那么此const修饰int。右边的const作用于*使得指针本身变成const（不可改变指向地址），那么这个是a constant pointer to a constant integer，不可改变指针本身所指向的地址也不可通过指针改变其指向的内容。</p>
-<p><code>int const * const</code><br>这里也出现了两个const，左边都有东西，那么左边的const作用于int，右边的const作用于*，于是这个还是是a constant pointer to a constant integer</p>
+<p>例如，<code>const int* </code>const 只有右边有东西，所以 const 修饰 int 成为常量整型，然后*再作用于常量整型。所以这是 a pointer to a constant integer（指向一个整型，不可通过该指针改变其指向的内容，但可改变指针本身所指向的地址）</p>
+<p><code>int const *</code>再看这个，const 左边有东西，所以 const 作用于 int，*再作用于 int const 所以这还是 a pointer to a constant integer（同上）</p>
+<p><code>int* const</code><br>这个 const 的左边是*，所以 const 作用于指针（不可改变指向的地址），所以这是 a constant pointer to an integer，可以通过指针改变其所指向的内容但只能指向该地址，不可指向别的地址。</p>
+<p><code>const int* const</code><br>这里有两个 const。左边的 const 的左边没东西，右边有 int 那么此 const 修饰 int。右边的 const 作用于*使得指针本身变成 const（不可改变指向地址），那么这个是 a constant pointer to a constant integer，不可改变指针本身所指向的地址也不可通过指针改变其指向的内容。</p>
+<p><code>int const * const</code><br>这里也出现了两个 const，左边都有东西，那么左边的 const 作用于 int，右边的 const 作用于*，于是这个还是是 a constant pointer to a constant integer</p>
 <h2 id="修饰函数体"><a href="#修饰函数体" class="headerlink" title="修饰函数体"></a>修饰函数体</h2><pre><code class="cpp">void SetAge(int age) //可以修改类的数据成员
 void SetAgeConst(int age) const //不可以修改类的数据成员
+</code></pre>
+<h1 id="lambda-表达式"><a href="#lambda-表达式" class="headerlink" title="lambda 表达式"></a>lambda 表达式</h1><h2 id="三种捕获"><a href="#三种捕获" class="headerlink" title="三种捕获"></a>三种捕获</h2><pre><code class="cpp">#include &lt;iostream&gt;
+int main()
+&#123;
+    int a = 3;
+    int b = 5;
+
+    // 按值来捕获
+    auto func1 = [a] &#123; std::cout &lt;&lt; a &lt;&lt; std::endl; &#125;;
+    func1();
+
+    // 按值来捕获
+    auto func2 = [=] &#123; std::cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; std::endl; &#125;;
+    func2();
+
+    // 按引用来捕获
+    auto func3 = [&amp;a] &#123; std::cout &lt;&lt; a &lt;&lt; std::endl; &#125;;
+    func3();
+
+    // 按引用来捕获
+    auto func4 = [&amp;] &#123; std::cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; std::endl; &#125;;
+    func4();
+&#125;
+</code></pre>
+<h2 id="举一个例子"><a href="#举一个例子" class="headerlink" title="举一个例子"></a>举一个例子</h2><p>在这个例子中使用<code>[=]</code>值捕获了所有的变量,但是因为是值捕获所以我们不能直接对 a 进行修改,即使 a 的值不会影响到外面</p>
+<p>如果我们真的想在内部对 a 的值进行修改需要加上<code>mutable</code>, <code>-&gt; int</code> 不是必须的,代表尾返回值,不过再更高版本的 C++中我们已经不需要这个写法了.</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+int main() &#123;
+    int a = 3;
+    int b = 4;
+    auto func = [=](int x) mutable&#123;
+        a++;
+        std::cout &lt;&lt; &quot;a after modify &quot; &lt;&lt; a &lt;&lt; std::endl; //a is 4
+        return b;
+    &#125;;
+    func(b);
+    std::cout &lt;&lt; a &lt;&lt; std::endl; // a is 3
+    return 0;
+&#125;
 </code></pre>
 
     </div>
