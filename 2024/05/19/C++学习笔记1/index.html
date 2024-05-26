@@ -296,7 +296,7 @@ int main()
 int main() &#123;
     int a = 3;
     int b = 4;
-    auto func = [=](int x) mutable&#123;
+    auto func = [=](int x) mutable -&gt;int &#123;
         a++;
         std::cout &lt;&lt; &quot;a after modify &quot; &lt;&lt; a &lt;&lt; std::endl; //a is 4
         return b;

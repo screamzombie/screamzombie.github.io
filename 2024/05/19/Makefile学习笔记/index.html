@@ -170,8 +170,7 @@
     </div>
     
     <div class="content" v-pre>
-        <span id="more"></span>
-<h1 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h1><p>Compile run all cpp files of src</p>
+        <h1 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h1><p>Compile run all cpp files of src</p>
 <pre><code class="makefile">CC = clang++
 CCFLAGS = -std=c++2b -Wall
 TARGET = test
@@ -189,18 +188,20 @@ $(TARGET): $(OBJS)
 clean:
     rm -f bin/* build/*%
 </code></pre>
-<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="makefile的依赖"><a href="#makefile的依赖" class="headerlink" title="makefile的依赖"></a>makefile的依赖</h2><pre><code class="makefile">x.txt: m.txt c.txt
+<span id="more"></span>
+
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="makefile-的依赖"><a href="#makefile-的依赖" class="headerlink" title="makefile 的依赖"></a>makefile 的依赖</h2><pre><code class="makefile">x.txt: m.txt c.txt
     cat m.txt c.txt &gt; x.txt
 </code></pre>
-<p>x.txt依赖 m.txt c.txt 其中m.txt是第一个依赖</p>
+<p>x.txt 依赖 m.txt c.txt 其中 m.txt 是第一个依赖</p>
 <p>一条规则的格式为<code>目标文件: 依赖文件1 依赖文件2 ...</code></p>
-<p>make执行时，默认执行第一条规则</p>
+<p>make 执行时，默认执行第一条规则</p>
 <h2 id="伪目标"><a href="#伪目标" class="headerlink" title="伪目标"></a>伪目标</h2><pre><code class="makefile">.PHONY: clean
 clean:
     rm -f m.txt
     rm -f x.txt
 </code></pre>
-<p>多数makefile中都有.PHONY这个标识,这意味着clean是一个伪目标,假如没有这个标识,大概文件夹中有了clean这个文件后,就不会执行<code>make clean</code>,make会认为目标已经完成了.</p>
+<p>多数 makefile 中都有.PHONY 这个标识,这意味着 clean 是一个伪目标,假如没有这个标识,大概文件夹中有了 clean 这个文件后,就不会执行<code>make clean</code>,make 会认为目标已经完成了.</p>
 <h2 id="多语句"><a href="#多语句" class="headerlink" title="多语句"></a>多语句</h2><p>可以使用<code>\</code>把一行语句拆成多行</p>
 <pre><code class="Makefile">cd_ok:
     pwd; \
@@ -211,7 +212,7 @@ clean:
 <pre><code class="Makefile">cd_ok:
     cd .. &amp;&amp; pwd
 </code></pre>
-<h1 id="编译C-C"><a href="#编译C-C" class="headerlink" title="编译C&#x2F;C++"></a>编译C&#x2F;C++</h1><h2 id="GCC编译C-C-的四个过程"><a href="#GCC编译C-C-的四个过程" class="headerlink" title="GCC编译C&#x2F;C++的四个过程"></a>GCC编译C&#x2F;C++的四个过程</h2><ul>
+<h1 id="编译-C-C"><a href="#编译-C-C" class="headerlink" title="编译 C&#x2F;C++"></a>编译 C&#x2F;C++</h1><h2 id="GCC-编译-C-C-的四个过程"><a href="#GCC-编译-C-C-的四个过程" class="headerlink" title="GCC 编译 C&#x2F;C++的四个过程"></a>GCC 编译 C&#x2F;C++的四个过程</h2><ul>
 <li>预处理(pre-processing),E：插入头文件，替换宏，展开宏<pre><code class="shell">gcc -E main.c -o main.i #.i文件叫做预处理后文件
 </code></pre>
 </li>
