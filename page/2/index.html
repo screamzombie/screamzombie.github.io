@@ -237,12 +237,495 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="MATLAB-的安装"><a href="#MATLAB-的安装" class="headerlink" title="MATLAB 的安装"></a>MATLAB 的安装</h1><p>MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。</p>
+            <span id="more"></span>
+
+<h1 id="MATLAB-的安装"><a href="#MATLAB-的安装" class="headerlink" title="MATLAB 的安装"></a>MATLAB 的安装</h1><p>MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。</p>
 <p>安装的方式很简单，基本在教程里都有说了。下面是软件的下载链接</p>
 <pre><code>链接：https://pan.baidu.com/s/1K0RDDru1wVK92CMbwRL_NQ
 提取码：bu3f
 复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
 </code></pre>
+<h1 id="勇敢的第一步"><a href="#勇敢的第一步" class="headerlink" title="勇敢的第一步"></a>勇敢的第一步</h1><h2 id="使用-MATLAB-进行第一个运算"><a href="#使用-MATLAB-进行第一个运算" class="headerlink" title="使用 MATLAB 进行第一个运算"></a>使用 MATLAB 进行第一个运算</h2><p>创建变量</p>
+<pre><code>a = 1;
+b = [1,2,3;4,5,6;7,8,9];
+</code></pre>
+<p>当不指定输出变量时，MATLAB 使用变量 ans （answer 的缩写）存储计算结果。</p>
+<p>如果以英文分号（;）结束语句，MATLAB 会执行计算，但会在命令窗口中隐藏对应的输出值。</p>
+<p>创建矩阵的另一种方法是使用函数，如产生一组 1、0 或随机数。例如，创建一个由 0 组成的 5×1 列向量</p>
+<pre><code>z = zeros(5,1)
+
+z = 5×1
+    0
+    0
+    0
+    0
+    0
+</code></pre>
+<h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><pre><code>a = [1 2 3; 4 5 6; 7 8 10]
+a + 10
+sin(a)
+</code></pre>
+<p>上面这段代码运行的结果是</p>
+<pre><code>ans =
+
+   0.841470984807897   0.909297426825682   0.141120008059867
+  -0.756802495307928  -0.958924274663138  -0.279415498198926
+   0.656986598718789   0.989358246623382  -0.544021110889370
+</code></pre>
+<p>注意在 MATLAB 中如果式子的值没有返回给一个变量，那么他会保存在一个叫 ans 的自带的变量中</p>
+<h3 id="转置矩阵"><a href="#转置矩阵" class="headerlink" title="转置矩阵"></a>转置矩阵</h3><p><strong>如果要使用转置矩阵请在变量的右上角加一个’</strong><br>例如<code>a&#39;</code></p>
+<p><strong>转置矩阵的定义:</strong><br><em>将矩阵的行列互换得到的新矩阵称为转置矩阵，转置矩阵的行列式不变</em></p>
+<h3 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h3><p>使用*号来完成两个矩阵之间的乘法运算。没错就是我们在《线性代数》中学到的那样</p>
+<p><strong>inv(a)会返回一个矩阵的逆矩阵</strong></p>
+<p><strong>逆矩阵：</strong><br><em>设 A 是一个 n 阶矩阵，若存在另一个 n 阶矩阵 B，使得： AB&#x3D;BA&#x3D;E ，则称方阵 A 可逆，并称方阵 B 是 A 的逆矩阵。</em></p>
+<p><strong>矩阵乘法:</strong><br><em>矩阵相乘最重要的方法是一般矩阵乘积。它只有在第一个矩阵的列数（column）和第二个矩阵的行数（row）相同时才有意义 。一般单指矩阵乘积时，指的便是一般矩阵乘积。一个 m×n 的矩阵就是 m×n 个数排成 m 行 n 列的一个数阵</em></p>
+<p>我感觉我已经不认识“矩”这个字了&#x3D; &#x3D;</p>
+<pre><code>a = [1 2 3; 4 5 6; 7 8 10]
+p = a*inv(a)
+</code></pre>
+<h3 id="设置数值格式"><a href="#设置数值格式" class="headerlink" title="设置数值格式"></a>设置数值格式</h3><p>在上面这个代码中，你的答案可能是下面两种之一</p>
+<p>长这样</p>
+<pre><code>p =
+
+    1.0000   -0.0000   -0.0000
+    0.0000    1.0000   -0.0000
+    0.0000   -0.0000    1.0000
+</code></pre>
+<p>或者是长这样</p>
+<pre><code>p =
+
+   1.000000000000000  -0.000000000000000  -0.000000000000000
+   0.000000000000001   0.999999999999999  -0.000000000000000
+   0.000000000000002  -0.000000000000003   1.000000000000000
+</code></pre>
+<p>其中出现第二种情况的原因是，之前有设置过数值格式<br>使用<br>在代码的第一行加上</p>
+<pre><code>format short
+</code></pre>
+<p>答案就会变成第一种的样子了。<br>我们并不需要每次都进行设置，一旦设置过后。它将会被保存下来，直到我们再次更改设置。</p>
+<p><strong>数据格式只影响数字的显示，而不影响 MATLAB 对结果的运算或保存。</strong></p>
+<h3 id="矩阵乘法-1"><a href="#矩阵乘法-1" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h3><pre><code>a = [1 2 3; 4 5 6; 7 8 10];
+p = a*a
+</code></pre>
+<p>结果</p>
+<pre><code>p =
+
+    30    36    45
+    66    81   102
+   109   134   169
+</code></pre>
+<p>矩阵数乘</p>
+<pre><code>a = [1 2 3; 4 5 6; 7 8 10];
+p = a.*a
+</code></pre>
+<p>结果</p>
+<pre><code>p =
+
+     1     4     9
+    16    25    36
+    49    64   100
+</code></pre>
+<h2 id="数组-矩阵的拼合"><a href="#数组-矩阵的拼合" class="headerlink" title="数组&#x2F;矩阵的拼合"></a>数组&#x2F;矩阵的拼合</h2><h3 id="两种不同的拼接方式"><a href="#两种不同的拼接方式" class="headerlink" title="两种不同的拼接方式"></a>两种不同的拼接方式</h3><p>在线性代数中我们已经知道了<strong>分块矩阵</strong>的概念。类似的在 MATLAB 中我们也可以把数组进行拼接</p>
+<p><strong>分块矩阵</strong><br><em>分块矩阵是一个矩阵， 它是把矩阵分别按照横竖分割成一些小的子矩阵 。 然后把每个小矩阵看成一个元素。</em></p>
+<p>MATLAB 中有两种不同的数组拼接方式<br>第一种水平拼接，就是左右拼在一起啦(｡・&#96;ω´･)</p>
+<p>仔细想想这个我们创建矩阵的时候使用<code>,</code>是不是一个道理呀<br>把俩个小矩阵看成两个元素就可以</p>
+<pre><code>a = [1 2 3; 4 5 6; 7 8 10];
+p = [a,a]
+</code></pre>
+<p>结果</p>
+<pre><code>
+p =
+
+     1     2     3     1     2     3
+     4     5     6     4     5     6
+     7     8    10     7     8    10
+</code></pre>
+<p>第二种则是竖直拼接，也就是上下拼在一起啦</p>
+<pre><code>a = [1 2 3; 4 5 6; 7 8 10];
+p = [a;a]
+</code></pre>
+<p>结果是</p>
+<pre><code>p =
+
+     1     2     3
+     4     5     6
+     7     8    10
+     1     2     3
+     4     5     6
+     7     8    10
+</code></pre>
+<h2 id="复数的表示"><a href="#复数的表示" class="headerlink" title="复数的表示"></a>复数的表示</h2><p>我相信各位大佬复数的定义都没有忘记</p>
+<pre><code>sqrt(-1)
+</code></pre>
+<pre><code>ans =
+
+   0.0000 + 1.0000i
+</code></pre>
+<p>如果想要表示数的虚部可以使用 <code>i</code> 或<code>j</code>。<br>像这样</p>
+<pre><code>c = [3+4i, 4+3j; -i, 10j]
+</code></pre>
+<pre><code>c =
+
+   3.0000 + 4.0000i   4.0000 + 3.0000i
+   0.0000 - 1.0000i   0.0000 +10.0000i
+</code></pre>
+<p>使用 i 或者使用 j，不会有任何不同。完全看个人喜好</p>
+<h2 id="从数组中进行搜索"><a href="#从数组中进行搜索" class="headerlink" title="从数组中进行搜索"></a>从数组中进行搜索</h2><p>在过去所学的计算机语言中我们已经接触过了二维数组，它们往往有很方便的得到某一行某一列所有元素的方法比如</p>
+<p>C++</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+using namespace std;
+int main()
+&#123;
+    int numbers[3][3] = &#123;0&#125;;
+    for(auto i=0;i&lt;3;i++)
+       cout &lt;&lt; numbers[2][i] &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p>Python</p>
+<pre><code class="python">ls = [[1,2,3],[4,5,6],[7,8,9]]
+print(ls[2])
+</code></pre>
+<p>Java</p>
+<pre><code class="java">package rainbow.demo;
+
+class Main &#123;
+
+  public static void main(String[] args) &#123;
+    int[][] array = &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5, 6 &#125;, &#123; 7, 8, 9 &#125; &#125;;
+    for (int j : array[2]) &#123;
+      System.out.println(j);
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<p>Scala</p>
+<pre><code class="scala">def dim2B(rows : Int)=&#123;
+      val d2  = new Array[ArrayBuffer[Int]](rows)
+      for (k &lt;-0 until rows ) &#123;
+        d2(k) = new ArrayBuffer[Int]()
+      &#125;
+      d2
+&#125;
+val index = dim2B(2)
+</code></pre>
+<p>C#</p>
+<pre><code class="Csharp">using System;
+namespace Work
+&#123;
+
+   class MyMain
+    &#123;
+        public static void Main()
+        &#123;
+            int[,] arrray1 = new int[3,3] &#123; &#123;1,2,3&#125;, &#123;4,5,6&#125;,&#123; 7,8,9&#125; &#125;;
+            for(int i = 0; i &lt; 3; i++)
+            &#123;
+                Console.WriteLine(arrray1[2,i]);
+            &#125;
+            Console.ReadLine();
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<h3 id="查找某一个元素"><a href="#查找某一个元素" class="headerlink" title="查找某一个元素"></a>查找某一个元素</h3><pre><code class="MATLAB">A = [1,2,3;4,5,6;7,8,9];
+A(2,1)
+</code></pre>
+<pre><code class="MATLAB">ans =
+
+     4
+</code></pre>
+<h3 id="查找列或者行"><a href="#查找列或者行" class="headerlink" title="查找列或者行"></a>查找列或者行</h3><p><strong>遍历一整行</strong></p>
+<pre><code class="MATLAB">A = [1,2,3;4,5,6;7,8,9]
+A(1,:)
+</code></pre>
+<pre><code>ans =
+
+     1     2     3
+</code></pre>
+<p><strong>遍历一整列</strong></p>
+<pre><code class="MATLAB">A = [1,2,3;4,5,6;7,8,9]
+A(:,2)
+</code></pre>
+<pre><code class="MATLAB">ans =
+
+     2
+     5
+     8
+</code></pre>
+<h2 id="工作空间变量"><a href="#工作空间变量" class="headerlink" title="工作空间变量"></a>工作空间变量</h2><p>使用<code>whos</code>查看工作区的内容，也就是查看变量</p>
+<h1 id="输出-Hello-World"><a href="#输出-Hello-World" class="headerlink" title="输出 Hello World"></a>输出 Hello World</h1><h2 id="字符串数组中的文本"><a href="#字符串数组中的文本" class="headerlink" title="字符串数组中的文本"></a>字符串数组中的文本</h2><p>MATLAB 也支持对文本的操作。通过这样的方式创建一个字符串，或者说将文本分配给变量。</p>
+<pre><code class="MATLAB">line = &quot;hello world&quot;
+</code></pre>
+<p>如果文本包含双引号，请在变量的定义中使用两个双引号。类似于 C 语言中使用%%输出百分号。</p>
+<pre><code class="MATLAB">q = &quot;My ablity is &quot;&quot;Dirty Deeds Done Dirt Cheap&quot;&quot;&quot;
+</code></pre>
+<p>显示效果</p>
+<pre><code>q =
+
+    &quot;My ablity is &quot;Dirty Deeds Done Dirt Cheap&quot;&quot;
+</code></pre>
+<h2 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h2><p>使用加号进行字符串拼接，就像你在 JAVA 和 Python 中做到的那样</p>
+<pre><code>str1 = &quot;I &quot;
+str1 + &quot;LOVE YOU&quot;
+</code></pre>
+<h2 id="strlength"><a href="#strlength" class="headerlink" title="strlength"></a>strlength</h2><p>还记的 C 语言中我们怎样求一个字符串的长度的嘛？！<br>使用 string.h 头文件中的 strlen 函数</p>
+<pre><code class="C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+int main()
+&#123;
+    char str1[100] =&quot;hello world&quot;;
+    int length = strlen(str1);
+    printf(&quot;%d\n&quot;,length)l;
+    return 0;
+&#125;
+</code></pre>
+<p>不过在 MATLAB 中我们也有类似的函数 叫 strlength<br>使用方法和 C 语言的 strlen 十分类似<br>这里直接举 MATLAB 官方手册的例子</p>
+<pre><code class="MATLAB">A = [&quot;a&quot;,&quot;bb&quot;,&quot;ccc&quot;; &quot;dddd&quot;,&quot;eeeeee&quot;,&quot;fffffff&quot;]
+
+A =
+    2×3 string array
+    &quot;a&quot;     &quot;bb&quot;      &quot;ccc&quot;
+    &quot;dddd&quot;  &quot;eeeeee&quot;  &quot;fffffff&quot;
+strlength(A)
+
+ans =
+    1 2 3
+    4 6 7
+1
+</code></pre>
+<h1 id="MATLAB-中的函数"><a href="#MATLAB-中的函数" class="headerlink" title="MATLAB 中的函数"></a>MATLAB 中的函数</h1><p>函数是一个我们非常熟悉的概念，甚至后面还出现了函数式编程的语言 <strong>scala</strong><br>MATLAB 中的函数有两种 第一种是内置的，第二种是用户自定义的。<br>囿于篇幅，我们不讨论 MATLAB 自带的函数，想要了解的话可以去官网查看原文文档。<br>MATLAB 有中文文档。<br>我们需要进行讨论和学习的是第二种情况</p>
+<h2 id="如何创建和使用自己定义函数"><a href="#如何创建和使用自己定义函数" class="headerlink" title="如何创建和使用自己定义函数"></a>如何创建和使用自己定义函数</h2><p>在别的高级编程语言中，我们要定义一个函数只需要使用如下的语句例如这些<br>(随便写的没有分行)</p>
+<pre><code>public static void Myfunction()&#123;
+    ·······
+&#125;
+
+def my_select_paper_window(self, paper):
+    pass
+
+void Say()
+&#123;
+    ······
+&#125;
+</code></pre>
+<p>但是在 MATLAB 中情况有了些许不同<br>我们先创建一个文件叫 myfunction.m 名字可以自己取<br>创建函数类似这样的写法</p>
+<pre><code class="MATLAB">function y = j(x)
+    y = x*x+5;
+end
+</code></pre>
+<p>调用函数必须保证两个文件在同一个目录下</p>
+<pre><code>t = myfunction(3);
+</code></pre>
+<h1 id="二维图像和三维图像绘制"><a href="#二维图像和三维图像绘制" class="headerlink" title="二维图像和三维图像绘制"></a>二维图像和三维图像绘制</h1><h2 id="二维图像"><a href="#二维图像" class="headerlink" title="二维图像"></a>二维图像</h2><p>使用<code>plot</code> 函数来创建一个二维曲线图。</p>
+<pre><code class="matlab">x = 0:pi/100:2*pi;
+y = sin(x);
+xlabel(&#39;x&#39;)
+ylabel(&#39;sin(x)&#39;)
+title(&#39;Plot of the Sine Function&#39;)
+plot(x,y,&#39;g:*&#39;)
+</code></pre>
+<p>x 的三个元素分别是 开始的坐标，拐点数量，结束的坐标,plot 中第三个元素表示使用绿线进行标识</p>
+<h2 id="多个函数图像在一个图中"><a href="#多个函数图像在一个图中" class="headerlink" title="多个函数图像在一个图中"></a>多个函数图像在一个图中</h2><pre><code class="matlab">x = 0:pi/100:2*pi;
+y = sin(x);
+plot(x,y)
+hold on
+y2 = cos(x);
+plot(x,y2,&#39;:&#39;)
+legend(&#39;sin&#39;,&#39;cos&#39;)
+hold off
+</code></pre>
+<p>使用 hold on ，握住这个图像，然后往里面添加新的图像。hold off 松手之后图像一齐绘制出来</p>
+<h2 id="三维图像"><a href="#三维图像" class="headerlink" title="三维图像"></a>三维图像</h2><p>早在《高等数学》中我们就已经接触过多元函数的概念了。<br>比较常见的是由 x,y,z 组成的一个三维空间内的曲面<br>使用 MATLAB 可以很方便的帮我们绘制图像<br>接下来是一段代码</p>
+<pre><code class="MATLAB">[X,Y] = meshgrid(-2:.2:2);
+Z = X .* exp(-X.^2 - Y.^2);
+surf(X,Y,Z)
+</code></pre>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><p><strong>meshgrid</strong><br>[X,Y] &#x3D; meshgrid(x,y)<br>[X,Y] &#x3D; meshgrid(x)<br>[X,Y,Z] &#x3D; meshgrid(x,y,z)<br>[X,Y,Z] &#x3D; meshgrid(x)<br><strong>Description</strong><br><em>example</em><br>[X,Y] &#x3D; meshgrid(x,y) returns 2-D grid coordinates based on the coordinates contained in vectors x and y. X is a matrix where each row is a copy of x, and Y is a matrix where each column is a copy of y. The grid represented by the coordinates X and Y has length(y) rows and length(x) columns.</p>
+<p><em>example</em><br>[X,Y] &#x3D; meshgrid(x) is the same as [X,Y] &#x3D; meshgrid(x,x), returning square grid coordinates with grid size length(x)-by-length(x).</p>
+<p><em>example</em><br>[X,Y,Z] &#x3D; meshgrid(x,y,z) returns 3-D grid coordinates defined by the vectors x, y, and z. The grid represented by X, Y, and Z has size length(y)-by-length(x)-by-length(z).</p>
+<p><em>example</em><br>[X,Y,Z] &#x3D; meshgrid(x) is the same as [X,Y,Z] &#x3D; meshgrid(x,x,x), returning 3-D grid coordinates with grid size length(x)-by-length(x)-by-length(x).</p>
+<p><strong><em>上面的内容是 MATLAB 官方手册中对这个函数的解释</em></strong><br>说人话就是<strong>用两个坐标轴上的点在平面上画格。</strong><br>不理解不要紧我们来看一下这个例子</p>
+<pre><code class="MATLAB">x=[-3:1:3];
+y=[-2:1:2];
+[X,Y]= meshgrid(x,y)
+</code></pre>
+<p>运行结果是</p>
+<pre><code class="MATLAB">X =
+
+    -3    -2    -1     0     1     2     3
+    -3    -2    -1     0     1     2     3
+    -3    -2    -1     0     1     2     3
+    -3    -2    -1     0     1     2     3
+    -3    -2    -1     0     1     2     3
+
+
+Y =
+
+    -2    -2    -2    -2    -2    -2    -2
+    -1    -1    -1    -1    -1    -1    -1
+     0     0     0     0     0     0     0
+     1     1     1     1     1     1     1
+     2     2     2     2     2     2     2
+</code></pre>
+<p>仔细看 X 和 Y 。X 是 -3 到 +3，Y 是 -2 到 +2。<br>是不是有点明白了<br>再看一段代码</p>
+<pre><code class="MATLAB">x=[-3:2:3];
+y=[-2:2:2];
+[X,Y]= meshgrid(x,y)
+</code></pre>
+<pre><code class="MATLAB">
+X =
+
+    -3    -1     1     3
+    -3    -1     1     3
+    -3    -1     1     3
+Y =
+
+    -2    -2    -2    -2
+     0     0     0     0
+     2     2     2     2
+</code></pre>
+<p>原来中间的数字是 step 啊<br>所以我们可以说函数的形参规则是[start:step:end]<br>第一个参数是开始，第二个参数是每次改变的坐标，第三个参数则是在哪截止</p>
+<p><strong>三维空间的情况</strong><br>类似的上面这个例子也可以用在三维空间中</p>
+<pre><code class="MATLAB">x = [-3:1:3];
+y = [-2:1:2];
+z = [-4:1:4]
+[X,Y,Z] = meshgrid(x,y,z)
+</code></pre>
+<p>效果也是和上面的类似，不过是三维的由于答案比较长，就不放在这里了。</p>
+<p>最后最后上面这么多说人话就是用 MATLAB 的方式建立去建立一个坐标。<br>虽然并不是我们所熟悉的笛卡尔坐标系就是了。<br><strong>surf 函数</strong><br>surf 函数和与之一起使用的 mesh 函数用于在三维空间显示曲面。<br>surf 函数用于彩色显示出连接线和表面。</p>
+<p><strong>mesh 函数</strong><br>mesh 函数用于产生表面的线框，并且只标记的点之间的连线线框着色。</p>
+<h2 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h2><p>使用 subplot 函数在同一个窗口的不同子区域中显示多个绘图。</p>
+<p><strong>语法</strong></p>
+<pre><code class="MATLAB">subplot(m,n,p)  %先只看第一个就好了
+subplot(m,n,p,&#39;replace&#39;)
+subplot(m,n,p,&#39;align&#39;)
+subplot(m,n,p,ax)
+subplot(&#39;Position&#39;,pos)
+subplot(**_,Name,Value)
+ax = subplot(_**)
+subplot(ax)
+</code></pre>
+<p><em>subplot(m,n,p) 将当前图窗划分为 m×n 网格，并在 p 指定的位置创建坐标区。MATLAB® 按行号对子图位置进行编号。第一个子图是第一行的第一列，第二个子图是第一行的第二列，依此类推。如果指定的位置已存在坐标区，则此命令会将该坐标区设为当前坐标区。</em></p>
+<p>示例</p>
+<pre><code class="MATLAB">t = 0:pi/10:2*pi;
+[X,Y,Z] = cylinder(4*cos(t));
+subplot(2,2,1); mesh(X); title(&#39;X&#39;);
+subplot(2,2,2); mesh(Y); title(&#39;Y&#39;);
+subplot(2,2,3); mesh(Z); title(&#39;Z&#39;);
+subplot(2,2,4); mesh(X,Y,Z); title(&#39;X,Y,Z&#39;);
+</code></pre>
+<h1 id="程序脚本"><a href="#程序脚本" class="headerlink" title="程序脚本"></a>程序脚本</h1><h2 id="怎样创建一个脚本？"><a href="#怎样创建一个脚本？" class="headerlink" title="怎样创建一个脚本？"></a>怎样创建一个脚本？</h2><p>在主流 linux 系统中我们往往使用如下命令创建一个文件</p>
+<pre><code class="SHELL">touch hello.cpp
+</code></pre>
+<p>类似的在 MATLAB 的终端中使用</p>
+<pre><code>edit your_file_name.m
+</code></pre>
+<p>这样就创建了一个名字是 your*file_name.m 的 m 文件<br>当然了，你可以起别的名字。<br>***人不能 至少不应该_** 我还是觉的敲代码的程序员更帅气一点。<br>如果你非要用鼠标去右键创建文件。那也是可以的</p>
+<h2 id="开始编写我们的脚本"><a href="#开始编写我们的脚本" class="headerlink" title="开始编写我们的脚本"></a>开始编写我们的脚本</h2><h3 id="怎样输出变量"><a href="#怎样输出变量" class="headerlink" title="怎样输出变量"></a>怎样输出变量</h3><p>相信你肯定学过这样那样的输出手段比如</p>
+<pre><code>std::cout &lt;&lt; &quot;我是C++的输出&quot;;
+System.out.println(&quot;我叫java&quot;);
+print(&quot;俺是python&quot;)
+printf(&quot;我是C语言\n&quot;);
+</code></pre>
+<p>在 MATLAB 中使用<code>disp()</code>来输出一个变量</p>
+<pre><code class="matlab">t = &quot;灰烬大人,愿您能找到安歇的港湾&quot;;
+disp(t)
+</code></pre>
+<p>终端输出效果是</p>
+<pre><code>&gt;&gt; hello
+灰烬大人，愿您能找到安歇的港湾
+</code></pre>
+<p>至于为什么前面有个 hello 那是因为我这个文件名就叫 hello。你起一个<strong>Dark Souls</strong>也可以</p>
+<p>有些同学总想搞个大新闻······（子弹滞销帮帮我们）</p>
+<p>说不对啊，我一开始没有使用<code>disp()</code>它也有输出啊。<br>那是因为 MATLAB 有多种输出变量的方式，主要包括以下几类：</p>
+<p><strong>第一种:</strong><br>语句后面不加分号“；”，这是直接输出数值的比较简单的方法。</p>
+<p><strong>第二种</strong><br>disp(a)直接在命令窗口显示 a 变量，这种方法输出和第一种差不多。</p>
+<p><strong>第三种</strong><br>fprintf(‘a&#x3D;%f’,a)格式控制输出：</p>
+<pre><code>a = [1,2,3];
+fprintf(&quot;a = %d\n&quot;,a);
+</code></pre>
+<h2 id="分支、跳转与循环"><a href="#分支、跳转与循环" class="headerlink" title="分支、跳转与循环"></a>分支、跳转与循环</h2><p>我想没人看的出来这个标题名是在 neta 《病毒、枪炮与细菌》这本书吧。</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>必须要提的概念是代码块，这是几乎所有的编程语言中都有的概念。<br>先来看这段代码。</p>
+<pre><code class="matlab">A = [4 3 1;6 5 4;9 7 9];
+B = max(A,[],2);
+B2 = B(:)&#39;
+C = min(A,[],1);
+for i = B2
+    for j = C
+        if (i==j)
+            i
+        end
+    end
+end
+</code></pre>
+<p>注意到，每个 if 或者 for 的后面都有一个 end。<br>没错 end 正是用来区分代码块的标志。整体的代码风格我感觉和 python 很接近。<br>让我们直接在实例中学习吧：</p>
+<p><em>求 1 到 100 内所有的偶数和</em></p>
+<pre><code class="matlab">s = 0;
+for i = 2:2:100
+    s = s + i;
+end
+s
+</code></pre>
+<p><em>打印 2 到 100 所有的素数</em></p>
+<pre><code class="matlab">for i = 2 : 100
+    for j = 2 : 100
+        if (~mod(i,j))
+           break;
+        end
+    end
+    if(j &gt; (i/j))
+        fprintf(&#39;%d is prime \n&#39;, i);
+    end
+end
+</code></pre>
+<p><em>求水仙花数</em></p>
+<pre><code class="matlab">m=100:999;
+m1=rem(m,10);%求个位数
+m2=rem(fix(m/10),10); %求十位数
+m3=fix(m/100); %求百位数
+k=find(m==m1.^3+m2.^3+m3.^3); %find(一维向量) 得出一维向量的下标序号
+s=m(k);
+s
+</code></pre>
+<p><strong>说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>max(A,[],2)</td>
+<td>求矩阵中每一行的最大值</td>
+</tr>
+<tr>
+<td>min(A,[],2)</td>
+<td>求矩阵中每一行的最小值</td>
+</tr>
+<tr>
+<td>max(A,[],1)</td>
+<td>求矩阵中每一列的最大值</td>
+</tr>
+<tr>
+<td>min(A,[],1)</td>
+<td>求矩阵中每一列的最小值</td>
+</tr>
+</tbody></table>
+<h2 id="输入语句"><a href="#输入语句" class="headerlink" title="输入语句"></a>输入语句</h2><pre><code class="matlab">n =10;
+while true;
+    n=input(&#39;请输入n=&#39;);
+    if n==10;
+        break;
+    end;
+    disp(&quot;输入错误&quot;);
+end;
+disp(&quot;恭喜输入正确&quot;);
+</code></pre>
+<p>这，妥妥的 Python 啊。</p>
+<p><strong>前有终结，所以泪</strong></p>
+
             
         </div>
     </div>
@@ -281,11 +764,769 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="Django安装"><a href="#Django安装" class="headerlink" title="Django安装"></a>Django安装</h2><p>python 3.11之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
-<p>首先使用这个命令创建一个python虚拟环境 <code>venv</code>是虚拟环境名字 后面的是路径可以自己找一个目录放进去</p>
+            <span id="more"></span>
+
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="Django-安装"><a href="#Django-安装" class="headerlink" title="Django 安装"></a>Django 安装</h2><p>python 3.11 之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
+<p>首先使用这个命令创建一个 python 虚拟环境 <code>venv</code>是虚拟环境名字 后面的是路径可以自己找一个目录放进去</p>
 <pre><code class="shell">python -m venv /path/to/new/virtual/environment
 </code></pre>
-<p>接着进去这个刚刚创建好的目录去source它</p>
+<p>接着进去这个刚刚创建好的目录去 source 它<br>比如我的电脑目前的虚拟环境地址在</p>
+<pre><code class="shell">~/.venv/
+</code></pre>
+<p>执行这个命令</p>
+<pre><code class="shell">source ~/.venv/bin/activate
+</code></pre>
+<p>这样这个终端的环境就变成虚拟环境 python 了</p>
+<p>如果不使用虚拟环境 pip 安装<code>Django</code>会直接报错，其他的一些包也是同理</p>
+<pre><code class="shell">pip install django
+</code></pre>
+<p>运行服务器</p>
+<pre><code class="shell">python manager.py runserver
+</code></pre>
+<h2 id="Django-连接-MySQL"><a href="#Django-连接-MySQL" class="headerlink" title="Django 连接 MySQL"></a>Django 连接 MySQL</h2><p>MySQL 数据库可以使用命令行直接安装</p>
+<pre><code class="shell">sudo apt install mysql-server
+</code></pre>
+<p>Django 与 mysql 通讯需要使用 pymysql 这个库（比较老了），新的库配置环境有些问题所以比较推荐使用这个</p>
+<pre><code class="shell">sudo pip install pymysql
+</code></pre>
+<p>下载好模块后需要在项目的<code>__init__.py</code>中配置。注意是项目的<code>__init__</code>不是 app 下的。</p>
+<pre><code class="python">import pymysql
+pymysql.install_as_MySQLdb()
+</code></pre>
+<p>接着修改 settings.py 中的 DATABASES 条目</p>
+<p>这是 Django 默认的 使用自带的 sqlite3 数据库</p>
+<pre><code class="python">DATABASES = &#123;
+    &#39;default&#39;: &#123;
+        &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
+        &#39;NAME&#39;: BASE_DIR / &#39;db.sqlite3&#39;,
+    &#125;
+&#125;
+</code></pre>
+<p>我们修改一下，以使用 MySQL</p>
+<pre><code class="python">DATABASES = &#123;
+    &#39;default&#39;: &#123;
+        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+        &#39;NAME&#39;: &#39;HFgene&#39;,
+        &#39;USER&#39;:&#39;root&#39;,
+        &#39;PASSWORD&#39;:&#39;123456&#39;,
+        &#39;HOST&#39;:&#39;localhost&#39;,
+        &#39;PORT&#39;:&#39;3306&#39;,
+    &#125;
+&#125;
+</code></pre>
+<h3 id="服务器-MySQL-连接-navicat"><a href="#服务器-MySQL-连接-navicat" class="headerlink" title="服务器 MySQL 连接 navicat"></a>服务器 MySQL 连接 navicat</h3><p>首先登录数据库</p>
+<pre><code class="shell">mysql -uroot -p    ## 以root登录数据库
+</code></pre>
+<p>查看一下当前端口</p>
+<pre><code class="shell">use mysql;    ## 选择mysql数据库
+select user,host from user;    ## 查看用户访问端口
+</code></pre>
+<p><strong>说明</strong>：root 用户默认的是 localhost，说明只允许从本地登录 mysql 服务。而我们要从远程以 root 用户连接数据库，就必须修改 host 的值，改为**’%’**：允许任何 ip 访问。</p>
+<pre><code class="shell">update user set host = &#39;%&#39; where user = &#39;root&#39;;
+</code></pre>
+<p>再次查看</p>
+<pre><code class="shell">mysql&gt; select user,host from user;    ## 查看用户访问端口
++------------------+-----------+
+| user             | host      |
++------------------+-----------+
+| root             | %         |
+| debian-sys-maint | localhost |
+| mysql.infoschema | localhost |
+| mysql.session    | localhost |
+| mysql.sys        | localhost |
++------------------+-----------+
+5 rows in set (0.00 sec)
+</code></pre>
+<p>这样就表示允许任何 ip 访问了</p>
+<pre><code class="shell">FLUSH PRIVILEGES;    ## 刷新服务配置项
+</code></pre>
+<p>刷新一下</p>
+<p>接着设置一个远程用户的登录密码</p>
+<pre><code class="shell"> ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;root_pwd&#39;; ## 授权root远程登录 后面的root_pwd代表登录密码
+</code></pre>
+<p>这里的 root_pwd 是自己填的 我写的是 123456</p>
+<h2 id="Django-与-Vue-的通讯"><a href="#Django-与-Vue-的通讯" class="headerlink" title="Django 与 Vue 的通讯"></a>Django 与 Vue 的通讯</h2><h3 id="配置-cnpm"><a href="#配置-cnpm" class="headerlink" title="配置 cnpm"></a>配置 cnpm</h3><pre><code class="shell">sudo npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<pre><code class="shell">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>以后安装 npm 的包都可以使用去安装</p>
+<pre><code class="shell">cnpm install [name]
+</code></pre>
+<p>使用 vite 创建项目也会有这个问题可以考虑下面的命令进行换源</p>
+<p>查看 npm 的镜像地址</p>
+<pre><code class="shell">npm config get registry
+</code></pre>
+<p>使用 taobao 镜像地址</p>
+<pre><code class="shell">npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<h1 id="项目运行"><a href="#项目运行" class="headerlink" title="项目运行"></a>项目运行</h1><h2 id="Django-篇"><a href="#Django-篇" class="headerlink" title="Django 篇"></a>Django 篇</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><pre><code class="shell">django-admin startproject xxxx
+</code></pre>
+<h3 id="创建-APP"><a href="#创建-APP" class="headerlink" title="创建 APP"></a>创建 APP</h3><p>进入项目后</p>
+<pre><code class="shell">python manage.py startapp xxxx
+</code></pre>
+<h3 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h3><pre><code class="shell">├── app01
+│   ├── admin.py                          [不动]自带的默认的后台管理功能
+│   ├── apps.py                           [不动]app启动类
+│   ├── __init__.py
+│   ├── migrations                        [不动]数据库变更记录
+│   │   └── __init__.py
+│   ├── models.py                         [重要]对数据库进行操作
+│   ├── tests.py                          [不动]单元测试，公司目前没有测试
+│   └── views.py                          [重要,经常修改]函数
+├── manage.py
+└── mysite
+    ├── asgi.py
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-38.pyc
+    │   └── settings.cpython-38.pyc
+    ├── settings.py
+    ├── urls.py                           [URL-&gt;函数]
+    └── wsgi.py
+</code></pre>
+<h3 id="APP-注册"><a href="#APP-注册" class="headerlink" title="APP 注册"></a>APP 注册</h3><p>创建好的 APP 不能直接使用需要注册后才可以，小型项目的话一般只需要一个 APP 就可以了。注册需要在项目名的<code>seetings.py</code>中注册</p>
+<p>在这个<code>mysite</code>的项目中就是<code>mysite.settings.py</code></p>
+<pre><code class="python">INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;app01.apps.App01Config&#39;, #这里也可以直接简写为app01
+]
+</code></pre>
+<h3 id="编写-URL-和视图函数的对应关系"><a href="#编写-URL-和视图函数的对应关系" class="headerlink" title="编写 URL 和视图函数的对应关系"></a>编写 URL 和视图函数的对应关系</h3><p>在 urls.py 中编写 路径是<code>mysite.urls.py</code></p>
+<pre><code class="python">from django.contrib import admin
+from django.urls import path
+
+
+from app01 import views
+urlpatterns = [
+    # path(&#39;admin/&#39;, admin.site.urls),
+
+    # www.xxxx.com/index/  -&gt;就会执行对应的函数
+    path(&#39;index/&#39;,views.index)
+
+]
+</code></pre>
+<p>下面即是 app01.views.py 的内容</p>
+<pre><code class="python">from django.shortcuts import render,HttpResponse
+
+# Create your views here.
+
+def index(request): #默认有一个参数 request
+    return HttpResponse(&quot;Hello&quot;)
+</code></pre>
+<h3 id="模板路径问题"><a href="#模板路径问题" class="headerlink" title="模板路径问题"></a>模板路径问题</h3><p>下面是使用 <code>django-admin</code> start project 创建的项目可以看到 DIRS 里面是空的，如果我们有一个 template 这里是放在 APP01 的文件夹里面</p>
+<pre><code class="shell">
+├── app01
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       └── __init__.cpython-38.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-38.pyc
+│   │   ├── apps.cpython-38.pyc
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── models.cpython-38.pyc
+│   │   └── views.cpython-38.pyc
+│   ├── templates
+│   │   └── user_list.html
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+</code></pre>
+<pre><code class="python">TEMPLATES = [
+    &#123;
+        &#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;,
+        &#39;DIRS&#39;: [],
+        &#39;APP_DIRS&#39;: True,
+        &#39;OPTIONS&#39;: &#123;
+            &#39;context_processors&#39;: [
+                &#39;django.template.context_processors.debug&#39;,
+                &#39;django.template.context_processors.request&#39;,
+                &#39;django.contrib.auth.context_processors.auth&#39;,
+                &#39;django.contrib.messages.context_processors.messages&#39;,
+            ],
+        &#125;,
+    &#125;,
+]
+</code></pre>
+<p>Django 会根据注册的 APP 顺序依次查找 template 文件夹</p>
+<pre><code class="python">
+INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;app01.apps.App01Config&#39;,
+]
+</code></pre>
+<p>但是如果使用 pycharm 就会在 TEMPLATES 这里面加上一句</p>
+<pre><code class="python"> &#39;DIRS&#39;: [], # 命令行创建 建议使用这种 这样每个模板都被APP归类
+ &#39;DIRS&#39;: [os.path.join(BASE_DIR,&#39;templates&#39;)], # 使用pycharm会变成这样
+</code></pre>
+<p>pycharm 这样的结果就是 django 会优先在项目根目录去寻找 template</p>
+<h3 id="静态文件-css-js-图片-的引入"><a href="#静态文件-css-js-图片-的引入" class="headerlink" title="静态文件(css,js,图片)的引入"></a>静态文件(css,js,图片)的引入</h3><pre><code class="html">&#123;% load static %&#125;
+&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;标题&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;这是用户列表&lt;/h1&gt;
+    &lt;img src=&quot;&#123;% static 'img/ming_ri_xiang.png' %&#125;&quot;&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="Django-模板语法"><a href="#Django-模板语法" class="headerlink" title="Django 模板语法"></a>Django 模板语法</h3><p>响应式的那种，就是在 HTML 中留一些位置，之后用数据对这些位置进行处理</p>
+<pre><code class="html">&#123;% load static %&#125;
+&lt;!DOCTYPE html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;标题&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;&#123;% static 'plugins/bootstrap/css/bootstrap.css'%&#125;&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;这是用户列表&lt;/h1&gt;
+    &lt;!-- &lt;img src=&quot;&#123;% static 'img/ming_ri_xiang.png' %&#125;&quot;&gt; --&gt;
+    &lt;input type=&quot;text&quot; class=&quot;btn btn-primary&quot; value=&quot;新建&quot;&gt;
+    &lt;div&gt;&#123;&#123; n1 &#125;&#125;&lt;/div&gt;
+    &lt;div&gt;&#123;&#123;n2.0&#125;&#125;&lt;/div&gt;
+    &lt;div&gt;&#123;&#123;n2.1&#125;&#125;&#123;&#123;n2.2&#125;&#125;&lt;/div&gt;
+    &lt;div&gt;
+        &#123;% for item in n2 %&#125;
+		<span>&#123;&#123; item &#125;&#125;</span>
+		&#123;% endfor %&#125;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;hr /&gt;
+&#123;&#123;n3.salary&#125;&#125;
+
+&lt;ul&gt;
+    &#123;% for item in n3.keys %&#125;
+	<li>&#123;&#123; item &#125;&#125;</li>
+	&#123;% endfor %&#125;
+&lt;/ul&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>后台 views</p>
+<pre><code class="python">from django.shortcuts import render,HttpResponse
+
+# Create your views here.
+
+def index(request): #默认有一个参数 request
+    name = &quot;长门有希大萌神&quot; #这里可以通过python从数据库里面读数据
+    roles = [&#39;A&#39;,&#39;B&#39;,&#39;C&#39;]
+    user_info = &#123;&quot;name&quot;:&quot;qw&quot;,&quot;salary&quot;:10000,&quot;role&quot;:&quot;CTO&quot;&#125;
+    return render(request,&quot;index.html&quot;,&#123;&quot;n1&quot;:name,&quot;n2&quot;:roles,&quot;n3&quot;:user_info&#125;)
+
+def user_list(request):
+    return render(request,&quot;user_list.html&quot;)
+
+def user_add(request):
+    return HttpResponse(&quot;添加用户&quot;)
+</code></pre>
+<h3 id="请求和响应"><a href="#请求和响应" class="headerlink" title="请求和响应"></a>请求和响应</h3><pre><code class="python">def something(request):
+    #请求的三种方式
+    print(request.method) #获得请求方式
+    print(&quot;URL=&gt; &quot;,request.GET) #在URL上传值
+    print(&quot;POST=&gt; &quot;,request.POST)#在请求体中返回数据
+
+    #响应
+    # return HttpResponse(&quot;添加用户&quot;)
+    # return render(request,&quot;user_list.html&quot;)
+
+    return redirect(&quot;https://www.baidu.com&quot;) # 让浏览器重定向到其他页面
+</code></pre>
+<h3 id="Django-与数据库交互"><a href="#Django-与数据库交互" class="headerlink" title="Django 与数据库交互"></a>Django 与数据库交互</h3><p>连接好数据库后，打开 app01 下的 models.py</p>
+<pre><code class="python">from django.db import models
+
+# Create your models here.
+class UserInfo(models.Model):
+    user = models.CharField(max_length=32)
+    pwd = models.CharField(max_length=32)
+</code></pre>
+<p>这样就会在我们的数据库中创建一个名为 UserInfo 的表，且有两个字段 user 和 pwd，当然这个时候只是设计好，下面几个命令执行完后才会真正开始创建</p>
+<p>运行下面这个命令来创建数据库表</p>
+<pre><code class="shell">python manage.py makemigrations
+</code></pre>
+<p>可以看到</p>
+<pre><code class="shell">.
+├── APP01
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations #目录中多了这个文件夹
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       └── __init__.cpython-38.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-38.pyc
+│   │   ├── apps.cpython-38.pyc
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── models.cpython-38.pyc
+│   │   └── views.cpython-38.pyc
+│   ├── templates
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   └── register.html
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+├── HF
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── settings.cpython-38.pyc
+│   │   ├── urls.cpython-38.pyc
+│   │   └── wsgi.cpython-38.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+</code></pre>
+<p>再输入命令</p>
+<pre><code class="shell">python manage.py migrate
+</code></pre>
+<h1 id="前后端交互"><a href="#前后端交互" class="headerlink" title="前后端交互"></a>前后端交互</h1><h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><h3 id="Django-setting-文件配置"><a href="#Django-setting-文件配置" class="headerlink" title="Django setting 文件配置"></a>Django setting 文件配置</h3><p>django 想要与 Vue 进行交互需要 RestFramework，还有 cors-headers 这两个插件</p>
+<pre><code class="shell">pip install djangorestframework
+pip install django-cors-headers
+</code></pre>
+<p>安装在 django 的根目录下的 setting 文件中进行 app 注册</p>
+<pre><code class="python">INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;rest_framework&#39;,
+    &#39;corsheaders&#39;,
+    &#39;lyb&#39;,
+]
+</code></pre>
+<p>因为前端与后端进行交互设计一个跨域保护的问题，后端使用 django-cors-headers 插件</p>
+<pre><code class="python">MIDDLEWARE = [
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;corsheaders.middleware.CorsMiddleware&#39;, # 注意顺序
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
+]
+</code></pre>
+<p>接着继续编辑 setting 文件，增加这两个配置</p>
+<pre><code class="python">ROOT_URLCONF = &#39;backends.urls&#39; # 后端项目的总路由路径
+CORS_ORIGIN_ALLOW_ALL = True #这是允许所有的跨域请求
+</code></pre>
+<p>至此后端的 setting 文件配置完成</p>
+<p>总配置文件如下 backends.settings.py</p>
+<pre><code class="python">&quot;&quot;&quot;
+Django settings for backends project.
+
+Generated by &#39;django-admin startproject&#39; using Django 5.0.1.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/5.0/topics/settings/
+
+For the full list of settings and their values, see
+https://docs.djangoproject.com/en/5.0/ref/settings/
+&quot;&quot;&quot;
+
+from pathlib import Path
+
+# Build paths inside the project like this: BASE_DIR / &#39;subdir&#39;.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = &#39;django-insecure-#fz@#++_qt+!=&amp;)tt2&amp;%uui8d)pmh=ko0v18midrnv8vfud@^*&#39;
+
+# SECURITY WARNING: don&#39;t run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
+
+# Application definition
+
+INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;rest_framework&#39;,
+    &#39;corsheaders&#39;,
+    &#39;lyb&#39;,
+]
+
+MIDDLEWARE = [
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;corsheaders.middleware.CorsMiddleware&#39;,
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
+]
+
+ROOT_URLCONF = &#39;backends.urls&#39;
+CORS_ORIGIN_ALLOW_ALL = True
+TEMPLATES = [
+    &#123;
+        &#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;,
+        &#39;DIRS&#39;: [],
+        &#39;APP_DIRS&#39;: True,
+        &#39;OPTIONS&#39;: &#123;
+            &#39;context_processors&#39;: [
+                &#39;django.template.context_processors.debug&#39;,
+                &#39;django.template.context_processors.request&#39;,
+                &#39;django.contrib.auth.context_processors.auth&#39;,
+                &#39;django.contrib.messages.context_processors.messages&#39;,
+            ],
+        &#125;,
+    &#125;,
+]
+
+WSGI_APPLICATION = &#39;backends.wsgi.application&#39;
+
+
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+DATABASES = &#123;
+    &#39;default&#39;: &#123;
+        &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
+        &#39;NAME&#39;: BASE_DIR / &#39;db.sqlite3&#39;,
+    &#125;
+&#125;
+
+
+# Password validation
+# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
+AUTH_PASSWORD_VALIDATORS = [
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#39;,
+    &#125;,
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.MinimumLengthValidator&#39;,
+    &#125;,
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.CommonPasswordValidator&#39;,
+    &#125;,
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.NumericPasswordValidator&#39;,
+    &#125;,
+]
+
+
+# Internationalization
+# https://docs.djangoproject.com/en/5.0/topics/i18n/
+
+LANGUAGE_CODE = &#39;en-us&#39;
+
+TIME_ZONE = &#39;UTC&#39;
+
+USE_I18N = True
+
+USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
+
+STATIC_URL = &#39;static/&#39;
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = &#39;django.db.models.BigAutoField&#39;
+</code></pre>
+<h3 id="Django-的总路由配置"><a href="#Django-的总路由配置" class="headerlink" title="Django 的总路由配置"></a>Django 的总路由配置</h3><pre><code class="python">from django.contrib import admin
+from django.urls import path,include
+from rest_framework import routers    #这些都要引用
+from lyb.views import LybViewSet      #这些都要引用
+
+router = routers.DefaultRouter()
+router.register(r&#39;lyb&#39;,LybViewSet)    #这个lyb是你的app
+
+urlpatterns = [
+    path(&#39;admin/&#39;, admin.site.urls),   #这句可以删掉
+    path(&#39;api/&#39;,include(router.urls))  #这句是与自己的app的配置有关
+]
+</code></pre>
+<h3 id="Django-配置序列化"><a href="#Django-配置序列化" class="headerlink" title="Django 配置序列化"></a>Django 配置序列化</h3><p>app 名字.serializers.py 没有就创建</p>
+<pre><code class="python">from rest_framework import serializers
+from .models import Lyb
+
+class LybSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Lyb
+        fields = &quot;__all__&quot; #所有的字段都序列化
+</code></pre>
+<p>models.py 中的内容 ，<em>虽然不是前后端交互必要的但是因为是一个案例于是留下来</em></p>
+<pre><code class="python">from django.db import models
+
+# Create your models here.
+class Lyb(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+    content = models.TextField()
+    posttime = models.DateTimeField(auto_now_add=True)
+</code></pre>
+<p>下面的是 views 的内容</p>
+<pre><code class="python">from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Lyb #导入自己的appmodel
+from .serializers import LybSerializer # 导入序列化器
+class LybViewSet(viewsets.ModelViewSet):
+    queryset = Lyb.objects.all().order_by(&#39;-posttime&#39;) #按时间排序 当然也可以选择其他的排序
+    serializer_class =  LybSerializer
+</code></pre>
+<h3 id="获得-model-中的数据-特定条件"><a href="#获得-model-中的数据-特定条件" class="headerlink" title="获得 model 中的数据 特定条件"></a>获得 model 中的数据 特定条件</h3><pre><code class="python">from myapp.models import MyModel
+
+specific_object = MyModel.objects.get(field=value)
+</code></pre>
+<h3 id="获得-model-中的全部数据"><a href="#获得-model-中的全部数据" class="headerlink" title="获得 model 中的全部数据"></a>获得 model 中的全部数据</h3><pre><code class="python">from myapp.models import MyModel
+
+all_data = MyModel.objects.all()
+</code></pre>
+<h3 id="视图中获得对象的值"><a href="#视图中获得对象的值" class="headerlink" title="视图中获得对象的值"></a>视图中获得对象的值</h3><pre><code class="python">import json
+from django.http import JsonResponse
+
+def login_view(request):
+    if request.method == &#39;POST&#39;:
+        data = json.loads(request.body)
+        username = data.get(&#39;username&#39;)
+        password = data.get(&#39;password&#39;)
+        # 进行登录逻辑处理
+        # ...
+        # 返回响应数据
+        response_data = &#123;
+            &#39;message&#39;: &#39;登录成功&#39;,
+            &#39;username&#39;: username,
+        &#125;
+        return JsonResponse(response_data)
+</code></pre>
+<h3 id="常见写法"><a href="#常见写法" class="headerlink" title="常见写法"></a>常见写法</h3><pre><code class="python">from django.http import JsonResponse
+from .models import UserModel
+
+def login_view(request):
+    if request.method == &quot;POST&quot;:
+        # 获取请求中的用户名和密码
+        username = request.POST.get(&quot;username&quot;)
+        password = request.POST.get(&quot;password&quot;)
+
+        # 在这里进行用户登录验证逻辑
+        try:
+            user = UserModel.objects.get(userName=username, passWord=password)
+            # 用户登录成功
+            return JsonResponse(&#123;&quot;message&quot;: &quot;登录成功&quot;&#125;)
+        except UserModel.DoesNotExist:
+            # 用户名或密码不正确，登录失败
+            return JsonResponse(&#123;&quot;message&quot;: &quot;用户名或密码不正确&quot;&#125;, status=401)
+
+    # 如果不是 POST 请求，返回错误响应
+    return JsonResponse(&#123;&quot;message&quot;: &quot;无效的请求&quot;&#125;, status=400)
+</code></pre>
+<h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><h3 id="VUE-环境配置"><a href="#VUE-环境配置" class="headerlink" title="VUE 环境配置"></a>VUE 环境配置</h3><p>下载 axios</p>
+<pre><code class="shell">npm install axios -s
+</code></pre>
+<p>使用 vite 脚手架创建项目 不适用 vue-cli</p>
+<pre><code class="shell">npm init vite-app &lt;project-name&gt;
+</code></pre>
+<p>vue 中默认的代码很多都是没用的因此我们删除</p>
+<p>vue 项目的 index.html 如下</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+        &lt;title&gt;vue-django&lt;/title&gt;
+        &lt;link
+            href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css&quot;
+            rel=&quot;stylesheet&quot;
+            integrity=&quot;sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD&quot;
+            crossorigin=&quot;anonymous&quot;
+        /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        hello
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script type=&quot;module&quot; src=&quot;/src/main.js&quot;&gt;&lt;/script&gt;
+        &lt;!-- 注意这一行 type和src的路径都要打 --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>把 main.js 中无用的代码删除</p>
+<pre><code class="js">import &#123; createApp &#125; from &#39;vue&#39;
+import App from &#39;./App.vue&#39;
+
+createApp(App).mount(&#39;#app&#39;)
+</code></pre>
+<p>创建一个组件（组件名随意我这里的例子交 lyb）这边是前端向后端要数据的核心部分</p>
+<pre><code class="vue">&lt;template&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-8&quot;&gt;
+            &lt;table class=&quot;table&quot;&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;标题&lt;/th&gt;
+                        &lt;th&gt;作者&lt;/th&gt;
+                        &lt;th&gt;内容&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr v-for=&quot;item in ly_list&quot; :key=&quot;item.url&quot;&gt;
+                        //循环显示元素
+                        &lt;td&gt;&#123;&#123; item.title &#125;&#125;&lt;/td&gt;
+                        &lt;td&gt;&#123;&#123; item.author &#125;&#125;&lt;/td&gt;
+                        &lt;td&gt;&#123;&#123; item.content &#125;&#125;&lt;/td&gt;
+                        &lt;td&gt;测试&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;button class=&quot;btn btn-success&quot; title=&quot;编辑&quot;&gt;
+                                &lt;i&gt;&lt;/i&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;btn btn-danger&quot; title=&quot;删除&quot;&gt;
+                                &lt;i&gt;&lt;/i&gt;
+                            &lt;/button&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import axios from &#39;axios&#39; //导入axios库
+import &#123; reactive, onMounted, toRefs &#125; from &#39;vue&#39; //这三个都要导入
+export default &#123;
+    name: &#39;lyb&#39;,
+    setup() &#123;
+        let base_url = &#39;http://127.0.0.1:8000/api/lyb/&#39; //这是django服务器的地址就是rest_framework提供数据的网址，
+        const state = reactive(&#123;
+            ly_list: [], //用来接数据
+        &#125;)
+        const getLyb = () =&gt; &#123;
+            axios
+                .get(base_url)
+                .then((res) =&gt; &#123;
+                    //发送请求
+                    console.log(&#39;成功&#39;)
+                    state.ly_list = res.data
+                    console.log(res.data)
+                &#125;)
+                .catch((err) =&gt; &#123;
+                    console.log(err)
+                &#125;)
+        &#125;
+        onMounted(() =&gt; &#123;
+            getLyb() //需要onMounted挂载
+        &#125;)
+
+        return &#123;
+            ...toRefs(state), //这段也要加上
+        &#125;
+    &#125;,
+&#125;
+&lt;/script&gt;
+</code></pre>
+<p>最后在 APP.vue 中注册一下</p>
+<pre><code class="vue">&lt;template&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;lyb /&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import lyb from &#39;./components/Lyb.vue&#39;
+export default &#123;
+    name: &#39;App&#39;,
+    components: &#123;
+        lyb,
+    &#125;,
+&#125;
+&lt;/script&gt;
+</code></pre>
+<p>将 django 与 vue 的服务器都启动，正常情况下就可以看到后端传来的数据了。</p>
+<p>这里有个小 bug 使用 vscode ssh 连接的时候网站可能不会发生改变，这并不是代码的问题。可能与电脑&#x2F;虚拟机性能有关。可以进入虚拟机桌面的终端直接运行，不通过 ssh 转发查看效果</p>
+<h3 id="使用-element-plus"><a href="#使用-element-plus" class="headerlink" title="使用 element-plus"></a>使用 element-plus</h3><pre><code class="shell">npm install element-plus --save
+</code></pre>
+<p><strong>main.js 中配置**</strong></p>
+<pre><code class="js">import &#123; createApp &#125; from &#39;vue&#39;
+import App from &#39;./App.vue&#39;
+import &#39;./index.css&#39;
+import ElementPlus from &#39;element-plus&#39;
+import &#39;element-plus/dist/index.css&#39;
+
+const app = createApp(App)
+app.use(ElementPlus).mount(&#39;#app&#39;)
+</code></pre>
+<h1 id="Vim-使用"><a href="#Vim-使用" class="headerlink" title="Vim 使用"></a>Vim 使用</h1><p>基础美化</p>
+<p>编辑 &#x2F;etc&#x2F;vim&#x2F;vimrc</p>
+<pre><code class="shell">syntax on                     &quot; 设置语法高亮
+set nu                        &quot; 设置行数显示
+set tabstop=4                 &quot; 设置tab缩进长度为4空格
+set autoindent                &quot; 设置自动缩进，适用所有类型文件
+set cindent                   &quot; 针对C语言的自动缩进功能，在C语言的编程环境中，比autoindent更加精准
+set list lcs=tab:\|\          &quot; 设置tab提示符号为 &quot;|&quot;，注意最后一个反斜杠后面要留有空格
+set cc=0                      &quot; 设置高亮的列，这里设置为0，代表关闭
+set cursorline                &quot; 突出显示当前行
+</code></pre>
+<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><p>查找 nginx 配置文件位置</p>
+<pre><code class="shell">locate nginx.conf
+</code></pre>
+<p>此外也可以使用这个命令</p>
+<pre><code class="shell">whereis nginx
+</code></pre>
+<p>假定我们按照网上的教程进入 &#x2F;usr&#x2F;sbin&#x2F; 目录 通过.&#x2F;nginx 启动服务可能会看到以下错误</p>
+<pre><code class="shell">nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+nginx: [emerg] still could not bind()
+</code></pre>
+<p>解决方法是 不使用<code>./nginx</code>这种启动方式，而是使用如下的命令启动<code>nginx</code></p>
+<pre><code class="shell">sudo systemctl restart nginx
+sudo systemctl start nginx
+</code></pre>
+<p>在浏览器中输入 即可看到</p>
+<pre><code class="shell">127.0.0.1:80
+</code></pre>
+
             
         </div>
     </div>
@@ -324,9 +1565,131 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>Perket 是一种流行的美食。为了做好 Perket，厨师们必须小心选择配料，以便达到更好的口感。你有N种可支配的配料。对于每一种配料，我们知道它们各自的酸度 SS 和甜度 BB。当我们添加配料时，总的酸度为每一种配料的酸度总乘积；总的甜度为每一种配料的甜度的总和。</p>
+            <span id="more"></span>
+
+<p>Perket 是一种流行的美食。为了做好 Perket，厨师们必须小心选择配料，以便达到更好的口感。你有 N 种可支配的配料。对于每一种配料，我们知道它们各自的酸度 SS 和甜度 BB。当我们添加配料时，总的酸度为每一种配料的酸度总乘积；总的甜度为每一种配料的甜度的总和。</p>
 <p>众所周知，美食应该口感适中；所以我们希望选取配料，以使得酸度和甜度的绝对差最小。</p>
 <p>另外，我们必须添加至少一种配料，因为没有美食是以白水为主要配料的。</p>
+<p>输入格式<br>第一行包括整数 NN，表示可支配的配料数。</p>
+<p>接下来 NN 行，每一行为用空格隔开的两个整数，表示每一种配料的酸度和甜度。</p>
+<p>输入数据保证，如果我们添加所有配料，总的酸度和甜度都不会超过 10^9109。</p>
+<p>输出格式<br>输出酸度和甜度的最小的绝对差。</p>
+<p>输入输出样例<br>输入 #1 复制<br>1<br>3 10</p>
+<p>输出 #1 复制<br>7<br>输入 #2 复制<br>4<br>1 7<br>2 6<br>3 8<br>4 9<br>输出 #2 复制<br>1<br>说明&#x2F;提示<br>1\le N\le 101≤N≤10。</p>
+<p>首先这个题目给我们最多十种调料，数字不大，因此可以使用状态压缩去枚举每一种情况。<br>但是看了很多网上的博客，网上的视频。都没有很好的，面向小白的状态压缩教程。<br>因此本人决定<del>明早 python 翘了</del>深夜发一篇题解。</p>
+<p>本人会竭力细致的讲解。So,让我们开始吧！</p>
+<hr>
+<p>什么是状态压缩？<br>状态压缩，可以把复杂的状态压缩到一个简单的数来保存。<br>是不是和本题看起来一点关系都没有?</p>
+<p>别着急！</p>
+<p>在讲解状态压缩之前，我们要知道二进制这个神奇的东西，以及知道如何将十进制转化为二进制。</p>
+<p>下面是十进制转化成二进制的代码（短除法）</p>
+<hr>
+<pre><code class="cpp">void dectobin(int n)
+&#123;
+    int result = 0, k = 1, i, temp;
+    temp = n;
+    while (temp)
+    &#123;
+        i = temp % 2;
+        result = k * i + result;
+        k = k * 10;
+        temp = temp / 2;
+    &#125;
+    printf(&quot;%d\n&quot;, resu
+</code></pre>
+<hr>
+<p>某同学：哦，我的天啊！我知道十进制转化为二进制又有什么用啊？对于本题没有一点帮助啊！</p>
+<p>在计算机世界中 0 代表 伪 ，1 代表 真。</p>
+<p>那么是不是我们可以用 1 代表这个调料被选用了，0 代表它没有被选用。</p>
+<p>注意！注意！</p>
+<p>因此假如有四份调料 ABCD，某个厨子就让我选 ABC 三种。</p>
+<p>那么用 1 代表选，0 代表不选</p>
+<p>是不是这种情况我们可以改写成：</p>
+<p>选，选，选，不选</p>
+<p>1，1，1， 0</p>
+<p>然后啊我们看啊，这个逗号好像完全不影响啊</p>
+<p>我们再把逗号删掉，是不是就是 1110（这是不是代表这种状态了）</p>
+<p>这个 1110 如果以二进制的角度看，是不是就<strong>唯一对应</strong>一个数了呢</p>
+<p>也就是 8+4+2&#x3D;14 这个数</p>
+<p><del>好了恭喜你已经学会一半的状态压缩了</del></p>
+<hr>
+<p>我们现在知道了可以用二进制去表示所有调料是否使用的所有状态</p>
+<p>加深印象再举几个例子：还是 ABCD</p>
+<p>我选了 D，ABC 不选就是 0001</p>
+<p>ABCD 全选就是 1111</p>
+<p>ABCD 都不选就是 0000</p>
+<p>有些同志就要说了：啊~，你这个东西啊，我知道用二进制代表状态有什么用呢？难道手撸所有的状态？？？打表？？？</p>
+<p>NO!</p>
+<p>对于这个题目来说一共有 2<em>2</em>2……*2 总共 1024 种状态</p>
+<p>某同志：所以，二进制转化成十进制后对应的最大的数是 1024？？？</p>
+<p>其实不然，由上面的例子可以看出</p>
+<p>十个调料如果全部要选的话：</p>
+<p>是 1111111111（十个 1）</p>
+<p>是 2^11 - 1 也就是 2047 这么大</p>
+<p>最多全选，最少选一种（题目要求，所以不是 0）</p>
+<p>也就是说 111111111 -&gt;-&gt;-&gt;0000000001</p>
+<p>当然：0000000010，也满足只选一种</p>
+<hr>
+<p>综上所述，我们可以用 2047 去代表 1111111111，然后不停的让自减 1，达到枚举全部状态的目的</p>
+<p>明白了这些我们再说另外一个很重要的东西 <strong>位运算</strong></p>
+<p>在这里我们简单的说几个下面出现了的，其余的可以去百度</p>
+<hr>
+<p><strong>&amp; 与 运算符</strong> 作用：两位同时为“1”，结果才为“1”，否则为 0</p>
+<p>运算规则：0&amp;0&#x3D;0; 0&amp;1&#x3D;0; 1&amp;0&#x3D;0; 1&amp;1&#x3D;1;</p>
+<p><strong>左移运算符（&lt;&lt;）</strong><br>将一个运算对象的各二进制位全部左移若干位（左边的二进制位丢弃，右边补 0）。<br>例：a &#x3D; a &lt;&lt; 2 将 a 的二进制位左移 2 位，右补 0，<br>左移 1 位后 a &#x3D; a * 2;<br>若左移时舍弃的高位不包含 1，则每左移一位，相当于该数乘以 2。</p>
+<p><strong>右移运算符（&gt;&gt;）</strong><br>将一个数的各二进制位全部右移若干位，正数左补 0，负数左补 1，右边丢弃。<br>操作数每右移一位，相当于该数除以 2。<br>例如：a &#x3D; a &gt;&gt; 2 将 a 的二进制位右移 2 位，<br>左补 0 or 补 1 得看被移数是正还是负</p>
+<hr>
+<p>然后我们就发现了一个是原来判断一个数二进制某位是不是 1 只要来一个按位 &amp; 运算符就 OK 了啊</p>
+<pre><code class="cpp">if (i &amp; (1 &lt;&lt; (j - 1)))
+</code></pre>
+<p>也就是这句代码</p>
+<p>左移运算符：</p>
+<p>1&lt;&lt;1 二进制下 ：10</p>
+<p>1&lt;&lt;2 二进制下： 100</p>
+<p>因为二进制的 10 可以判断 1110（随便举得一个二进制数做例子）<br>的从右往左数的第二位是不是 1</p>
+<p>二进制的 100 可以判断 11001（同上）<br>的从右往左数的第三位是不是 1</p>
+<p>所以我们只要来一个循环不断产生</p>
+<p>1，10，100，1000……</p>
+<p>这样就可以知道到底是哪个调料被选用了</p>
+<h3 id="枚举状态-扫描情况-努力学习写出的-c-代码-AC"><a href="#枚举状态-扫描情况-努力学习写出的-c-代码-AC" class="headerlink" title="枚举状态 + 扫描情况 + 努力学习写出的 c++代码 &#x3D;&#x3D;AC!"></a>枚举状态 + 扫描情况 + 努力学习写出的 c++代码 &#x3D;&#x3D;AC!</h3><p>最后 AC 代码如下：</p>
+<p>细心的同志会发现我开了一个 f[2048]但是完全没有使用啊哈哈哈哈</p>
+<hr>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+int f[2048];
+struct
+&#123;
+int s; //酸度
+int t; //甜度
+&#125; shicai[18];
+int main()
+&#123;
+int N;
+cin &gt;&gt; N;
+for (int i = 1; i &lt;= N; i++)
+cin &gt;&gt; shicai[i].s &gt;&gt; shicai[i].t;
+int c = 9999999; //甜度差,先设置为无限大
+for (int i = (1 &lt;&lt; N) - 1; i &gt;= 1; i--)
+&#123;
+int t_t = 0;
+int s_t = 1; //s_t千万不要设置为0
+for (int j = 1; j &lt;= N; j++) //开始状态压缩，扫一扫
+&#123;
+if (i &amp; (1 &lt;&lt; (j - 1))) //现在对比的是第j位调料
+&#123;
+t_t += shicai[j].t;
+s_t *= shicai[j].s;
+&#125;
+&#125;
+c = min(c, abs(t_t - s_t));
+&#125;
+cout &lt;&lt; c &lt;&lt; endl;
+return 0;
+&#125;
+</code></pre>
+
             
         </div>
     </div>

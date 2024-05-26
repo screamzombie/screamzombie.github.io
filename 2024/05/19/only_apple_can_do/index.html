@@ -174,7 +174,7 @@
 <span id="more"></span>
 
 <h1 id="适用于苹果芯片了吗"><a href="#适用于苹果芯片了吗" class="headerlink" title="适用于苹果芯片了吗"></a>适用于苹果芯片了吗</h1><p><a target="_blank" rel="noopener" href="https://isapplesiliconready.com/zh">https://isapplesiliconready.com/zh</a></p>
-<h1 id="调整dock动画速度"><a href="#调整dock动画速度" class="headerlink" title="调整dock动画速度"></a>调整dock动画速度</h1><p>原链接</p>
+<h1 id="调整-dock-动画速度"><a href="#调整-dock-动画速度" class="headerlink" title="调整 dock 动画速度"></a>调整 dock 动画速度</h1><p>原链接</p>
 <p><a target="_blank" rel="noopener" href="https://cn.appflix.cc/how-to-remove-animation-and-delay-in-dock-on-mac/">https://cn.appflix.cc/how-to-remove-animation-and-delay-in-dock-on-mac/</a></p>
 <pre><code class="shell">defaults write com.apple.dock autohide-time-modifier -float 0.25;
 
@@ -182,10 +182,10 @@ killall Dock
 </code></pre>
 <h1 id="解决其他品牌的耳机蓝牙连接后自动播放音乐"><a href="#解决其他品牌的耳机蓝牙连接后自动播放音乐" class="headerlink" title="解决其他品牌的耳机蓝牙连接后自动播放音乐"></a>解决其他品牌的耳机蓝牙连接后自动播放音乐</h1><pre><code class="shell">launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 </code></pre>
-<h1 id="karabiner无法连接键盘"><a href="#karabiner无法连接键盘" class="headerlink" title="karabiner无法连接键盘"></a>karabiner无法连接键盘</h1><pre><code class="shell">grabber_client connect_failed: Connection refused
+<h1 id="karabiner-无法连接键盘"><a href="#karabiner-无法连接键盘" class="headerlink" title="karabiner 无法连接键盘"></a>karabiner 无法连接键盘</h1><pre><code class="shell">grabber_client connect_failed: Connection refused
 </code></pre>
-<p>一般会打出这样的log。设置中重新设置登录项和后台就好了</p>
-<h1 id="mac切换输入法失灵问题"><a href="#mac切换输入法失灵问题" class="headerlink" title="mac切换输入法失灵问题"></a>mac切换输入法失灵问题</h1><p><strong>解决方案</strong><br><del>更换搜狗输入法</del></p>
+<p>一般会打出这样的 log。设置中重新设置登录项和后台就好了</p>
+<h1 id="mac-切换输入法失灵问题"><a href="#mac-切换输入法失灵问题" class="headerlink" title="mac 切换输入法失灵问题"></a>mac 切换输入法失灵问题</h1><p><strong>解决方案</strong><br><del>更换搜狗输入法</del></p>
 <p>诚然使用<code>caps</code>键对中英文进行切换是一个好的想法,但是苹果默认的切换实际上是切换输入法,没错 <code>拼</code>是一个输入法<code>ABC</code>是另一个输入法,<br>所以默认情况下按<code>caps</code>进行切换时,实际上是切换了输入法,而不是一个在一个输入法里面进行了中英文切换,如果打字速度比较快,尤其是刚刚按下<code>caps</code>后就立即进行输入,系统反应不过来切换就容易失败.</p>
 <p>所以解决方案是关闭设置中的使用<code>caps</code>切换<code>ABC</code>输入法,然后当你想从中文切换到英文时,在<code>拼</code>下按一下<code>cpas</code>没错这才是普通的模式切换,按<code>shift</code>依旧可以大写.</p>
 <p>你无法通过长按<code>cpas</code>进入到大写模式了,但是你可以切换输入法<code>ABC</code>在这里面按一下<code>cpas</code>进行大小写切换,这就和普通的英文输入法无二了</p>
