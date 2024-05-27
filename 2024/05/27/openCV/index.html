@@ -184,6 +184,24 @@ include_directories($&#123;OpenCV_INCLUDE_DIRS&#125;)
 add_executable(learnOpenCV main.cpp) # main是工程的主文件
 target_link_libraries(learnOpenCV $&#123;OpenCV_LIBS&#125;)
 </code></pre>
+<p>测试代码</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace std;
+using namespace cv;
+
+int main() &#123;
+    Mat srcImage = imread(&quot;images.jpg&quot;);
+    if (!srcImage.data) &#123;
+        std::cout &lt;&lt; &quot;Image not loaded&quot;;
+        return -1;
+    &#125;
+    imshow(&quot;image&quot;, srcImage);
+    waitKey(0);
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     
