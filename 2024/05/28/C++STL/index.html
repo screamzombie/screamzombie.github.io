@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: 配置 | rainbow 的小窝</title>
+    <title>C++STL | rainbow 的小窝</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,14 +145,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>C++STL</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/28
+        </span>
         
-        
-        
-        <span>
-            <a href="/categories/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background: #ff7d73">
+        <span class="category">
+            <a href="/categories/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -157,120 +167,33 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Markdown/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Markdown
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/ACM/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                ACM
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Git/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Git
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%85%8D%E7%BD%AE/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                配置
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/408/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                408
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%95%B0%E5%AD%A6/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                数学
-            </a>
-        </span>
-        
-        
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2024/5/19</div>
-            <a href="/2024/05/19/vue%E5%92%8Cdjango%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">
-                <h3>vue和django的一些配置</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E9%85%8D%E7%BD%AE/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        配置
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>标准模板库（英语：Standard Template Library，缩写：STL），是一个C++软件库，大量影响了C++标准程序库但并非是其的一部分。其中包含4个组件，分别为算法、容器、函数、迭代器</p>
+<ul>
+<li>参考C++STL源码剖析<span id="more"></span></li>
+</ul>
+<h1 id="分配器"><a href="#分配器" class="headerlink" title="分配器"></a>分配器</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>由于<code>C++</code>中存在有<code>list</code>，<code>vector</code>，<code>string</code>等大小会改变的容易因此需要使用分配器对内存空间进行分配和管理。</p>
+<p>满足以下需求的类都可以成为分配器</p>
+<pre><code class="cpp">A::pointer //指针
+A::const_pointer// 常量指针
+A::reference //引用
+A::const_reference //常量引用
+A::value_type //值类型
+A::size_type //所用内存大小的类型，表示类A所定义的分配模型中的单个对象最大尺寸的无符号整型
+A::difference_type //指针差值的类型，为带符号整型，用于表示分配模型内的两个指针的差异值
+</code></pre>
+<h2 id="设计一个分配器"><a href="#设计一个分配器" class="headerlink" title="设计一个分配器"></a>设计一个分配器</h2><pre><code class="hpp">
+</code></pre>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -302,6 +225,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
