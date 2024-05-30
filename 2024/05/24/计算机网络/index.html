@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>计算机网络 | rainbow 的小窝</title>
+    <title>计算机网络 | Res Publica</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -68,7 +68,7 @@
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>RAINBOW 的小窝</span>
+            <span>RES PUBLICA</span>
         </a>
         
         <a href="/">
@@ -95,7 +95,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;RAINBOW 的小窝</span>
+            <span>&emsp;RES PUBLICA</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -170,7 +170,101 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <blockquote>
+<p>互联网？那个东西还在吗</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>408考就考记忆，重点是边边拐拐的</p>
+<h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><h2 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a>计算机网络的组成</h2><h3 id="组成部分："><a href="#组成部分：" class="headerlink" title="组成部分："></a>组成部分：</h3><p>完整的计算机网络 &#x3D; 硬件 + 软件 + 协议</p>
+<p>硬件：主机(端系统)、通信链路 (如双绞线、光纤)、交换设备 (如路 由器、交换机等) 和 通信处理机 (如网卡)</p>
+<p>软件：实现资源共享和方便用户使用</p>
+<p>计算机网络的核心是<code>协议</code></p>
+<h3 id="工作方式："><a href="#工作方式：" class="headerlink" title="工作方式："></a>工作方式：</h3><p>计算机网络 &#x3D; 边缘部分 + 核心部分</p>
+<p>边缘部分: 所有连接到因特网上、供用户直接使用的主机组成，用来进行<code>通信</code>和<code>资源共享</code></p>
+<p>核心部分: 大量的<em>网络</em>和连接这些网络的<em>路由器</em>组成 ， 它 为 边 缘 部 分 提 供 <code>连 通 性</code> 和<code> 交 换 服 务</code></p>
+<h3 id="功能组成：-我觉得是重点"><a href="#功能组成：-我觉得是重点" class="headerlink" title="功能组成：(我觉得是重点)"></a>功能组成：(我觉得是重点)</h3><p>计算机网络 &#x3D;  通信子网 + 资源子网</p>
+<p>通信子网 &#x3D; 各种传输介质 + 通信设备 + 相应的网络协议</p>
+<p>资源子网 &#x3D; 实现资源共享功能的设备及其软件的集合</p>
+<p><strong>通信子网：使网络具有 <em>数据传输</em>、<em>交换</em>、<em>控制</em> 和 <em>存储</em> 的能力</strong></p>
+<h2 id="几种网络构型"><a href="#几种网络构型" class="headerlink" title="几种网络构型"></a>几种网络构型</h2><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><p>总线型网络(建网容易，效率不高)</p>
+<p>星型（便于集中控制和管理，端用户通信必须经过中央设备）</p>
+<p>环形 （可以单环，也可以双环，<strong>环中信号是单向传输的</strong>）</p>
+<p>网状</p>
+<h2 id="指标-重点"><a href="#指标-重点" class="headerlink" title="指标(重点)"></a>指标(重点)</h2><p>带宽： 网络的通信线路所能传送数据的能力，即数字信道的最高数据传输速率</p>
+<p>时延： 从网络的一端传送到另外一端所需要的总时间 时延&#x3D; 发送时延 + 传播时延+处理时延+排队时延</p>
+<ul>
+<li>发送时延 &#x3D;》 所有数据上链路        分组长度&#x2F;信道宽度</li>
+<li>传播时延 &#x3D;》电磁波从一头跑到另一头     信道长度&#x2F;电磁波在信道上的传播速率</li>
+<li>处理时延 &#x3D;》 数据在交换节点的存储转发中进行的必要工作花的时间 分析首部，寻找路由等</li>
+<li>排队时延 &#x3D;》 数据进出交换节点都需要排队</li>
+</ul>
+<p>时延带宽积：时延带宽积 &#x3D; 传播时延  *  信道宽度 就像是水管里的水的容量一般</p>
+<p>时延带宽积 考计算！！！！</p>
+<ul>
+<li>信道利用率： 有数据通过的时间&#x2F;总时间</li>
+</ul>
+<h2 id="细小知识点"><a href="#细小知识点" class="headerlink" title="&amp;细小知识点"></a>&amp;细小知识点</h2><p>不同机器上的同一层叫<code>对等层</code>，同一层的实体叫<code>对等实体</code></p>
+<p>每个报文PDU都由两个部分组成  数据部分SDU  控制信息 PCI</p>
+<p>数据服务单元 SDU 为了完成用户所求的功能而传送的数据</p>
+<p>协议控制信息 PCI 控制协议操作的信息</p>
+<p>协议数据单元 PDU 对等层次之间传送的数据单位称为该层的PDU</p>
+<h2 id="协议-接口-服务"><a href="#协议-接口-服务" class="headerlink" title="协议 接口 服务"></a>协议 接口 服务</h2><ul>
+<li><p>协议 &#x3D; 规则的集合，<strong>水平的必须是同层之间</strong></p>
+<blockquote>
+<p>协议 &#x3D; 语法(传输数据的格式) + 语义（所完成的功能） + 同步（执行各种操作的条件，时间关系等）<br>协议需要 &#x3D;》 线路管理 + 差错控制 + 数据转换</p>
+</blockquote>
+</li>
+<li><p>接口 是同一节点内<strong>相邻两层</strong>的交换信息的连接点，不能跳</p>
+<blockquote>
+<p>通过服务访问点 SAP</p>
+</blockquote>
+</li>
+<li><p>服务 下层<strong>紧邻</strong>的上层提供功能调用</p>
+<blockquote>
+<p>上层要求下层提供服务的命令在OSI中叫<code>服务原语</code><br>请求<code>Request</code> 服务用户 -&gt; 服务提供者 请求完成某项工作<br>指示<code>Indication</code> 服务提供者 -&gt; 服务用户，指示用户做某件事<br>响应 <code>Response</code> 服务用户-&gt; 服务提供者 对请求的回应<br>证实 <code>Confirmation</code>  服务提供者 -&gt; 服务用户 对请求的证实</p>
+</blockquote>
+</li>
+</ul>
+<p><em>请求 &lt;—-&gt;指示 <em>是一对，</em>响应 &lt;—&gt;证实</em>是一对</p>
+<p>有应答服务包括四种</p>
+<p>无应答服务 只有 **请求和指示 **</p>
+<h2 id="TCP-IP-与-OSI模型的比较"><a href="#TCP-IP-与-OSI模型的比较" class="headerlink" title="TCP&#x2F;IP 与 OSI模型的比较"></a>TCP&#x2F;IP 与 OSI模型的比较</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP_OSI.png" alt="image-20240530174500257"></p>
+<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h2 id="通信模式等基本概念"><a href="#通信模式等基本概念" class="headerlink" title="通信模式等基本概念"></a>通信模式等基本概念</h2><p>连续变化的信号 &#x3D;》 模拟信号</p>
+<p>取值仅为有限个的 &#x3D;》 数字信号</p>
+<p>**远距离传输 使用的是串行传输 **</p>
+<p>数字通信中信号的计量单位是<strong>码元</strong></p>
+<h2 id="信源-信道-与-信宿"><a href="#信源-信道-与-信宿" class="headerlink" title="信源 信道 与 信宿"></a>信源 信道 与 信宿</h2><p>信源：产生和发出数据的源头</p>
+<p>信宿：接受数据的终点</p>
+<p>信道不能简单的视作电路</p>
+<h3 id="信道的划分"><a href="#信道的划分" class="headerlink" title="信道的划分"></a>信道的划分</h3><ul>
+<li>按传输信号种类 有模拟信道 和 数字信道两种</li>
+<li>按传输介质不同 无线信道 和 有线信道</li>
+</ul>
+<h3 id="信道上的信号-我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看"><a href="#信道上的信号-我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看" class="headerlink" title="信道上的信号(我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看)"></a>信道上的信号(我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看)</h3><p>信道上的信号</p>
+<ul>
+<li>基带信号 -&gt; 将数字0 1直接用不同电压表示 (基带传输)</li>
+<li>宽带信号 -&gt; 将基带信号调制后形成 <strong>频分复用</strong> 的 ** 模拟信号** (宽带传输)</li>
+</ul>
+<p>Question</p>
+<blockquote>
+<p>宽带传输用的是<code>模拟信号</code><br>宽带传输用的是<code>频分复用</code><br>基带信号调制的是不同的<code>电压</code></p>
+</blockquote>
+<h3 id="三种信息方式的交互"><a href="#三种信息方式的交互" class="headerlink" title="三种信息方式的交互"></a>三种信息方式的交互</h3><p>单向通信: 只有一个方向,仅需要一个信道, <strong>无线电,广播</strong></p>
+<p>半双工: 两边都可以发 但不能同时 <strong>需要两条信道</strong></p>
+<p>全双工: 两边可以同时发 需要两条信道</p>
+<h2 id=""><a href="#" class="headerlink" title="&amp;"></a>&amp;</h2><p>波特率  叫 码元传输速率,表示 单位时间内系统所传输的码元个数,码元可以是多进制也可以是二进制,并且传输速率与进制无关 </p>
+<blockquote>
+<p>eg 1波特 表示数字系统一秒传输一个码元</p>
+</blockquote>
+<p>信息传输速率 叫 信息速率,比特率 。 表示单位时间内的二进制码元个数 比特数 单位是比特&#x2F;s bit&#x2F;s</p>
+<p>Question:<br>不当人的话可能会把概念混过来考，比如把波特率叫信息传输速率</p>
+<h2 id="奈氏准则-和-香农"><a href="#奈氏准则-和-香农" class="headerlink" title="奈氏准则 和 香农"></a>奈氏准则 和 香农</h2><p>前几年几乎送分 现在不怎么喜欢考了，</p>
+<h3 id="奈氏准则-（内忧-码间串扰）"><a href="#奈氏准则-（内忧-码间串扰）" class="headerlink" title="奈氏准则 （内忧 码间串扰）"></a>奈氏准则 （内忧 码间串扰）</h3><p>$2Wlog_{2}V$</p>
+<h1 id="附录-一-计算机网络的所有协议"><a href="#附录-一-计算机网络的所有协议" class="headerlink" title="附录(一) 计算机网络的所有协议"></a>附录(一) 计算机网络的所有协议</h1><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h1 id="附录-二-近年计网考试方向"><a href="#附录-二-近年计网考试方向" class="headerlink" title="附录 (二)近年计网考试方向"></a>附录 (二)近年计网考试方向</h1><h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>2024 2023 2022 均有涉及，不过之前方向是香农公式，24年出了一个问四种方式的</p>
+<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20240529143037829.png" alt="image-20240529143037829"></p>
+<p>21年考的则是编码，什么曼彻斯特等等</p>
+
     </div>
     
     
@@ -185,7 +279,7 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2024 rainbow 的小窝
+            2022 - 2024 Res Publica
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
