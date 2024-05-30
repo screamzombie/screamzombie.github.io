@@ -176,7 +176,7 @@
 <span id="more"></span>
 
 <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>408考就考记忆，重点是边边拐拐的</p>
-<h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><h2 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a>计算机网络的组成</h2><h3 id="组成部分："><a href="#组成部分：" class="headerlink" title="组成部分："></a>组成部分：</h3><p>完整的计算机网络 &#x3D; 硬件 + 软件 + 协议</p>
+<h1 id="一-绪论"><a href="#一-绪论" class="headerlink" title="一 绪论"></a>一 绪论</h1><h2 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a>计算机网络的组成</h2><h3 id="组成部分："><a href="#组成部分：" class="headerlink" title="组成部分："></a>组成部分：</h3><p>完整的计算机网络 &#x3D; 硬件 + 软件 + 协议</p>
 <p>硬件：主机(端系统)、通信链路 (如双绞线、光纤)、交换设备 (如路 由器、交换机等) 和 通信处理机 (如网卡)</p>
 <p>软件：实现资源共享和方便用户使用</p>
 <p>计算机网络的核心是<code>协议</code></p>
@@ -230,7 +230,7 @@
 <p>有应答服务包括四种</p>
 <p>无应答服务 只有 **请求和指示 **</p>
 <h2 id="TCP-IP-与-OSI模型的比较"><a href="#TCP-IP-与-OSI模型的比较" class="headerlink" title="TCP&#x2F;IP 与 OSI模型的比较"></a>TCP&#x2F;IP 与 OSI模型的比较</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP_OSI.png" alt="image-20240530174500257"></p>
-<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h2 id="通信模式等基本概念"><a href="#通信模式等基本概念" class="headerlink" title="通信模式等基本概念"></a>通信模式等基本概念</h2><p>连续变化的信号 &#x3D;》 模拟信号</p>
+<h1 id="二-物理层"><a href="#二-物理层" class="headerlink" title="二 物理层"></a>二 物理层</h1><h2 id="通信模式等基本概念"><a href="#通信模式等基本概念" class="headerlink" title="通信模式等基本概念"></a>通信模式等基本概念</h2><p>连续变化的信号 &#x3D;》 模拟信号</p>
 <p>取值仅为有限个的 &#x3D;》 数字信号</p>
 <p>**远距离传输 使用的是串行传输 **</p>
 <p>数字通信中信号的计量单位是<strong>码元</strong></p>
@@ -261,7 +261,77 @@
 <p>Question:<br>不当人的话可能会把概念混过来考，比如把波特率叫信息传输速率</p>
 <h2 id="奈氏准则-和-香农"><a href="#奈氏准则-和-香农" class="headerlink" title="奈氏准则 和 香农"></a>奈氏准则 和 香农</h2><p>前几年几乎送分 现在不怎么喜欢考了，</p>
 <h3 id="奈氏准则-（内忧-码间串扰）"><a href="#奈氏准则-（内忧-码间串扰）" class="headerlink" title="奈氏准则 （内忧 码间串扰）"></a>奈氏准则 （内忧 码间串扰）</h3><p>$2Wlog_{2}V$</p>
-<h1 id="附录-一-计算机网络的所有协议"><a href="#附录-一-计算机网络的所有协议" class="headerlink" title="附录(一) 计算机网络的所有协议"></a>附录(一) 计算机网络的所有协议</h1><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h1 id="附录-二-近年计网考试方向"><a href="#附录-二-近年计网考试方向" class="headerlink" title="附录 (二)近年计网考试方向"></a>附录 (二)近年计网考试方向</h1><h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>2024 2023 2022 均有涉及，不过之前方向是香农公式，24年出了一个问四种方式的</p>
+<h3 id="香农"><a href="#香农" class="headerlink" title="香农"></a>香农</h3><p>$Wlog_{2}(2+S&#x2F;N)$</p>
+<p>这个算是经典题目了,必会,两者取其小就行了</p>
+<h2 id="恶心人的编码方式"><a href="#恶心人的编码方式" class="headerlink" title="恶心人的编码方式"></a>恶心人的编码方式</h2><h3 id="数字编码方式"><a href="#数字编码方式" class="headerlink" title="数字编码方式"></a>数字编码方式</h3><p><del>不仅要知道种类还要认得图和对应的英文🤮</del></p>
+<ul>
+<li><p>归零编码 <code>RZ</code> </p>
+<blockquote>
+<p>重点是每个周期中间均要跳变到低电平,当然如果是0就不用跳了,压根就没起来.</p>
+<p>归零会影响到带宽进而影响到传输效率</p>
+</blockquote>
+</li>
+<li><p>非归零编码 <code>NRZ</code> 周期不归零,但是<code>NRZ</code>无法传递时钟信号,想要传输高速同步数据需要都带有时钟线</p>
+</li>
+<li><p>反向归零编码 <code>NRZI</code> 信号翻转 -&gt; 0 信号不变 -&gt; 1</p>
+<blockquote>
+<p>记忆点,信号翻转表示什么 <code>USB2.0</code>用的是<code>NRZI</code>编码 可能考</p>
+</blockquote>
+</li>
+<li><p>曼彻斯特编码 <code>Machester Encoding</code> 把一个码元分成两半,前高后低 -&gt; 1 前低后高 -&gt; 0.</p>
+<blockquote>
+<p>记忆点 曼彻斯特编码所占的宽度是原始基带宽度的<strong>两倍</strong> , 并且<code>以太网</code>用的编码方式就是 <code>曼彻斯特编码</code></p>
+</blockquote>
+</li>
+<li><p>差分曼彻斯特编码.  常用在<code>无线局域网</code> 前半个码元的电平和上一码元相同 -&gt; 1 可以实现自同步,抗干扰性好</p>
+</li>
+<li><p>4B&#x2F;5B 将数据流4位一组 然后按照4B&#x2F;5B 转换成5位码 共32中组合 但只要16种,对应原先16种 剩下16种是控制码</p>
+<blockquote>
+<p>编码规则(详细的换算太抽象了感觉不可能考了,这个能记住就差不多了)</p>
+<p>每个5bit码组中不多于3个”0”</p>
+<p>或者5bit码组中不少于2个”1”</p>
+</blockquote>
+</li>
+</ul>
+<p>Question</p>
+<ol>
+<li>最坑的应该就是让算 局域网&#x2F;无线局域网 然后算出来的结果要乘2 </li>
+<li>或者问下面几个图哪一个是无线局域网的编码方式等等</li>
+</ol>
+<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%97%E7%BC%96%E7%A0%81.png" alt="alt text"></p>
+<h3 id="数字信号调制为模拟信号"><a href="#数字信号调制为模拟信号" class="headerlink" title="数字信号调制为模拟信号"></a>数字信号调制为模拟信号</h3><p><del>已经连续考了两年了,不过不慌今年我乱杀</del></p>
+<h4 id="数字调制技术"><a href="#数字调制技术" class="headerlink" title="数字调制技术"></a>数字调制技术</h4><p><code>发送端</code> 把 <code>数字信号</code> -&gt; <code>模拟信号</code> 这个叫<strong>调制</strong></p>
+<p><code>接受端</code> 把 <code>模拟信号</code> -&gt; <code>数字信号</code> 这个叫<strong>解调</strong></p>
+<p><em>可能会问哪个是对的,其中某个错误的就是搞错转换地点或者是方法的名字</em></p>
+<h4 id="四种数字调制方法🤮"><a href="#四种数字调制方法🤮" class="headerlink" title="四种数字调制方法🤮"></a>四种数字调制方法🤮</h4><ol>
+<li>幅移键控 <code>ASK</code> 通过改变<code>振幅</code> 比较容易实现 <em>抗干扰能力差</em></li>
+<li>频移键控 <code>FSK</code> 通过改变载波信号的<code>频率</code> 来表示0和1 <del>去年考过</del></li>
+<li>相移键控 <code>PSK</code> 通过改变载波信号的<code>相位</code> 来表示0和1</li>
+<li>正交振幅调制 <code>QAM</code> 在<code>频率</code> 相同的情况下 <code>ASK</code> + <code>PSK</code> &#x3D;&gt; 形成的叠加信号.<blockquote>
+<p>波特率B 相位数量m  每个相位n个振幅</p>
+<p>$R&#x3D;Blog_{2}(mn)$ 单位(bit&#x2F;s)</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>出题点:</p>
+<ol>
+<li>给出单位让算QAM</li>
+<li>给图片判断信号种类 或者给信号找图片</li>
+<li>数字信号 -&gt; 模拟信号 叫什么? <code>调制</code><br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E5%AD%97%E8%B0%83%E5%88%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F.png" alt="alt text"></li>
+</ol>
+<h3 id="模拟数据编码为数字信号"><a href="#模拟数据编码为数字信号" class="headerlink" title="模拟数据编码为数字信号"></a>模拟数据编码为数字信号</h3><h4 id="对于音频-信号的脉码调制PCM"><a href="#对于音频-信号的脉码调制PCM" class="headerlink" title="对于音频 信号的脉码调制PCM"></a>对于<em>音频</em> 信号的脉码调制<code>PCM</code></h4><p><code>PCM</code> &#x3D; 采样 + 量化 + 编码</p>
+<p><code>带宽</code> &#x3D; 信号的最高频率和最低频率之差</p>
+<h2 id="采样频率-必须-geq-最高频率"><a href="#采样频率-必须-geq-最高频率" class="headerlink" title="采样频率 必须 $\geq$ 最高频率"></a><code>采样频率</code> 必须 $\geq$ 最高频率</h2><p>出题点</p>
+<ol>
+<li>算带宽</li>
+<li>问技术叫什么名字 或者 模拟信号 -&gt; 数字信号叫什么 答<code>编码</code></li>
+</ol>
+<h3 id="模拟信号转换成模拟信号"><a href="#模拟信号转换成模拟信号" class="headerlink" title="模拟信号转换成模拟信号"></a>模拟信号转换成模拟信号</h3><h2 id="技术名字叫调制-方式是通过-频分复用-FDM电话机和本地交换机-用的就是模拟转模拟"><a href="#技术名字叫调制-方式是通过-频分复用-FDM电话机和本地交换机-用的就是模拟转模拟" class="headerlink" title="技术名字叫调制 方式是通过 频分复用 FDM电话机和本地交换机 用的就是模拟转模拟"></a>技术名字叫<code>调制</code> 方式是通过 频分复用 <code>FDM</code><br><strong>电话机和本地交换机</strong> 用的就是模拟转模拟</h2><p>出题点</p>
+<ol>
+<li>很有可能就这么问 交换机使用的信号转换方式是什么? 四个英语让你选</li>
+</ol>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h1 id="附录-二-近年计网考试方向"><a href="#附录-二-近年计网考试方向" class="headerlink" title="附录 (二)近年计网考试方向"></a>附录 (二)近年计网考试方向</h1><h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>2024 2023 2022 均有涉及，不过之前方向是香农公式，24年出了一个问四种方式的</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20240529143037829.png" alt="image-20240529143037829"></p>
 <p>21年考的则是编码，什么曼彻斯特等等</p>
 
