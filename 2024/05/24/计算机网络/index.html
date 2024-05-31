@@ -331,7 +331,22 @@
 <ol>
 <li>很有可能就这么问 交换机使用的信号转换方式是什么? 四个英语让你选</li>
 </ol>
-<h2 id="三种报文交换"><a href="#三种报文交换" class="headerlink" title="三种报文交换"></a>三种报文交换</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h1 id="附录-二-近年计网考试方向"><a href="#附录-二-近年计网考试方向" class="headerlink" title="附录 (二)近年计网考试方向"></a>附录 (二)近年计网考试方向</h1><h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>2024 2023 2022 均有涉及，不过之前方向是香农公式，24年出了一个问四种方式的</p>
+<h2 id="三种报文交换"><a href="#三种报文交换" class="headerlink" title="三种报文交换"></a>三种报文交换</h2><h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p>必须建立一条<strong>专用</strong>的物理通信</p>
+<blockquote>
+<p>除了起点和终点,中间任意节点都是<code>直通方式</code> 路上不会产生存储转发时延</p>
+</blockquote>
+<h3 id="报文转发"><a href="#报文转发" class="headerlink" title="报文转发"></a>报文转发</h3><p>单位 <code>报文</code><br>报文 携带 目标地址 源地址 交换方式是<code>存储转发</code></p>
+<h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p>区别<br>分组交换的每个小数据块都需要加上<code>源地址</code>,<code>目标地址</code> 和 <code>分组编号</code></p>
+<ul>
+<li>分组到达目标节点后 需要按编号进行排序工作</li>
+<li>如果采取虚电路 但有 呼叫建立 数据传输 虚电路&#96;释放</li>
+</ul>
+<hr>
+<ol>
+<li>如果传送数据量大且传送时间远大于呼叫时间 应该用 <strong>电路交换</strong></li>
+<li>适合计算机之间突发通信的是<strong>分组交换</strong> (可能是考点)</li>
+</ol>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h1 id="附录-二-近年计网考试方向"><a href="#附录-二-近年计网考试方向" class="headerlink" title="附录 (二)近年计网考试方向"></a>附录 (二)近年计网考试方向</h1><h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>2024 2023 2022 均有涉及，不过之前方向是香农公式，24年出了一个问四种方式的</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20240529143037829.png" alt="image-20240529143037829"></p>
 <p>21年考的则是编码，什么曼彻斯特等等</p>
 
