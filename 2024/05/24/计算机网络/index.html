@@ -370,6 +370,22 @@
 <h2 id="物理接口特性"><a href="#物理接口特性" class="headerlink" title="物理接口特性"></a>物理接口特性</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E6%8E%A5%E5%8F%A3%E7%89%B9%E6%80%A7.png"></p>
 <p><del>接口标准</del><br><code>ELA RS232C</code> <code>ADSL</code> <code>SONET/SDH</code></p>
 <h2 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h2><p>有hub组成的网络是共享式网络 每个主机在不同的网段,只能在半双工下工作</p>
+<h1 id="三-数据链路层"><a href="#三-数据链路层" class="headerlink" title="三 数据链路层"></a>三 数据链路层</h1><h2 id="几种方式"><a href="#几种方式" class="headerlink" title="几种方式"></a>几种方式</h2><ol>
+<li>无连接无确认  —&gt; 实时通讯 —&gt; <code>以太网</code></li>
+<li>有连接无确认  —&gt; 无线通信</li>
+<li>有连接有确认  —&gt; 对于可靠性要求较高的场合</li>
+</ol>
+<hr>
+<p>可能会问以太网是什么通讯方式然后让你选</p>
+<h2 id="链路管理"><a href="#链路管理" class="headerlink" title="链路管理"></a>链路管理</h2><h3 id="HDLC协议-不是重点了"><a href="#HDLC协议-不是重点了" class="headerlink" title="HDLC协议(不是重点了)"></a>HDLC协议(不是重点了)</h3><p>标准帧格式<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/hdlc%E6%A0%87%E5%87%86%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
+<h3 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h3><p>帧校验用的是<code>CRC</code>,接收端发现错误就<code>丢弃</code>,发送方<code>超时重传</code> &#x3D;&#x3D;&#x3D;&gt; <code>ARQ法</code></p>
+<h3 id="CRC的计算方法-重点"><a href="#CRC的计算方法-重点" class="headerlink" title="CRC的计算方法(重点)"></a>CRC的计算方法(重点)</h3><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<ol>
+<li>数据链路层 以太网最大帧长度 1518 字节 </li>
+<li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU的范围是 46~1500字节</li>
+<li><code>OSI</code>体系中数据链路层 —&gt; 流量控制</li>
+<li><code>TCP/IP</code> 传输层 —&gt; 流量控制</li>
+</ol>
 <h1 id="附录-二-近年计网考试方向"><a href="#附录-二-近年计网考试方向" class="headerlink" title="附录 (二)近年计网考试方向"></a>附录 (二)近年计网考试方向</h1><h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>2024 2023 2022 均有涉及，不过之前方向是香农公式，24年出了一个问四种方式的</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20240529143037829.png" alt="image-20240529143037829"></p>
 <p>21年考的则是编码，什么曼彻斯特等等</p>
