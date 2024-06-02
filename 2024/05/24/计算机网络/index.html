@@ -379,16 +379,40 @@
 <p>可能会问以太网是什么通讯方式然后让你选</p>
 <h2 id="链路管理"><a href="#链路管理" class="headerlink" title="链路管理"></a>链路管理</h2><h3 id="HDLC协议-不是重点了"><a href="#HDLC协议-不是重点了" class="headerlink" title="HDLC协议(不是重点了)"></a>HDLC协议(不是重点了)</h3><p>标准帧格式<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/hdlc%E6%A0%87%E5%87%86%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
 <h3 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h3><p>帧校验用的是<code>CRC</code>,接收端发现错误就<code>丢弃</code>,发送方<code>超时重传</code> &#x3D;&#x3D;&#x3D;&gt; <code>ARQ法</code></p>
-<h3 id="CRC的计算方法-重点"><a href="#CRC的计算方法-重点" class="headerlink" title="CRC的计算方法(重点)"></a>CRC的计算方法(重点)</h3><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h3 id="CRC的计算方法-重点"><a href="#CRC的计算方法-重点" class="headerlink" title="CRC的计算方法(重点)"></a>CRC的计算方法(重点)</h3><p>$g(x)&#x3D;x^4+x+1$ 这个式子的生成多项式就是10011 </p>
+<p>例子<br>原始数据 10110011 因为g(x)的最高次是4 所以原始数据往左位移4位 ,补0</p>
+<p>接着用 101100110000 除 10011</p>
+<p>这里要用到模除 上下相同0  不同1  没用到的拉下来</p>
+<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CRC%E4%BE%8B%E5%AD%90.png"></p>
+<h3 id="汉明码-重点"><a href="#汉明码-重点" class="headerlink" title="汉明码(重点)"></a>汉明码(重点)</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B1%89%E6%98%8E%E7%A0%81.png"></p>
+<h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><ol>
+<li>一组连续的可以发送的序号 -&gt; 发送窗口</li>
+<li>一组连续的可以接收的序号 -&gt; 接受窗口<blockquote>
+<p>当接收端接收到不在接收窗口的帧 就丢弃</p>
+<p>注意 序号是循环的比如 0 1 2 3 0 1 2 3 1</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="后退N帧协议-GBN"><a href="#后退N帧协议-GBN" class="headerlink" title="后退N帧协议 GBN"></a>后退N帧协议 GBN</h3><p>发送窗口大小是$2^n -1$</p>
+<h3 id="选择重传协议-SR"><a href="#选择重传协议-SR" class="headerlink" title="选择重传协议 SR"></a>选择重传协议 SR</h3><p>发送窗口大小是 $2^{n-1}$</p>
+<h3 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h3><p>发送周期:发送方从<code>开始发送</code>到收到第一个<code>确认帧</code></p>
+<p>信道利用率 &#x3D; (发送的数据量L &#x2F;传输速度C)&#x2F; 总时间T</p>
+<p>信道吞吐率 &#x3D; 信道利用率&#x2F;发送方的发送速率</p>
+<h2 id="介质访问控制"><a href="#介质访问控制" class="headerlink" title="介质访问控制"></a>介质访问控制</h2><p>介质访问控制层<code>MAC</code>$\subset$数据链路层</p>
+<h3 id="名词-1"><a href="#名词-1" class="headerlink" title="名词"></a>名词</h3><ol>
+<li>频分多路复用<code>FDM</code> 把多路基带信号<strong>调制</strong>到不同<strong>频率</strong>的载波上. 总合不能超过总带宽,相邻信道间要加入<em>保护频带</em> 防止干扰</li>
+<li>时分复用<code>TDM</code></li>
+<li>统计时分多路复用<code>STDM</code> 动态分割时间</li>
+<li>波分多路复用<code>WDM</code></li>
+<li>码分多路复用<code>CDM</code> 重点可考计算</li>
+</ol>
+<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节 </li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU的范围是 46~1500字节</li>
 <li><code>OSI</code>体系中数据链路层 —&gt; 流量控制</li>
 <li><code>TCP/IP</code> 传输层 —&gt; 流量控制</li>
 </ol>
-<h1 id="附录-二-近年计网考试方向"><a href="#附录-二-近年计网考试方向" class="headerlink" title="附录 (二)近年计网考试方向"></a>附录 (二)近年计网考试方向</h1><h2 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h2><p>2024 2023 2022 均有涉及，不过之前方向是香农公式，24年出了一个问四种方式的</p>
-<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20240529143037829.png" alt="image-20240529143037829"></p>
-<p>21年考的则是编码，什么曼彻斯特等等</p>
 
     </div>
     
