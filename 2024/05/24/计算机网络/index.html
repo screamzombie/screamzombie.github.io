@@ -399,6 +399,7 @@
 <p>信道利用率 &#x3D; (发送的数据量L &#x2F;传输速度C)&#x2F; 总时间T</p>
 <p>信道吞吐率 &#x3D; 信道利用率&#x2F;发送方的发送速率</p>
 <h2 id="介质访问控制"><a href="#介质访问控制" class="headerlink" title="介质访问控制"></a>介质访问控制</h2><p>介质访问控制层<code>MAC</code>$\subset$数据链路层</p>
+<p>主要路线有两种对于介质本身进行物理上的划分 和 时间上的划分技术</p>
 <h3 id="名词-1"><a href="#名词-1" class="headerlink" title="名词"></a>名词</h3><ol>
 <li>频分多路复用<code>FDM</code> 把多路基带信号<strong>调制</strong>到不同<strong>频率</strong>的载波上. 总合不能超过总带宽,相邻信道间要加入<em>保护频带</em> 防止干扰</li>
 <li>时分复用<code>TDM</code></li>
@@ -426,6 +427,25 @@
 </ol>
 <p>因此如果我们想要知道A发了什么 只需要将A的码片向量乘叠加向量就行了</p>
 <p>比如$A \cdot (A+B)$ A与其他所有的向量内积会变为0 这样我们就提出了A的值 如果是+1 就代表发了1 -1 就是 0</p>
+<h2 id="随机介质访问控制-常考"><a href="#随机介质访问控制-常考" class="headerlink" title="随机介质访问控制(常考)"></a>随机介质访问控制(常考)</h2><h3 id="纯ALOHA协议"><a href="#纯ALOHA协议" class="headerlink" title="纯ALOHA协议"></a>纯ALOHA协议</h3><p>想发就发,纯看脸</p>
+<p>相关计算公式(还没考过😱)</p>
+<p><code>网络负载</code>:T0时间内所有站点<strong>发送成功</strong>和<strong>没成功而重传</strong>的帧数 符号为G</p>
+<p><code>纯ALOHA</code>的平均网络负载量是$S&#x3D;Ge^{-2G}$ 极大值为G&#x3D;0.5 S约为0.184</p>
+<h3 id="时隙ALOHA"><a href="#时隙ALOHA" class="headerlink" title="时隙ALOHA"></a>时隙ALOHA</h3><p>时隙ALOHA 把所有站点综合考虑设定了一个$T_{0}$作为时隙,$T_{0}$满足能发一个但不会让你发两个</p>
+<p>每个主机都只能在每个$T_{0}$到来的开头才能发,如果错过了就等下一个</p>
+<p>网络负载量是$S&#x3D;Ge^{-G}$ 相比较纯ALOHA提高了一倍</p>
+<h2 id="CSMA"><a href="#CSMA" class="headerlink" title="CSMA"></a>CSMA</h2><p>CSMA是ALOHA的改进,比较ALOHA有了一个<code>载波侦听装置</code></p>
+<p>有三种形式的CSMA,主要考第三种</p>
+<ol>
+<li>1-坚持 CSMA</li>
+<li>非坚持 CSMA</li>
+<li>p-坚持 CSMA</li>
+</ol>
+<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p>p-坚持CSMA,用于<code>时分信道</code>,工作流程是</p>
+<blockquote>
+<p>发送之前先听,如果忙就<strong>持续侦听</strong>(不是不侦听了,也不是一直听,而是下个间隙开始再听听看,是时分信道嘛)</p>
+<p>如果信道空闲,则p概率发,1-p推迟到下个间隙,下个间隙到了再看看空不空,空的话也是p概率发 1-p不发,忙的话就等到下个间隙再听了</p>
+</blockquote>
 <h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节 </li>
