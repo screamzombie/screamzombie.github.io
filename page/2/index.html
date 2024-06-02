@@ -172,101 +172,6 @@
         
 
 <div class="post">
-    <a href="/2024/05/19/only_apple_can_do/">
-        <h2 class="post-title">only apple can do</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/5/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><img src="/../images/kuke.png" alt="only apple can do"></p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/05/19/only_apple_can_do/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/05/19/Makefile%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        <h2 class="post-title">Makefile学习笔记</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/5/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h1><p>Compile run all cpp files of src</p>
-<pre><code class="makefile">CC = clang++
-CCFLAGS = -std=c++2b -Wall
-TARGET = test
-SRCS = $(wildcard ./src/*.cpp)
-OBJS = $(patsubst %.cpp,%.o,$(SRCS))
-all:$(TARGET)
-    mv $(TARGET) ./bin
-    mv $(OBJS) ./build
-$(TARGET): $(OBJS)
-    $(CC) $(CCFLAGS) -o $@ $^
-
-%.o: %.cpp
-    $(CC) $(CCFLAGS) -c $&lt; -o $@
-.PHONY:clean
-clean:
-    rm -f bin/* build/*%
-</code></pre>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/05/19/Makefile%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2024/05/19/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">
         <h2 class="post-title">C++学习笔记(一)</h2>
     </a>
@@ -306,45 +211,6 @@ clean:
 </div>
 
 <div class="post">
-    <a href="/2024/05/19/matlab%E6%95%99%E7%A8%8B/">
-        <h2 class="post-title">MATLAB教程</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/5/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="MATLAB-的安装"><a href="#MATLAB-的安装" class="headerlink" title="MATLAB 的安装"></a>MATLAB 的安装</h1><p>MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/05/19/matlab%E6%95%99%E7%A8%8B/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2024/05/19/vue%E5%92%8Cdjango%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">
         <h2 class="post-title">vue和django的一些配置</h2>
     </a>
@@ -381,6 +247,45 @@ clean:
         
     </div>
     <a href="/2024/05/19/vue%E5%92%8Cdjango%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2021/09/03/matlab%E6%95%99%E7%A8%8B/">
+        <h2 class="post-title">MATLAB教程</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                计算机技术
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2021/9/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="MATLAB-的安装"><a href="#MATLAB-的安装" class="headerlink" title="MATLAB 的安装"></a>MATLAB 的安装</h1><p>MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2021/09/03/matlab%E6%95%99%E7%A8%8B/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">

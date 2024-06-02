@@ -213,7 +213,7 @@ pymysql.install_as_MySQLdb()
 <pre><code class="python">DATABASES = &#123;
     &#39;default&#39;: &#123;
         &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
-        &#39;NAME&#39;: &#39;HFgene&#39;,
+        &#39;NAME&#39;: &#39;&#39;,
         &#39;USER&#39;:&#39;root&#39;,
         &#39;PASSWORD&#39;:&#39;123456&#39;,
         &#39;HOST&#39;:&#39;localhost&#39;,
@@ -278,7 +278,7 @@ select user,host from user;    ## 查看用户访问端口
 │   ├── migrations                        [不动]数据库变更记录
 │   │   └── __init__.py
 │   ├── models.py                         [重要]对数据库进行操作
-│   ├── tests.py                          [不动]单元测试，公司目前没有测试
+│   ├── tests.py                          
 │   └── views.py                          [重要,经常修改]函数
 ├── manage.py
 └── mysite
@@ -469,44 +469,6 @@ class UserInfo(models.Model):
 <p>这样就会在我们的数据库中创建一个名为 UserInfo 的表，且有两个字段 user 和 pwd，当然这个时候只是设计好，下面几个命令执行完后才会真正开始创建</p>
 <p>运行下面这个命令来创建数据库表</p>
 <pre><code class="shell">python manage.py makemigrations
-</code></pre>
-<p>可以看到</p>
-<pre><code class="shell">.
-├── APP01
-│   ├── admin.py
-│   ├── apps.py
-│   ├── __init__.py
-│   ├── migrations #目录中多了这个文件夹
-│   │   ├── 0001_initial.py
-│   │   ├── __init__.py
-│   │   └── __pycache__
-│   │       └── __init__.cpython-38.pyc
-│   ├── models.py
-│   ├── __pycache__
-│   │   ├── admin.cpython-38.pyc
-│   │   ├── apps.cpython-38.pyc
-│   │   ├── __init__.cpython-38.pyc
-│   │   ├── models.cpython-38.pyc
-│   │   └── views.cpython-38.pyc
-│   ├── templates
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   └── register.html
-│   ├── tests.py
-│   └── views.py
-├── db.sqlite3
-├── HF
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-38.pyc
-│   │   ├── settings.cpython-38.pyc
-│   │   ├── urls.cpython-38.pyc
-│   │   └── wsgi.cpython-38.pyc
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-└── manage.py
 </code></pre>
 <p>再输入命令</p>
 <pre><code class="shell">python manage.py migrate
@@ -895,43 +857,6 @@ import &#39;element-plus/dist/index.css&#39;
 
 const app = createApp(App)
 app.use(ElementPlus).mount(&#39;#app&#39;)
-</code></pre>
-<h1 id="Vim-使用"><a href="#Vim-使用" class="headerlink" title="Vim 使用"></a>Vim 使用</h1><p>基础美化</p>
-<p>编辑 &#x2F;etc&#x2F;vim&#x2F;vimrc</p>
-<pre><code class="shell">syntax on                     &quot; 设置语法高亮
-set nu                        &quot; 设置行数显示
-set tabstop=4                 &quot; 设置tab缩进长度为4空格
-set autoindent                &quot; 设置自动缩进，适用所有类型文件
-set cindent                   &quot; 针对C语言的自动缩进功能，在C语言的编程环境中，比autoindent更加精准
-set list lcs=tab:\|\          &quot; 设置tab提示符号为 &quot;|&quot;，注意最后一个反斜杠后面要留有空格
-set cc=0                      &quot; 设置高亮的列，这里设置为0，代表关闭
-set cursorline                &quot; 突出显示当前行
-</code></pre>
-<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><p>查找 nginx 配置文件位置</p>
-<pre><code class="shell">locate nginx.conf
-</code></pre>
-<p>此外也可以使用这个命令</p>
-<pre><code class="shell">whereis nginx
-</code></pre>
-<p>假定我们按照网上的教程进入 &#x2F;usr&#x2F;sbin&#x2F; 目录 通过.&#x2F;nginx 启动服务可能会看到以下错误</p>
-<pre><code class="shell">nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] still could not bind()
-</code></pre>
-<p>解决方法是 不使用<code>./nginx</code>这种启动方式，而是使用如下的命令启动<code>nginx</code></p>
-<pre><code class="shell">sudo systemctl restart nginx
-sudo systemctl start nginx
-</code></pre>
-<p>在浏览器中输入 即可看到</p>
-<pre><code class="shell">127.0.0.1:80
 </code></pre>
 
     </div>
