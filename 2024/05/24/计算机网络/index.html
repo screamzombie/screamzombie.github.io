@@ -473,6 +473,35 @@
 </ol>
 <h3 id="退避算法"><a href="#退避算法" class="headerlink" title="退避算法"></a>退避算法</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSMA_CA%E9%80%80%E9%81%BF%E7%AE%97%E6%B3%95.png"></p>
 <h2 id="隐蔽站"><a href="#隐蔽站" class="headerlink" title="隐蔽站"></a>隐蔽站</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RTS_CTS.png"></p>
+<ol>
+<li>CSMA&#x2F;CD 可以检测冲突,CSMA&#x2F;CA发送数据的同时不能检测是否有冲突</li>
+<li>CSMA&#x2F;CD 适用 <code>总线型以太网</code>,CSMA&#x2F;CA适用<code>802.11a/b/g/n</code></li>
+<li>CSMA&#x2F;CD 通过电压方式检测, </li>
+<li>CSMA&#x2F;CA <code>能量检测</code>,<code>载波检测</code>,<code>能量载波混合检测</code></li>
+</ol>
+<h2 id="令牌环网"><a href="#令牌环网" class="headerlink" title="令牌环网"></a>令牌环网</h2><h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol>
+<li>网络空闲时 只有令牌在传递</li>
+<li>如果有数据站点想要发送数据,拿到令牌后,修改令牌的数据位,使其变成一个数据帧发送出去</li>
+<li>到达目的地后,重新产生令牌</li>
+<li>令牌传递适用于<strong>负载很高</strong>的网络</li>
+</ol>
+<h2 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>各站点共享较高的总带宽</li>
+<li>各站点为平等关系</li>
+<li>能够进行广播和组播</li>
+</ol>
+<hr>
+<p>考点</p>
+<p><code>CSMA/CD</code>,<code>令牌总线</code> &#x3D;&#x3D;&#x3D;&gt; <code>总线型以太网</code></p>
+<p><code>令牌环</code> &#x3D;&#x3D;&#x3D;&gt; <code>环形以太网</code></p>
+<p>以太网 逻辑结构是 <code>总线型</code>,<br>物理结构 是<code>星型</code>或者<code>拓展星型</code></p>
+<p>令牌环<code>IEEE 802.5</code> 逻辑是<code>环形</code> 物理是<code>星型</code></p>
+<p>FDDI<code>IEEE 802.8</code> 光纤分布数字接口,逻辑环形,物理双环</p>
+<p><code>IEEE802标准</code> 把数据链路层 </p>
+<blockquote>
+<p>–&gt; 媒体接入控制子层(MAC) </p>
+<p>–&gt; 逻辑链路控制子层(LLC)</p>
+</blockquote>
 <h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节 </li>
