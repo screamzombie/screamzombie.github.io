@@ -2,21 +2,22 @@
 title: vue和django的一些配置
 categories: 配置
 ---
+vue和django的一些配置
+<!-- more -->
 
 # 环境配置
 
-## Django安装
+## Django 安装
 
-python 3.11之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的
+python 3.11 之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的
 
-首先使用这个命令创建一个python虚拟环境 `venv`是虚拟环境名字 后面的是路径可以自己找一个目录放进去
+首先使用这个命令创建一个 python 虚拟环境 `venv`是虚拟环境名字 后面的是路径可以自己找一个目录放进去
 
 ```shell
 python -m venv /path/to/new/virtual/environment
 ```
 
-接着进去这个刚刚创建好的目录去source它
-<!-- more -->
+接着进去这个刚刚创建好的目录去 source 它
 比如我的电脑目前的虚拟环境地址在
 
 ```shell
@@ -29,9 +30,9 @@ python -m venv /path/to/new/virtual/environment
 source ~/.venv/bin/activate
 ```
 
-这样这个终端的环境就变成虚拟环境python了
+这样这个终端的环境就变成虚拟环境 python 了
 
-如果不使用虚拟环境 pip安装`Django`会直接报错，其他的一些包也是同理
+如果不使用虚拟环境 pip 安装`Django`会直接报错，其他的一些包也是同理
 
 ```shell
 pip install django
@@ -43,31 +44,30 @@ pip install django
 python manager.py runserver
 ```
 
+## Django 连接 MySQL
 
-## Django连接MySQL
-
-MySQL数据库可以使用命令行直接安装
+MySQL 数据库可以使用命令行直接安装
 
 ```shell
 sudo apt install mysql-server
 ```
 
-Django与mysql通讯需要使用pymysql这个库（比较老了），新的库配置环境有些问题所以比较推荐使用这个
+Django 与 mysql 通讯需要使用 pymysql 这个库（比较老了），新的库配置环境有些问题所以比较推荐使用这个
 
 ```shell
 sudo pip install pymysql
 ```
 
-下载好模块后需要在项目的`__init__.py`中配置。注意是项目的`__init__`不是app下的。
+下载好模块后需要在项目的`__init__.py`中配置。注意是项目的`__init__`不是 app 下的。
 
 ```python
 import pymysql
 pymysql.install_as_MySQLdb()
 ```
 
-接着修改settings.py中的DATABASES条目
+接着修改 settings.py 中的 DATABASES 条目
 
-这是Django默认的  使用自带的sqlite3数据库
+这是 Django 默认的 使用自带的 sqlite3 数据库
 
 ```python
 DATABASES = {
@@ -78,13 +78,13 @@ DATABASES = {
 }
 ```
 
-我们修改一下，以使用MySQL
+我们修改一下，以使用 MySQL
 
 ```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'HFgene',
+        'NAME': '',
         'USER':'root',
         'PASSWORD':'123456',
         'HOST':'localhost',
@@ -93,14 +93,12 @@ DATABASES = {
 }
 ```
 
-
-
-### 服务器MySQL连接navicat
+### 服务器 MySQL 连接 navicat
 
 首先登录数据库
 
 ```shell
-mysql -uroot -p    ## 以root登录数据库 
+mysql -uroot -p    ## 以root登录数据库
 ```
 
 查看一下当前端口
@@ -110,7 +108,7 @@ use mysql;    ## 选择mysql数据库
 select user,host from user;    ## 查看用户访问端口
 ```
 
-**说明**：root用户默认的是localhost，说明只允许从本地登录mysql服务。而我们要从远程以root用户连接数据库，就必须修改host的值，改为**'%'**：允许任何ip访问。
+**说明**：root 用户默认的是 localhost，说明只允许从本地登录 mysql 服务。而我们要从远程以 root 用户连接数据库，就必须修改 host 的值，改为**'%'**：允许任何 ip 访问。
 
 ```shell
 update user set host = '%' where user = 'root';
@@ -133,7 +131,7 @@ mysql> select user,host from user;    ## 查看用户访问端口
 
 ```
 
-这样就表示允许任何ip访问了
+这样就表示允许任何 ip 访问了
 
 ```shell
 FLUSH PRIVILEGES;    ## 刷新服务配置项
@@ -147,11 +145,11 @@ FLUSH PRIVILEGES;    ## 刷新服务配置项
  ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root_pwd'; ## 授权root远程登录 后面的root_pwd代表登录密码
 ```
 
-这里的root_pwd是自己填的 我写的是123456
+这里的 root_pwd 是自己填的 我写的是 123456
 
-## Django与Vue的通讯
+## Django 与 Vue 的通讯
 
-### 配置cnpm
+### 配置 cnpm
 
 ```shell
 sudo npm config set registry https://registry.npm.taobao.org
@@ -161,31 +159,29 @@ sudo npm config set registry https://registry.npm.taobao.org
 sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
-以后安装npm的包都可以使用去安装
+以后安装 npm 的包都可以使用去安装
 
 ```shell
 cnpm install [name]
 ```
 
+使用 vite 创建项目也会有这个问题可以考虑下面的命令进行换源
 
-
-使用vite创建项目也会有这个问题可以考虑下面的命令进行换源
-
-查看npm的镜像地址
+查看 npm 的镜像地址
 
 ```shell
-npm config get registry 
+npm config get registry
 ```
 
-使用taobao镜像地址
+使用 taobao 镜像地址
 
 ```shell
-npm config set registry https://registry.npm.taobao.org 
+npm config set registry https://registry.npm.taobao.org
 ```
 
 # 项目运行
 
-## Django篇
+## Django 篇
 
 ### 创建项目
 
@@ -193,7 +189,7 @@ npm config set registry https://registry.npm.taobao.org
 django-admin startproject xxxx
 ```
 
-### 创建APP
+### 创建 APP
 
 进入项目后
 
@@ -207,11 +203,11 @@ python manage.py startapp xxxx
 ├── app01
 │   ├── admin.py                          [不动]自带的默认的后台管理功能
 │   ├── apps.py                           [不动]app启动类
-│   ├── __init__.py                          
+│   ├── __init__.py
 │   ├── migrations                        [不动]数据库变更记录
 │   │   └── __init__.py
 │   ├── models.py                         [重要]对数据库进行操作
-│   ├── tests.py                          [不动]单元测试，公司目前没有测试
+│   ├── tests.py                          
 │   └── views.py                          [重要,经常修改]函数
 ├── manage.py
 └── mysite
@@ -225,9 +221,9 @@ python manage.py startapp xxxx
     └── wsgi.py
 ```
 
-###   APP注册
+### APP 注册
 
-创建好的APP不能直接使用需要注册后才可以，小型项目的话一般只需要一个APP就可以了。注册需要在项目名的`seetings.py`中注册
+创建好的 APP 不能直接使用需要注册后才可以，小型项目的话一般只需要一个 APP 就可以了。注册需要在项目名的`seetings.py`中注册
 
 在这个`mysite`的项目中就是`mysite.settings.py`
 
@@ -243,9 +239,9 @@ INSTALLED_APPS = [
 ]
 ```
 
-### 编写URL和视图函数的对应关系
+### 编写 URL 和视图函数的对应关系
 
-在urls.py中编写 路径是`mysite.urls.py`
+在 urls.py 中编写 路径是`mysite.urls.py`
 
 ```python
 from django.contrib import admin
@@ -255,14 +251,14 @@ from django.urls import path
 from app01 import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
-   
+
     # www.xxxx.com/index/  ->就会执行对应的函数
     path('index/',views.index)
-    
+
 ]
 ```
 
-下面即是app01.views.py的内容
+下面即是 app01.views.py 的内容
 
 ```python
 from django.shortcuts import render,HttpResponse
@@ -275,7 +271,7 @@ def index(request): #默认有一个参数 request
 
 ### 模板路径问题
 
-下面是使用 `django-admin` start project 创建的项目可以看到DIRS里面是空的，如果我们有一个template 这里是放在APP01的文件夹里面
+下面是使用 `django-admin` start project 创建的项目可以看到 DIRS 里面是空的，如果我们有一个 template 这里是放在 APP01 的文件夹里面
 
 ```shell
 
@@ -301,8 +297,6 @@ def index(request): #默认有一个参数 request
 ├── db.sqlite3
 ```
 
-
-
 ```python
 TEMPLATES = [
     {
@@ -322,7 +316,7 @@ TEMPLATES = [
 
 ```
 
-Django会根据注册的APP顺序依次查找template文件夹
+Django 会根据注册的 APP 顺序依次查找 template 文件夹
 
 ```python
 
@@ -337,21 +331,21 @@ INSTALLED_APPS = [
 ]
 ```
 
-但是如果使用pycharm就会在TEMPLATES这里面加上一句
+但是如果使用 pycharm 就会在 TEMPLATES 这里面加上一句
 
 ```python
  'DIRS': [], # 命令行创建 建议使用这种 这样每个模板都被APP归类
  'DIRS': [os.path.join(BASE_DIR,'templates')], # 使用pycharm会变成这样
 ```
 
-pycharm这样的结果就是django会优先在项目根目录去寻找template
+pycharm 这样的结果就是 django 会优先在项目根目录去寻找 template
 
 ### 静态文件(css,js,图片)的引入
 
 ```html
-{% load static %} 
+{% load static %}
 <!DOCTYPE html>
-<head>	
+<head>
 	<meta charset="utf-8">
 	<title>标题</title>
 </head>
@@ -364,9 +358,9 @@ pycharm这样的结果就是django会优先在项目根目录去寻找template
 </html>
 ```
 
-### Django模板语法
+### Django 模板语法
 
-响应式的那种，就是在HTML中留一些位置，之后用数据对这些位置进行处理
+响应式的那种，就是在 HTML 中留一些位置，之后用数据对这些位置进行处理
 
 ```html
 {% load static %}
@@ -403,7 +397,7 @@ pycharm这样的结果就是django会优先在项目根目录去寻找template
 </html>
 ```
 
-后台views
+后台 views
 
 ```python
 from django.shortcuts import render,HttpResponse
@@ -431,17 +425,17 @@ def something(request):
     print(request.method) #获得请求方式
     print("URL=> ",request.GET) #在URL上传值
     print("POST=> ",request.POST)#在请求体中返回数据
-    
+
     #响应
     # return HttpResponse("添加用户")
     # return render(request,"user_list.html")
-    
+
     return redirect("https://www.baidu.com") # 让浏览器重定向到其他页面
 ```
 
-### Django与数据库交互
+### Django 与数据库交互
 
-连接好数据库后，打开app01下的models.py
+连接好数据库后，打开 app01 下的 models.py
 
 ```python
 from django.db import models
@@ -452,53 +446,12 @@ class UserInfo(models.Model):
     pwd = models.CharField(max_length=32)
 ```
 
-这样就会在我们的数据库中创建一个名为UserInfo的表，且有两个字段user和pwd，当然这个时候只是设计好，下面几个命令执行完后才会真正开始创建
+这样就会在我们的数据库中创建一个名为 UserInfo 的表，且有两个字段 user 和 pwd，当然这个时候只是设计好，下面几个命令执行完后才会真正开始创建
 
 运行下面这个命令来创建数据库表
 
 ```shell
 python manage.py makemigrations
-```
-
-可以看到
-
-```shell
-.
-├── APP01
-│   ├── admin.py
-│   ├── apps.py
-│   ├── __init__.py
-│   ├── migrations #目录中多了这个文件夹
-│   │   ├── 0001_initial.py
-│   │   ├── __init__.py
-│   │   └── __pycache__
-│   │       └── __init__.cpython-38.pyc
-│   ├── models.py  
-│   ├── __pycache__
-│   │   ├── admin.cpython-38.pyc
-│   │   ├── apps.cpython-38.pyc
-│   │   ├── __init__.cpython-38.pyc
-│   │   ├── models.cpython-38.pyc
-│   │   └── views.cpython-38.pyc
-│   ├── templates
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   └── register.html
-│   ├── tests.py
-│   └── views.py
-├── db.sqlite3
-├── HF
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-38.pyc
-│   │   ├── settings.cpython-38.pyc
-│   │   ├── urls.cpython-38.pyc
-│   │   └── wsgi.cpython-38.pyc
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-└── manage.py
 ```
 
 再输入命令
@@ -511,16 +464,16 @@ python manage.py migrate
 
 ## Django
 
-### Django setting文件配置
+### Django setting 文件配置
 
-django想要与Vue进行交互需要RestFramework，还有cors-headers这两个插件
+django 想要与 Vue 进行交互需要 RestFramework，还有 cors-headers 这两个插件
 
 ```shell
 pip install djangorestframework
 pip install django-cors-headers
 ```
 
-安装在django的根目录下的setting文件中进行app注册
+安装在 django 的根目录下的 setting 文件中进行 app 注册
 
 ```python
 INSTALLED_APPS = [
@@ -536,10 +489,10 @@ INSTALLED_APPS = [
 ]
 ```
 
-因为前端与后端进行交互设计一个跨域保护的问题，后端使用django-cors-headers插件
+因为前端与后端进行交互设计一个跨域保护的问题，后端使用 django-cors-headers 插件
 
 ```python
-MIDDLEWARE = [   
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware', # 注意顺序
@@ -551,14 +504,14 @@ MIDDLEWARE = [
 ]
 ```
 
-接着继续编辑setting文件，增加这两个配置
+接着继续编辑 setting 文件，增加这两个配置
 
 ```python
 ROOT_URLCONF = 'backends.urls' # 后端项目的总路由路径
 CORS_ORIGIN_ALLOW_ALL = True #这是允许所有的跨域请求
 ```
 
-至此后端的setting文件配置完成
+至此后端的 setting 文件配置完成
 
 总配置文件如下 backends.settings.py
 
@@ -607,7 +560,7 @@ INSTALLED_APPS = [
     'lyb',
 ]
 
-MIDDLEWARE = [    
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -693,7 +646,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ```
 
-### Django的总路由配置
+### Django 的总路由配置
 
 ```python
 from django.contrib import admin
@@ -710,9 +663,9 @@ urlpatterns = [
 ]
 ```
 
-### Django配置序列化
+### Django 配置序列化
 
-app名字.serializers.py 没有就创建
+app 名字.serializers.py 没有就创建
 
 ```python
 from rest_framework import serializers
@@ -724,7 +677,7 @@ class LybSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__" #所有的字段都序列化
 ```
 
-models.py中的内容 ，*虽然不是前后端交互必要的但是因为是一个案例于是留下来*
+models.py 中的内容 ，_虽然不是前后端交互必要的但是因为是一个案例于是留下来_
 
 ```python
 from django.db import models
@@ -737,7 +690,7 @@ class Lyb(models.Model):
     posttime = models.DateTimeField(auto_now_add=True)
 ```
 
-下面的是views的内容
+下面的是 views 的内容
 
 ```python
 from django.shortcuts import render
@@ -746,10 +699,10 @@ from .models import Lyb #导入自己的appmodel
 from .serializers import LybSerializer # 导入序列化器
 class LybViewSet(viewsets.ModelViewSet):
     queryset = Lyb.objects.all().order_by('-posttime') #按时间排序 当然也可以选择其他的排序
-    serializer_class =  LybSerializer 
+    serializer_class =  LybSerializer
 ```
 
-### 获得model中的数据 特定条件
+### 获得 model 中的数据 特定条件
 
 ```python
 from myapp.models import MyModel
@@ -757,7 +710,7 @@ from myapp.models import MyModel
 specific_object = MyModel.objects.get(field=value)
 ```
 
-### 获得model中的全部数据
+### 获得 model 中的全部数据
 
 ```python
 from myapp.models import MyModel
@@ -811,159 +764,161 @@ def login_view(request):
     return JsonResponse({"message": "无效的请求"}, status=400)
 ```
 
-
-
 ## VUE
 
-### VUE环境配置
+### VUE 环境配置
 
-下载axios
+下载 axios
 
 ```shell
 npm install axios -s
 ```
 
-使用 vite 脚手架创建项目 不适用vue-cli
+使用 vite 脚手架创建项目 不适用 vue-cli
 
 ```shell
 npm init vite-app <project-name>
 ```
 
-vue中默认的代码很多都是没用的因此我们删除
+vue 中默认的代码很多都是没用的因此我们删除
 
-vue项目的index.html如下
+vue 项目的 index.html 如下
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>vue-django</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>						
-<body>
-  hello
-  <div class="container">
-    <div id="app"></div> 
-  </div>
-  <script type="module" src="/src/main.js"></script><!-- 注意这一行 type和src的路径都要打 -->
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>vue-django</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		hello
+		<div class="container">
+			<div id="app"></div>
+		</div>
+		<script type="module" src="/src/main.js"></script>
+		<!-- 注意这一行 type和src的路径都要打 -->
+	</body>
 </html>
 ```
 
-把main.js中无用的代码删除
+把 main.js 中无用的代码删除
 
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
 
 createApp(App).mount('#app')
-
 ```
 
-创建一个组件（组件名随意我这里的例子交lyb）这边是前端向后端要数据的核心部分
+创建一个组件（组件名随意我这里的例子交 lyb）这边是前端向后端要数据的核心部分
 
 ```vue
 <template>
-  <div class="row">
-    <div class="col-md-8">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>标题</th>
-            <th>作者</th>
-            <th>内容</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in ly_list" :key="item.url">  //循环显示元素
-            <td>{{ item.title }}</td>
-            <td>{{ item.author }}</td>
-            <td>{{ item.content }}</td>            
-            <td>测试</td>     
-            <td>
-              <button class="btn btn-success" title="编辑">
-                <i></i>
-              </button>
-              <button class="btn btn-danger" title="删除">
-                <i ></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+	<div class="row">
+		<div class="col-md-8">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>标题</th>
+						<th>作者</th>
+						<th>内容</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="item in ly_list" :key="item.url">
+						//循环显示元素
+						<td>{{ item.title }}</td>
+						<td>{{ item.author }}</td>
+						<td>{{ item.content }}</td>
+						<td>测试</td>
+						<td>
+							<button class="btn btn-success" title="编辑">
+								<i></i>
+							</button>
+							<button class="btn btn-danger" title="删除">
+								<i></i>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </template>
 <script>
 import axios from 'axios' //导入axios库
 import { reactive, onMounted, toRefs } from 'vue' //这三个都要导入
 export default {
-  name: 'lyb',
-  setup() {
-    let base_url = "http://127.0.0.1:8000/api/lyb/" //这是django服务器的地址就是rest_framework提供数据的网址，
-    const state = reactive({
-      ly_list: [], //用来接数据
-    })
-    const getLyb = () => {
-      axios.get(base_url).then(res => { //发送请求
-        console.log("成功") 
-        state.ly_list = res.data;
-        console.log(res.data);
-      }).catch(err => {
-        console.log(err);
-      })
-    }
-    onMounted(() => {
-      getLyb(); //需要onMounted挂载
-    })
+	name: 'lyb',
+	setup() {
+		let base_url = 'http://127.0.0.1:8000/api/lyb/' //这是django服务器的地址就是rest_framework提供数据的网址，
+		const state = reactive({
+			ly_list: [], //用来接数据
+		})
+		const getLyb = () => {
+			axios
+				.get(base_url)
+				.then((res) => {
+					//发送请求
+					console.log('成功')
+					state.ly_list = res.data
+					console.log(res.data)
+				})
+				.catch((err) => {
+					console.log(err)
+				})
+		}
+		onMounted(() => {
+			getLyb() //需要onMounted挂载
+		})
 
-    return {
-      ...toRefs(state) //这段也要加上
-    }
-  }
+		return {
+			...toRefs(state), //这段也要加上
+		}
+	},
 }
 </script>
-
 ```
 
-最后在APP.vue中注册一下
+最后在 APP.vue 中注册一下
 
 ```vue
 <template>
-  <div class="row">
-    <lyb />
-  </div>
+	<div class="row">
+		<lyb />
+	</div>
 </template>
 
 <script>
 import lyb from './components/Lyb.vue'
 export default {
-  name: 'App',
-  components: {
-    lyb
-  }
+	name: 'App',
+	components: {
+		lyb,
+	},
 }
-</script>   
-
+</script>
 ```
 
-将django与vue的服务器都启动，正常情况下就可以看到后端传来的数据了。
+将 django 与 vue 的服务器都启动，正常情况下就可以看到后端传来的数据了。
 
-这里有个小bug 使用vscode ssh连接的时候网站可能不会发生改变，这并不是代码的问题。可能与电脑/虚拟机性能有关。可以进入虚拟机桌面的终端直接运行，不通过ssh转发查看效果
+这里有个小 bug 使用 vscode ssh 连接的时候网站可能不会发生改变，这并不是代码的问题。可能与电脑/虚拟机性能有关。可以进入虚拟机桌面的终端直接运行，不通过 ssh 转发查看效果
 
-
-
-### 使用element-plus
+### 使用 element-plus
 
 ```shell
 npm install element-plus --save
 ```
 
-**main.js中配置****
+**main.js 中配置\*\***
 
 ```js
 import { createApp } from 'vue'
@@ -974,74 +929,4 @@ import 'element-plus/dist/index.css'
 
 const app = createApp(App)
 app.use(ElementPlus).mount('#app')
-
 ```
-
-
-
-# Vim使用
-
-基础美化
-
-编辑 /etc/vim/vimrc
-
-```shell
-syntax on                     " 设置语法高亮                                                                                                                                                                              
-set nu                        " 设置行数显示
-set tabstop=4                 " 设置tab缩进长度为4空格
-set autoindent                " 设置自动缩进，适用所有类型文件
-set cindent                   " 针对C语言的自动缩进功能，在C语言的编程环境中，比autoindent更加精准
-set list lcs=tab:\|\          " 设置tab提示符号为 "|"，注意最后一个反斜杠后面要留有空格
-set cc=0                      " 设置高亮的列，这里设置为0，代表关闭
-set cursorline                " 突出显示当前行
-
-```
-
-# nginx
-
-查找nginx配置文件位置
-
-```shell
-locate nginx.conf
-```
-
-此外也可以使用这个命令
-
-```shell
-whereis nginx
-```
-
-假定我们按照网上的教程进入 /usr/sbin/ 目录 通过./nginx启动服务可能会看到以下错误
-
-```shell
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
-nginx: [emerg] still could not bind()
-```
-
-解决方法是 不使用`./nginx`这种启动方式，而是使用如下的命令启动`nginx`
-
-```shell
-sudo systemctl restart nginx
-sudo systemctl start nginx
-```
-
-在浏览器中输入 即可看到
-
-```shell
-127.0.0.1:80
-```
-
-
-
-
-
-
