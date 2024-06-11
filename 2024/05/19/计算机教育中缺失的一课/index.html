@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Makefile学习笔记 | Res Publica</title>
+    <title>计算机教育中缺失的一课 | Res Publica</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -147,7 +147,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>Makefile学习笔记</h1>
+        <h1>计算机教育中缺失的一课</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -170,7 +170,10 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h1><p>Compile run all cpp files of src</p>
+        <p>2020 MIT 公开课:The Missing Semester of Your CS Education</p>
+<span id="more"></span>
+
+<h1 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h1><p>Compile run all cpp files of src</p>
 <pre><code class="makefile">CC = clang++
 CCFLAGS = -std=c++2b -Wall
 TARGET = test
@@ -188,8 +191,6 @@ $(TARGET): $(OBJS)
 clean:
     rm -f bin/* build/*%
 </code></pre>
-<span id="more"></span>
-
 <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="makefile-的依赖"><a href="#makefile-的依赖" class="headerlink" title="makefile 的依赖"></a>makefile 的依赖</h2><pre><code class="makefile">x.txt: m.txt c.txt
     cat m.txt c.txt &gt; x.txt
 </code></pre>
