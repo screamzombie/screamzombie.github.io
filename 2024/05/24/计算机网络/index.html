@@ -175,7 +175,7 @@
 </blockquote>
 <span id="more"></span>
 
-<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>408考就考记忆，重点是边边拐拐的</p>
+<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>408 考就考记忆，重点是边边拐拐的</p>
 <h1 id="一-绪论"><a href="#一-绪论" class="headerlink" title="一 绪论"></a>一 绪论</h1><h2 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a>计算机网络的组成</h2><h3 id="组成部分："><a href="#组成部分：" class="headerlink" title="组成部分："></a>组成部分：</h3><p>完整的计算机网络 &#x3D; 硬件 + 软件 + 协议</p>
 <p>硬件：主机(端系统)、通信链路 (如双绞线、光纤)、交换设备 (如路 由器、交换机等) 和 通信处理机 (如网卡)</p>
 <p>软件：实现资源共享和方便用户使用</p>
@@ -183,10 +183,10 @@
 <h3 id="工作方式："><a href="#工作方式：" class="headerlink" title="工作方式："></a>工作方式：</h3><p>计算机网络 &#x3D; 边缘部分 + 核心部分</p>
 <p>边缘部分: 所有连接到因特网上、供用户直接使用的主机组成，用来进行<code>通信</code>和<code>资源共享</code></p>
 <p>核心部分: 大量的<em>网络</em>和连接这些网络的<em>路由器</em>组成 ， 它 为 边 缘 部 分 提 供 <code>连 通 性</code> 和<code> 交 换 服 务</code></p>
-<h3 id="功能组成：-我觉得是重点"><a href="#功能组成：-我觉得是重点" class="headerlink" title="功能组成：(我觉得是重点)"></a>功能组成：(我觉得是重点)</h3><p>计算机网络 &#x3D;  通信子网 + 资源子网</p>
+<h3 id="功能组成：-我觉得是重点"><a href="#功能组成：-我觉得是重点" class="headerlink" title="功能组成：(我觉得是重点)"></a>功能组成：(我觉得是重点)</h3><p>计算机网络 &#x3D; 通信子网 + 资源子网</p>
 <p>通信子网 &#x3D; 各种传输介质 + 通信设备 + 相应的网络协议</p>
 <p>资源子网 &#x3D; 实现资源共享功能的设备及其软件的集合</p>
-<p><strong>通信子网：使网络具有 <em>数据传输</em>、<em>交换</em>、<em>控制</em> 和 <em>存储</em> 的能力</strong></p>
+<p><strong>通信子网：使网络具有 <em>数据传输_、_交换_、_控制</em> 和 <em>存储</em> 的能力</strong></p>
 <h2 id="几种网络构型"><a href="#几种网络构型" class="headerlink" title="几种网络构型"></a>几种网络构型</h2><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><p>总线型网络(建网容易，效率不高)</p>
 <p>星型（便于集中控制和管理，端用户通信必须经过中央设备）</p>
 <p>环形 （可以单环，也可以双环，<strong>环中信号是单向传输的</strong>）</p>
@@ -194,21 +194,21 @@
 <h2 id="指标-重点"><a href="#指标-重点" class="headerlink" title="指标(重点)"></a>指标(重点)</h2><p>带宽： 网络的通信线路所能传送数据的能力，即数字信道的最高数据传输速率</p>
 <p>时延： 从网络的一端传送到另外一端所需要的总时间 时延&#x3D; 发送时延 + 传播时延+处理时延+排队时延</p>
 <ul>
-<li>发送时延 &#x3D;》 所有数据上链路        分组长度&#x2F;信道宽度</li>
-<li>传播时延 &#x3D;》电磁波从一头跑到另一头     信道长度&#x2F;电磁波在信道上的传播速率</li>
+<li>发送时延 &#x3D;》 所有数据上链路 分组长度&#x2F;信道宽度</li>
+<li>传播时延 &#x3D;》电磁波从一头跑到另一头 信道长度&#x2F;电磁波在信道上的传播速率</li>
 <li>处理时延 &#x3D;》 数据在交换节点的存储转发中进行的必要工作花的时间 分析首部，寻找路由等</li>
 <li>排队时延 &#x3D;》 数据进出交换节点都需要排队</li>
 </ul>
-<p>时延带宽积：时延带宽积 &#x3D; 传播时延  *  信道宽度 就像是水管里的水的容量一般</p>
+<p>时延带宽积：时延带宽积 &#x3D; 传播时延 * 信道宽度 就像是水管里的水的容量一般</p>
 <p>时延带宽积 考计算！！！！</p>
 <ul>
 <li>信道利用率： 有数据通过的时间&#x2F;总时间</li>
 </ul>
 <h2 id="细小知识点"><a href="#细小知识点" class="headerlink" title="&amp;细小知识点"></a>&amp;细小知识点</h2><p>不同机器上的同一层叫<code>对等层</code>，同一层的实体叫<code>对等实体</code></p>
-<p>每个报文PDU都由两个部分组成  数据部分SDU  控制信息 PCI</p>
+<p>每个报文 PDU 都由两个部分组成 数据部分 SDU 控制信息 PCI</p>
 <p>数据服务单元 SDU 为了完成用户所求的功能而传送的数据</p>
 <p>协议控制信息 PCI 控制协议操作的信息</p>
-<p>协议数据单元 PDU 对等层次之间传送的数据单位称为该层的PDU</p>
+<p>协议数据单元 PDU 对等层次之间传送的数据单位称为该层的 PDU</p>
 <h2 id="协议-接口-服务"><a href="#协议-接口-服务" class="headerlink" title="协议 接口 服务"></a>协议 接口 服务</h2><ul>
 <li><p>协议 &#x3D; 规则的集合，<strong>水平的必须是同层之间</strong></p>
 <blockquote>
@@ -222,14 +222,14 @@
 </li>
 <li><p>服务 下层<strong>紧邻</strong>的上层提供功能调用</p>
 <blockquote>
-<p>上层要求下层提供服务的命令在OSI中叫<code>服务原语</code><br>请求<code>Request</code> 服务用户 -&gt; 服务提供者 请求完成某项工作<br>指示<code>Indication</code> 服务提供者 -&gt; 服务用户，指示用户做某件事<br>响应 <code>Response</code> 服务用户-&gt; 服务提供者 对请求的回应<br>证实 <code>Confirmation</code>  服务提供者 -&gt; 服务用户 对请求的证实</p>
+<p>上层要求下层提供服务的命令在 OSI 中叫<code>服务原语</code><br>请求<code>Request</code> 服务用户 -&gt; 服务提供者 请求完成某项工作<br>指示<code>Indication</code> 服务提供者 -&gt; 服务用户，指示用户做某件事<br>响应 <code>Response</code> 服务用户-&gt; 服务提供者 对请求的回应<br>证实 <code>Confirmation</code> 服务提供者 -&gt; 服务用户 对请求的证实</p>
 </blockquote>
 </li>
 </ul>
 <p><em>请求 &lt;—-&gt;指示 <em>是一对，</em>响应 &lt;—&gt;证实</em>是一对</p>
 <p>有应答服务包括四种</p>
 <p>无应答服务 只有 **请求和指示 **</p>
-<h2 id="TCP-IP-与-OSI模型的比较"><a href="#TCP-IP-与-OSI模型的比较" class="headerlink" title="TCP&#x2F;IP 与 OSI模型的比较"></a>TCP&#x2F;IP 与 OSI模型的比较</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP_OSI.png" alt="image-20240530174500257"></p>
+<h2 id="TCP-IP-与-OSI-模型的比较"><a href="#TCP-IP-与-OSI-模型的比较" class="headerlink" title="TCP&#x2F;IP 与 OSI 模型的比较"></a>TCP&#x2F;IP 与 OSI 模型的比较</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP_OSI.png" alt="image-20240530174500257"></p>
 <h1 id="二-物理层"><a href="#二-物理层" class="headerlink" title="二 物理层"></a>二 物理层</h1><h2 id="通信模式等基本概念"><a href="#通信模式等基本概念" class="headerlink" title="通信模式等基本概念"></a>通信模式等基本概念</h2><p>连续变化的信号 &#x3D;》 模拟信号</p>
 <p>取值仅为有限个的 &#x3D;》 数字信号</p>
 <p>**远距离传输 使用的是串行传输 **</p>
@@ -243,7 +243,7 @@
 </ul>
 <h3 id="信道上的信号-我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看"><a href="#信道上的信号-我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看" class="headerlink" title="信道上的信号(我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看)"></a>信道上的信号(我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看)</h3><p>信道上的信号</p>
 <ul>
-<li>基带信号 -&gt; 将数字0 1直接用不同电压表示 (基带传输)</li>
+<li>基带信号 -&gt; 将数字 0 1 直接用不同电压表示 (基带传输)</li>
 <li>宽带信号 -&gt; 将基带信号调制后形成 <strong>频分复用</strong> 的 ** 模拟信号** (宽带传输)</li>
 </ul>
 <p>Question</p>
@@ -253,9 +253,9 @@
 <h3 id="三种信息方式的交互"><a href="#三种信息方式的交互" class="headerlink" title="三种信息方式的交互"></a>三种信息方式的交互</h3><p>单向通信: 只有一个方向,仅需要一个信道, <strong>无线电,广播</strong></p>
 <p>半双工: 两边都可以发 但不能同时 <strong>需要两条信道</strong></p>
 <p>全双工: 两边可以同时发 需要两条信道</p>
-<h2 id=""><a href="#" class="headerlink" title="&amp;"></a>&amp;</h2><p>波特率  叫 码元传输速率,表示 单位时间内系统所传输的码元个数,码元可以是多进制也可以是二进制,并且传输速率与进制无关 </p>
+<h2 id=""><a href="#" class="headerlink" title="&amp;"></a>&amp;</h2><p>波特率 叫 码元传输速率,表示 单位时间内系统所传输的码元个数,码元可以是多进制也可以是二进制,并且传输速率与进制无关</p>
 <blockquote>
-<p>eg 1波特 表示数字系统一秒传输一个码元</p>
+<p>eg 1 波特 表示数字系统一秒传输一个码元</p>
 </blockquote>
 <p>信息传输速率 叫 信息速率,比特率 。 表示单位时间内的二进制码元个数 比特数 单位是比特&#x2F;s bit&#x2F;s</p>
 <p>Question:<br>不当人的话可能会把概念混过来考，比如把波特率叫信息传输速率</p>
@@ -263,11 +263,11 @@
 <h3 id="奈氏准则-（内忧-码间串扰）"><a href="#奈氏准则-（内忧-码间串扰）" class="headerlink" title="奈氏准则 （内忧 码间串扰）"></a>奈氏准则 （内忧 码间串扰）</h3><p>$2Wlog_{2}V$</p>
 <h3 id="香农"><a href="#香农" class="headerlink" title="香农"></a>香农</h3><p>$Wlog_{2}(2+S&#x2F;N)$</p>
 <p>这个算是经典题目了,必会,两者取其小就行了</p>
-<h2 id="恶心人的编码方式"><a href="#恶心人的编码方式" class="headerlink" title="恶心人的编码方式"></a>恶心人的编码方式</h2><h3 id="数字编码方式"><a href="#数字编码方式" class="headerlink" title="数字编码方式"></a>数字编码方式</h3><p><del>不仅要知道种类还要认得图和对应的英文🤮</del></p>
+<h2 id="恶心人的编码方式"><a href="#恶心人的编码方式" class="headerlink" title="恶心人的编码方式"></a>恶心人的编码方式</h2><h3 id="数字编码方式"><a href="#数字编码方式" class="headerlink" title="数字编码方式"></a>数字编码方式</h3><p><del>不仅要知道种类还要认得图和对应的英文 🤮</del></p>
 <ul>
-<li><p>归零编码 <code>RZ</code> </p>
+<li><p>归零编码 <code>RZ</code></p>
 <blockquote>
-<p>重点是每个周期中间均要跳变到低电平,当然如果是0就不用跳了,压根就没起来.</p>
+<p>重点是每个周期中间均要跳变到低电平,当然如果是 0 就不用跳了,压根就没起来.</p>
 <p>归零会影响到带宽进而影响到传输效率</p>
 </blockquote>
 </li>
@@ -283,19 +283,19 @@
 <p>记忆点 曼彻斯特编码所占的宽度是原始基带宽度的<strong>两倍</strong> , 并且<code>以太网</code>用的编码方式就是 <code>曼彻斯特编码</code></p>
 </blockquote>
 </li>
-<li><p>差分曼彻斯特编码.  常用在<code>无线局域网</code> 前半个码元的电平和上一码元相同 -&gt; 1 可以实现自同步,抗干扰性好</p>
+<li><p>差分曼彻斯特编码. 常用在<code>无线局域网</code> 前半个码元的电平和上一码元相同 -&gt; 1 可以实现自同步,抗干扰性好</p>
 </li>
-<li><p>4B&#x2F;5B 将数据流4位一组 然后按照4B&#x2F;5B 转换成5位码 共32中组合 但只要16种,对应原先16种 剩下16种是控制码</p>
+<li><p>4B&#x2F;5B 将数据流 4 位一组 然后按照 4B&#x2F;5B 转换成 5 位码 共 32 中组合 但只要 16 种,对应原先 16 种 剩下 16 种是控制码</p>
 <blockquote>
 <p>编码规则(详细的换算太抽象了感觉不可能考了,这个能记住就差不多了)</p>
-<p>每个5bit码组中不多于3个”0”</p>
-<p>或者5bit码组中不少于2个”1”</p>
+<p>每个 5bit 码组中不多于 3 个”0”</p>
+<p>或者 5bit 码组中不少于 2 个”1”</p>
 </blockquote>
 </li>
 </ul>
 <p>Question</p>
 <ol>
-<li>最坑的应该就是让算 局域网&#x2F;无线局域网 然后算出来的结果要乘2 </li>
+<li>最坑的应该就是让算 局域网&#x2F;无线局域网 然后算出来的结果要乘 2</li>
 <li>或者问下面几个图哪一个是无线局域网的编码方式等等</li>
 </ol>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%97%E7%BC%96%E7%A0%81.png" alt="alt text"></p>
@@ -303,12 +303,12 @@
 <h4 id="数字调制技术"><a href="#数字调制技术" class="headerlink" title="数字调制技术"></a>数字调制技术</h4><p><code>发送端</code> 把 <code>数字信号</code> -&gt; <code>模拟信号</code> 这个叫<strong>调制</strong></p>
 <p><code>接受端</code> 把 <code>模拟信号</code> -&gt; <code>数字信号</code> 这个叫<strong>解调</strong></p>
 <p><em>可能会问哪个是对的,其中某个错误的就是搞错转换地点或者是方法的名字</em></p>
-<h4 id="四种数字调制方法🤮"><a href="#四种数字调制方法🤮" class="headerlink" title="四种数字调制方法🤮"></a>四种数字调制方法🤮</h4><ol>
+<h4 id="四种数字调制方法-🤮"><a href="#四种数字调制方法-🤮" class="headerlink" title="四种数字调制方法 🤮"></a>四种数字调制方法 🤮</h4><ol>
 <li>幅移键控 <code>ASK</code> 通过改变<code>振幅</code> 比较容易实现 <em>抗干扰能力差</em></li>
-<li>频移键控 <code>FSK</code> 通过改变载波信号的<code>频率</code> 来表示0和1 <del>去年考过</del></li>
-<li>相移键控 <code>PSK</code> 通过改变载波信号的<code>相位</code> 来表示0和1</li>
+<li>频移键控 <code>FSK</code> 通过改变载波信号的<code>频率</code> 来表示 0 和 1 <del>去年考过</del></li>
+<li>相移键控 <code>PSK</code> 通过改变载波信号的<code>相位</code> 来表示 0 和 1</li>
 <li>正交振幅调制 <code>QAM</code> 在<code>频率</code> 相同的情况下 <code>ASK</code> + <code>PSK</code> &#x3D;&gt; 形成的叠加信号.<blockquote>
-<p>波特率B 相位数量m  每个相位n个振幅</p>
+<p>波特率 B 相位数量 m 每个相位 n 个振幅</p>
 <p>$R&#x3D;Blog_{2}(mn)$ 单位(bit&#x2F;s)</p>
 </blockquote>
 </li>
@@ -316,7 +316,7 @@
 <hr>
 <p>出题点:</p>
 <ol>
-<li>给出单位让算QAM</li>
+<li>给出单位让算 QAM</li>
 <li>给图片判断信号种类 或者给信号找图片</li>
 <li>数字信号 -&gt; 模拟信号 叫什么? <code>调制</code><br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E5%AD%97%E8%B0%83%E5%88%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F.png" alt="alt text"></li>
 </ol>
@@ -327,7 +327,9 @@
 <li>算带宽</li>
 <li>问技术叫什么名字 或者 模拟信号 -&gt; 数字信号叫什么 答<code>编码</code></li>
 </ol>
-<h3 id="模拟信号转换成模拟信号"><a href="#模拟信号转换成模拟信号" class="headerlink" title="模拟信号转换成模拟信号"></a>模拟信号转换成模拟信号</h3><h2 id="技术名字叫调制-方式是通过-频分复用-FDM电话机和本地交换机-用的就是模拟转模拟"><a href="#技术名字叫调制-方式是通过-频分复用-FDM电话机和本地交换机-用的就是模拟转模拟" class="headerlink" title="技术名字叫调制 方式是通过 频分复用 FDM电话机和本地交换机 用的就是模拟转模拟"></a>技术名字叫<code>调制</code> 方式是通过 频分复用 <code>FDM</code><br><strong>电话机和本地交换机</strong> 用的就是模拟转模拟</h2><p>出题点</p>
+<h3 id="模拟信号转换成模拟信号"><a href="#模拟信号转换成模拟信号" class="headerlink" title="模拟信号转换成模拟信号"></a>模拟信号转换成模拟信号</h3><p>技术名字叫<code>调制</code> 方式是通过 频分复用 <code>FDM</code><br><strong>电话机和本地交换机</strong> 用的就是模拟转模拟</p>
+<hr>
+<p>出题点</p>
 <ol>
 <li>很有可能就这么问 交换机使用的信号转换方式是什么? 四个英语让你选</li>
 </ol>
@@ -352,13 +354,13 @@
 <p>屏蔽双绞线<code>UTP</code></p>
 <ol>
 <li><strong>双绞线</strong>局域网和传统电话网中用的最多 选择题可问</li>
-<li>长距离运输  模拟信号 -&gt; <code>放大器</code> 放大衰竭信号 </li>
+<li>长距离运输 模拟信号 -&gt; <code>放大器</code> 放大衰竭信号</li>
 <li>数字信号 用 <code>中继器</code> 整形 (可做考点问哪个错的故意弄乱)</li>
 </ol>
-<h3 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h3><p>种类 50Ω 和75Ω</p>
+<h3 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h3><p>种类 50Ω 和 75Ω</p>
 <ol>
-<li>传送基带数字信号的是 50Ω  —&gt; 局域网</li>
-<li>传送宽带数字信号的事 75Ω  —&gt; 有线电视</li>
+<li>传送基带数字信号的是 50Ω —&gt; 局域网</li>
+<li>传送宽带数字信号的事 75Ω —&gt; 有线电视</li>
 </ol>
 <p>有良好的抗干扰性</p>
 <h3 id="光纤"><a href="#光纤" class="headerlink" title="光纤"></a>光纤</h3><ol>
@@ -369,20 +371,20 @@
 </ol>
 <h2 id="物理接口特性"><a href="#物理接口特性" class="headerlink" title="物理接口特性"></a>物理接口特性</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E6%8E%A5%E5%8F%A3%E7%89%B9%E6%80%A7.png"></p>
 <p><del>接口标准</del><br><code>ELA RS232C</code> <code>ADSL</code> <code>SONET/SDH</code></p>
-<h2 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h2><p>有hub组成的网络是共享式网络 每个主机在不同的网段,只能在半双工下工作</p>
+<h2 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h2><p>有 hub 组成的网络是共享式网络 每个主机在不同的网段,只能在半双工下工作</p>
 <h1 id="三-数据链路层"><a href="#三-数据链路层" class="headerlink" title="三 数据链路层"></a>三 数据链路层</h1><h2 id="几种方式"><a href="#几种方式" class="headerlink" title="几种方式"></a>几种方式</h2><ol>
-<li>无连接无确认  —&gt; 实时通讯 —&gt; <code>以太网</code></li>
-<li>有连接无确认  —&gt; 无线通信</li>
-<li>有连接有确认  —&gt; 对于可靠性要求较高的场合</li>
+<li>无连接无确认 —&gt; 实时通讯 —&gt; <code>以太网</code></li>
+<li>有连接无确认 —&gt; 无线通信</li>
+<li>有连接有确认 —&gt; 对于可靠性要求较高的场合</li>
 </ol>
 <hr>
 <p>可能会问以太网是什么通讯方式然后让你选</p>
-<h2 id="链路管理"><a href="#链路管理" class="headerlink" title="链路管理"></a>链路管理</h2><h3 id="HDLC协议-不是重点了"><a href="#HDLC协议-不是重点了" class="headerlink" title="HDLC协议(不是重点了)"></a>HDLC协议(不是重点了)</h3><p>标准帧格式<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/hdlc%E6%A0%87%E5%87%86%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
+<h2 id="链路管理"><a href="#链路管理" class="headerlink" title="链路管理"></a>链路管理</h2><h3 id="HDLC-协议-不是重点了"><a href="#HDLC-协议-不是重点了" class="headerlink" title="HDLC 协议(不是重点了)"></a>HDLC 协议(不是重点了)</h3><p>标准帧格式<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/hdlc%E6%A0%87%E5%87%86%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
 <h3 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h3><p>帧校验用的是<code>CRC</code>,接收端发现错误就<code>丢弃</code>,发送方<code>超时重传</code> &#x3D;&#x3D;&#x3D;&gt; <code>ARQ法</code></p>
-<h3 id="CRC的计算方法-重点"><a href="#CRC的计算方法-重点" class="headerlink" title="CRC的计算方法(重点)"></a>CRC的计算方法(重点)</h3><p>$g(x)&#x3D;x^4+x+1$ 这个式子的生成多项式就是10011 </p>
-<p>例子<br>原始数据 10110011 因为g(x)的最高次是4 所以原始数据往左位移4位 ,补0</p>
+<h3 id="CRC-的计算方法-重点"><a href="#CRC-的计算方法-重点" class="headerlink" title="CRC 的计算方法(重点)"></a>CRC 的计算方法(重点)</h3><p>$g(x)&#x3D;x^4+x+1$ 这个式子的生成多项式就是 10011</p>
+<p>例子<br>原始数据 10110011 因为 g(x)的最高次是 4 所以原始数据往左位移 4 位 ,补 0</p>
 <p>接着用 101100110000 除 10011</p>
-<p>这里要用到模除 上下相同0  不同1  没用到的拉下来</p>
+<p>这里要用到模除 上下相同 0 不同 1 没用到的拉下来</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CRC%E4%BE%8B%E5%AD%90.png"></p>
 <h3 id="汉明码-重点"><a href="#汉明码-重点" class="headerlink" title="汉明码(重点)"></a>汉明码(重点)</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B1%89%E6%98%8E%E7%A0%81.png"></p>
 <h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><ol>
@@ -393,10 +395,10 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="后退N帧协议-GBN"><a href="#后退N帧协议-GBN" class="headerlink" title="后退N帧协议 GBN"></a>后退N帧协议 GBN</h3><p>发送窗口大小是$2^n -1$</p>
+<h3 id="后退-N-帧协议-GBN"><a href="#后退-N-帧协议-GBN" class="headerlink" title="后退 N 帧协议 GBN"></a>后退 N 帧协议 GBN</h3><p>发送窗口大小是$2^n -1$</p>
 <h3 id="选择重传协议-SR"><a href="#选择重传协议-SR" class="headerlink" title="选择重传协议 SR"></a>选择重传协议 SR</h3><p>发送窗口大小是 $2^{n-1}$</p>
 <h3 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h3><p>发送周期:发送方从<code>开始发送</code>到收到第一个<code>确认帧</code></p>
-<p>信道利用率 &#x3D; (发送的数据量L &#x2F;传输速度C)&#x2F; 总时间T</p>
+<p>信道利用率 &#x3D; (发送的数据量 L &#x2F;传输速度 C)&#x2F; 总时间 T</p>
 <p>信道吞吐率 &#x3D; 信道利用率&#x2F;发送方的发送速率</p>
 <h2 id="介质访问控制"><a href="#介质访问控制" class="headerlink" title="介质访问控制"></a>介质访问控制</h2><p>介质访问控制层<code>MAC</code>$\subset$数据链路层</p>
 <p>主要路线有两种对于介质本身进行物理上的划分 和 时间上的划分技术</p>
@@ -405,68 +407,68 @@
 <li>时分复用<code>TDM</code></li>
 <li>统计时分多路复用<code>STDM</code> 动态分割时间</li>
 <li>波分多路复用<code>WDM</code></li>
-<li>码分多路复用<code>CDM</code> 重点可考计算  注 <code>CDMA</code>码分多址</li>
+<li>码分多路复用<code>CDM</code> 重点可考计算 注 <code>CDMA</code>码分多址</li>
 </ol>
-<h2 id="码分复用计算"><a href="#码分复用计算" class="headerlink" title="码分复用计算"></a>码分复用计算</h2><p>假设我们有 <code>A</code> <code>B</code> <code>C</code> 三个站点,C是服务器,A B 是客户机 均向C发送</p>
-<p>一开始A B 会被分别指派一个<code>码片序列</code>,有时候题目会问你怎么算或者下面哪一个是</p>
-<p>假如A的码片序列是 <code>00011011</code> 那么当 A想发送1时 就发 <code>00011011</code> 相应的如果A想发送0 就发送序列的反码<code>11100100</code></p>
-<p>其中 <code>1</code> 用 <code>+1</code> ,<code>0</code> 用 <code>-1</code>表示 为了方便计算 </p>
+<h2 id="码分复用计算"><a href="#码分复用计算" class="headerlink" title="码分复用计算"></a>码分复用计算</h2><p>假设我们有 <code>A</code> <code>B</code> <code>C</code> 三个站点,C 是服务器,A B 是客户机 均向 C 发送</p>
+<p>一开始 A B 会被分别指派一个<code>码片序列</code>,有时候题目会问你怎么算或者下面哪一个是</p>
+<p>假如 A 的码片序列是 <code>00011011</code> 那么当 A 想发送 1 时 就发 <code>00011011</code> 相应的如果 A 想发送 0 就发送序列的反码<code>11100100</code></p>
+<p>其中 <code>1</code> 用 <code>+1</code> ,<code>0</code> 用 <code>-1</code>表示 为了方便计算</p>
 <p><strong>规格化内积</strong>的计算公式如下</p>
-<p>$$S\cdot T \equiv \frac{1}{m}\sum_{i&#x3D;1}^{m} S_{i} T_{i}$$<br>也就是说另外一个站的码片序列必须得满足这个式子<br>这里已经计算出B的是<br>{-1,-1,+1,-1,+1,+1,+1,-1}</p>
-<p>A是<br>{-1,-1,-1,+1,+1,-1,+1,+1}</p>
+<p>$$S\cdot T \equiv \frac{1}{m}\sum_{i&#x3D;1}^{m} S_{i} T_{i}$$<br>也就是说另外一个站的码片序列必须得满足这个式子<br>这里已经计算出 B 的是<br>{-1,-1,+1,-1,+1,+1,+1,-1}</p>
+<p>A 是<br>{-1,-1,-1,+1,+1,-1,+1,+1}</p>
 <p>发的是线性叠加的</p>
-<p>假如两个都发1</p>
+<p>假如两个都发 1</p>
 <p>就是<br>{-2,-2,0,0,2,0,2,0}</p>
-<p>王道书上给的例子是B发0<br>B是<code>11010001</code></p>
-<p>叠加后的结果是(0 0 -2 2 0 -2 0 2) </p>
+<p>王道书上给的例子是 B 发 0<br>B 是<code>11010001</code></p>
+<p>叠加后的结果是(0 0 -2 2 0 -2 0 2)</p>
 <h3 id="分离"><a href="#分离" class="headerlink" title="分离"></a>分离</h3><p>利用的是如下性质</p>
 <ol>
 <li>任意一个向量与自身内积 &#x3D;&gt; 1</li>
 <li>任意一个向量与自身的补码内积 &#x3D;&gt; -1</li>
 <li>任意一个向量与其他码片向量 内积&#x3D;&gt;0</li>
 </ol>
-<p>因此如果我们想要知道A发了什么 只需要将A的码片向量乘叠加向量就行了</p>
-<p>比如$A \cdot (A+B)$ A与其他所有的向量内积会变为0 这样我们就提出了A的值 如果是+1 就代表发了1 -1 就是 0</p>
-<h2 id="随机介质访问控制-常考"><a href="#随机介质访问控制-常考" class="headerlink" title="随机介质访问控制(常考)"></a>随机介质访问控制(常考)</h2><h3 id="纯ALOHA协议"><a href="#纯ALOHA协议" class="headerlink" title="纯ALOHA协议"></a>纯ALOHA协议</h3><p>想发就发,纯看脸</p>
-<p>相关计算公式(还没考过😱)</p>
-<p><code>网络负载</code>:T0时间内所有站点<strong>发送成功</strong>和<strong>没成功而重传</strong>的帧数 符号为G</p>
-<p><code>纯ALOHA</code>的平均网络负载量是$S&#x3D;Ge^{-2G}$ 极大值为G&#x3D;0.5 S约为0.184</p>
-<h3 id="时隙ALOHA"><a href="#时隙ALOHA" class="headerlink" title="时隙ALOHA"></a>时隙ALOHA</h3><p>时隙ALOHA 把所有站点综合考虑设定了一个$T_{0}$作为时隙,$T_{0}$满足能发一个但不会让你发两个</p>
+<p>因此如果我们想要知道 A 发了什么 只需要将 A 的码片向量乘叠加向量就行了</p>
+<p>比如$A \cdot (A+B)$ A 与其他所有的向量内积会变为 0 这样我们就提出了 A 的值 如果是+1 就代表发了 1 -1 就是 0</p>
+<h2 id="随机介质访问控制-常考"><a href="#随机介质访问控制-常考" class="headerlink" title="随机介质访问控制(常考)"></a>随机介质访问控制(常考)</h2><h3 id="纯-ALOHA-协议"><a href="#纯-ALOHA-协议" class="headerlink" title="纯 ALOHA 协议"></a>纯 ALOHA 协议</h3><p>想发就发,纯看脸</p>
+<p>相关计算公式(还没考过 😱)</p>
+<p><code>网络负载</code>:T0 时间内所有站点<strong>发送成功</strong>和<strong>没成功而重传</strong>的帧数 符号为 G</p>
+<p><code>纯ALOHA</code>的平均网络负载量是$S&#x3D;Ge^{-2G}$ 极大值为 G&#x3D;0.5 S 约为 0.184</p>
+<h3 id="时隙-ALOHA"><a href="#时隙-ALOHA" class="headerlink" title="时隙 ALOHA"></a>时隙 ALOHA</h3><p>时隙 ALOHA 把所有站点综合考虑设定了一个$T_{0}$作为时隙,$T_{0}$满足能发一个但不会让你发两个</p>
 <p>每个主机都只能在每个$T_{0}$到来的开头才能发,如果错过了就等下一个</p>
-<p>网络负载量是$S&#x3D;Ge^{-G}$ 相比较纯ALOHA提高了一倍</p>
-<h2 id="CSMA"><a href="#CSMA" class="headerlink" title="CSMA"></a>CSMA</h2><p>CSMA是ALOHA的改进,比较ALOHA有了一个<code>载波侦听装置</code></p>
-<p>有三种形式的CSMA,主要考第三种</p>
+<p>网络负载量是$S&#x3D;Ge^{-G}$ 相比较纯 ALOHA 提高了一倍</p>
+<h2 id="CSMA"><a href="#CSMA" class="headerlink" title="CSMA"></a>CSMA</h2><p>CSMA 是 ALOHA 的改进,比较 ALOHA 有了一个<code>载波侦听装置</code></p>
+<p>有三种形式的 CSMA,主要考第三种</p>
 <ol>
 <li>1-坚持 CSMA</li>
 <li>非坚持 CSMA</li>
 <li>p-坚持 CSMA</li>
 </ol>
-<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p>p-坚持CSMA,用于<code>时分信道</code>,工作流程是</p>
+<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p>p-坚持 CSMA,用于<code>时分信道</code>,工作流程是</p>
 <blockquote>
 <p>发送之前先听,如果忙就<strong>持续侦听</strong>(不是不侦听了,也不是一直听,而是下个间隙开始再听听看,是时分信道嘛)</p>
-<p>如果信道空闲,则p概率发,1-p推迟到下个间隙,下个间隙到了再看看空不空,空的话也是p概率发 1-p不发,忙的话就等到下个间隙再听了</p>
+<p>如果信道空闲,则 p 概率发,1-p 推迟到下个间隙,下个间隙到了再看看空不空,空的话也是 p 概率发 1-p 不发,忙的话就等到下个间隙再听了</p>
 </blockquote>
 <h2 id="载波侦听堵路访问-碰撞协议-CSMA-CD"><a href="#载波侦听堵路访问-碰撞协议-CSMA-CD" class="headerlink" title="载波侦听堵路访问&#x2F;碰撞协议(CSMA&#x2F;CD)"></a>载波侦听堵路访问&#x2F;碰撞协议(CSMA&#x2F;CD)</h2><p><code>ALOHA</code> 进化—&gt; <code>CSMA</code> 超进化—&gt;<code>CSMA/CD</code></p>
-<h3 id="碰撞检测"><a href="#碰撞检测" class="headerlink" title="碰撞检测"></a>碰撞检测</h3><p>以太网-&gt; <code>51.2</code>微秒作为最短帧长 </p>
-<p>10Mb&#x2F;s的以太网 争用期可发送512bit 也就是64B,<br>争用期没发生冲突 后续也就不会发生冲突了,因为已经占领了信道,别的设备会去检测的</p>
+<h3 id="碰撞检测"><a href="#碰撞检测" class="headerlink" title="碰撞检测"></a>碰撞检测</h3><p>以太网-&gt; <code>51.2</code>微秒作为最短帧长</p>
+<p>10Mb&#x2F;s 的以太网 争用期可发送 512bit 也就是 64B,<br>争用期没发生冲突 后续也就不会发生冲突了,因为已经占领了信道,别的设备会去检测的</p>
 <h3 id="截断二进制指数退避算法"><a href="#截断二进制指数退避算法" class="headerlink" title="截断二进制指数退避算法"></a>截断二进制指数退避算法</h3><ol>
-<li>基本退避时间$2\tau$ -&gt; 一个争用期 ,注意有时候题目只告诉你一个$\tau$要记得乘2</li>
-<li>设k为重传次数 k &#x3D; min[重传次数,10] ,k最大为10不会一直增大</li>
+<li>基本退避时间$2\tau$ -&gt; 一个争用期 ,注意有时候题目只告诉你一个$\tau$要记得乘 2</li>
+<li>设 k 为重传次数 k &#x3D; min[重传次数,10] ,k 最大为 10 不会一直增大</li>
 <li>从$[0,1,3,\cdots,2^{k}-1]$随机挑一个, 把这个数乘争用期</li>
-<li>当重传16次仍然不成功,则丢弃,并向高层报告</li>
+<li>当重传 16 次仍然不成功,则丢弃,并向高层报告</li>
 </ol>
-<h2 id="碰撞避免-802-11标准-CSMA-CA"><a href="#碰撞避免-802-11标准-CSMA-CA" class="headerlink" title="碰撞避免 802.11标准 CSMA/CA"></a>碰撞避免 802.11标准 <code>CSMA/CA</code></h2><p>碰撞避免不能完全避免碰撞</p>
+<h2 id="碰撞避免-802-11-标准-CSMA-CA"><a href="#碰撞避免-802-11-标准-CSMA-CA" class="headerlink" title="碰撞避免 802.11 标准 CSMA/CA"></a>碰撞避免 802.11 标准 <code>CSMA/CA</code></h2><p>碰撞避免不能完全避免碰撞</p>
 <p><code>802.11</code>使用链路层的确认&#x2F;重传<code>ARQ</code>,收到了确认才能发下一帧</p>
-<h3 id="帧间间隔🤮"><a href="#帧间间隔🤮" class="headerlink" title="帧间间隔🤮"></a>帧间间隔🤮</h3><ol>
-<li>SIFS(短IFS)最短的IFS<blockquote>
-<p>ACK,CTS,分片后的数据帧,回答AP探寻的帧都用SIFS</p>
+<h3 id="帧间间隔-🤮"><a href="#帧间间隔-🤮" class="headerlink" title="帧间间隔 🤮"></a>帧间间隔 🤮</h3><ol>
+<li>SIFS(短 IFS)最短的 IFS<blockquote>
+<p>ACK,CTS,分片后的数据帧,回答 AP 探寻的帧都用 SIFS</p>
 </blockquote>
 </li>
-<li>PIFS(点协调IFS) 中等长度 <blockquote>
-<p>在PCF操作中用 </p>
+<li>PIFS(点协调 IFS) 中等长度<blockquote>
+<p>在 PCF 操作中用</p>
 </blockquote>
 </li>
-<li>DIFS(分布式协调IFS) 最长的IFS<blockquote>
+<li>DIFS(分布式协调 IFS) 最长的 IFS<blockquote>
 <p>用于异步帧竞争访问的时延</p>
 </blockquote>
 </li>
@@ -474,9 +476,9 @@
 <h3 id="退避算法"><a href="#退避算法" class="headerlink" title="退避算法"></a>退避算法</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSMA_CA%E9%80%80%E9%81%BF%E7%AE%97%E6%B3%95.png"></p>
 <h2 id="隐蔽站"><a href="#隐蔽站" class="headerlink" title="隐蔽站"></a>隐蔽站</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RTS_CTS.png"></p>
 <ol>
-<li>CSMA&#x2F;CD 可以检测冲突,CSMA&#x2F;CA发送数据的同时不能检测是否有冲突</li>
-<li>CSMA&#x2F;CD 适用 <code>总线型以太网</code>,CSMA&#x2F;CA适用<code>802.11a/b/g/n</code></li>
-<li>CSMA&#x2F;CD 通过电压方式检测, </li>
+<li>CSMA&#x2F;CD 可以检测冲突,CSMA&#x2F;CA 发送数据的同时不能检测是否有冲突</li>
+<li>CSMA&#x2F;CD 适用 <code>总线型以太网</code>,CSMA&#x2F;CA 适用<code>802.11a/b/g/n</code></li>
+<li>CSMA&#x2F;CD 通过电压方式检测,</li>
 <li>CSMA&#x2F;CA <code>能量检测</code>,<code>载波检测</code>,<code>能量载波混合检测</code></li>
 </ol>
 <h2 id="令牌环网"><a href="#令牌环网" class="headerlink" title="令牌环网"></a>令牌环网</h2><h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol>
@@ -497,22 +499,39 @@
 <p>以太网 逻辑结构是 <code>总线型</code>,<br>物理结构 是<code>星型</code>或者<code>拓展星型</code></p>
 <p>令牌环<code>IEEE 802.5</code> 逻辑是<code>环形</code> 物理是<code>星型</code></p>
 <p>FDDI<code>IEEE 802.8</code> 光纤分布数字接口,逻辑环形,物理双环</p>
-<p><code>IEEE802标准</code> 把数据链路层 </p>
+<p><code>IEEE802标准</code> 把数据链路层</p>
 <blockquote>
-<p>–&gt; 媒体接入控制子层(MAC) </p>
+<p>–&gt; 媒体接入控制子层(MAC)</p>
 <p>–&gt; 逻辑链路控制子层(LLC)</p>
 </blockquote>
-<h2 id="以太网传输介质"><a href="#以太网传输介质" class="headerlink" title="以太网传输介质"></a>以太网传输介质</h2><p>🤮可能选择题会问</p>
+<h2 id="以太网传输介质"><a href="#以太网传输介质" class="headerlink" title="以太网传输介质"></a>以太网传输介质</h2><p>🤮 可能选择题会问</p>
 <p><code>10BASE-T</code>非屏蔽双绞线 ,记一下这个差不多了,剩下的再问有点不礼貌了<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BC%A0%E8%BE%93%E4%BB%8B%E8%B4%A8.png"></p>
-<h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p>协议是<code>IEEE 802.3</code> </p>
+<h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p>协议是<code>IEEE 802.3</code></p>
 <ol>
 <li>以太网采取无连接的方式发送,不对数据帧编号,也不对数据帧确认,尽最大努力交付</li>
 <li>曼彻斯特编码</li>
 </ol>
+<h2 id="MAC-帧-重点"><a href="#MAC-帧-重点" class="headerlink" title="MAC 帧 重点"></a>MAC 帧 重点</h2><p><code>MAC</code>地址一共有 6 个字节 48 位</p>
+<p>因为有以太网和无线局域网,MAC 帧格式有两种(我居然一直都不知道)</p>
+<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/mac%E5%B8%A7.png"></p>
+<p>在发送 MAC 帧的时候前面还需要再插入一个<strong>前导码</strong>,这个前导码又有两个部分组成</p>
+<blockquote>
+<p>MAC 帧不需要帧结束符,每个 MAC 帧之间都有空隙,但是不等于 MAC 帧没有尾部</p>
+</blockquote>
+<p>由于<code>CSMA/CD</code>的限制,以太网帧的最小长度是 64B,注意 这个以太网帧的长度是不包括前面插入的 8B 的</p>
+<h3 id="高速以太网"><a href="#高速以太网" class="headerlink" title="高速以太网"></a>高速以太网</h3><ol>
+<li><p><code>100BASE-T</code> : <code>双绞线</code>,<code>星型拓扑结构</code>,<code>CSMA/CD协议</code> 可以全双工也可以半双工,在全双工模式下不需要使用<code>CSMA/CD</code> 帧间隔时间是 0.96$\mu$s</p>
+</li>
+<li><p>千兆网: 全双工不用<code>CSMA/CD</code> 半双工也需要</p>
+</li>
+<li><p>10GB 网: 只有全双工,不需要<code>CSMA/CD</code></p>
+</li>
+</ol>
+<h3 id="无线局域网"><a href="#无线局域网" class="headerlink" title="无线局域网"></a>无线局域网</h3><p>协议是<code>IEEE 802.11</code></p>
 <h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
-<li>数据链路层 以太网最大帧长度 1518 字节 </li>
-<li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU的范围是 46~1500字节</li>
+<li>数据链路层 以太网最大帧长度 1518 字节</li>
+<li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
 <li><code>OSI</code>体系中数据链路层 —&gt; 流量控制</li>
 <li><code>TCP/IP</code> 传输层 —&gt; 流量控制</li>
 <li><code>CSMA/CD</code> 碰撞检测</li>
