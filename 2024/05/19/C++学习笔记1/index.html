@@ -306,7 +306,65 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
+<h1 id="新的字面量"><a href="#新的字面量" class="headerlink" title="新的字面量"></a>新的字面量</h1><p>c++中的<code>long long </code>是一个至少<strong>64</strong>位的整数,也就是可以超过 64 位.不过书上没说</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+int main() &#123;
+    long long num = 65535ll;
+    long long otherNum = 65535;
+    auto res = num &lt;&lt; 16;
+    auto otherRes = otherNum &lt;&lt; 16;
+    std::cout &lt;&lt; res &lt;&lt; &quot; &quot; &lt;&lt; otherRes &lt;&lt; std::endl;
+    /* 在我这里两个都是 4294901760 但是加了ll后会让c++将long long 看做是64位，如果不加可能会将其视为32位进行处理，不同的编译器可能会有不同的做法
+    */
+    return 0;
+&#125;
+</code></pre>
+<h2 id="获得类型的最大值与最小值"><a href="#获得类型的最大值与最小值" class="headerlink" title="获得类型的最大值与最小值"></a>获得类型的最大值与最小值</h2><pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;limits&gt;
+int main() &#123;
+    std::cout &lt;&lt; std::numeric_limits&lt;int&gt;::max()&lt;&lt; std::endl;
+    //使用模版获得最大最小值而不是使用宏
+    return 0;
+&#125;
+</code></pre>
+<h2 id="内联命名空间"><a href="#内联命名空间" class="headerlink" title="内联命名空间"></a>内联命名空间</h2><pre><code class="cpp">#include &lt;iostream&gt;
+namespace parent
+&#123;
+    namespace child1
+    &#123;
+        auto function = []() -&gt; void
+        &#123; std::cout &lt;&lt; &quot;child1&quot;; &#125;;
+    &#125; // namespace child1
+    inline namespace child2
+    &#123;
+        auto function = []() -&gt; void
+        &#123;
+            std::cout &lt;&lt; &quot;child2&quot;;
+        &#125;;
+    &#125; // namespace child2
 
+&#125; // namespace parent
+
+int main()&#123;
+    parent::function(); //输出child2
+&#125;
+</code></pre>
+<p>通过<code>inline</code>可以把自命名空间内的东西拿到父命名空间中</p>
+<h2 id="嵌套命名空间"><a href="#嵌套命名空间" class="headerlink" title="嵌套命名空间"></a>嵌套命名空间</h2><pre><code class="cpp">namespace parent::child3
+&#123;
+    auto function = []() -&gt; void
+    &#123;
+        std::cout &lt;&lt; &quot;child3&quot;;
+    &#125;;
+&#125; // namespace parent::child3
+
+int main()
+&#123;
+    parent::child3::function(); // 输出child3
+&#125;
+</code></pre>
+<p>使用<code>namespace A::B::C</code>这种形式避免过多的嵌套缩进</p>
+<h2 id="右值引用"><a href="#右值引用" class="headerlink" title="右值引用"></a>右值引用</h2>
     </div>
     
     
