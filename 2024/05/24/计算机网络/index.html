@@ -527,17 +527,25 @@
 <li><p>10GB 网: 只有全双工,不需要<code>CSMA/CD</code></p>
 </li>
 </ol>
-<h3 id="无线局域网"><a href="#无线局域网" class="headerlink" title="无线局域网"></a>无线局域网</h3><p>协议是<code>IEEE 802.11</code>,使用星型拓扑,中心叫Access Point <code>AP</code> 在<code>MAC</code>层使用<code>CSMA/CA</code>协议</p>
-<p>IEEE 802.11 规定最小的构件单元 <code>BSS</code> ,各站在BSS中的或者是往外面的都需要通过<code>AP</code></p>
-<h3 id="IEEE-802-11-的MAC帧"><a href="#IEEE-802-11-的MAC帧" class="headerlink" title="IEEE 802.11 的MAC帧"></a>IEEE 802.11 的MAC帧</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IEEE802.11MAC%E5%B8%A7.png"><br>直接上图,主要信息就在前面30B上,当然后面还有4个MAC帧尾部<code>FCS</code>,首尾加起来一共34B</p>
-<p>前30B中最重要的是前面2B 必考重点</p>
+<h3 id="无线局域网"><a href="#无线局域网" class="headerlink" title="无线局域网"></a>无线局域网</h3><p>协议是<code>IEEE 802.11</code>,使用星型拓扑,中心叫 Access Point <code>AP</code> 在<code>MAC</code>层使用<code>CSMA/CA</code>协议</p>
+<p>IEEE 802.11 规定最小的构件单元 <code>BSS</code> ,各站在 BSS 中的或者是往外面的都需要通过<code>AP</code></p>
+<h3 id="IEEE-802-11-的-MAC-帧"><a href="#IEEE-802-11-的-MAC-帧" class="headerlink" title="IEEE 802.11 的 MAC 帧"></a>IEEE 802.11 的 MAC 帧</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IEEE802.11MAC%E5%B8%A7.png"><br>直接上图,主要信息就在前面 30B 上,当然后面还有 4 个 MAC 帧尾部<code>FCS</code>,首尾加起来一共 34B</p>
+<p>前 30B 中最重要的是前面 2B 必考重点</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/MAC%E5%B8%A7802.11%E5%9C%B0%E5%9D%80%E5%AD%97%E6%AE%B5.png" alt="alt text"></p>
-<h3 id="虚拟局域网VLAN"><a href="#虚拟局域网VLAN" class="headerlink" title="虚拟局域网VLAN"></a>虚拟局域网VLAN</h3><p>定义:将一个大的局域网分成逻辑上的几个小的子网,不同的子网之间是不同的广播域 <code>IEEE 802.3ac</code>协议<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/802.1Q%E5%B8%A7.png"></p>
+<h3 id="虚拟局域网-VLAN"><a href="#虚拟局域网-VLAN" class="headerlink" title="虚拟局域网 VLAN"></a>虚拟局域网 VLAN</h3><p>定义:将一个大的局域网分成逻辑上的几个小的子网,不同的子网之间是不同的广播域 <code>IEEE 802.3ac</code>协议<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/802.1Q%E5%B8%A7.png"></p>
 <blockquote>
 <p>相比较以太网帧因为插入了四个字节的<code>VLAN</code>标志,所以最大帧长是<strong>1522</strong>字节,</p>
-<p>以太网(有线局域网) 是1518 无线局域网最大是2312字节 无线局域网帧比有线的长很多</p>
+<p>以太网(有线局域网) 是 1518 无线局域网最大是 2312 字节 无线局域网帧比有线的长很多</p>
 </blockquote>
-<h4 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h4><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/vlan%E4%BC%A0%E8%BE%93%E4%B9%A0%E9%A2%98.png"></p>
+<h4 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h4><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/vlan%E4%BC%A0%E8%BE%93%E4%B9%A0%E9%A2%98.png"><br>分别讨论下面几种情况</p>
+<ol>
+<li>A 向 B 发送(同一个交换机,同一个 VLAN): 交换机根据 MAC 地址 发现是本交换机,本 vlan 所以就像普通以太网直接传送帧</li>
+<li>A -&gt; E(不同交换机,同一个 VLAN): 交换机 1 会将帧给转发给交换机 2, 在转发前要插入<code>VLAN</code>标签. 链路上传递是<code>802.1.Q</code>帧. 注意!!! 交换机 2 给 E 的时候会抽出<code>VLAN</code>标签这样,这样这个帧就退化成了标准以太网帧</li>
+<li>A -&gt; C(同一个交换机,不同 VLAN):虽然他们在同一个交换机,但是不能直接发送,需要上层路由器的帮助</li>
+</ol>
+<blockquote>
+<p>虚拟局域网<code>VLAN</code>是局域网给用户的一种服务,不是一种局域网类型</p>
+</blockquote>
 <h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
