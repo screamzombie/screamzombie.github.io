@@ -532,7 +532,13 @@
 <h3 id="IEEE-802-11-的MAC帧"><a href="#IEEE-802-11-的MAC帧" class="headerlink" title="IEEE 802.11 的MAC帧"></a>IEEE 802.11 的MAC帧</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IEEE802.11MAC%E5%B8%A7.png"><br>直接上图,主要信息就在前面30B上,当然后面还有4个MAC帧尾部<code>FCS</code>,首尾加起来一共34B</p>
 <p>前30B中最重要的是前面2B 必考重点</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/MAC%E5%B8%A7802.11%E5%9C%B0%E5%9D%80%E5%AD%97%E6%AE%B5.png" alt="alt text"></p>
-<h2 id="虚拟局域网VLAN"><a href="#虚拟局域网VLAN" class="headerlink" title="虚拟局域网VLAN"></a>虚拟局域网VLAN</h2><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h3 id="虚拟局域网VLAN"><a href="#虚拟局域网VLAN" class="headerlink" title="虚拟局域网VLAN"></a>虚拟局域网VLAN</h3><p>定义:将一个大的局域网分成逻辑上的几个小的子网,不同的子网之间是不同的广播域 <code>IEEE 802.3ac</code>协议<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/802.1Q%E5%B8%A7.png"></p>
+<blockquote>
+<p>相比较以太网帧因为插入了四个字节的<code>VLAN</code>标志,所以最大帧长是<strong>1522</strong>字节,</p>
+<p>以太网(有线局域网) 是1518 无线局域网最大是2312字节 无线局域网帧比有线的长很多</p>
+</blockquote>
+<h4 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h4><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/vlan%E4%BC%A0%E8%BE%93%E4%B9%A0%E9%A2%98.png"></p>
+<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
