@@ -562,7 +562,27 @@
 </blockquote>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ppp%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
 <p>ps 关于<code>CSMA/CD</code>的帧的间隔,已经考了好几次了可能是重点让算</p>
-<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="一些中继设备"><a href="#一些中继设备" class="headerlink" title="一些中继设备"></a>一些中继设备</h3><ol>
+<li>物理层:转发器,集线器</li>
+<li>数据链路层:网桥, 交换机</li>
+<li>网络层: 路由器</li>
+<li>网络层以上的: 网关</li>
+</ol>
+<h3 id="软件定义网络-SDN"><a href="#软件定义网络-SDN" class="headerlink" title="软件定义网络 SDN"></a>软件定义网络 SDN</h3><p>简单的说就是,原先的网络模式,路由器不仅需要保存转发表,还需要进行路由选择算法,在<code>SDN</code>中,会有一个远程控制器,来集中更新所有路由器的转发表,这样路由器只需要收到报文,查表转发即可</p>
+<blockquote>
+<p>SDN 编程接口:北向接口</p>
+<p>SDN 控制器和转发设备之间双向会话接口: 南向接口</p>
+<p>SDN 控制器内部之间的通信接口: 东西向接口</p>
+</blockquote>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><ol>
+<li>开环控制: 事先考虑好,静态控制,系统启动后不再需要修改,做决定时不考虑当前网络状态</li>
+<li>闭环控制: 事前不考虑,而是动态的根据网络状况进行调整</li>
+</ol>
+<h3 id="静态路由和动态路由"><a href="#静态路由和动态路由" class="headerlink" title="静态路由和动态路由"></a>静态路由和动态路由</h3><ol>
+<li>静态路由(非自适应路由算法):需要管理员提前配置 -&gt; 适用小型网络</li>
+<li>动态路由(自适应路由算法): 路由器之间动态交换信息</li>
+</ol>
+<h2 id="动态路由算法"><a href="#动态路由算法" class="headerlink" title="动态路由算法"></a>动态路由算法</h2><h3 id="距离-向量算法-RIP"><a href="#距离-向量算法-RIP" class="headerlink" title="距离-向量算法, RIP"></a>距离-向量算法, RIP</h3><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
