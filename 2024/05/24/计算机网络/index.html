@@ -598,7 +598,20 @@
 <blockquote>
 <p>由于互联网太过庞大,可能寻找到的并不是真的最短路径,王道书上说的是最短</p>
 </blockquote>
-<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h2 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ip%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F.png"></p>
+<ol>
+<li>首部长度 <code>4B</code>为单位,最大 60B,最小 20B</li>
+<li>总长度 <code>指首部和数据之和</code>的长度 单位是<code>字节B</code> 一个数据报最大长度是$2^{16}-1&#x3D;65535$</li>
+<li>标志 <code>MF</code>&#x3D; 表示还有分片 <code>MF</code>&#x3D;0 表示最后一个分片,中间一位是<code>DF</code> DF &#x3D; 0 时 才允许分片</li>
+<li>片偏移 <code>13位</code> 以 8 字节为单位,除了最后一片外,都是 8B 的整数位</li>
+<li>因为 MTU 最长是 1500B 所以 IP 数据报,首部+数据 不能超过这个,超过了就要分片</li>
+<li>TTL 8 位, 路由器在转发前,先把 TTL-1 如果被减为 0 则分组必须丢弃</li>
+<li>协议 8 位 6 表示<code>TCP</code> 17 表示<code>UDP</code></li>
+<li>首部校验和 16 位 只校验首部,不校验数据</li>
+<li>源地址: <code>4B</code> 发送方的 IP 地址</li>
+<li>目的地址: <code>4B</code>目的方的 IP 地址</li>
+</ol>
+<h3 id="五类-IP-地址"><a href="#五类-IP-地址" class="headerlink" title="五类 IP 地址"></a>五类 IP 地址</h3><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
