@@ -612,6 +612,20 @@
 <li>目的地址: <code>4B</code>目的方的 IP 地址</li>
 </ol>
 <h3 id="五类-IP-地址"><a href="#五类-IP-地址" class="headerlink" title="五类 IP 地址"></a>五类 IP 地址</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BA%94%E7%B1%BBip%E5%9C%B0%E5%9D%80.png"></p>
+<ol>
+<li>网络号全 0 表示本网络本身,比如 202.92.174.0</li>
+<li>主机号全 1 表示本网络的广播地址<code>直接广播地址</code>202.92.174.255</li>
+<li>127.x.x <code>环回地址</code></li>
+<li>32 位全 0, 0.0.0.0 表示本网络的本主机</li>
+<li>32 位全 1,255.255.255.255 表示 TCP&#x2F;IP 网络广播地址,<code>受限广播地址</code><br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E7%A7%8DIP%E5%9C%B0%E5%9D%80%E4%BD%BF%E7%94%A8%E8%8C%83%E5%9B%B4.png"></li>
+</ol>
+<h3 id="NAT-与私有-IP-网段"><a href="#NAT-与私有-IP-网段" class="headerlink" title="NAT 与私有 IP 网段"></a>NAT 与私有 IP 网段</h3><ol>
+<li>A 类 1 个 A 类网段 10.0.0.0~10.255.255.255</li>
+<li>B 类 16 个 B 类网段 172.16.0.0~172.31.255.255</li>
+<li>C 类 256 个 C 类网段 192.168.0.0~192.168.255.255</li>
+</ol>
+<p><code>私有IP地址</code> 又叫&#x3D;&gt; <code>可重用地址</code></p>
+<h4 id="NAT-转换表格式"><a href="#NAT-转换表格式" class="headerlink" title="NAT 转换表格式"></a>NAT 转换表格式</h4><p>{本地 ip 地址:端口} 和 {全球 ip 地址:端口}<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/NAT%E8%BD%AC%E6%8D%A2%E8%A1%A8.png"></p>
 <h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
