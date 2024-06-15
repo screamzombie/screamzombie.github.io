@@ -582,7 +582,23 @@
 <li>静态路由(非自适应路由算法):需要管理员提前配置 -&gt; 适用小型网络</li>
 <li>动态路由(自适应路由算法): 路由器之间动态交换信息</li>
 </ol>
-<h2 id="动态路由算法"><a href="#动态路由算法" class="headerlink" title="动态路由算法"></a>动态路由算法</h2><h3 id="距离-向量算法-RIP"><a href="#距离-向量算法-RIP" class="headerlink" title="距离-向量算法, RIP"></a>距离-向量算法, RIP</h3><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h2 id="动态路由算法"><a href="#动态路由算法" class="headerlink" title="动态路由算法"></a>动态路由算法</h2><h3 id="距离-向量算法-RIP"><a href="#距离-向量算法-RIP" class="headerlink" title="距离-向量算法, RIP"></a>距离-向量算法, RIP</h3><p>对于所有路由器发来的<code>RIP</code>报文,把每个距离+1 后储存下来,收到新的报文后按下面的情况进行处理</p>
+<ol>
+<li>如果表中不存在,就添加到项目中</li>
+<li>如果收到的比如某个目的地,已经在表中了,并且转发走的是同一个路由,但是距离改变了,则更新</li>
+<li>如果收到的一个相同的目的地,已经在表中了,但是新来的路由距离更短就更新,否则不更新,按最好的来</li>
+<li>如果 3 分钟还没有收到邻接路由器的报文,则标记为<code>16</code>表示不可达</li>
+</ol>
+<p>上述算法是<code>Bellman-Ford</code> 或者叫<code>Ford-Fulkerson</code></p>
+<h3 id="链路状态路由算法"><a href="#链路状态路由算法" class="headerlink" title="链路状态路由算法"></a>链路状态路由算法</h3><p>典型的链路状态路由算法是<code>OSPF</code>,一个节点将自己与相邻节点的信息通过<code>洪泛法</code>逐步发送到整个 网络的所有路由上. 节点变化时使用<code>迪杰斯特拉</code> 计算单源到达目的的最短路径</p>
+<h4 id="层次路由"><a href="#层次路由" class="headerlink" title="层次路由"></a>层次路由</h4><p>因特网 划分&#x3D;&gt; 许多小的自治系统</p>
+<p>一个自治系统 &#x3D;&gt; 包含很多小的局域网</p>
+<p>自治系统内部<code>IGP</code> 包括<code>RIP</code>,<code>OSPF</code></p>
+<p>自治系统之间<code>EGP</code> 用在不同自治系统之间交换信息,和在不同自治系统之间寻找最优路径,具体协议是 BGP</p>
+<blockquote>
+<p>由于互联网太过庞大,可能寻找到的并不是真的最短路径,王道书上说的是最短</p>
+</blockquote>
+<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
