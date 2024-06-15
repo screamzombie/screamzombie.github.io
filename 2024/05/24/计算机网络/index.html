@@ -611,7 +611,8 @@
 <li>源地址: <code>4B</code> 发送方的 IP 地址</li>
 <li>目的地址: <code>4B</code>目的方的 IP 地址</li>
 </ol>
-<h3 id="五类-IP-地址"><a href="#五类-IP-地址" class="headerlink" title="五类 IP 地址"></a>五类 IP 地址</h3><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h3 id="五类-IP-地址"><a href="#五类-IP-地址" class="headerlink" title="五类 IP 地址"></a>五类 IP 地址</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BA%94%E7%B1%BBip%E5%9C%B0%E5%9D%80.png"></p>
+<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
@@ -620,6 +621,17 @@
 <li><code>CSMA/CD</code> 碰撞检测</li>
 <li><code>CSMA/CA</code> 碰撞避免</li>
 <li><code>PPP</code>点对点,数据链路层,不要使用<code>CSMA/CD</code></li>
+<li><code>BGP</code> 五种报文六种状态<blockquote>
+<p>五种报文</p>
+<ol>
+<li><code>Open报文</code>:用于协商 BGP 参数，包括版本号，AS 号等信息。在两个路由器之间建立了 TCP 会话之后开始交换 Open 信息以确认是否能形成邻居关系，是 TCP 建立后发送的第一个信息，类似 OSPF 中的 DD 报文。</li>
+<li><code>Update报文</code>：用于 BGP 邻居间交换路由信息，其中包括撤销路由信息和可达路由信息以及其他路由属性，类似 OSPF 中的 LSU 报文。</li>
+<li><code>Keepalive报文</code>：用于保持 BGP 邻居关系，周期性交换，用于判断对等体之间的可达性，类似 OSPF 中的 Hello 报文。</li>
+<li><code>Notification报文</code>：差错通知，当 BGP 运行时发现错误，则 BGP speaker 会发送一个 Notification 报文来切断 BGP 邻居。</li>
+<li><code>Route-refresh报文</code>：用于改变路由策略后刷新 BGP 路由表，请求 BGP 对等体重新发送路由信息，只有支持 Route-refresh 能力的 BGP 设备会发送和响应此报文。</li>
+</ol>
+</blockquote>
+</li>
 </ol>
 <h1 id="附录-二-计算机网络的几种信息交换方式"><a href="#附录-二-计算机网络的几种信息交换方式" class="headerlink" title="附录 (二) 计算机网络的几种信息交换方式"></a>附录 (二) 计算机网络的几种信息交换方式</h1><h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>交换机本质是多端口网桥,通常工作在<code>全双工</code>,可以划分<code>冲突域</code></p>
 <ol>
