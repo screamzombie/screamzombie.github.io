@@ -621,7 +621,7 @@
 <li><code>CSMA/CD</code> 碰撞检测</li>
 <li><code>CSMA/CA</code> 碰撞避免</li>
 <li><code>PPP</code>点对点,数据链路层,不要使用<code>CSMA/CD</code></li>
-<li><code>BGP</code> 五种报文六种状态<blockquote>
+<li><code>BGP</code> 五种报文六种状态 应用层协议<blockquote>
 <p>五种报文</p>
 <ol>
 <li><code>Open报文</code>:用于协商 BGP 参数，包括版本号，AS 号等信息。在两个路由器之间建立了 TCP 会话之后开始交换 Open 信息以确认是否能形成邻居关系，是 TCP 建立后发送的第一个信息，类似 OSPF 中的 DD 报文。</li>
@@ -665,6 +665,11 @@
 </ol>
 </blockquote>
 </li>
+<li><code>TCP</code>、<code>UDP</code>是属于传输层的协议；</li>
+<li><code>IP</code>是属于网络层的协议；</li>
+<li><code>RIP</code> 用 <code>UDP</code>（RIP 用到传输层），所以 <code>RIP</code> 是应用层的协议；</li>
+<li><code>OSPF</code>协议是不使用<code>UDP数据报</code>传送，而是直接使用<code>IP数据报</code>传送，因此 OSPF 是被划分到属于网络层协议-这一点考研党要以考纲为标准）；</li>
+<li><code>BGP</code>用<code>TCP（RIP用到传输层</code>），所以 BGP 是应用层协议；</li>
 </ol>
 <h1 id="附录-二-计算机网络的几种信息交换方式"><a href="#附录-二-计算机网络的几种信息交换方式" class="headerlink" title="附录 (二) 计算机网络的几种信息交换方式"></a>附录 (二) 计算机网络的几种信息交换方式</h1><h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>交换机本质是多端口网桥,通常工作在<code>全双工</code>,可以划分<code>冲突域</code></p>
 <ol>
