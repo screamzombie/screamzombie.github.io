@@ -630,6 +630,39 @@
 <li><code>Notification报文</code>：差错通知，当 BGP 运行时发现错误，则 BGP speaker 会发送一个 Notification 报文来切断 BGP 邻居。</li>
 <li><code>Route-refresh报文</code>：用于改变路由策略后刷新 BGP 路由表，请求 BGP 对等体重新发送路由信息，只有支持 Route-refresh 能力的 BGP 设备会发送和响应此报文。</li>
 </ol>
+<p>六种状态</p>
+<ol>
+<li><p><code>Idle（空闲）</code>状态是 BGP 初始状态，在 Idle 状态下，BGP 拒绝邻居发送的连接请求，只有在收到本设备的 Start 事件后，BGP 才开始尝试和其他 BGP 对等体进行 TCP 连接，并转到 Connect 状态。</p>
+</li>
+<li><p><code>Connect(连接）</code>状态下，BGP 启动连接 Connect Retry（重传定时器），等待 TCP 完成连接。</p>
+<ul>
+<li>如果 TCP 连接成功，那么 BGP Speaker 向对等体发送 Open 报文，并转至 OpenSent 状态。</li>
+<li>如果 TCP 连接失败，那么 BGP 转至 Active 状态，反复尝试连接</li>
+<li>如果连接重传定时器超时，BGP 仍没有收到 BGP 对等体的响应，那么 BGP 继续尝试和其它 BGP 对等体进行 TCP 连接，停留在 Connect 状态。</li>
+</ul>
+</li>
+<li><p>在 <code>Active（活跃）</code>状态下，BGP 总是试图建立 TCP 连接</p>
+<ul>
+<li>如果 TCP 连接成功，那么 BGP Speaker 向对等体发送 Open 报文，并转至 OpenSent 状态。</li>
+<li>如果失败，那么 BGP 继续停留在 Active 状态。</li>
+<li>如果连接重传定时器超时，BGP 仍没有收到 BGP 对等体的响应，那么 BGP 继续尝试和其它 BGP 对等体进行 TCP 连接，停留在 Connect 状态。</li>
+</ul>
+</li>
+<li><p>在 <code>OpenSent(Open 已发送)</code>状态下，BGP Speaker 等待对等体回应的 Open 报文，并对 Open 报文中携带的 AS 号、版本号、认证码进行检查。</p>
+<ul>
+<li>收到的 OPen 报文正确，那么 BGP 发送 Keepalive 报文，并转至 OpenConfirm 状态。</li>
+<li>如果收到的 Open 报文有错误，那么 BGP 发送 Notification 报文给对等体，并转至 Idle 状态。</li>
+</ul>
+</li>
+<li><p>在 <code>OpenConfirm（Open 已确认）</code>状态下，BGP Speaker 等待对等体的 Keepalive 或 Notification 报文，</p>
+<ul>
+<li>如果收到 Keepalive 报文，则转至 Established 状态，</li>
+<li>如果收到 Notification 报文，则转至 Idle 状态。</li>
+</ul>
+</li>
+<li><p>在 <code>Established（连接已建立）</code>状态下，表示邻居状态已建立，BGP 可以和对等体交换 Update、Keepalive、Route-refresh 报文和 Notification 报文。</p>
+</li>
+</ol>
 </blockquote>
 </li>
 </ol>
