@@ -626,7 +626,14 @@
 </ol>
 <p><code>私有IP地址</code> 又叫&#x3D;&gt; <code>可重用地址</code></p>
 <h4 id="NAT-转换表格式"><a href="#NAT-转换表格式" class="headerlink" title="NAT 转换表格式"></a>NAT 转换表格式</h4><p>{本地 ip 地址:端口} 和 {全球 ip 地址:端口}<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/NAT%E8%BD%AC%E6%8D%A2%E8%A1%A8.png"></p>
-<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h4 id="子网掩码与-CIDR"><a href="#子网掩码与-CIDR" class="headerlink" title="子网掩码与 CIDR"></a>子网掩码与 CIDR</h4><p>比较简单,注意一下全 0 和全 1 的特殊情况即可</p>
+<h3 id="ARP-DHCP-和-ICMP"><a href="#ARP-DHCP-和-ICMP" class="headerlink" title="ARP DHCP 和 ICMP"></a>ARP DHCP 和 ICMP</h3><h4 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议<code>ARP</code></h4><p>作用:<code>ip地址</code> –映射–&gt; <code>MAC地址</code></p>
+<p><strong>网络层协议</strong></p>
+<blockquote>
+<p>每个主机都有一个自己的<code>ARP缓存表</code>,当需要转换时,查找这个表,如果有就好,没有就使用广播帧(全 F)发送 ARP 请求分组,对应的通过 ARP 响应分组(单播)回复</p>
+</blockquote>
+<p>tips: <code>ARP</code>工作在网络层,而<code>NAT</code>工作在传输层,因为 NAT 要看见<code>端口号</code>.</p>
+<h4 id="动态主机配置协议DHCP"><a href="#动态主机配置协议DHCP" class="headerlink" title="动态主机配置协议DHCP"></a>动态主机配置协议<code>DHCP</code></h4><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
