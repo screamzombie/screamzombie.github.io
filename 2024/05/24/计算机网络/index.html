@@ -659,6 +659,22 @@
 <li>参数问题:收到的报文有值不正确</li>
 <li>改变路由:有更好的路由了</li>
 </ol>
+<h3 id="IP-组播"><a href="#IP-组播" class="headerlink" title="IP 组播"></a>IP 组播</h3><p>组播仅应用于<code>UDP</code>,一个主机可以在多个组中</p>
+<p>组播 主机需要使用<code>IGMP</code>(因特网组管理协议)</p>
+<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95%E6%92%AD%E4%B8%8E%E7%BB%84%E6%92%AD.png"></p>
+<h4 id="IP-组播地址"><a href="#IP-组播地址" class="headerlink" title="IP 组播地址"></a>IP 组播地址</h4><p>IP 组播使用<code>D类</code>地址,D 类前 4 位是<code>1110</code>,因此 D 类地址范围是<br><code>224.0.0.0</code>~&#96;239.255.255.255&#96;,每个 D 类标志代表一个组播组</p>
+<p>组播 IP 数据报,使用 D 类,并且协议字段数值是<code>2</code>表明使用<code>IGMP</code></p>
+<p>tips</p>
+<ol>
+<li>组播是尽最大努力交付</li>
+<li>组播地址只能是目的地址</li>
+<li><strong>组播数据报不产生 ICMP 差错报文</strong></li>
+<li>不是所有的 D 类地址都可以作为组播地址</li>
+</ol>
+<h4 id="D-类地址与以太网组播地址的映射关系"><a href="#D-类地址与以太网组播地址的映射关系" class="headerlink" title="D 类地址与以太网组播地址的映射关系"></a>D 类地址与以太网组播地址的映射关系</h4><p>TODO: 几乎不可能考具体转换吧</p>
+<p>注意的有五位不做映射即可</p>
+<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/D%E7%B1%BBIP%E5%9C%B0%E5%9D%80%E4%B8%8E%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%BB%84%E6%92%AD%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84.png"></p>
+<h3 id="移动-IP"><a href="#移动-IP" class="headerlink" title="移动 IP"></a>移动 IP</h3><p>移动IP中每个移动站都有一个原始地址即<code>永久地址</code>,移动站原始链接网络称为<code>归属网络</code>,永久地址和归属网络的关系是不变的 </p>
 <h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
