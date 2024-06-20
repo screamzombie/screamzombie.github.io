@@ -686,6 +686,16 @@
 <p>移动站在归属网络时使用<code>TCP/IP</code>进行通信</p>
 <p>外地代理向被访网络的移动站发送数据时,使用移动站的<code>MAC地址</code></p>
 </blockquote>
+<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p>传输层的 SAP 是<code>端口</code>,16bit,可以表示<code>65535</code>个不同的端口号</p>
+<h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><p>大的说有两类,<code>服务器</code>用的和<code>客户端</code>用的</p>
+<p>其中服务器用的又有两类</p>
+<blockquote>
+<ol>
+<li><code>熟知端口号</code> 范围是 0~1023</li>
+<li><code>登记端口号</code> 范围是 1024~49151 给没有熟知端口号的应用程序用的</li>
+</ol>
+</blockquote>
+<p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%86%9F%E7%9F%A5%E7%AB%AF%E5%8F%A3%E5%8F%B7.png"></p>
 <h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
