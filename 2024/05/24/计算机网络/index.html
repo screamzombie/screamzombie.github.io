@@ -689,14 +689,35 @@
 <h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p>传输层的 SAP 是<code>端口</code>,16bit,可以表示<code>65535</code>个不同的端口号</p>
 <h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><p>大的说有两类,<code>服务器</code>用的和<code>客户端</code>用的</p>
 <p>其中服务器用的又有两类</p>
-<blockquote>
+<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><blockquote>
 <ol>
 <li><code>熟知端口号</code> 范围是 0~1023</li>
 <li><code>登记端口号</code> 范围是 1024~49151 给没有熟知端口号的应用程序用的</li>
 </ol>
 </blockquote>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%86%9F%E7%9F%A5%E7%AB%AF%E5%8F%A3%E5%8F%B7.png"></p>
-<h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>客户端使用的端口号 范围是 49152~65535,用户进程启动时才短暂的动态的选择 又叫<code>临时端口号</code></p>
+<h2 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h2><p>标识一台主机的不同进程</p>
+<p>Socket &#x3D; (IP 地址:端口号)</p>
+<h2 id="无连接服务和面向连接服务"><a href="#无连接服务和面向连接服务" class="headerlink" title="无连接服务和面向连接服务"></a>无连接服务和面向连接服务</h2><h3 id="TCP-面向连接服务"><a href="#TCP-面向连接服务" class="headerlink" title="TCP 面向连接服务"></a><code>TCP</code> 面向连接服务</h3><p>比如文件传输<code>FTP</code>,超文本协议<code>HTTP</code>,远程登录<code>TELNET</code></p>
+<h3 id="UDP-无连接非可靠"><a href="#UDP-无连接非可靠" class="headerlink" title="UDP 无连接非可靠"></a><code>UDP</code> 无连接非可靠</h3><p>小文件传输协议<code>TFTP</code><br>,<code>DNS</code><br>,<code>SNMP</code><br>,实时传输协议<code>RTP</code></p>
+<h2 id="UDP-数据报"><a href="#UDP-数据报" class="headerlink" title="UDP 数据报"></a>UDP 数据报</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<li><p>UDP 无需建立连接,分组开销小</p>
+</li>
+<li><p><code>TCP</code> 20B 首部, <code>UDP</code>仅 8B 首部</p>
+</li>
+<li><p><code>UDP</code>没有拥塞控制</p>
+</li>
+<li><p><code>UDP</code>支持一对一,一对多,多对一,多对多的交互通信</p>
+</li>
+</ul>
+<h3 id="UDP-首部"><a href="#UDP-首部" class="headerlink" title="UDP 首部"></a>UDP 首部</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E9%A6%96%E9%83%A8.png"></p>
+<p>注意:</p>
+<ol>
+<li>源端口，在需要对方回信时选用,如果不需要时可以全 0</li>
+<li>长度,UDP 数据报最小长度是 8 仅仅首部</li>
+</ol>
+<h4 id="UDP-校验和计算"><a href="#UDP-校验和计算" class="headerlink" title="UDP 校验和计算"></a>UDP 校验和计算</h4><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
