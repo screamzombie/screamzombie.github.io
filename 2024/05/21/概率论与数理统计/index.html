@@ -185,7 +185,7 @@
 <h2 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h2><p>二项分布可以看成遵循伯努利分布的事件的结果之和。抛掷一枚均质硬币，扔20次，有多少次扔出正面</p>
 <h2 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h2><p>泊松分布适合于描述单位时间内随机事件发生的次数的概率分布。如某一服务设施在一定时间内受到的服务请求的次数，电话交换机接到呼叫的次数、汽车站台的候客人数、机器出现的故障数、自然灾害发生的次数、DNA序列的变异数、放射性原子核的衰变数、激光的光子数分布等等。</p>
 <p><img src="/../images/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/image.png" alt="泊松分布"></p>
-<p>$${\displaystyle P(X&#x3D;k)&#x3D;{\frac {e^{-\lambda }\lambda ^{k}}{k!}}}$$</p>
+<p>$$<br>{\displaystyle P(X&#x3D;k)&#x3D;{\frac {e^{-\lambda }\lambda ^{k}}{k!}}}<br>$$</p>
 <h2 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h2><p>几何分布（英语：Geometric distribution）指的是以下两种离散型概率分布中的一种：</p>
 <ul>
 <li><p>在伯努利试验中，得到一次成功所需要的试验次数得到一次成功所需要的试验次数𝑋，X的值域是{ 1, 2, 3, … }</p>
@@ -194,10 +194,10 @@
 </li>
 </ul>
 <p>这两种分布不应该混淆。前一种形式经常被称作shifted geometric distribution；但是，为了避免歧义，最好明确地说明取值范围。</p>
-<p>$$P(X&#x3D;k)&#x3D;(1-p)^{k-1} p, k&#x3D;1,2, \ldots$$</p>
+<p>$$<br>P(X&#x3D;k)&#x3D;(1-p)^{k-1} p, k&#x3D;1,2, \ldots<br>$$</p>
 <p>说人话就是，前面都是失败的，直到那一次成功了，因此用这个公式。</p>
 <h2 id="超几何分布"><a href="#超几何分布" class="headerlink" title="超几何分布"></a>超几何分布</h2><p>公式</p>
-<p>$${p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}} $$</p>
+<p>$$<br>{p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}}<br>$$</p>
 <p>例子</p>
 <p>设有N件产品，其中有M件次品，现在从中任取n件，问其中恰有k(k≤M)件次品的概率是多少？</p>
 <p>解释</p>
@@ -205,23 +205,23 @@
 <p>tips</p>
 <p>虽然几何分布和超几何分布名字相似但是他们有很大的不同,二项分布就像一件事在平面上重复多次。而超几何分布就像，一件事在每个维度上都只做一次</p>
 <h2 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔</p>
-<p>$$f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0$$<br>$$f(x) &#x3D;0,x&lt;&#x3D;0$$</p>
+<p>$$<br>f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0<br>$$<br>$$<br>f(x) &#x3D;0,x&lt;&#x3D;0<br>$$</p>
 <p><del>为什么分开写,因为没配置好不支持&#x2F;begin</del></p>
 <h2 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h2><p>公式</p>
-<p>$$f(x)&#x3D;\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{–\frac{(x \mu)^{2}}{2 \sigma^{2}}},-\infty&lt;x&lt;+\infty$$</p>
+<p>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{–\frac{(x \mu)^{2}}{2 \sigma^{2}}},-\infty&lt;x&lt;+\infty<br>$$</p>
 <h1 id="方差-期望和协方差"><a href="#方差-期望和协方差" class="headerlink" title="方差,期望和协方差"></a>方差,期望和协方差</h1><h2 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h2><blockquote>
 <p>协方差(Covariance)在概率论和统计学中用于衡量两个变量的总体误差。它表示的是两个变量的变化趋势是否一致</p>
 </blockquote>
 <h1 id="随机变量和分布函数"><a href="#随机变量和分布函数" class="headerlink" title="随机变量和分布函数"></a>随机变量和分布函数</h1><h2 id="分布函数"><a href="#分布函数" class="headerlink" title="分布函数"></a>分布函数</h2><ol>
 <li>单调递增,且右连续</li>
-<li>对于 $\forall x{_1} x{_2}(x_1 &lt;x_2)有P\lbrace x_1 &lt; X \leq x{_2} \rbrace &#x3D; F(x_2)-F(x_1)$</li>
+<li>有<br>$$<br>\forall x{_1} x{_2}(x_1 &lt;x_2)有P\lbrace x_1 &lt; X \leq x{_2} \rbrace &#x3D; F(x_2)-F(x_1)<br>$$</li>
 </ol>
-<h2 id="常见分布函数"><a href="#常见分布函数" class="headerlink" title="常见分布函数"></a>常见分布函数</h2><h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$$f(x)&#x3D; \begin{cases}\frac{1}{b-a},a&lt;x&lt;b,\0,其他,\end{cases}$$ </p>
+<h2 id="常见分布函数"><a href="#常见分布函数" class="headerlink" title="常见分布函数"></a>常见分布函数</h2><h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$$<br>f(x)&#x3D; \begin{cases}\frac{1}{b-a},a&lt;x&lt;b,\0,其他,\end{cases}<br>$$</p>
 <p>人话:总和为1,当然越长每个点的概率密度越低就是长这样的.</p>
-<p>分布函数<br>$$F( x ) &#x3D; \begin{cases}0 ,&amp; x &lt; a ,\[2ex]\frac{x - a}{b - a},&amp; a \leqslant x &lt; b ,\[2ex]1 ,&amp; x \geqslant b .\end{cases}$$</p>
-<h3 id="指数分布-1"><a href="#指数分布-1" class="headerlink" title="指数分布"></a>指数分布</h3><p>概率密度函数长这样$f(x)&#x3D;\left{\begin{matrix}\lambda\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0,\end{matrix}\right.$</p>
-<p>分布函数长这样$F(x)&#x3D;\left{\begin{matrix}1-\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0.\end{matrix}\right.$</p>
-<h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p>一般正态分布的分布函数长这样$f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\quad(-\infty&lt;x&lt;+\infty)$</p>
+<p>分布函数<br>$$<br>F( x ) &#x3D; \begin{cases}0 ,&amp; x &lt; a ,\[2ex]\frac{x - a}{b - a},&amp; a \leqslant x &lt; b ,\[2ex]1 ,&amp; x \geqslant b .\end{cases}<br>$$</p>
+<h3 id="指数分布-1"><a href="#指数分布-1" class="headerlink" title="指数分布"></a>指数分布</h3><p>概率密度函数长这样<br>$$<br>f(x)&#x3D;\left{\begin{matrix}\lambda\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0,\end{matrix}\right.<br>$$</p>
+<p>分布函数长这样<br>$$<br>F(x)&#x3D;\left{\begin{matrix}1-\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0.\end{matrix}\right.<br>$$</p>
+<h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p>一般正态分布的分布函数长这样<br>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\quad(-\infty&lt;x&lt;+\infty)<br>$$</p>
 
     </div>
     
