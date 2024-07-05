@@ -170,7 +170,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p><img src="/../images/Probability.png" alt="概率论与数理统计"></p>
+        <p><img src="/../images/Probability.png" alt="概率论与数理统计"><br><del>建议使用Typora阅读本文</del></p>
 <span id="more"></span>
 <h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><ol>
 <li><p>概率密度函数 (Probability density function) </p>
@@ -198,10 +198,6 @@
 <p>说人话就是，前面都是失败的，直到那一次成功了，因此用这个公式。</p>
 <h2 id="超几何分布"><a href="#超几何分布" class="headerlink" title="超几何分布"></a>超几何分布</h2><p>公式</p>
 <p>$$<br>{p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}}<br>$$</p>
-<p>例子</p>
-<p>设有N件产品，其中有M件次品，现在从中任取n件，问其中恰有k(k≤M)件次品的概率是多少？</p>
-<p>解释</p>
-<p>设N件产品中任取n件为事件A，则事件A共包含 $C_{N}^{n}$恰好取出k个残次品$C_{N}^{k}$因此在剩下的正品中你只能取$n-k$个 因此是$C_{N-k}^{n-k}$</p>
 <p>tips</p>
 <p>虽然几何分布和超几何分布名字相似但是他们有很大的不同,二项分布就像一件事在平面上重复多次。而超几何分布就像，一件事在每个维度上都只做一次</p>
 <h2 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔</p>
@@ -221,7 +217,7 @@
 <p>分布函数<br>$$<br>F( x ) &#x3D; \begin{cases}0 ,&amp; x &lt; a ,\[2ex]\frac{x - a}{b - a},&amp; a \leqslant x &lt; b ,\[2ex]1 ,&amp; x \geqslant b .\end{cases}<br>$$</p>
 <h3 id="指数分布-1"><a href="#指数分布-1" class="headerlink" title="指数分布"></a>指数分布</h3><p>概率密度函数长这样<br>$$<br>f(x)&#x3D;\left{\begin{matrix}\lambda\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0,\end{matrix}\right.<br>$$</p>
 <p>分布函数长这样<br>$$<br>F(x)&#x3D;\left{\begin{matrix}1-\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0.\end{matrix}\right.<br>$$</p>
-<h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p>一般正态分布的分布函数长这样<br>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\quad(-\infty&lt;x&lt;+\infty)<br>$$</p>
+<h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p><strong>一般正态分布</strong>的概率密度函数长这样<br>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\quad(-\infty&lt;x&lt;+\infty)<br>$$<br>分布函数<br>$$<br>F(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^{x}\mathrm{e}^{-\frac{(t-\mu)^{2}}{2\sigma^{2}}}\mathrm{d}t<br>$$<br><strong>标准正态分布</strong><br>$$<br>\begin{equation}<br>    \varphi(x)&#x3D;\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^{2}}{2}}(-\infty&lt;x&lt;+\infty),\quad\Phi(x)&#x3D;\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}\mathrm{e}^{-\frac{t^{2}}{2}}\mathrm{d}t.<br>\end{equation}<br>$$</p>
 
     </div>
     
