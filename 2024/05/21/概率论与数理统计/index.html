@@ -170,7 +170,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p><img src="/../images/Probability.png" alt="概率论与数理统计"><br><del>建议使用Typora阅读本文</del></p>
+        <p><img src="/../images/Probability.png" alt="概率论与数理统计"><br><strong><del>建议使用Typora阅读本文</del></strong></p>
 <span id="more"></span>
 <h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><ol>
 <li><p>概率密度函数 (Probability density function) </p>
@@ -218,6 +218,17 @@
 <h3 id="指数分布-1"><a href="#指数分布-1" class="headerlink" title="指数分布"></a>指数分布</h3><p>概率密度函数长这样<br>$$<br>f(x)&#x3D;\left{\begin{matrix}\lambda\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0,\end{matrix}\right.<br>$$</p>
 <p>分布函数长这样<br>$$<br>F(x)&#x3D;\left{\begin{matrix}1-\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0.\end{matrix}\right.<br>$$</p>
 <h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p><strong>一般正态分布</strong>的概率密度函数长这样<br>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\quad(-\infty&lt;x&lt;+\infty)<br>$$<br>分布函数<br>$$<br>F(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^{x}\mathrm{e}^{-\frac{(t-\mu)^{2}}{2\sigma^{2}}}\mathrm{d}t<br>$$<br><strong>标准正态分布</strong><br>$$<br>\begin{equation}<br>    \varphi(x)&#x3D;\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^{2}}{2}}(-\infty&lt;x&lt;+\infty),\quad\Phi(x)&#x3D;\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}\mathrm{e}^{-\frac{t^{2}}{2}}\mathrm{d}t.<br>\end{equation}<br>$$</p>
+<blockquote>
+<p>这俩都读Phi，左边是小写表示密度，右边是大写表示分布</p>
+</blockquote>
+<p>标准正态分布的性质有</p>
+<ol>
+<li><p>偶函数<br> $$<br> \varphi(-x) &#x3D; \varphi(x)<br> $$</p>
+</li>
+<li><p>左侧递增，右侧递减</p>
+</li>
+</ol>
+<p>$$<br>在x&#x3D;0处取得最大值\frac{1}{\sqrt{2\pi}}<br>$$</p>
 
     </div>
     
