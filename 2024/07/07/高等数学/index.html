@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: 苹果 | Res Publica</title>
+    <title>高等数学 | Res Publica</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,71 +145,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/C/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                C++
-            </a>
+            <div class="article">
+    <div>
+        <h1>高等数学</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/7/7
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                C++学习笔记
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/408/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                408
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Math/" style="background: #00bcd4">
+        <span class="category">
+            <a href="/categories/Math/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -214,41 +167,35 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E9%85%8D%E7%BD%AE/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                配置
-            </a>
-        </span>
-        
-        
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2024/5/19</div>
-            <a href="/2024/05/19/only_apple_can_do/">
-                <h3>only apple can do</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E8%8B%B9%E6%9E%9C/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        苹果
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p><strong><del>请使用人脑编译本文的 Latex 公式</del></strong></p>
+<span id="more"></span>
+
+<h1 id="无穷级数"><a href="#无穷级数" class="headerlink" title="无穷级数"></a>无穷级数</h1><h2 id="收敛"><a href="#收敛" class="headerlink" title="收敛"></a>收敛</h2><h3 id="常见性质"><a href="#常见性质" class="headerlink" title="常见性质"></a>常见性质</h3><p><code>收敛</code>,<code>绝对收敛</code>,<code>条件收敛</code> 是三个不同的概念</p>
+<ol>
+<li>收敛:$S_n&#x3D;\sum\limits_{k&#x3D;1}^nu_k&#x3D;u_1+u_2+\cdots+u_n,(n&#x3D;1,2,\cdots)$ 当$\lim_{n\to\infty}S_{n}存在$则可以说该数列收敛</li>
+<li>绝对收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$ 收敛,且各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$收敛</li>
+<li>条件收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$收敛 但各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$不收敛</li>
+</ol>
+<h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><p>某个级数是否收敛的必要条件: $\operatorname*{lim}<em>{n\to\infty}u</em>{n}&#x3D;0$ 这是必要条件不是说满足了就一定收敛,而是不满足一定发散</p>
+<h3 id="收敛级数的常见运算法则"><a href="#收敛级数的常见运算法则" class="headerlink" title="收敛级数的常见运算法则"></a>收敛级数的常见运算法则</h3><ol>
+<li><p>$\sum_{n&#x3D;1}^{\infty}\left(\lambda u_{n}+\mu v_{n}\right)&#x3D;\lambda\sum_{n&#x3D;1}^{\infty}u_{n}+\mu\sum_{n&#x3D;1}^{\infty}v_{n}$ 其中$\lambda$ 和 $\mu$都是常数</p>
+</li>
+<li><p>若$\sum_{n&#x3D;1}^{\infty}u_n$ 和 $\sum_{n&#x3D;1}^{\infty}v_n$一个<strong>收敛</strong>一个<strong>发散</strong>则有$\sum_{n&#x3D;1}^{\infty}(u_{n}\pm v_{n})$发散.</p>
+</li>
+<li><p>若$\sum_{n&#x3D;1}^{\infty}u_n$ 和 $\sum_{n&#x3D;1}^{\infty}v_n$均发散则$\sum_{n&#x3D;1}^{\infty}(u_{n}\pm v_{n})$的敛散性需要具体讨论</p>
+</li>
+</ol>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -280,6 +227,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
