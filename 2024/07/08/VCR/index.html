@@ -170,14 +170,28 @@
     </div>
     
     <div class="content" v-pre>
-        <p><del>感谢电信,让我的全家桶报废</del></p>
+        <p><del>感谢电信,让我的  全家桶报废</del></p>
 <span id="more"></span>
+
 <h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="2023-22-题"><a href="#2023-22-题" class="headerlink" title="2023 22 题"></a>2023 22 题</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/../images/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%9C%9F%E9%A2%98/%E6%A6%82%E7%8E%87%E8%AE%BA/2023_22.png"></p>
 <h3 id="解析与思路"><a href="#解析与思路" class="headerlink" title="解析与思路"></a>解析与思路</h3><h4 id="第一问"><a href="#第一问" class="headerlink" title="第一问"></a>第一问</h4><ol>
 <li>利用这个式子$Cov(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]}$或$Cov(X,Y)&#x3D;E(XY)-E(X)E(Y)$计算协方差,本题我们选后者</li>
 <li>这个式子需要知道两者的概率密度,和两者成绩的概率密度因此我们需要会算二维随机变量的<code>边缘密度函数</code><br><img src="/../images/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%9C%9F%E9%A2%98/%E6%A6%82%E7%8E%87%E8%AE%BA/A_2023_22_1.png"></li>
 </ol>
-
+<p>补充一个概率论协方差公式</p>
+<blockquote>
+<p>$Cov(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]} &#x3D;E(XY)-E(X)E(Y)$</p>
+<p>proof:<br>$Cov(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]}$ 因为$E(X),E(Y)$可以看做常数</p>
+<p>$E{XY- E(Y)X-E(X)Y+E(X)E(Y)}$看做常数提出来</p>
+<p>先把 E(Y)看做常数,还剩下个 X 所以是 E(X),第二个把 E(X)看做常数,剩下的是 Y 接着是 E(X) 最后一项 E{E(X)E(Y)},E(X)E(Y)都是常数,取平均数后也不变,常数的期望还是常数所以是 E(X)E(Y)</p>
+<p>$E(xy)-E(x)E(y)-E(x)E(y)+E(x)E(y)$</p>
+<p>$E{XY}-E(Y)E{X}$</p>
+</blockquote>
+<h4 id="第二问"><a href="#第二问" class="headerlink" title="第二问"></a>第二问</h4><p><img src="/../images/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%9C%9F%E9%A2%98/%E6%A6%82%E7%8E%87%E8%AE%BA/A_2023_22_2.png"></p>
+<p>如果$f_X(x)f_Y(y) &#x3D; f(x,y)$则两个变量相互独立</p>
+<p>如果$f_X(x)f_Y(y) \neq f(x,y)$则两个变量相互独立</p>
+<h4 id="第三问"><a href="#第三问" class="headerlink" title="第三问"></a>第三问</h4><p>这种题都需要分情况讨论,$z&lt;0$几乎不存在,肯定是 0,$z &gt; 1$远超过范围包括了所有范围即 1,只有在$0&lt;z&lt;1$的时候才是两者重复的,这是一个极坐标积分</p>
+<h2 id="2022-22-题"><a href="#2022-22-题" class="headerlink" title="2022 22 题"></a>2022 22 题</h2>
     </div>
     
     
