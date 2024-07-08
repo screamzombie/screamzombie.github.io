@@ -208,6 +208,15 @@
 <p>$$<br>f(x) &#x3D;0,x&lt;&#x3D;0<br>$$</p>
 <h2 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h2><p>公式</p>
 <p>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{–\frac{(x \mu)^{2}}{2 \sigma^{2}}},-\infty&lt;x&lt;+\infty<br>$$</p>
+<h1 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h1><p>考研范围内一般只考二维随机变量</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>设$(X,Y)$是二维随机变量,对于任意的实数$x,y$称二元函数$F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}$记成$P{X\leqslant x,Y\leqslant y}(-\infty&lt;x,y&lt;+\infty)$为随机变量$(X,Y)$的<code>分布函数</code>或者叫随机变量 X,Y 的<code>联合分布函数</code></p>
+<h2 id="二维随机变量的边缘密度函数"><a href="#二维随机变量的边缘密度函数" class="headerlink" title="二维随机变量的边缘密度函数"></a>二维随机变量的边缘密度函数</h2><p>有一个二维随机变量$(X,Y)$的分布函数为$F(X,Y)$则</p>
+<p>$F_X(x)&#x3D;P{X\leq x }$是关于 X 的<code>边缘分布函数</code><br>$F_Y(t)&#x3D;P{Y\leq y }$是关于 Y 的<code>边缘分布函数</code></p>
+<p>关系<br>$F_X(x)&#x3D;P{X\leq x }&#x3D;P{X \leq x,Y &lt; + \infty} &#x3D; F(x,+ \infty) &#x3D; \lim_{y \to +\infty} F(x,y)$</p>
+<p>tips:</p>
+<blockquote>
+<p>(X,Y) 可以推出 X,Y 的边缘分布函数,但是反过来不一定成立.只有当 X,Y 相互独立时才能由边缘密度函数反推原本的分布函数</p>
+</blockquote>
 <h1 id="方差-期望和协方差"><a href="#方差-期望和协方差" class="headerlink" title="方差,期望和协方差"></a>方差,期望和协方差</h1><h2 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h2><blockquote>
 <p>协方差(Covariance)在概率论和统计学中用于衡量两个变量的总体误差。它表示的是两个变量的变化趋势是否一致</p>
 </blockquote>
@@ -247,7 +256,7 @@
 <li><p>对于$\forall a&gt;0$ 有$P{|X|\leqslant a}&#x3D;2\Phi(a)-1$</p>
 </li>
 </ol>
-<h3 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>考研中涉及的多为二维随机变量</p>
+<h3 id="多维随机变量及其分布-1"><a href="#多维随机变量及其分布-1" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>考研中涉及的多为二维随机变量</p>
 <p>$$<br>F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}\frac{\text{记成}}\Longleftrightarrow\boldsymbol{P}\left{X\leqslant x,Y\leqslant y\right}\left(-\infty&lt;x,y&lt;+\infty\right)<br>$$</p>
 <p>叫二维随机变量的$(X,Y)$的<strong>分布函数</strong>或<strong>联合分布函数</strong></p>
 <h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><ol>
@@ -317,7 +326,11 @@
 <p>定义:设$Y1,Y2,\dots,Y_n,\dots$是一个随机变量序列,a 是一个常数,对于任意给定的整数$\varepsilon$有$\lim_{n\to\infty}\boldsymbol{P}\left{\begin{array}{c|c}Y_n&amp;-a&amp;|&lt;\varepsilon\end{array}\right}&#x3D;1$成立,则可以说此随机变量依概率收敛到这个常数</p>
 <p>不严谨的说法就是在相当大的次数的试验后,类似于无穷级数那样,可以把这个随机变量当做常数了,还有依概率收敛到另一个随机变量,不在考纲内跳过</p>
 <h3 id="性质-2"><a href="#性质-2" class="headerlink" title="性质"></a>性质</h3><p>若有$X_n\xrightarrow{P}a,Y_n\xrightarrow{P}b$又有$g(x,y)$在$(a,b)$连续<br>有$g(X_n,Y_n)\xrightarrow{P}g(a,b)$</p>
-<h2 id="切比雪夫不等式-近年的重点"><a href="#切比雪夫不等式-近年的重点" class="headerlink" title="切比雪夫不等式(近年的重点)"></a>切比雪夫不等式(近年的重点)</h2><h1 id="数理统计"><a href="#数理统计" class="headerlink" title="数理统计"></a>数理统计</h1><h1 id="参数估计和假设检验"><a href="#参数估计和假设检验" class="headerlink" title="参数估计和假设检验"></a>参数估计和假设检验</h1><h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2>
+<h2 id="切比雪夫不等式-近年的重点"><a href="#切比雪夫不等式-近年的重点" class="headerlink" title="切比雪夫不等式(近年的重点)"></a>切比雪夫不等式(近年的重点)</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><p>设随机变量 X 的数学期望和方差都存在对与任意给定的$\varepsilon$总有<br>$\boldsymbol{P}{|X-\boldsymbol{E}X|\geqslant\varepsilon}\leqslant\frac{\boldsymbol{D}X}{\varepsilon^{2}}$或者 $\boldsymbol{P}{|X-\boldsymbol{E}X|&lt;\boldsymbol{\varepsilon}|\geqslant1-\frac{\boldsymbol{D}X}{\boldsymbol{\varepsilon}^{2}}$</p>
+<h3 id="人话"><a href="#人话" class="headerlink" title="人话"></a>人话</h3><p>切比雪夫不等式是经验法则的一般化形式或者说保守的估计,假如我们有一个随机变量 X,我们只知道 E(X)&#x3D;100,D(X)&#x3D;50,X 的具体形状我们不知道.假如我们知道具体形状,算$P{80&lt;X &lt;100 }$就可以采取积分的方式了,但问题是我们不知道,所以这就是切比雪夫不等式的用处了.当我们不知道具体分布时仍然可以求得一个保守的下限</p>
+<p>公式:$\boldsymbol{P}{|X-\boldsymbol{E}X|\geqslant\varepsilon}\leqslant\frac{\boldsymbol{D}X}{\varepsilon^{2}}$ 或者</p>
+<h2 id="切比雪夫大数定律"><a href="#切比雪夫大数定律" class="headerlink" title="切比雪夫大数定律"></a>切比雪夫大数定律</h2><h3 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h3><p>假设${X_n }{ n&#x3D;1,2,3\dots }$是相互独立(可以放宽到两两不相关)的随机变量序列(这里的每个${X_i}$不是一个数,而都是一个随机序列),且${DX_i}$存在且一致有上界</p>
+<h1 id="数理统计"><a href="#数理统计" class="headerlink" title="数理统计"></a>数理统计</h1><h1 id="参数估计和假设检验"><a href="#参数估计和假设检验" class="headerlink" title="参数估计和假设检验"></a>参数估计和假设检验</h1><h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2>
     </div>
     
     
