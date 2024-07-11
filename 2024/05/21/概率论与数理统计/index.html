@@ -242,10 +242,17 @@ $$
 <p>tips</p>
 <p>虽然几何分布和超几何分布名字相似但是他们有很大的不同,二项分布就像一件事在平面上重复多次。而超几何分布就像，一件事在每个维度上都只做一次</p>
 <h2 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔<br><span><br>$$<br>f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0<br>$$</p>
-<p>$$<br>f(x) &#x3D;0,x&lt;&#x3D;0<br>$$</p>
 </span>
 
-<h2 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h2><p>公式</p>
+<span>
+$$
+f(x) =0,x<=0
+$$
+
+</span>
+## 正态分布
+
+<p>公式</p>
 <p>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{–\frac{(x \mu)^{2}}{2 \sigma^{2}}},-\infty&lt;x&lt;+\infty<br>$$</p>
 <h1 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h1><p>考研范围内一般只考二维随机变量</p>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>设$(X,Y)$是二维随机变量,对于任意的实数$x,y$称二元函数$F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}$记成$P{X\leqslant x,Y\leqslant y}(-\infty&lt;x,y&lt;+\infty)$为随机变量$(X,Y)$的<code>分布函数</code>或者叫随机变量 X,Y 的<code>联合分布函数</code></p>
@@ -279,7 +286,7 @@ $$
 <p>$$<br>f(x)&#x3D;\left{\begin{matrix}\lambda\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0,\end{matrix}\right.<br>$$</p>
 <p>分布函数长这样</p>
 <p>$$<br>F(x)&#x3D;\left{\begin{matrix}1-\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0.\end{matrix}\right.<br>$$</p>
-<h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p><strong>一般正态分布</strong>的概率密度函数长这样</p>
+<h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><p><strong>一般正态分布</strong>的概率密度函数长这样</p>
 <p>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\quad(-\infty&lt;x&lt;+\infty)<br>$$</p>
 <p>分布函数</p>
 <p>$$<br>F(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^{x}\mathrm{e}^{-\frac{(t-\mu)^{2}}{2\sigma^{2}}}\mathrm{d}t<br>$$</p>
