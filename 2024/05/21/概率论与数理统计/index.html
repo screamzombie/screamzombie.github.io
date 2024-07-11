@@ -26,14 +26,6 @@
 <script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
-
 
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -175,7 +167,7 @@
 
 <h1 id="随机事件与概率"><a href="#随机事件与概率" class="headerlink" title="随机事件与概率"></a>随机事件与概率</h1><h2 id="相关概念与符号"><a href="#相关概念与符号" class="headerlink" title="相关概念与符号"></a>相关概念与符号</h2><p><code>基本事件</code>:随机事件最基本的结果 符号 $\omega$ “欧米伽”</p>
 <p><code>样本空间</code>: 一切基本事件的集合 记作 $\Omega$ 也读”欧米伽” 上面的是小写,这是大写</p>
-<h2 id="事件的关系和运算"><a href="#事件的关系和运算" class="headerlink" title="事件的关系和运算"></a>事件的关系和运算</h2><table>
+<h2 id="事件的关系和运算-常见-几个类似的就没写进去了"><a href="#事件的关系和运算-常见-几个类似的就没写进去了" class="headerlink" title="事件的关系和运算(常见,几个类似的就没写进去了)"></a>事件的关系和运算(常见,几个类似的就没写进去了)</h2><table>
 <thead>
 <tr>
 <th>描述</th>
@@ -184,21 +176,34 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>事件A包含事件B</td>
+<td>事件 A 包含事件 B</td>
 <td>$A\subset B$</td>
-<td>B发生A一定发生</td>
+<td>B 发生 A 一定发生</td>
 </tr>
 <tr>
-<td>A 和 B相等</td>
+<td>A 和 B 相等</td>
 <td>A &#x3D; B</td>
-<td>A发生B一定发生，反之一样</td>
+<td>A 发生 B 一定发生，反之一样</td>
 </tr>
 <tr>
-<td>A，B事件之和</td>
-<td>A+B或者 $A \cup B$</td>
-<td>A, B两者至少有一个发生</td>
+<td>A，B 事件之和</td>
+<td>A+B 或者 $A \cup B$</td>
+<td>A, B 两者至少有一个发生</td>
+</tr>
+<tr>
+<td>A 和 B 互不相容</td>
+<td>$A\cap B&#x3D;\emptyset$</td>
+<td>A 与 B 不可能同时发生</td>
+</tr>
+<tr>
+<td>事件 $A_1,\dots,A_n$是一个完备事件组</td>
+<td>${A_{1}\cup\cdots\cup A_{n}&#x3D;\Omega}\A_{i}A_{j}&#x3D;\emptyset,1\leqslant i&lt;j\leqslant n$</td>
+<td>n 个事件 $A_1,\dots,A_n$ 仅发生且必发生其中之一</td>
 </tr>
 </tbody></table>
+<h2 id="事件的运算公式-恶心-🤮-小题肯定有一个各种套"><a href="#事件的运算公式-恶心-🤮-小题肯定有一个各种套" class="headerlink" title="事件的运算公式(恶心 🤮,小题肯定有一个各种套)"></a>事件的运算公式(恶心 🤮,小题肯定有一个各种套)</h2><ol>
+<li>吸收律: $\text{若 } A \subset B, \text{ 则 } A \cup B &#x3D; B, \quad AB &#x3D; A;$</li>
+</ol>
 <h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><ol>
 <li><p>概率密度函数 (Probability density function)</p>
 <p>人话:所有的点每点的可能性连成的线,连续型单点概率为 0</p>
