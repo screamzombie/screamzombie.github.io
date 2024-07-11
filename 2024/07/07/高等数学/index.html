@@ -26,6 +26,14 @@
 <script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
 
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -165,14 +173,14 @@
         <p><strong><del>请继续使用人脑编译本文的 Latex 公式</del></strong></p>
 <span id="more"></span>
 
-<h1 id="无穷级数"><a href="#无穷级数" class="headerlink" title="无穷级数"></a>无穷级数</h1><h2 id="收敛"><a href="#收敛" class="headerlink" title="收敛"></a>收敛</h2><h3 id="常见性质"><a href="#常见性质" class="headerlink" title="常见性质"></a>常见性质</h3><p><code>收敛</code>,<code>绝对收敛</code>,<code>条件收敛</code> 是三个不同的概念</p>
+<h1><span id="无穷级数">无穷级数</span></h1><h2><span id="收敛">收敛</span></h2><h3><span id="常见性质">常见性质</span></h3><p><code>收敛</code>,<code>绝对收敛</code>,<code>条件收敛</code> 是三个不同的概念</p>
 <ol>
 <li>收敛:$S_n&#x3D;\sum\limits_{k&#x3D;1}^nu_k&#x3D;u_1+u_2+\cdots+u_n,(n&#x3D;1,2,\cdots)$ 当$\lim_{n\to\infty}S_{n}存在$则可以说该数列收敛</li>
 <li>绝对收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$ 收敛,且各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$收敛</li>
 <li>条件收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$收敛 但各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$不收敛</li>
 </ol>
-<h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><p>某个级数是否收敛的必要条件: $\operatorname*{lim}<em>{n\to\infty}u</em>{n}&#x3D;0$ 这是必要条件不是说满足了就一定收敛,而是不满足一定发散</p>
-<h3 id="收敛级数的常见运算法则"><a href="#收敛级数的常见运算法则" class="headerlink" title="收敛级数的常见运算法则"></a>收敛级数的常见运算法则</h3><ol>
+<h3><span id="一些概念">一些概念</span></h3><p>某个级数是否收敛的必要条件: $\operatorname*{lim}<em>{n\to\infty}u</em>{n}&#x3D;0$ 这是必要条件不是说满足了就一定收敛,而是不满足一定发散</p>
+<h3><span id="收敛级数的常见运算法则">收敛级数的常见运算法则</span></h3><ol>
 <li><p>$\sum_{n&#x3D;1}^{\infty}\left(\lambda u_{n}+\mu v_{n}\right)&#x3D;\lambda\sum_{n&#x3D;1}^{\infty}u_{n}+\mu\sum_{n&#x3D;1}^{\infty}v_{n}$ 其中$\lambda$ 和 $\mu$都是常数</p>
 </li>
 <li><p>若$\sum_{n&#x3D;1}^{\infty}u_n$ 和 $\sum_{n&#x3D;1}^{\infty}v_n$一个<strong>收敛</strong>一个<strong>发散</strong>则有$\sum_{n&#x3D;1}^{\infty}(u_{n}\pm v_{n})$发散.</p>
@@ -187,7 +195,7 @@
 <p>黎曼级数重排定理</p>
 <p>是一个有关于无穷级数性质的数学定理，得名于 19 世纪德国著名数学家波恩哈德·黎曼。黎曼级数定理说<br>明，如果一个实数项无穷级数若是条件收敛的，它的项在重新排列后，重新排列后的级数收敛的值可以收敛<br>到任何一个给定的值，甚至发散。</p>
 </blockquote>
-<h2 id="几个重要级数"><a href="#几个重要级数" class="headerlink" title="几个重要级数"></a>几个重要级数</h2><ol>
+<h2><span id="几个重要级数">几个重要级数</span></h2><ol>
 <li><p>几何级数<br>$\sum_{n&#x3D;0}^\infty q^n$ 当$|q| &lt; 1$时收敛 当$|q| \geq 1$时发散</p>
 </li>
 <li><p>$p$级数<br>$\sum_{n&#x3D;1}^\infty \frac{1}{n^p}$ 当$p&gt;1$时收敛,当$p \leq 1$发散</p>
@@ -195,7 +203,7 @@
 <li><p>常用的一个级数 $\sum_{n&#x3D;2}^{\infty}\frac1{n^p\ln^qn}$当$p&gt;1 或p&#x3D;1 且 q &gt; 1$时收敛;当$p&lt;1或p&#x3D;1且 q\leq 1$发散</p>
 </li>
 </ol>
-<h2 id="正向级数敛散性的判定问题"><a href="#正向级数敛散性的判定问题" class="headerlink" title="正向级数敛散性的判定问题"></a>正向级数敛散性的判定问题</h2>
+<h2><span id="正向级数敛散性的判定问题">正向级数敛散性的判定问题</span></h2>
     </div>
     
     

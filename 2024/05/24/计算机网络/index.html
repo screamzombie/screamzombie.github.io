@@ -26,6 +26,14 @@
 <script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
 
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -167,23 +175,23 @@
 </blockquote>
 <span id="more"></span>
 
-<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>408 考就考记忆，重点是边边拐拐的</p>
-<h1 id="一-绪论"><a href="#一-绪论" class="headerlink" title="一 绪论"></a>一 绪论</h1><h2 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a>计算机网络的组成</h2><h3 id="组成部分："><a href="#组成部分：" class="headerlink" title="组成部分："></a>组成部分：</h3><p>完整的计算机网络 &#x3D; 硬件 + 软件 + 协议</p>
+<h1><span id="序言">序言</span></h1><p>408 考就考记忆，重点是边边拐拐的</p>
+<h1><span id="一-绪论">一 绪论</span></h1><h2><span id="计算机网络的组成">计算机网络的组成</span></h2><h3><span id="组成部分">组成部分：</span></h3><p>完整的计算机网络 &#x3D; 硬件 + 软件 + 协议</p>
 <p>硬件：主机(端系统)、通信链路 (如双绞线、光纤)、交换设备 (如路 由器、交换机等) 和 通信处理机 (如网卡)</p>
 <p>软件：实现资源共享和方便用户使用</p>
 <p>计算机网络的核心是<code>协议</code></p>
-<h3 id="工作方式："><a href="#工作方式：" class="headerlink" title="工作方式："></a>工作方式：</h3><p>计算机网络 &#x3D; 边缘部分 + 核心部分</p>
+<h3><span id="工作方式">工作方式：</span></h3><p>计算机网络 &#x3D; 边缘部分 + 核心部分</p>
 <p>边缘部分: 所有连接到因特网上、供用户直接使用的主机组成，用来进行<code>通信</code>和<code>资源共享</code></p>
 <p>核心部分: 大量的<em>网络</em>和连接这些网络的<em>路由器</em>组成 ， 它 为 边 缘 部 分 提 供 <code>连 通 性</code> 和<code> 交 换 服 务</code></p>
-<h3 id="功能组成：-我觉得是重点"><a href="#功能组成：-我觉得是重点" class="headerlink" title="功能组成：(我觉得是重点)"></a>功能组成：(我觉得是重点)</h3><p>计算机网络 &#x3D; 通信子网 + 资源子网</p>
+<h3><span id="功能组成我觉得是重点">功能组成：(我觉得是重点)</span></h3><p>计算机网络 &#x3D; 通信子网 + 资源子网</p>
 <p>通信子网 &#x3D; 各种传输介质 + 通信设备 + 相应的网络协议</p>
 <p>资源子网 &#x3D; 实现资源共享功能的设备及其软件的集合</p>
 <p><strong>通信子网：使网络具有 <em>数据传输_、_交换_、_控制</em> 和 <em>存储</em> 的能力</strong></p>
-<h2 id="几种网络构型"><a href="#几种网络构型" class="headerlink" title="几种网络构型"></a>几种网络构型</h2><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><p>总线型网络(建网容易，效率不高)</p>
+<h2><span id="几种网络构型">几种网络构型</span></h2><h3><span id="种类">种类</span></h3><p>总线型网络(建网容易，效率不高)</p>
 <p>星型（便于集中控制和管理，端用户通信必须经过中央设备）</p>
 <p>环形 （可以单环，也可以双环，<strong>环中信号是单向传输的</strong>）</p>
 <p>网状</p>
-<h2 id="指标-重点"><a href="#指标-重点" class="headerlink" title="指标(重点)"></a>指标(重点)</h2><p>带宽： 网络的通信线路所能传送数据的能力，即数字信道的最高数据传输速率</p>
+<h2><span id="指标重点">指标(重点)</span></h2><p>带宽： 网络的通信线路所能传送数据的能力，即数字信道的最高数据传输速率</p>
 <p>时延： 从网络的一端传送到另外一端所需要的总时间 时延&#x3D; 发送时延 + 传播时延+处理时延+排队时延</p>
 <ul>
 <li>发送时延 &#x3D;》 所有数据上链路 分组长度&#x2F;信道宽度</li>
@@ -196,12 +204,12 @@
 <ul>
 <li>信道利用率： 有数据通过的时间&#x2F;总时间</li>
 </ul>
-<h2 id="细小知识点"><a href="#细小知识点" class="headerlink" title="&amp;细小知识点"></a>&amp;细小知识点</h2><p>不同机器上的同一层叫<code>对等层</code>，同一层的实体叫<code>对等实体</code></p>
+<h2><span id="amp细小知识点">&amp;细小知识点</span></h2><p>不同机器上的同一层叫<code>对等层</code>，同一层的实体叫<code>对等实体</code></p>
 <p>每个报文 PDU 都由两个部分组成 数据部分 SDU 控制信息 PCI</p>
 <p>数据服务单元 SDU 为了完成用户所求的功能而传送的数据</p>
 <p>协议控制信息 PCI 控制协议操作的信息</p>
 <p>协议数据单元 PDU 对等层次之间传送的数据单位称为该层的 PDU</p>
-<h2 id="协议-接口-服务"><a href="#协议-接口-服务" class="headerlink" title="协议 接口 服务"></a>协议 接口 服务</h2><ul>
+<h2><span id="协议-接口-服务">协议 接口 服务</span></h2><ul>
 <li><p>协议 &#x3D; 规则的集合，<strong>水平的必须是同层之间</strong></p>
 <blockquote>
 <p>协议 &#x3D; 语法(传输数据的格式) + 语义（所完成的功能） + 同步（执行各种操作的条件，时间关系等）<br>协议需要 &#x3D;》 线路管理 + 差错控制 + 数据转换</p>
@@ -221,19 +229,19 @@
 <p><em>请求 &lt;—-&gt;指示 <em>是一对，</em>响应 &lt;—&gt;证实</em>是一对</p>
 <p>有应答服务包括四种</p>
 <p>无应答服务 只有 **请求和指示 **</p>
-<h2 id="TCP-IP-与-OSI-模型的比较"><a href="#TCP-IP-与-OSI-模型的比较" class="headerlink" title="TCP&#x2F;IP 与 OSI 模型的比较"></a>TCP&#x2F;IP 与 OSI 模型的比较</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP_OSI.png" alt="image-20240530174500257"></p>
-<h1 id="二-物理层"><a href="#二-物理层" class="headerlink" title="二 物理层"></a>二 物理层</h1><h2 id="通信模式等基本概念"><a href="#通信模式等基本概念" class="headerlink" title="通信模式等基本概念"></a>通信模式等基本概念</h2><p>连续变化的信号 &#x3D;》 模拟信号</p>
+<h2><span id="tcpx2fip-与-osi-模型的比较">TCP&#x2F;IP 与 OSI 模型的比较</span></h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP_OSI.png" alt="image-20240530174500257"></p>
+<h1><span id="二-物理层">二 物理层</span></h1><h2><span id="通信模式等基本概念">通信模式等基本概念</span></h2><p>连续变化的信号 &#x3D;》 模拟信号</p>
 <p>取值仅为有限个的 &#x3D;》 数字信号</p>
 <p>**远距离传输 使用的是串行传输 **</p>
 <p>数字通信中信号的计量单位是<strong>码元</strong></p>
-<h2 id="信源-信道-与-信宿"><a href="#信源-信道-与-信宿" class="headerlink" title="信源 信道 与 信宿"></a>信源 信道 与 信宿</h2><p>信源：产生和发出数据的源头</p>
+<h2><span id="信源-信道-与-信宿">信源 信道 与 信宿</span></h2><p>信源：产生和发出数据的源头</p>
 <p>信宿：接受数据的终点</p>
 <p>信道不能简单的视作电路</p>
-<h3 id="信道的划分"><a href="#信道的划分" class="headerlink" title="信道的划分"></a>信道的划分</h3><ul>
+<h3><span id="信道的划分">信道的划分</span></h3><ul>
 <li>按传输信号种类 有模拟信道 和 数字信道两种</li>
 <li>按传输介质不同 无线信道 和 有线信道</li>
 </ul>
-<h3 id="信道上的信号-我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看"><a href="#信道上的信号-我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看" class="headerlink" title="信道上的信号(我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看)"></a>信道上的信号(我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看)</h3><p>信道上的信号</p>
+<h3><span id="信道上的信号我感觉这太细了但是计网的这几年的抽象试卷让我不得不看">信道上的信号(我感觉这太细了，但是计网的这几年的抽象试卷让我不得不看)</span></h3><p>信道上的信号</p>
 <ul>
 <li>基带信号 -&gt; 将数字 0 1 直接用不同电压表示 (基带传输)</li>
 <li>宽带信号 -&gt; 将基带信号调制后形成 <strong>频分复用</strong> 的 ** 模拟信号** (宽带传输)</li>
@@ -242,20 +250,20 @@
 <blockquote>
 <p>宽带传输用的是<code>模拟信号</code><br>宽带传输用的是<code>频分复用</code><br>基带信号调制的是不同的<code>电压</code></p>
 </blockquote>
-<h3 id="三种信息方式的交互"><a href="#三种信息方式的交互" class="headerlink" title="三种信息方式的交互"></a>三种信息方式的交互</h3><p>单向通信: 只有一个方向,仅需要一个信道, <strong>无线电,广播</strong></p>
+<h3><span id="三种信息方式的交互">三种信息方式的交互</span></h3><p>单向通信: 只有一个方向,仅需要一个信道, <strong>无线电,广播</strong></p>
 <p>半双工: 两边都可以发 但不能同时 <strong>需要两条信道</strong></p>
 <p>全双工: 两边可以同时发 需要两条信道</p>
-<h2 id=""><a href="#" class="headerlink" title="&amp;"></a>&amp;</h2><p>波特率 叫 码元传输速率,表示 单位时间内系统所传输的码元个数,码元可以是多进制也可以是二进制,并且传输速率与进制无关</p>
+<h2><span id="amp">&amp;</span></h2><p>波特率 叫 码元传输速率,表示 单位时间内系统所传输的码元个数,码元可以是多进制也可以是二进制,并且传输速率与进制无关</p>
 <blockquote>
 <p>eg 1 波特 表示数字系统一秒传输一个码元</p>
 </blockquote>
 <p>信息传输速率 叫 信息速率,比特率 。 表示单位时间内的二进制码元个数 比特数 单位是比特&#x2F;s bit&#x2F;s</p>
 <p>Question:<br>不当人的话可能会把概念混过来考，比如把波特率叫信息传输速率</p>
-<h2 id="奈氏准则-和-香农"><a href="#奈氏准则-和-香农" class="headerlink" title="奈氏准则 和 香农"></a>奈氏准则 和 香农</h2><p>前几年几乎送分 现在不怎么喜欢考了，</p>
-<h3 id="奈氏准则-（内忧-码间串扰）"><a href="#奈氏准则-（内忧-码间串扰）" class="headerlink" title="奈氏准则 （内忧 码间串扰）"></a>奈氏准则 （内忧 码间串扰）</h3><p>$2Wlog_{2}V$</p>
-<h3 id="香农"><a href="#香农" class="headerlink" title="香农"></a>香农</h3><p>$Wlog_{2}(2+S&#x2F;N)$</p>
+<h2><span id="奈氏准则-和-香农">奈氏准则 和 香农</span></h2><p>前几年几乎送分 现在不怎么喜欢考了，</p>
+<h3><span id="奈氏准则-内忧-码间串扰">奈氏准则 （内忧 码间串扰）</span></h3><p>$2Wlog_{2}V$</p>
+<h3><span id="香农">香农</span></h3><p>$Wlog_{2}(2+S&#x2F;N)$</p>
 <p>这个算是经典题目了,必会,两者取其小就行了</p>
-<h2 id="恶心人的编码方式"><a href="#恶心人的编码方式" class="headerlink" title="恶心人的编码方式"></a>恶心人的编码方式</h2><h3 id="数字编码方式"><a href="#数字编码方式" class="headerlink" title="数字编码方式"></a>数字编码方式</h3><p><del>不仅要知道种类还要认得图和对应的英文 🤮</del></p>
+<h2><span id="恶心人的编码方式">恶心人的编码方式</span></h2><h3><span id="数字编码方式">数字编码方式</span></h3><p><del>不仅要知道种类还要认得图和对应的英文 🤮</del></p>
 <ul>
 <li><p>归零编码 <code>RZ</code></p>
 <blockquote>
@@ -291,11 +299,11 @@
 <li>或者问下面几个图哪一个是无线局域网的编码方式等等</li>
 </ol>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%97%E7%BC%96%E7%A0%81.png" alt="alt text"></p>
-<h3 id="数字信号调制为模拟信号"><a href="#数字信号调制为模拟信号" class="headerlink" title="数字信号调制为模拟信号"></a>数字信号调制为模拟信号</h3><p><del>已经连续考了两年了,不过不慌今年我乱杀</del></p>
-<h4 id="数字调制技术"><a href="#数字调制技术" class="headerlink" title="数字调制技术"></a>数字调制技术</h4><p><code>发送端</code> 把 <code>数字信号</code> -&gt; <code>模拟信号</code> 这个叫<strong>调制</strong></p>
+<h3><span id="数字信号调制为模拟信号">数字信号调制为模拟信号</span></h3><p><del>已经连续考了两年了,不过不慌今年我乱杀</del></p>
+<h4><span id="数字调制技术">数字调制技术</span></h4><p><code>发送端</code> 把 <code>数字信号</code> -&gt; <code>模拟信号</code> 这个叫<strong>调制</strong></p>
 <p><code>接受端</code> 把 <code>模拟信号</code> -&gt; <code>数字信号</code> 这个叫<strong>解调</strong></p>
 <p><em>可能会问哪个是对的,其中某个错误的就是搞错转换地点或者是方法的名字</em></p>
-<h4 id="四种数字调制方法-🤮"><a href="#四种数字调制方法-🤮" class="headerlink" title="四种数字调制方法 🤮"></a>四种数字调制方法 🤮</h4><ol>
+<h4><span id="四种数字调制方法">四种数字调制方法 🤮</span></h4><ol>
 <li>幅移键控 <code>ASK</code> 通过改变<code>振幅</code> 比较容易实现 <em>抗干扰能力差</em></li>
 <li>频移键控 <code>FSK</code> 通过改变载波信号的<code>频率</code> 来表示 0 和 1 <del>去年考过</del></li>
 <li>相移键控 <code>PSK</code> 通过改变载波信号的<code>相位</code> 来表示 0 和 1</li>
@@ -312,25 +320,25 @@
 <li>给图片判断信号种类 或者给信号找图片</li>
 <li>数字信号 -&gt; 模拟信号 叫什么? <code>调制</code><br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E5%AD%97%E8%B0%83%E5%88%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F.png" alt="alt text"></li>
 </ol>
-<h3 id="模拟数据编码为数字信号"><a href="#模拟数据编码为数字信号" class="headerlink" title="模拟数据编码为数字信号"></a>模拟数据编码为数字信号</h3><h4 id="对于音频-信号的脉码调制PCM"><a href="#对于音频-信号的脉码调制PCM" class="headerlink" title="对于音频 信号的脉码调制PCM"></a>对于<em>音频</em> 信号的脉码调制<code>PCM</code></h4><p><code>PCM</code> &#x3D; 采样 + 量化 + 编码</p>
+<h3><span id="模拟数据编码为数字信号">模拟数据编码为数字信号</span></h3><h4><span id="对于音频-信号的脉码调制pcm">对于<em>音频</em> 信号的脉码调制<code>PCM</code></span></h4><p><code>PCM</code> &#x3D; 采样 + 量化 + 编码</p>
 <p><code>带宽</code> &#x3D; 信号的最高频率和最低频率之差</p>
-<h2 id="采样频率-必须-geq-最高频率"><a href="#采样频率-必须-geq-最高频率" class="headerlink" title="采样频率 必须 $\geq$ 最高频率"></a><code>采样频率</code> 必须 $\geq$ 最高频率</h2><p>出题点</p>
+<h2><span id="采样频率-必须-geq-最高频率"><code>采样频率</code> 必须 $\geq$ 最高频率</span></h2><p>出题点</p>
 <ol>
 <li>算带宽</li>
 <li>问技术叫什么名字 或者 模拟信号 -&gt; 数字信号叫什么 答<code>编码</code></li>
 </ol>
-<h3 id="模拟信号转换成模拟信号"><a href="#模拟信号转换成模拟信号" class="headerlink" title="模拟信号转换成模拟信号"></a>模拟信号转换成模拟信号</h3><p>技术名字叫<code>调制</code> 方式是通过 频分复用 <code>FDM</code><br><strong>电话机和本地交换机</strong> 用的就是模拟转模拟</p>
+<h3><span id="模拟信号转换成模拟信号">模拟信号转换成模拟信号</span></h3><p>技术名字叫<code>调制</code> 方式是通过 频分复用 <code>FDM</code><br><strong>电话机和本地交换机</strong> 用的就是模拟转模拟</p>
 <hr>
 <p>出题点</p>
 <ol>
 <li>很有可能就这么问 交换机使用的信号转换方式是什么? 四个英语让你选</li>
 </ol>
-<h2 id="三种报文交换"><a href="#三种报文交换" class="headerlink" title="三种报文交换"></a>三种报文交换</h2><h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p>必须建立一条<strong>专用</strong>的物理通信</p>
+<h2><span id="三种报文交换">三种报文交换</span></h2><h3><span id="电路交换">电路交换</span></h3><p>必须建立一条<strong>专用</strong>的物理通信</p>
 <blockquote>
 <p>除了起点和终点,中间任意节点都是<code>直通方式</code> 路上不会产生存储转发时延</p>
 </blockquote>
-<h3 id="报文转发"><a href="#报文转发" class="headerlink" title="报文转发"></a>报文转发</h3><p>单位 <code>报文</code><br>报文 携带 目标地址 源地址 交换方式是<code>存储转发</code></p>
-<h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p>区别<br>分组交换的每个小数据块都需要加上<code>源地址</code>,<code>目标地址</code> 和 <code>分组编号</code></p>
+<h3><span id="报文转发">报文转发</span></h3><p>单位 <code>报文</code><br>报文 携带 目标地址 源地址 交换方式是<code>存储转发</code></p>
+<h3><span id="分组交换">分组交换</span></h3><p>区别<br>分组交换的每个小数据块都需要加上<code>源地址</code>,<code>目标地址</code> 和 <code>分组编号</code></p>
 <ul>
 <li>分组到达目标节点后 需要按编号进行排序工作</li>
 <li>如果采取虚电路 但有 呼叫建立 数据传输 虚电路&#96;释放</li>
@@ -342,44 +350,44 @@
 <li>虚电路是否需要完整的地址? 答:仅在连接之初需要,后面每个报文都是用较短的虚电路号</li>
 <li>数据报服务是不可靠的,可靠性由用户主机负责,而虚电路可靠性由整个网络负责</li>
 </ol>
-<h2 id="物理介质"><a href="#物理介质" class="headerlink" title="物理介质"></a>物理介质</h2><h3 id="双绞线"><a href="#双绞线" class="headerlink" title="双绞线"></a>双绞线</h3><p>屏蔽双绞线<code>STP</code></p>
+<h2><span id="物理介质">物理介质</span></h2><h3><span id="双绞线">双绞线</span></h3><p>屏蔽双绞线<code>STP</code></p>
 <p>屏蔽双绞线<code>UTP</code></p>
 <ol>
 <li><strong>双绞线</strong>局域网和传统电话网中用的最多 选择题可问</li>
 <li>长距离运输 模拟信号 -&gt; <code>放大器</code> 放大衰竭信号</li>
 <li>数字信号 用 <code>中继器</code> 整形 (可做考点问哪个错的故意弄乱)</li>
 </ol>
-<h3 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h3><p>种类 50Ω 和 75Ω</p>
+<h3><span id="同轴电缆">同轴电缆</span></h3><p>种类 50Ω 和 75Ω</p>
 <ol>
 <li>传送基带数字信号的是 50Ω —&gt; 局域网</li>
 <li>传送宽带数字信号的事 75Ω —&gt; 有线电视</li>
 </ol>
 <p>有良好的抗干扰性</p>
-<h3 id="光纤"><a href="#光纤" class="headerlink" title="光纤"></a>光纤</h3><ol>
+<h3><span id="光纤">光纤</span></h3><ol>
 <li><p>多模光纤 -&gt; 近距离</p>
 </li>
 <li><p>单模模纤 -&gt; 远距离</p>
 </li>
 </ol>
-<h2 id="物理接口特性"><a href="#物理接口特性" class="headerlink" title="物理接口特性"></a>物理接口特性</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E6%8E%A5%E5%8F%A3%E7%89%B9%E6%80%A7.png"></p>
+<h2><span id="物理接口特性">物理接口特性</span></h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%89%A9%E7%90%86%E6%8E%A5%E5%8F%A3%E7%89%B9%E6%80%A7.png"></p>
 <p><del>接口标准</del><br><code>ELA RS232C</code> <code>ADSL</code> <code>SONET/SDH</code></p>
-<h2 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h2><p>有 hub 组成的网络是共享式网络 每个主机在不同的网段,只能在半双工下工作</p>
-<h1 id="三-数据链路层"><a href="#三-数据链路层" class="headerlink" title="三 数据链路层"></a>三 数据链路层</h1><h2 id="几种方式"><a href="#几种方式" class="headerlink" title="几种方式"></a>几种方式</h2><ol>
+<h2><span id="集线器">集线器</span></h2><p>有 hub 组成的网络是共享式网络 每个主机在不同的网段,只能在半双工下工作</p>
+<h1><span id="三-数据链路层">三 数据链路层</span></h1><h2><span id="几种方式">几种方式</span></h2><ol>
 <li>无连接无确认 —&gt; 实时通讯 —&gt; <code>以太网</code></li>
 <li>有连接无确认 —&gt; 无线通信</li>
 <li>有连接有确认 —&gt; 对于可靠性要求较高的场合</li>
 </ol>
 <hr>
 <p>可能会问以太网是什么通讯方式然后让你选</p>
-<h2 id="链路管理"><a href="#链路管理" class="headerlink" title="链路管理"></a>链路管理</h2><h3 id="HDLC-协议-不是重点了"><a href="#HDLC-协议-不是重点了" class="headerlink" title="HDLC 协议(不是重点了)"></a>HDLC 协议(不是重点了)</h3><p>标准帧格式<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/hdlc%E6%A0%87%E5%87%86%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
-<h3 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h3><p>帧校验用的是<code>CRC</code>,接收端发现错误就<code>丢弃</code>,发送方<code>超时重传</code> &#x3D;&#x3D;&#x3D;&gt; <code>ARQ法</code></p>
-<h3 id="CRC-的计算方法-重点"><a href="#CRC-的计算方法-重点" class="headerlink" title="CRC 的计算方法(重点)"></a>CRC 的计算方法(重点)</h3><p>$g(x)&#x3D;x^4+x+1$ 这个式子的生成多项式就是 10011</p>
+<h2><span id="链路管理">链路管理</span></h2><h3><span id="hdlc-协议不是重点了">HDLC 协议(不是重点了)</span></h3><p>标准帧格式<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/hdlc%E6%A0%87%E5%87%86%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
+<h3><span id="差错控制">差错控制</span></h3><p>帧校验用的是<code>CRC</code>,接收端发现错误就<code>丢弃</code>,发送方<code>超时重传</code> &#x3D;&#x3D;&#x3D;&gt; <code>ARQ法</code></p>
+<h3><span id="crc-的计算方法重点">CRC 的计算方法(重点)</span></h3><p>$g(x)&#x3D;x^4+x+1$ 这个式子的生成多项式就是 10011</p>
 <p>例子<br>原始数据 10110011 因为 g(x)的最高次是 4 所以原始数据往左位移 4 位 ,补 0</p>
 <p>接着用 101100110000 除 10011</p>
 <p>这里要用到模除 上下相同 0 不同 1 没用到的拉下来</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CRC%E4%BE%8B%E5%AD%90.png"></p>
-<h3 id="汉明码-重点"><a href="#汉明码-重点" class="headerlink" title="汉明码(重点)"></a>汉明码(重点)</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B1%89%E6%98%8E%E7%A0%81.png"></p>
-<h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><ol>
+<h3><span id="汉明码重点">汉明码(重点)</span></h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B1%89%E6%98%8E%E7%A0%81.png"></p>
+<h2><span id="流量控制">流量控制</span></h2><h3><span id="名词">名词</span></h3><ol>
 <li>一组连续的可以发送的序号 -&gt; 发送窗口</li>
 <li>一组连续的可以接收的序号 -&gt; 接受窗口<blockquote>
 <p>当接收端接收到不在接收窗口的帧 就丢弃</p>
@@ -387,21 +395,21 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="后退-N-帧协议-GBN"><a href="#后退-N-帧协议-GBN" class="headerlink" title="后退 N 帧协议 GBN"></a>后退 N 帧协议 GBN</h3><p>发送窗口大小是$2^n -1$</p>
-<h3 id="选择重传协议-SR"><a href="#选择重传协议-SR" class="headerlink" title="选择重传协议 SR"></a>选择重传协议 SR</h3><p>发送窗口大小是 $2^{n-1}$</p>
-<h3 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h3><p>发送周期:发送方从<code>开始发送</code>到收到第一个<code>确认帧</code></p>
+<h3><span id="后退-n-帧协议-gbn">后退 N 帧协议 GBN</span></h3><p>发送窗口大小是$2^n -1$</p>
+<h3><span id="选择重传协议-sr">选择重传协议 SR</span></h3><p>发送窗口大小是 $2^{n-1}$</p>
+<h3><span id="信道利用率">信道利用率</span></h3><p>发送周期:发送方从<code>开始发送</code>到收到第一个<code>确认帧</code></p>
 <p>信道利用率 &#x3D; (发送的数据量 L &#x2F;传输速度 C)&#x2F; 总时间 T</p>
 <p>信道吞吐率 &#x3D; 信道利用率&#x2F;发送方的发送速率</p>
-<h2 id="介质访问控制"><a href="#介质访问控制" class="headerlink" title="介质访问控制"></a>介质访问控制</h2><p>介质访问控制层<code>MAC</code>$\subset$数据链路层</p>
+<h2><span id="介质访问控制">介质访问控制</span></h2><p>介质访问控制层<code>MAC</code>$\subset$数据链路层</p>
 <p>主要路线有两种对于介质本身进行物理上的划分 和 时间上的划分技术</p>
-<h3 id="名词-1"><a href="#名词-1" class="headerlink" title="名词"></a>名词</h3><ol>
+<h3><span id="名词">名词</span></h3><ol>
 <li>频分多路复用<code>FDM</code> 把多路基带信号<strong>调制</strong>到不同<strong>频率</strong>的载波上. 总合不能超过总带宽,相邻信道间要加入<em>保护频带</em> 防止干扰</li>
 <li>时分复用<code>TDM</code></li>
 <li>统计时分多路复用<code>STDM</code> 动态分割时间</li>
 <li>波分多路复用<code>WDM</code></li>
 <li>码分多路复用<code>CDM</code> 重点可考计算 注 <code>CDMA</code>码分多址</li>
 </ol>
-<h2 id="码分复用计算"><a href="#码分复用计算" class="headerlink" title="码分复用计算"></a>码分复用计算</h2><p>假设我们有 <code>A</code> <code>B</code> <code>C</code> 三个站点,C 是服务器,A B 是客户机 均向 C 发送</p>
+<h2><span id="码分复用计算">码分复用计算</span></h2><p>假设我们有 <code>A</code> <code>B</code> <code>C</code> 三个站点,C 是服务器,A B 是客户机 均向 C 发送</p>
 <p>一开始 A B 会被分别指派一个<code>码片序列</code>,有时候题目会问你怎么算或者下面哪一个是</p>
 <p>假如 A 的码片序列是 <code>00011011</code> 那么当 A 想发送 1 时 就发 <code>00011011</code> 相应的如果 A 想发送 0 就发送序列的反码<code>11100100</code></p>
 <p>其中 <code>1</code> 用 <code>+1</code> ,<code>0</code> 用 <code>-1</code>表示 为了方便计算</p>
@@ -413,7 +421,7 @@
 <p>就是<br>{-2,-2,0,0,2,0,2,0}</p>
 <p>王道书上给的例子是 B 发 0<br>B 是<code>11010001</code></p>
 <p>叠加后的结果是(0 0 -2 2 0 -2 0 2)</p>
-<h3 id="分离"><a href="#分离" class="headerlink" title="分离"></a>分离</h3><p>利用的是如下性质</p>
+<h3><span id="分离">分离</span></h3><p>利用的是如下性质</p>
 <ol>
 <li>任意一个向量与自身内积 &#x3D;&gt; 1</li>
 <li>任意一个向量与自身的补码内积 &#x3D;&gt; -1</li>
@@ -421,37 +429,37 @@
 </ol>
 <p>因此如果我们想要知道 A 发了什么 只需要将 A 的码片向量乘叠加向量就行了</p>
 <p>比如$A \cdot (A+B)$ A 与其他所有的向量内积会变为 0 这样我们就提出了 A 的值 如果是+1 就代表发了 1 -1 就是 0</p>
-<h2 id="随机介质访问控制-常考"><a href="#随机介质访问控制-常考" class="headerlink" title="随机介质访问控制(常考)"></a>随机介质访问控制(常考)</h2><h3 id="纯-ALOHA-协议"><a href="#纯-ALOHA-协议" class="headerlink" title="纯 ALOHA 协议"></a>纯 ALOHA 协议</h3><p>想发就发,纯看脸</p>
+<h2><span id="随机介质访问控制常考">随机介质访问控制(常考)</span></h2><h3><span id="纯-aloha-协议">纯 ALOHA 协议</span></h3><p>想发就发,纯看脸</p>
 <p>相关计算公式(还没考过 😱)</p>
 <p><code>网络负载</code>:T0 时间内所有站点<strong>发送成功</strong>和<strong>没成功而重传</strong>的帧数 符号为 G</p>
 <p><code>纯ALOHA</code>的平均网络负载量是$S&#x3D;Ge^{-2G}$ 极大值为 G&#x3D;0.5 S 约为 0.184</p>
-<h3 id="时隙-ALOHA"><a href="#时隙-ALOHA" class="headerlink" title="时隙 ALOHA"></a>时隙 ALOHA</h3><p>时隙 ALOHA 把所有站点综合考虑设定了一个$T_{0}$作为时隙,$T_{0}$满足能发一个但不会让你发两个</p>
+<h3><span id="时隙-aloha">时隙 ALOHA</span></h3><p>时隙 ALOHA 把所有站点综合考虑设定了一个$T_{0}$作为时隙,$T_{0}$满足能发一个但不会让你发两个</p>
 <p>每个主机都只能在每个$T_{0}$到来的开头才能发,如果错过了就等下一个</p>
 <p>网络负载量是$S&#x3D;Ge^{-G}$ 相比较纯 ALOHA 提高了一倍</p>
-<h2 id="CSMA"><a href="#CSMA" class="headerlink" title="CSMA"></a>CSMA</h2><p>CSMA 是 ALOHA 的改进,比较 ALOHA 有了一个<code>载波侦听装置</code></p>
+<h2><span id="csma">CSMA</span></h2><p>CSMA 是 ALOHA 的改进,比较 ALOHA 有了一个<code>载波侦听装置</code></p>
 <p>有三种形式的 CSMA,主要考第三种</p>
 <ol>
 <li>1-坚持 CSMA</li>
 <li>非坚持 CSMA</li>
 <li>p-坚持 CSMA</li>
 </ol>
-<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p>p-坚持 CSMA,用于<code>时分信道</code>,工作流程是</p>
+<h3><span id="细节">细节</span></h3><p>p-坚持 CSMA,用于<code>时分信道</code>,工作流程是</p>
 <blockquote>
 <p>发送之前先听,如果忙就<strong>持续侦听</strong>(不是不侦听了,也不是一直听,而是下个间隙开始再听听看,是时分信道嘛)</p>
 <p>如果信道空闲,则 p 概率发,1-p 推迟到下个间隙,下个间隙到了再看看空不空,空的话也是 p 概率发 1-p 不发,忙的话就等到下个间隙再听了</p>
 </blockquote>
-<h2 id="载波侦听堵路访问-碰撞协议-CSMA-CD"><a href="#载波侦听堵路访问-碰撞协议-CSMA-CD" class="headerlink" title="载波侦听堵路访问&#x2F;碰撞协议(CSMA&#x2F;CD)"></a>载波侦听堵路访问&#x2F;碰撞协议(CSMA&#x2F;CD)</h2><p><code>ALOHA</code> 进化—&gt; <code>CSMA</code> 超进化—&gt;<code>CSMA/CD</code></p>
-<h3 id="碰撞检测"><a href="#碰撞检测" class="headerlink" title="碰撞检测"></a>碰撞检测</h3><p>以太网-&gt; <code>51.2</code>微秒作为最短帧长</p>
+<h2><span id="载波侦听堵路访问x2f碰撞协议csmax2fcd">载波侦听堵路访问&#x2F;碰撞协议(CSMA&#x2F;CD)</span></h2><p><code>ALOHA</code> 进化—&gt; <code>CSMA</code> 超进化—&gt;<code>CSMA/CD</code></p>
+<h3><span id="碰撞检测">碰撞检测</span></h3><p>以太网-&gt; <code>51.2</code>微秒作为最短帧长</p>
 <p>10Mb&#x2F;s 的以太网 争用期可发送 512bit 也就是 64B,<br>争用期没发生冲突 后续也就不会发生冲突了,因为已经占领了信道,别的设备会去检测的</p>
-<h3 id="截断二进制指数退避算法"><a href="#截断二进制指数退避算法" class="headerlink" title="截断二进制指数退避算法"></a>截断二进制指数退避算法</h3><ol>
+<h3><span id="截断二进制指数退避算法">截断二进制指数退避算法</span></h3><ol>
 <li>基本退避时间$2\tau$ -&gt; 一个争用期 ,注意有时候题目只告诉你一个$\tau$要记得乘 2</li>
 <li>设 k 为重传次数 k &#x3D; min[重传次数,10] ,k 最大为 10 不会一直增大</li>
 <li>从$[0,1,3,\cdots,2^{k}-1]$随机挑一个, 把这个数乘争用期</li>
 <li>当重传 16 次仍然不成功,则丢弃,并向高层报告</li>
 </ol>
-<h2 id="碰撞避免-802-11-标准-CSMA-CA"><a href="#碰撞避免-802-11-标准-CSMA-CA" class="headerlink" title="碰撞避免 802.11 标准 CSMA/CA"></a>碰撞避免 802.11 标准 <code>CSMA/CA</code></h2><p>碰撞避免不能完全避免碰撞</p>
+<h2><span id="碰撞避免-80211-标准-csmaca">碰撞避免 802.11 标准 <code>CSMA/CA</code></span></h2><p>碰撞避免不能完全避免碰撞</p>
 <p><code>802.11</code>使用链路层的确认&#x2F;重传<code>ARQ</code>,收到了确认才能发下一帧</p>
-<h3 id="帧间间隔-🤮"><a href="#帧间间隔-🤮" class="headerlink" title="帧间间隔 🤮"></a>帧间间隔 🤮</h3><ol>
+<h3><span id="帧间间隔">帧间间隔 🤮</span></h3><ol>
 <li>SIFS(短 IFS)最短的 IFS<blockquote>
 <p>ACK,CTS,分片后的数据帧,回答 AP 探寻的帧都用 SIFS</p>
 </blockquote>
@@ -465,21 +473,21 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="退避算法"><a href="#退避算法" class="headerlink" title="退避算法"></a>退避算法</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSMA_CA%E9%80%80%E9%81%BF%E7%AE%97%E6%B3%95.png"></p>
-<h2 id="隐蔽站"><a href="#隐蔽站" class="headerlink" title="隐蔽站"></a>隐蔽站</h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RTS_CTS.png"></p>
+<h3><span id="退避算法">退避算法</span></h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CSMA_CA%E9%80%80%E9%81%BF%E7%AE%97%E6%B3%95.png"></p>
+<h2><span id="隐蔽站">隐蔽站</span></h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RTS_CTS.png"></p>
 <ol>
 <li>CSMA&#x2F;CD 可以检测冲突,CSMA&#x2F;CA 发送数据的同时不能检测是否有冲突</li>
 <li>CSMA&#x2F;CD 适用 <code>总线型以太网</code>,CSMA&#x2F;CA 适用<code>802.11a/b/g/n</code></li>
 <li>CSMA&#x2F;CD 通过电压方式检测,</li>
 <li>CSMA&#x2F;CA <code>能量检测</code>,<code>载波检测</code>,<code>能量载波混合检测</code></li>
 </ol>
-<h2 id="令牌环网"><a href="#令牌环网" class="headerlink" title="令牌环网"></a>令牌环网</h2><h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol>
+<h2><span id="令牌环网">令牌环网</span></h2><h3><span id="注意点">注意点</span></h3><ol>
 <li>网络空闲时 只有令牌在传递</li>
 <li>如果有数据站点想要发送数据,拿到令牌后,修改令牌的数据位,使其变成一个数据帧发送出去</li>
 <li>到达目的地后,重新产生令牌</li>
 <li>令牌传递适用于<strong>负载很高</strong>的网络</li>
 </ol>
-<h2 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<h2><span id="局域网">局域网</span></h2><h3><span id="特点">特点</span></h3><ol>
 <li>各站点共享较高的总带宽</li>
 <li>各站点为平等关系</li>
 <li>能够进行广播和组播</li>
@@ -496,14 +504,14 @@
 <p>–&gt; 媒体接入控制子层(MAC)</p>
 <p>–&gt; 逻辑链路控制子层(LLC)</p>
 </blockquote>
-<h2 id="以太网传输介质"><a href="#以太网传输介质" class="headerlink" title="以太网传输介质"></a>以太网传输介质</h2><p>🤮 可能选择题会问</p>
+<h2><span id="以太网传输介质">以太网传输介质</span></h2><p>🤮 可能选择题会问</p>
 <p><code>10BASE-T</code>非屏蔽双绞线 ,记一下这个差不多了,剩下的再问有点不礼貌了<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BC%A0%E8%BE%93%E4%BB%8B%E8%B4%A8.png"></p>
-<h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p>协议是<code>IEEE 802.3</code></p>
+<h2><span id="以太网">以太网</span></h2><p>协议是<code>IEEE 802.3</code></p>
 <ol>
 <li>以太网采取无连接的方式发送,不对数据帧编号,也不对数据帧确认,尽最大努力交付</li>
 <li>曼彻斯特编码</li>
 </ol>
-<h2 id="MAC-帧-重点"><a href="#MAC-帧-重点" class="headerlink" title="MAC 帧 重点"></a>MAC 帧 重点</h2><p><code>MAC</code>地址一共有 6 个字节 48 位</p>
+<h2><span id="mac-帧-重点">MAC 帧 重点</span></h2><p><code>MAC</code>地址一共有 6 个字节 48 位</p>
 <p>因为有以太网和无线局域网,MAC 帧格式有两种(我居然一直都不知道)</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/mac%E5%B8%A7.png"></p>
 <p>在发送 MAC 帧的时候前面还需要再插入一个<strong>前导码</strong>,这个前导码又有两个部分组成</p>
@@ -511,7 +519,7 @@
 <p>MAC 帧不需要帧结束符,每个 MAC 帧之间都有空隙,但是不等于 MAC 帧没有尾部</p>
 </blockquote>
 <p>由于<code>CSMA/CD</code>的限制,以太网帧的最小长度是 64B,注意 这个以太网帧的长度是不包括前面插入的 8B 的</p>
-<h3 id="高速以太网"><a href="#高速以太网" class="headerlink" title="高速以太网"></a>高速以太网</h3><ol>
+<h3><span id="高速以太网">高速以太网</span></h3><ol>
 <li><p><code>100BASE-T</code> : <code>双绞线</code>,<code>星型拓扑结构</code>,<code>CSMA/CD协议</code> 可以全双工也可以半双工,在全双工模式下不需要使用<code>CSMA/CD</code> 帧间隔时间是 0.96$\mu$s</p>
 </li>
 <li><p>千兆网: 全双工不用<code>CSMA/CD</code> 半双工也需要</p>
@@ -519,17 +527,17 @@
 <li><p>10GB 网: 只有全双工,不需要<code>CSMA/CD</code></p>
 </li>
 </ol>
-<h3 id="无线局域网"><a href="#无线局域网" class="headerlink" title="无线局域网"></a>无线局域网</h3><p>协议是<code>IEEE 802.11</code>,使用星型拓扑,中心叫 Access Point <code>AP</code> 在<code>MAC</code>层使用<code>CSMA/CA</code>协议</p>
+<h3><span id="无线局域网">无线局域网</span></h3><p>协议是<code>IEEE 802.11</code>,使用星型拓扑,中心叫 Access Point <code>AP</code> 在<code>MAC</code>层使用<code>CSMA/CA</code>协议</p>
 <p>IEEE 802.11 规定最小的构件单元 <code>BSS</code> ,各站在 BSS 中的或者是往外面的都需要通过<code>AP</code></p>
-<h3 id="IEEE-802-11-的-MAC-帧"><a href="#IEEE-802-11-的-MAC-帧" class="headerlink" title="IEEE 802.11 的 MAC 帧"></a>IEEE 802.11 的 MAC 帧</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IEEE802.11MAC%E5%B8%A7.png"><br>直接上图,主要信息就在前面 30B 上,当然后面还有 4 个 MAC 帧尾部<code>FCS</code>,首尾加起来一共 34B</p>
+<h3><span id="ieee-80211-的-mac-帧">IEEE 802.11 的 MAC 帧</span></h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IEEE802.11MAC%E5%B8%A7.png"><br>直接上图,主要信息就在前面 30B 上,当然后面还有 4 个 MAC 帧尾部<code>FCS</code>,首尾加起来一共 34B</p>
 <p>前 30B 中最重要的是前面 2B 必考重点</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/MAC%E5%B8%A7802.11%E5%9C%B0%E5%9D%80%E5%AD%97%E6%AE%B5.png" alt="alt text"></p>
-<h3 id="虚拟局域网-VLAN"><a href="#虚拟局域网-VLAN" class="headerlink" title="虚拟局域网 VLAN"></a>虚拟局域网 VLAN</h3><p>定义:将一个大的局域网分成逻辑上的几个小的子网,不同的子网之间是不同的广播域 <code>IEEE 802.3ac</code>协议<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/802.1Q%E5%B8%A7.png"></p>
+<h3><span id="虚拟局域网-vlan">虚拟局域网 VLAN</span></h3><p>定义:将一个大的局域网分成逻辑上的几个小的子网,不同的子网之间是不同的广播域 <code>IEEE 802.3ac</code>协议<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/802.1Q%E5%B8%A7.png"></p>
 <blockquote>
 <p>相比较以太网帧因为插入了四个字节的<code>VLAN</code>标志,所以最大帧长是<strong>1522</strong>字节,</p>
 <p>以太网(有线局域网) 是 1518 无线局域网最大是 2312 字节 无线局域网帧比有线的长很多</p>
 </blockquote>
-<h4 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h4><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/vlan%E4%BC%A0%E8%BE%93%E4%B9%A0%E9%A2%98.png"><br>分别讨论下面几种情况</p>
+<h4><span id="习题">习题</span></h4><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/vlan%E4%BC%A0%E8%BE%93%E4%B9%A0%E9%A2%98.png"><br>分别讨论下面几种情况</p>
 <ol>
 <li>A 向 B 发送(同一个交换机,同一个 VLAN): 交换机根据 MAC 地址 发现是本交换机,本 vlan 所以就像普通以太网直接传送帧</li>
 <li>A -&gt; E(不同交换机,同一个 VLAN): 交换机 1 会将帧给转发给交换机 2, 在转发前要插入<code>VLAN</code>标签. 链路上传递是<code>802.1.Q</code>帧. 注意!!! 交换机 2 给 E 的时候会抽出<code>VLAN</code>标签这样,这样这个帧就退化成了标准以太网帧</li>
@@ -538,7 +546,7 @@
 <blockquote>
 <p>虚拟局域网<code>VLAN</code>是局域网给用户的一种服务,不是一种局域网类型</p>
 </blockquote>
-<h2 id="广域网"><a href="#广域网" class="headerlink" title="广域网"></a>广域网</h2><ol>
+<h2><span id="广域网">广域网</span></h2><ol>
 <li>广域网是因特网的核心部分(我感觉也不会拿这个当考点吧)</li>
 <li>广域网由<strong>节点交换机</strong> 不是路由器 交换分组</li>
 </ol>
@@ -546,35 +554,35 @@
 <blockquote>
 <p>注意广域网会工作在三层,局域网则是两层</p>
 </blockquote>
-<h3 id="HDLC-协议"><a href="#HDLC-协议" class="headerlink" title="HDLC 协议"></a>HDLC 协议</h3><p>广域网协议,考纲已经删掉了</p>
-<h3 id="PPP-协议"><a href="#PPP-协议" class="headerlink" title="PPP 协议"></a>PPP 协议</h3><blockquote>
+<h3><span id="hdlc-协议">HDLC 协议</span></h3><p>广域网协议,考纲已经删掉了</p>
+<h3><span id="ppp-协议">PPP 协议</span></h3><blockquote>
 <p>点对点协议,<strong>数据链路层</strong></p>
 <p><code>PPP</code> &#x3D; <code>LCP</code>链路控制协议 + <code>NCP</code>网络控制协议 + 信息部分(IP 数据报)</p>
 <p>PPP 是点对点的,不是总线型,不需要<code>CSMA/CD</code>,没有最短帧</p>
 </blockquote>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ppp%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
 <p>ps 关于<code>CSMA/CD</code>的帧的间隔,已经考了好几次了可能是重点让算</p>
-<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="一些中继设备"><a href="#一些中继设备" class="headerlink" title="一些中继设备"></a>一些中继设备</h3><ol>
+<h1><span id="网络层">网络层</span></h1><h2><span id="简介">简介</span></h2><h3><span id="一些中继设备">一些中继设备</span></h3><ol>
 <li>物理层:转发器,集线器</li>
 <li>数据链路层:网桥, 交换机</li>
 <li>网络层: 路由器</li>
 <li>网络层以上的: 网关</li>
 </ol>
-<h3 id="软件定义网络-SDN"><a href="#软件定义网络-SDN" class="headerlink" title="软件定义网络 SDN"></a>软件定义网络 SDN</h3><p>简单的说就是,原先的网络模式,路由器不仅需要保存转发表,还需要进行路由选择算法,在<code>SDN</code>中,会有一个远程控制器,来集中更新所有路由器的转发表,这样路由器只需要收到报文,查表转发即可</p>
+<h3><span id="软件定义网络-sdn">软件定义网络 SDN</span></h3><p>简单的说就是,原先的网络模式,路由器不仅需要保存转发表,还需要进行路由选择算法,在<code>SDN</code>中,会有一个远程控制器,来集中更新所有路由器的转发表,这样路由器只需要收到报文,查表转发即可</p>
 <blockquote>
 <p>SDN 编程接口:北向接口</p>
 <p>SDN 控制器和转发设备之间双向会话接口: 南向接口</p>
 <p>SDN 控制器内部之间的通信接口: 东西向接口</p>
 </blockquote>
-<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><ol>
+<h3><span id="拥塞控制">拥塞控制</span></h3><ol>
 <li>开环控制: 事先考虑好,静态控制,系统启动后不再需要修改,做决定时不考虑当前网络状态</li>
 <li>闭环控制: 事前不考虑,而是动态的根据网络状况进行调整</li>
 </ol>
-<h3 id="静态路由和动态路由"><a href="#静态路由和动态路由" class="headerlink" title="静态路由和动态路由"></a>静态路由和动态路由</h3><ol>
+<h3><span id="静态路由和动态路由">静态路由和动态路由</span></h3><ol>
 <li>静态路由(非自适应路由算法):需要管理员提前配置 -&gt; 适用小型网络</li>
 <li>动态路由(自适应路由算法): 路由器之间动态交换信息</li>
 </ol>
-<h2 id="动态路由算法"><a href="#动态路由算法" class="headerlink" title="动态路由算法"></a>动态路由算法</h2><h3 id="距离-向量算法-RIP"><a href="#距离-向量算法-RIP" class="headerlink" title="距离-向量算法, RIP"></a>距离-向量算法, RIP</h3><p>对于所有路由器发来的<code>RIP</code>报文,把每个距离+1 后储存下来,收到新的报文后按下面的情况进行处理</p>
+<h2><span id="动态路由算法">动态路由算法</span></h2><h3><span id="距离-向量算法-rip">距离-向量算法, RIP</span></h3><p>对于所有路由器发来的<code>RIP</code>报文,把每个距离+1 后储存下来,收到新的报文后按下面的情况进行处理</p>
 <ol>
 <li>如果表中不存在,就添加到项目中</li>
 <li>如果收到的比如某个目的地,已经在表中了,并且转发走的是同一个路由,但是距离改变了,则更新</li>
@@ -582,15 +590,15 @@
 <li>如果 3 分钟还没有收到邻接路由器的报文,则标记为<code>16</code>表示不可达</li>
 </ol>
 <p>上述算法是<code>Bellman-Ford</code> 或者叫<code>Ford-Fulkerson</code></p>
-<h3 id="链路状态路由算法"><a href="#链路状态路由算法" class="headerlink" title="链路状态路由算法"></a>链路状态路由算法</h3><p>典型的链路状态路由算法是<code>OSPF</code>,一个节点将自己与相邻节点的信息通过<code>洪泛法</code>逐步发送到整个 网络的所有路由上. 节点变化时使用<code>迪杰斯特拉</code> 计算单源到达目的的最短路径</p>
-<h4 id="层次路由"><a href="#层次路由" class="headerlink" title="层次路由"></a>层次路由</h4><p>因特网 划分&#x3D;&gt; 许多小的自治系统</p>
+<h3><span id="链路状态路由算法">链路状态路由算法</span></h3><p>典型的链路状态路由算法是<code>OSPF</code>,一个节点将自己与相邻节点的信息通过<code>洪泛法</code>逐步发送到整个 网络的所有路由上. 节点变化时使用<code>迪杰斯特拉</code> 计算单源到达目的的最短路径</p>
+<h4><span id="层次路由">层次路由</span></h4><p>因特网 划分&#x3D;&gt; 许多小的自治系统</p>
 <p>一个自治系统 &#x3D;&gt; 包含很多小的局域网</p>
 <p>自治系统内部<code>IGP</code> 包括<code>RIP</code>,<code>OSPF</code></p>
 <p>自治系统之间<code>EGP</code> 用在不同自治系统之间交换信息,和在不同自治系统之间寻找最优路径,具体协议是 BGP</p>
 <blockquote>
 <p>由于互联网太过庞大,可能寻找到的并不是真的最短路径,王道书上说的是最短</p>
 </blockquote>
-<h2 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ip%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F.png"></p>
+<h2><span id="ipv4">IPV4</span></h2><h3><span id="格式">格式</span></h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ip%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F.png"></p>
 <ol>
 <li>首部长度 <code>4B</code>为单位,最大 60B,最小 20B</li>
 <li>总长度 <code>指首部和数据之和</code>的长度 单位是<code>字节B</code> 一个数据报最大长度是$2^{16}-1&#x3D;65535$</li>
@@ -603,7 +611,7 @@
 <li>源地址: <code>4B</code> 发送方的 IP 地址</li>
 <li>目的地址: <code>4B</code>目的方的 IP 地址</li>
 </ol>
-<h3 id="五类-IP-地址"><a href="#五类-IP-地址" class="headerlink" title="五类 IP 地址"></a>五类 IP 地址</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BA%94%E7%B1%BBip%E5%9C%B0%E5%9D%80.png"></p>
+<h3><span id="五类-ip-地址">五类 IP 地址</span></h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BA%94%E7%B1%BBip%E5%9C%B0%E5%9D%80.png"></p>
 <ol>
 <li>网络号全 0 表示本网络本身,比如 202.92.174.0</li>
 <li>主机号全 1 表示本网络的广播地址<code>直接广播地址</code>202.92.174.255</li>
@@ -611,21 +619,21 @@
 <li>32 位全 0, 0.0.0.0 表示本网络的本主机</li>
 <li>32 位全 1,255.255.255.255 表示 TCP&#x2F;IP 网络广播地址,<code>受限广播地址</code><br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E7%A7%8DIP%E5%9C%B0%E5%9D%80%E4%BD%BF%E7%94%A8%E8%8C%83%E5%9B%B4.png"></li>
 </ol>
-<h3 id="NAT-与私有-IP-网段"><a href="#NAT-与私有-IP-网段" class="headerlink" title="NAT 与私有 IP 网段"></a>NAT 与私有 IP 网段</h3><ol>
+<h3><span id="nat-与私有-ip-网段">NAT 与私有 IP 网段</span></h3><ol>
 <li>A 类 1 个 A 类网段 10.0.0.0~10.255.255.255</li>
 <li>B 类 16 个 B 类网段 172.16.0.0~172.31.255.255</li>
 <li>C 类 256 个 C 类网段 192.168.0.0~192.168.255.255</li>
 </ol>
 <p><code>私有IP地址</code> 又叫&#x3D;&gt; <code>可重用地址</code></p>
-<h4 id="NAT-转换表格式"><a href="#NAT-转换表格式" class="headerlink" title="NAT 转换表格式"></a>NAT 转换表格式</h4><p>{本地 ip 地址:端口} 和 {全球 ip 地址:端口}<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/NAT%E8%BD%AC%E6%8D%A2%E8%A1%A8.png"></p>
-<h4 id="子网掩码与-CIDR"><a href="#子网掩码与-CIDR" class="headerlink" title="子网掩码与 CIDR"></a>子网掩码与 CIDR</h4><p>比较简单,注意一下全 0 和全 1 的特殊情况即可</p>
-<h3 id="ARP-DHCP-和-ICMP"><a href="#ARP-DHCP-和-ICMP" class="headerlink" title="ARP DHCP 和 ICMP"></a>ARP DHCP 和 ICMP</h3><h4 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议<code>ARP</code></h4><p>作用:<code>ip地址</code> –映射–&gt; <code>MAC地址</code></p>
+<h4><span id="nat-转换表格式">NAT 转换表格式</span></h4><p>{本地 ip 地址:端口} 和 {全球 ip 地址:端口}<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/NAT%E8%BD%AC%E6%8D%A2%E8%A1%A8.png"></p>
+<h4><span id="子网掩码与-cidr">子网掩码与 CIDR</span></h4><p>比较简单,注意一下全 0 和全 1 的特殊情况即可</p>
+<h3><span id="arp-dhcp-和-icmp">ARP DHCP 和 ICMP</span></h3><h4><span id="地址解析协议arp">地址解析协议<code>ARP</code></span></h4><p>作用:<code>ip地址</code> –映射–&gt; <code>MAC地址</code></p>
 <p><strong>网络层协议</strong></p>
 <blockquote>
 <p>每个主机都有一个自己的<code>ARP缓存表</code>,当需要转换时,查找这个表,如果有就好,没有就使用广播帧(全 F)发送 ARP 请求分组,对应的通过 ARP 响应分组(单播)回复</p>
 </blockquote>
 <p>tips: <code>ARP</code>工作在网络层,而<code>NAT</code>工作在传输层,因为 NAT 要看见<code>端口号</code>.</p>
-<h4 id="动态主机配置协议DHCP"><a href="#动态主机配置协议DHCP" class="headerlink" title="动态主机配置协议DHCP"></a>动态主机配置协议<code>DHCP</code></h4><p>DHCP 用来给主机分配 ip 地址,DHCP 是<strong>应用层</strong>协议,基于 UDP,使用客户&#x2F;服务模式(B&#x2F;S)</p>
+<h4><span id="动态主机配置协议dhcp">动态主机配置协议<code>DHCP</code></span></h4><p>DHCP 用来给主机分配 ip 地址,DHCP 是<strong>应用层</strong>协议,基于 UDP,使用客户&#x2F;服务模式(B&#x2F;S)</p>
 <p>工作原理:</p>
 <blockquote>
 <ol>
@@ -640,7 +648,7 @@
 <p>客户机面对多台 DHCP 服务器,可能会收到多个消息,通常选最先到达的.</p>
 <p>问:为什么用 UDP?</p>
 <p>答:TCP 需要建立连接,而此时客户机还没有自己的 ip 地址</p>
-<h4 id="网际控制报文协议-ICMP"><a href="#网际控制报文协议-ICMP" class="headerlink" title="网际控制报文协议 ICMP"></a>网际控制报文协议 <code>ICMP</code></h4><p><code>ICMP</code>是网络层协议</p>
+<h4><span id="网际控制报文协议-icmp">网际控制报文协议 <code>ICMP</code></span></h4><p><code>ICMP</code>是网络层协议</p>
 <p>如何发送? ICMP 作为 IP 数据报的数据部分+IP 数据报的首部 发送出去</p>
 <p>ICMP 有两种 <code>ICMP差错报文</code>,<code>ICMP询问报文</code></p>
 <p><strong>ICMP 差错报文</strong></p>
@@ -651,10 +659,10 @@
 <li>参数问题:收到的报文有值不正确</li>
 <li>改变路由:有更好的路由了</li>
 </ol>
-<h3 id="IP-组播"><a href="#IP-组播" class="headerlink" title="IP 组播"></a>IP 组播</h3><p>组播仅应用于<code>UDP</code>,一个主机可以在多个组中</p>
+<h3><span id="ip-组播">IP 组播</span></h3><p>组播仅应用于<code>UDP</code>,一个主机可以在多个组中</p>
 <p>组播 主机需要使用<code>IGMP</code>(因特网组管理协议)</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95%E6%92%AD%E4%B8%8E%E7%BB%84%E6%92%AD.png"></p>
-<h4 id="IP-组播地址"><a href="#IP-组播地址" class="headerlink" title="IP 组播地址"></a>IP 组播地址</h4><p>IP 组播使用<code>D类</code>地址,D 类前 4 位是<code>1110</code>,因此 D 类地址范围是<br><code>224.0.0.0</code>~&#96;239.255.255.255&#96;,每个 D 类标志代表一个组播组</p>
+<h4><span id="ip-组播地址">IP 组播地址</span></h4><p>IP 组播使用<code>D类</code>地址,D 类前 4 位是<code>1110</code>,因此 D 类地址范围是<br><code>224.0.0.0</code>~&#96;239.255.255.255&#96;,每个 D 类标志代表一个组播组</p>
 <p>组播 IP 数据报,使用 D 类,并且协议字段数值是<code>2</code>表明使用<code>IGMP</code></p>
 <p>tips</p>
 <ol>
@@ -663,10 +671,10 @@
 <li><strong>组播数据报不产生 ICMP 差错报文</strong></li>
 <li>不是所有的 D 类地址都可以作为组播地址</li>
 </ol>
-<h4 id="D-类地址与以太网组播地址的映射关系"><a href="#D-类地址与以太网组播地址的映射关系" class="headerlink" title="D 类地址与以太网组播地址的映射关系"></a>D 类地址与以太网组播地址的映射关系</h4><p>TODO: 几乎不可能考具体转换吧</p>
+<h4><span id="d-类地址与以太网组播地址的映射关系">D 类地址与以太网组播地址的映射关系</span></h4><p>TODO: 几乎不可能考具体转换吧</p>
 <p>注意的有五位不做映射即可</p>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/D%E7%B1%BBIP%E5%9C%B0%E5%9D%80%E4%B8%8E%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%BB%84%E6%92%AD%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84.png"></p>
-<h3 id="移动-IP"><a href="#移动-IP" class="headerlink" title="移动 IP"></a>移动 IP</h3><p>移动 IP 中每个移动站都有一个原始地址即<code>永久地址</code>,移动站原始链接网络称为<code>归属网络</code>,永久地址和归属网络的关系是不变的.</p>
+<h3><span id="移动-ip">移动 IP</span></h3><p>移动 IP 中每个移动站都有一个原始地址即<code>永久地址</code>,移动站原始链接网络称为<code>归属网络</code>,永久地址和归属网络的关系是不变的.</p>
 <p><code>归属代理</code>通常是指连接到归属网络上的路由器,代理功能是在<code>应用层</code>完成的</p>
 <p>外地代理有两个重要功能:</p>
 <ol>
@@ -678,22 +686,22 @@
 <p>移动站在归属网络时使用<code>TCP/IP</code>进行通信</p>
 <p>外地代理向被访网络的移动站发送数据时,使用移动站的<code>MAC地址</code></p>
 </blockquote>
-<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p>传输层的 SAP 是<code>端口</code>,16bit,可以表示<code>65535</code>个不同的端口号</p>
-<h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><p>大的说有两类,<code>服务器</code>用的和<code>客户端</code>用的</p>
+<h1><span id="传输层">传输层</span></h1><p>传输层的 SAP 是<code>端口</code>,16bit,可以表示<code>65535</code>个不同的端口号</p>
+<h2><span id="端口号">端口号</span></h2><p>大的说有两类,<code>服务器</code>用的和<code>客户端</code>用的</p>
 <p>其中服务器用的又有两类</p>
-<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><blockquote>
+<h3><span id="服务端">服务端</span></h3><blockquote>
 <ol>
 <li><code>熟知端口号</code> 范围是 0~1023</li>
 <li><code>登记端口号</code> 范围是 1024~49151 给没有熟知端口号的应用程序用的</li>
 </ol>
 </blockquote>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%86%9F%E7%9F%A5%E7%AB%AF%E5%8F%A3%E5%8F%B7.png"></p>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>客户端使用的端口号 范围是 49152~65535,用户进程启动时才短暂的动态的选择 又叫<code>临时端口号</code></p>
-<h2 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h2><p>标识一台主机的不同进程</p>
+<h3><span id="客户端">客户端</span></h3><p>客户端使用的端口号 范围是 49152~65535,用户进程启动时才短暂的动态的选择 又叫<code>临时端口号</code></p>
+<h2><span id="套接字">套接字</span></h2><p>标识一台主机的不同进程</p>
 <p>Socket &#x3D; (IP 地址:端口号)</p>
-<h2 id="无连接服务和面向连接服务"><a href="#无连接服务和面向连接服务" class="headerlink" title="无连接服务和面向连接服务"></a>无连接服务和面向连接服务</h2><h3 id="TCP-面向连接服务"><a href="#TCP-面向连接服务" class="headerlink" title="TCP 面向连接服务"></a><code>TCP</code> 面向连接服务</h3><p>比如文件传输<code>FTP</code>,超文本协议<code>HTTP</code>,远程登录<code>TELNET</code></p>
-<h3 id="UDP-无连接非可靠"><a href="#UDP-无连接非可靠" class="headerlink" title="UDP 无连接非可靠"></a><code>UDP</code> 无连接非可靠</h3><p>小文件传输协议<code>TFTP</code><br>,<code>DNS</code><br>,<code>SNMP</code><br>,实时传输协议<code>RTP</code></p>
-<h2 id="UDP-数据报"><a href="#UDP-数据报" class="headerlink" title="UDP 数据报"></a>UDP 数据报</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2><span id="无连接服务和面向连接服务">无连接服务和面向连接服务</span></h2><h3><span id="tcp-面向连接服务"><code>TCP</code> 面向连接服务</span></h3><p>比如文件传输<code>FTP</code>,超文本协议<code>HTTP</code>,远程登录<code>TELNET</code></p>
+<h3><span id="udp-无连接非可靠"><code>UDP</code> 无连接非可靠</span></h3><p>小文件传输协议<code>TFTP</code><br>,<code>DNS</code><br>,<code>SNMP</code><br>,实时传输协议<code>RTP</code></p>
+<h2><span id="udp-数据报">UDP 数据报</span></h2><h3><span id="特点">特点</span></h3><ul>
 <li><p>UDP 无需建立连接,分组开销小</p>
 </li>
 <li><p><code>TCP</code> 20B 首部, <code>UDP</code>仅 8B 首部</p>
@@ -703,13 +711,13 @@
 <li><p><code>UDP</code>支持一对一,一对多,多对一,多对多的交互通信</p>
 </li>
 </ul>
-<h3 id="UDP-首部"><a href="#UDP-首部" class="headerlink" title="UDP 首部"></a>UDP 首部</h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E9%A6%96%E9%83%A8.png"></p>
+<h3><span id="udp-首部">UDP 首部</span></h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E9%A6%96%E9%83%A8.png"></p>
 <p>注意:</p>
 <ol>
 <li>源端口，在需要对方回信时选用,如果不需要时可以全 0</li>
 <li>长度,UDP 数据报最小长度是 8 仅仅首部</li>
 </ol>
-<h4 id="UDP-校验和计算"><a href="#UDP-校验和计算" class="headerlink" title="UDP 校验和计算"></a>UDP 校验和计算</h4><h1 id="附录-一-协议-名词和概念"><a href="#附录-一-协议-名词和概念" class="headerlink" title="附录 (一)协议,名词和概念"></a>附录 (一)协议,名词和概念</h1><p><del>说的好像不常见的就不考一样</del></p>
+<h4><span id="udp-校验和计算">UDP 校验和计算</span></h4><h1><span id="附录-一协议名词和概念">附录 (一)协议,名词和概念</span></h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
@@ -768,12 +776,12 @@
 <li><code>OSPF</code>协议是不使用<code>UDP数据报</code>传送，而是直接使用<code>IP数据报</code>传送，因此 OSPF 是被划分到属于网络层协议-这一点考研党要以考纲为标准）；</li>
 <li><code>BGP</code>用<code>TCP（RIP用到传输层</code>），所以 BGP 是应用层协议；</li>
 </ol>
-<h1 id="附录-二-计算机网络的几种信息交换方式"><a href="#附录-二-计算机网络的几种信息交换方式" class="headerlink" title="附录 (二) 计算机网络的几种信息交换方式"></a>附录 (二) 计算机网络的几种信息交换方式</h1><h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>交换机本质是多端口网桥,通常工作在<code>全双工</code>,可以划分<code>冲突域</code></p>
+<h1><span id="附录-二-计算机网络的几种信息交换方式">附录 (二) 计算机网络的几种信息交换方式</span></h1><h2><span id="交换机">交换机</span></h2><h3><span id="1概念">1.概念</span></h3><p>交换机本质是多端口网桥,通常工作在<code>全双工</code>,可以划分<code>冲突域</code></p>
 <ol>
 <li>直通式交换机 只检查帧的目的地址 不能支持不同速率的</li>
 <li>存储转发交换机 先将交换机缓存起来 ,检查数据是否正确 ,如果错误则丢弃,支持连接不同速率的端口</li>
 </ol>
-<h3 id="2-自学习"><a href="#2-自学习" class="headerlink" title="2.自学习"></a>2.自学习</h3><p>相比较<code>ARP</code>算法,交换机的自学习,比较简单</p>
+<h3><span id="2自学习">2.自学习</span></h3><p>相比较<code>ARP</code>算法,交换机的自学习,比较简单</p>
 <p>假如表一开始都是空的,A 向 B 发送一个帧从 1 端口进入,那么交换机就会记录下 A-1,一开始交换机肯定是找不到 B 的端口的,所以交换机会把这个帧从除了进来的端口以外的所有端口进行转发,不是目的地的端口收到后都会丢弃该帧,B 接受后因为是自己的所以不会丢弃.当然等 B 回复 A 的时候 交换机自然就知道了 B 的端口了</p>
 <p>即插即用,无需手动分配,会自动定期更新</p>
 

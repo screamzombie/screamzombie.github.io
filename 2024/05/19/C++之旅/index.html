@@ -26,6 +26,14 @@
 <script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
 
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -165,8 +173,8 @@
         <p><img src="/../images/C++/CPPlogo.png"></p>
 <span id="more"></span>
 
-<h1 id="现代-C"><a href="#现代-C" class="headerlink" title="现代 C++"></a>现代 C++</h1><p>任何一个伟大的目标，都有一个微不足道的开始。</p>
-<h2 id="using-关键字"><a href="#using-关键字" class="headerlink" title="using 关键字"></a>using 关键字</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>using 声明 (using declaration) 是将命名空间中单个名字注入到当前作用域的机制，使得在当前作用域下访问另一个作用域下的成员时无需使用限定符 ::</p>
+<h1><span id="现代-c">现代 C++</span></h1><p>任何一个伟大的目标，都有一个微不足道的开始。</p>
+<h2><span id="using-关键字">using 关键字</span></h2><h3><span id="声明">声明</span></h3><p>using 声明 (using declaration) 是将命名空间中单个名字注入到当前作用域的机制，使得在当前作用域下访问另一个作用域下的成员时无需使用限定符 ::</p>
 <p>比如</p>
 <pre><code class="cpp">void function()&#123;
     using std::cout; //仅仅导入某个函数
@@ -180,7 +188,7 @@ int main()&#123;
     using namespace std; //如果using 某个明明空间是在某个函数内，那么它仅仅在该函数内生效
 &#125;
 </code></pre>
-<h3 id="类型重定义"><a href="#类型重定义" class="headerlink" title="类型重定义"></a>类型重定义</h3><pre><code class="cpp">using alias = typename
+<h3><span id="类型重定义">类型重定义</span></h3><pre><code class="cpp">using alias = typename
 </code></pre>
 <p>举例</p>
 <pre><code class="cpp">using fun = void (*)(int, int);
@@ -192,7 +200,7 @@ int main()&#123;
     std::cout&lt;&lt;sizeof(int16)&lt;&lt;std::endl;
 &#125;
 </code></pre>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><p>加入我们有这样的想法</p>
+<h3><span id="优势">优势</span></h3><p>加入我们有这样的想法</p>
 <pre><code class="cpp">typedef std::map&lt;int, int&gt; map_int_t;
 typedef std::map&lt;int, std::string&gt; map_str_t;
 typedef std::map&lt;int, bool&gt; map_b_t;
@@ -220,7 +228,7 @@ int main()&#123;
 &#125;
 </code></pre>
 <p>简化了一点,聊胜于无</p>
-<h2 id="几个数据类型大小与范围"><a href="#几个数据类型大小与范围" class="headerlink" title="几个数据类型大小与范围"></a>几个数据类型大小与范围</h2><table>
+<h2><span id="几个数据类型大小与范围">几个数据类型大小与范围</span></h2><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -249,7 +257,7 @@ int main()&#123;
 unsigned char ch2; // 无符号
 signed char ch3; //有符号
 </code></pre>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><h3 id="const-int-与-int-const"><a href="#const-int-与-int-const" class="headerlink" title="const int _ 与 int _ const"></a>const int _ 与 int _ const</h3><blockquote>
+<h2><span id="const">const</span></h2><h3><span id="const-int-_-与-int-_-const">const int _ 与 int _ const</span></h3><blockquote>
 <p>不管 const 写成如何，读懂别人写的 const 和*满天飞的类型的金科玉律是 const 默认<br>作用于其左边的东西，否则作用于其右边的东西：</p>
 </blockquote>
 <p>例如，<code>const int* </code>const 只有右边有东西，所以 const 修饰 int 成为常量整型，然后*再作用于常量整型。所以这是 a pointer to a constant integer（指向一个整型，不可通过该指针改变其指向的内容，但可改变指针本身所指向的地址）</p>
@@ -257,10 +265,10 @@ signed char ch3; //有符号
 <p><code>int* const</code><br>这个 const 的左边是*，所以 const 作用于指针（不可改变指向的地址），所以这是 a constant pointer to an integer，可以通过指针改变其所指向的内容但只能指向该地址，不可指向别的地址。</p>
 <p><code>const int* const</code><br>这里有两个 const。左边的 const 的左边没东西，右边有 int 那么此 const 修饰 int。右边的 const 作用于*使得指针本身变成 const（不可改变指向地址），那么这个是 a constant pointer to a constant integer，不可改变指针本身所指向的地址也不可通过指针改变其指向的内容。</p>
 <p><code>int const * const</code><br>这里也出现了两个 const，左边都有东西，那么左边的 const 作用于 int，右边的 const 作用于*，于是这个还是是 a constant pointer to a constant integer</p>
-<h3 id="修饰函数体"><a href="#修饰函数体" class="headerlink" title="修饰函数体"></a>修饰函数体</h3><pre><code class="cpp">void SetAge(int age) //可以修改类的数据成员
+<h3><span id="修饰函数体">修饰函数体</span></h3><pre><code class="cpp">void SetAge(int age) //可以修改类的数据成员
 void SetAgeConst(int age) const //不可以修改类的数据成员
 </code></pre>
-<h2 id="lambda-表达式"><a href="#lambda-表达式" class="headerlink" title="lambda 表达式"></a>lambda 表达式</h2><h3 id="三种捕获"><a href="#三种捕获" class="headerlink" title="三种捕获"></a>三种捕获</h3><pre><code class="cpp">#include &lt;iostream&gt;
+<h2><span id="lambda-表达式">lambda 表达式</span></h2><h3><span id="三种捕获">三种捕获</span></h3><pre><code class="cpp">#include &lt;iostream&gt;
 int main()
 &#123;
     int a = 3;
@@ -283,7 +291,7 @@ int main()
     func4();
 &#125;
 </code></pre>
-<h3 id="举一个例子"><a href="#举一个例子" class="headerlink" title="举一个例子"></a>举一个例子</h3><p>在这个例子中使用<code>[=]</code>值捕获了所有的变量,但是因为是值捕获所以我们不能直接对 a 进行修改,即使 a 的值不会影响到外面</p>
+<h3><span id="举一个例子">举一个例子</span></h3><p>在这个例子中使用<code>[=]</code>值捕获了所有的变量,但是因为是值捕获所以我们不能直接对 a 进行修改,即使 a 的值不会影响到外面</p>
 <p>如果我们真的想在内部对 a 的值进行修改需要加上<code>mutable</code>, <code>-&gt; int</code> 不是必须的,代表尾返回值,不过再更高版本的 C++中我们已经不需要这个写法了.</p>
 <pre><code class="cpp">#include &lt;iostream&gt;
 int main() &#123;
@@ -299,7 +307,7 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-<h2 id="新的字面量"><a href="#新的字面量" class="headerlink" title="新的字面量"></a>新的字面量</h2><p>c++中的<code>long long </code>是一个至少<strong>64</strong>位的整数,也就是可以超过 64 位.不过书上没说</p>
+<h2><span id="新的字面量">新的字面量</span></h2><p>c++中的<code>long long </code>是一个至少<strong>64</strong>位的整数,也就是可以超过 64 位.不过书上没说</p>
 <pre><code class="cpp">#include &lt;iostream&gt;
 int main() &#123;
     long long num = 65535ll;
@@ -312,7 +320,7 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-<h3 id="获得类型的最大值与最小值"><a href="#获得类型的最大值与最小值" class="headerlink" title="获得类型的最大值与最小值"></a>获得类型的最大值与最小值</h3><pre><code class="cpp">#include &lt;iostream&gt;
+<h3><span id="获得类型的最大值与最小值">获得类型的最大值与最小值</span></h3><pre><code class="cpp">#include &lt;iostream&gt;
 #include &lt;limits&gt;
 int main() &#123;
     std::cout &lt;&lt; std::numeric_limits&lt;int&gt;::max()&lt;&lt; std::endl;
@@ -320,7 +328,7 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-<h3 id="内联命名空间"><a href="#内联命名空间" class="headerlink" title="内联命名空间"></a>内联命名空间</h3><pre><code class="cpp">#include &lt;iostream&gt;
+<h3><span id="内联命名空间">内联命名空间</span></h3><pre><code class="cpp">#include &lt;iostream&gt;
 namespace parent
 &#123;
     namespace child1
@@ -343,7 +351,7 @@ int main()&#123;
 &#125;
 </code></pre>
 <p>通过<code>inline</code>可以把自命名空间内的东西拿到父命名空间中</p>
-<h2 id="嵌套命名空间"><a href="#嵌套命名空间" class="headerlink" title="嵌套命名空间"></a>嵌套命名空间</h2><pre><code class="cpp">namespace parent::child3
+<h2><span id="嵌套命名空间">嵌套命名空间</span></h2><pre><code class="cpp">namespace parent::child3
 &#123;
     auto function = []() -&gt; void
     &#123;
@@ -357,8 +365,8 @@ int main()
 &#125;
 </code></pre>
 <p>使用<code>namespace A::B::C</code>这种形式避免过多的嵌套缩进</p>
-<h2 id="右值引用"><a href="#右值引用" class="headerlink" title="右值引用"></a>右值引用</h2><p>TODO</p>
-<h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><h2 id="分配器"><a href="#分配器" class="headerlink" title="分配器"></a>分配器</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>由于<code>C++</code>中存在有<code>list</code>，<code>vector</code>，<code>string</code>等大小会改变的容易因此需要使用分配器对内存空间进行分配和管理。</p>
+<h2><span id="右值引用">右值引用</span></h2><p>TODO</p>
+<h1><span id="stl">STL</span></h1><h2><span id="分配器">分配器</span></h2><h3><span id="简介">简介</span></h3><p>由于<code>C++</code>中存在有<code>list</code>，<code>vector</code>，<code>string</code>等大小会改变的容易因此需要使用分配器对内存空间进行分配和管理。</p>
 <p>满足以下需求的类都可以成为分配器</p>
 <pre><code class="cpp">A::pointer //指针
 A::const_pointer// 常量指针
@@ -368,8 +376,8 @@ A::value_type //值类型
 A::size_type //所用内存大小的类型，表示类A所定义的分配模型中的单个对象最大尺寸的无符号整型
 A::difference_type //指针差值的类型，为带符号整型，用于表示分配模型内的两个指针的差异值
 </code></pre>
-<h1 id="C-Qt"><a href="#C-Qt" class="headerlink" title="C++ Qt"></a>C++ Qt</h1><p><del>扎不多得了</del></p>
-<h1 id="工欲善其事必先利其器"><a href="#工欲善其事必先利其器" class="headerlink" title="工欲善其事必先利其器"></a>工欲善其事必先利其器</h1><h2 id="MakeFile"><a href="#MakeFile" class="headerlink" title="MakeFile"></a>MakeFile</h2><p>Compile run all cpp files of src</p>
+<h1><span id="c-qt">C++ Qt</span></h1><p><del>扎不多得了</del></p>
+<h1><span id="工欲善其事必先利其器">工欲善其事必先利其器</span></h1><h2><span id="makefile">MakeFile</span></h2><p>Compile run all cpp files of src</p>
 <pre><code class="makefile">CC = clang++
 CCFLAGS = -std=c++2b -Wall
 TARGET = test
@@ -387,19 +395,19 @@ $(TARGET): $(OBJS)
 clean:
     rm -f bin/* build/*%
 </code></pre>
-<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="makefile-的依赖"><a href="#makefile-的依赖" class="headerlink" title="makefile 的依赖"></a>makefile 的依赖</h4><pre><code class="makefile">x.txt: m.txt c.txt
+<h3><span id="基础知识">基础知识</span></h3><h4><span id="makefile-的依赖">makefile 的依赖</span></h4><pre><code class="makefile">x.txt: m.txt c.txt
     cat m.txt c.txt &gt; x.txt
 </code></pre>
 <p>x.txt 依赖 m.txt c.txt 其中 m.txt 是第一个依赖</p>
 <p>一条规则的格式为<code>目标文件: 依赖文件1 依赖文件2 ...</code></p>
 <p>make 执行时，默认执行第一条规则</p>
-<h4 id="伪目标"><a href="#伪目标" class="headerlink" title="伪目标"></a>伪目标</h4><pre><code class="makefile">.PHONY: clean
+<h4><span id="伪目标">伪目标</span></h4><pre><code class="makefile">.PHONY: clean
 clean:
     rm -f m.txt
     rm -f x.txt
 </code></pre>
 <p>多数 makefile 中都有.PHONY 这个标识,这意味着 clean 是一个伪目标,假如没有这个标识,大概文件夹中有了 clean 这个文件后,就不会执行<code>make clean</code>,make 会认为目标已经完成了.</p>
-<h4 id="多语句"><a href="#多语句" class="headerlink" title="多语句"></a>多语句</h4><p>可以使用<code>\</code>把一行语句拆成多行</p>
+<h4><span id="多语句">多语句</span></h4><p>可以使用<code>\</code>把一行语句拆成多行</p>
 <pre><code class="Makefile">cd_ok:
     pwd; \
     cd ..; \
@@ -409,7 +417,7 @@ clean:
 <pre><code class="Makefile">cd_ok:
     cd .. &amp;&amp; pwd
 </code></pre>
-<h3 id="编译-C-C"><a href="#编译-C-C" class="headerlink" title="编译 C&#x2F;C++"></a>编译 C&#x2F;C++</h3><h4 id="GCC-编译-C-C-的四个过程"><a href="#GCC-编译-C-C-的四个过程" class="headerlink" title="GCC 编译 C&#x2F;C++的四个过程"></a>GCC 编译 C&#x2F;C++的四个过程</h4><ul>
+<h3><span id="编译-cx2fc">编译 C&#x2F;C++</span></h3><h4><span id="gcc-编译-cx2fc的四个过程">GCC 编译 C&#x2F;C++的四个过程</span></h4><ul>
 <li>预处理(pre-processing),E：插入头文件，替换宏，展开宏<pre><code class="shell">gcc -E main.c -o main.i #.i文件叫做预处理后文件
 </code></pre>
 </li>

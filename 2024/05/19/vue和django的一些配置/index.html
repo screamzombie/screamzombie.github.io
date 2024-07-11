@@ -26,6 +26,14 @@
 <script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
 
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -165,7 +173,7 @@
         <p>vue和django的一些配置</p>
 <span id="more"></span>
 
-<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="Django-安装"><a href="#Django-安装" class="headerlink" title="Django 安装"></a>Django 安装</h2><p>python 3.11 之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
+<h1><span id="环境配置">环境配置</span></h1><h2><span id="django-安装">Django 安装</span></h2><p>python 3.11 之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
 <p>首先使用这个命令创建一个 python 虚拟环境 <code>venv</code>是虚拟环境名字 后面的是路径可以自己找一个目录放进去</p>
 <pre><code class="shell">python -m venv /path/to/new/virtual/environment
 </code></pre>
@@ -182,7 +190,7 @@
 <p>运行服务器</p>
 <pre><code class="shell">python manager.py runserver
 </code></pre>
-<h2 id="Django-连接-MySQL"><a href="#Django-连接-MySQL" class="headerlink" title="Django 连接 MySQL"></a>Django 连接 MySQL</h2><p>MySQL 数据库可以使用命令行直接安装</p>
+<h2><span id="django-连接-mysql">Django 连接 MySQL</span></h2><p>MySQL 数据库可以使用命令行直接安装</p>
 <pre><code class="shell">sudo apt install mysql-server
 </code></pre>
 <p>Django 与 mysql 通讯需要使用 pymysql 这个库（比较老了），新的库配置环境有些问题所以比较推荐使用这个</p>
@@ -213,7 +221,7 @@ pymysql.install_as_MySQLdb()
     &#125;
 &#125;
 </code></pre>
-<h3 id="服务器-MySQL-连接-navicat"><a href="#服务器-MySQL-连接-navicat" class="headerlink" title="服务器 MySQL 连接 navicat"></a>服务器 MySQL 连接 navicat</h3><p>首先登录数据库</p>
+<h3><span id="服务器-mysql-连接-navicat">服务器 MySQL 连接 navicat</span></h3><p>首先登录数据库</p>
 <pre><code class="shell">mysql -uroot -p    ## 以root登录数据库
 </code></pre>
 <p>查看一下当前端口</p>
@@ -244,7 +252,7 @@ select user,host from user;    ## 查看用户访问端口
 <pre><code class="shell"> ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;root_pwd&#39;; ## 授权root远程登录 后面的root_pwd代表登录密码
 </code></pre>
 <p>这里的 root_pwd 是自己填的 我写的是 123456</p>
-<h2 id="Django-与-Vue-的通讯"><a href="#Django-与-Vue-的通讯" class="headerlink" title="Django 与 Vue 的通讯"></a>Django 与 Vue 的通讯</h2><h3 id="配置-cnpm"><a href="#配置-cnpm" class="headerlink" title="配置 cnpm"></a>配置 cnpm</h3><pre><code class="shell">sudo npm config set registry https://registry.npm.taobao.org
+<h2><span id="django-与-vue-的通讯">Django 与 Vue 的通讯</span></h2><h3><span id="配置-cnpm">配置 cnpm</span></h3><pre><code class="shell">sudo npm config set registry https://registry.npm.taobao.org
 </code></pre>
 <pre><code class="shell">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
 </code></pre>
@@ -258,12 +266,12 @@ select user,host from user;    ## 查看用户访问端口
 <p>使用 taobao 镜像地址</p>
 <pre><code class="shell">npm config set registry https://registry.npm.taobao.org
 </code></pre>
-<h1 id="项目运行"><a href="#项目运行" class="headerlink" title="项目运行"></a>项目运行</h1><h2 id="Django-篇"><a href="#Django-篇" class="headerlink" title="Django 篇"></a>Django 篇</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><pre><code class="shell">django-admin startproject xxxx
+<h1><span id="项目运行">项目运行</span></h1><h2><span id="django-篇">Django 篇</span></h2><h3><span id="创建项目">创建项目</span></h3><pre><code class="shell">django-admin startproject xxxx
 </code></pre>
-<h3 id="创建-APP"><a href="#创建-APP" class="headerlink" title="创建 APP"></a>创建 APP</h3><p>进入项目后</p>
+<h3><span id="创建-app">创建 APP</span></h3><p>进入项目后</p>
 <pre><code class="shell">python manage.py startapp xxxx
 </code></pre>
-<h3 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h3><pre><code class="shell">├── app01
+<h3><span id="项目目录">项目目录</span></h3><pre><code class="shell">├── app01
 │   ├── admin.py                          [不动]自带的默认的后台管理功能
 │   ├── apps.py                           [不动]app启动类
 │   ├── __init__.py
@@ -283,7 +291,7 @@ select user,host from user;    ## 查看用户访问端口
     ├── urls.py                           [URL-&gt;函数]
     └── wsgi.py
 </code></pre>
-<h3 id="APP-注册"><a href="#APP-注册" class="headerlink" title="APP 注册"></a>APP 注册</h3><p>创建好的 APP 不能直接使用需要注册后才可以，小型项目的话一般只需要一个 APP 就可以了。注册需要在项目名的<code>seetings.py</code>中注册</p>
+<h3><span id="app-注册">APP 注册</span></h3><p>创建好的 APP 不能直接使用需要注册后才可以，小型项目的话一般只需要一个 APP 就可以了。注册需要在项目名的<code>seetings.py</code>中注册</p>
 <p>在这个<code>mysite</code>的项目中就是<code>mysite.settings.py</code></p>
 <pre><code class="python">INSTALLED_APPS = [
     &#39;django.contrib.admin&#39;,
@@ -295,7 +303,7 @@ select user,host from user;    ## 查看用户访问端口
     &#39;app01.apps.App01Config&#39;, #这里也可以直接简写为app01
 ]
 </code></pre>
-<h3 id="编写-URL-和视图函数的对应关系"><a href="#编写-URL-和视图函数的对应关系" class="headerlink" title="编写 URL 和视图函数的对应关系"></a>编写 URL 和视图函数的对应关系</h3><p>在 urls.py 中编写 路径是<code>mysite.urls.py</code></p>
+<h3><span id="编写-url-和视图函数的对应关系">编写 URL 和视图函数的对应关系</span></h3><p>在 urls.py 中编写 路径是<code>mysite.urls.py</code></p>
 <pre><code class="python">from django.contrib import admin
 from django.urls import path
 
@@ -317,7 +325,7 @@ urlpatterns = [
 def index(request): #默认有一个参数 request
     return HttpResponse(&quot;Hello&quot;)
 </code></pre>
-<h3 id="模板路径问题"><a href="#模板路径问题" class="headerlink" title="模板路径问题"></a>模板路径问题</h3><p>下面是使用 <code>django-admin</code> start project 创建的项目可以看到 DIRS 里面是空的，如果我们有一个 template 这里是放在 APP01 的文件夹里面</p>
+<h3><span id="模板路径问题">模板路径问题</span></h3><p>下面是使用 <code>django-admin</code> start project 创建的项目可以看到 DIRS 里面是空的，如果我们有一个 template 这里是放在 APP01 的文件夹里面</p>
 <pre><code class="shell">
 ├── app01
 │   ├── admin.py
@@ -373,7 +381,7 @@ INSTALLED_APPS = [
  &#39;DIRS&#39;: [os.path.join(BASE_DIR,&#39;templates&#39;)], # 使用pycharm会变成这样
 </code></pre>
 <p>pycharm 这样的结果就是 django 会优先在项目根目录去寻找 template</p>
-<h3 id="静态文件-css-js-图片-的引入"><a href="#静态文件-css-js-图片-的引入" class="headerlink" title="静态文件(css,js,图片)的引入"></a>静态文件(css,js,图片)的引入</h3><pre><code class="html">&#123;% load static %&#125;
+<h3><span id="静态文件cssjs图片的引入">静态文件(css,js,图片)的引入</span></h3><pre><code class="html">&#123;% load static %&#125;
 &lt;!DOCTYPE html&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -387,7 +395,7 @@ INSTALLED_APPS = [
 
 &lt;/html&gt;
 </code></pre>
-<h3 id="Django-模板语法"><a href="#Django-模板语法" class="headerlink" title="Django 模板语法"></a>Django 模板语法</h3><p>响应式的那种，就是在 HTML 中留一些位置，之后用数据对这些位置进行处理</p>
+<h3><span id="django-模板语法">Django 模板语法</span></h3><p>响应式的那种，就是在 HTML 中留一些位置，之后用数据对这些位置进行处理</p>
 <pre><code class="html">&#123;% load static %&#125;
 &lt;!DOCTYPE html&gt;
 
@@ -438,7 +446,7 @@ def user_list(request):
 def user_add(request):
     return HttpResponse(&quot;添加用户&quot;)
 </code></pre>
-<h3 id="请求和响应"><a href="#请求和响应" class="headerlink" title="请求和响应"></a>请求和响应</h3><pre><code class="python">def something(request):
+<h3><span id="请求和响应">请求和响应</span></h3><pre><code class="python">def something(request):
     #请求的三种方式
     print(request.method) #获得请求方式
     print(&quot;URL=&gt; &quot;,request.GET) #在URL上传值
@@ -450,7 +458,7 @@ def user_add(request):
 
     return redirect(&quot;https://www.baidu.com&quot;) # 让浏览器重定向到其他页面
 </code></pre>
-<h3 id="Django-与数据库交互"><a href="#Django-与数据库交互" class="headerlink" title="Django 与数据库交互"></a>Django 与数据库交互</h3><p>连接好数据库后，打开 app01 下的 models.py</p>
+<h3><span id="django-与数据库交互">Django 与数据库交互</span></h3><p>连接好数据库后，打开 app01 下的 models.py</p>
 <pre><code class="python">from django.db import models
 
 # Create your models here.
@@ -465,7 +473,7 @@ class UserInfo(models.Model):
 <p>再输入命令</p>
 <pre><code class="shell">python manage.py migrate
 </code></pre>
-<h1 id="前后端交互"><a href="#前后端交互" class="headerlink" title="前后端交互"></a>前后端交互</h1><h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><h3 id="Django-setting-文件配置"><a href="#Django-setting-文件配置" class="headerlink" title="Django setting 文件配置"></a>Django setting 文件配置</h3><p>django 想要与 Vue 进行交互需要 RestFramework，还有 cors-headers 这两个插件</p>
+<h1><span id="前后端交互">前后端交互</span></h1><h2><span id="django">Django</span></h2><h3><span id="django-setting-文件配置">Django setting 文件配置</span></h3><p>django 想要与 Vue 进行交互需要 RestFramework，还有 cors-headers 这两个插件</p>
 <pre><code class="shell">pip install djangorestframework
 pip install django-cors-headers
 </code></pre>
@@ -628,7 +636,7 @@ STATIC_URL = &#39;static/&#39;
 
 DEFAULT_AUTO_FIELD = &#39;django.db.models.BigAutoField&#39;
 </code></pre>
-<h3 id="Django-的总路由配置"><a href="#Django-的总路由配置" class="headerlink" title="Django 的总路由配置"></a>Django 的总路由配置</h3><pre><code class="python">from django.contrib import admin
+<h3><span id="django-的总路由配置">Django 的总路由配置</span></h3><pre><code class="python">from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers    #这些都要引用
 from lyb.views import LybViewSet      #这些都要引用
@@ -641,7 +649,7 @@ urlpatterns = [
     path(&#39;api/&#39;,include(router.urls))  #这句是与自己的app的配置有关
 ]
 </code></pre>
-<h3 id="Django-配置序列化"><a href="#Django-配置序列化" class="headerlink" title="Django 配置序列化"></a>Django 配置序列化</h3><p>app 名字.serializers.py 没有就创建</p>
+<h3><span id="django-配置序列化">Django 配置序列化</span></h3><p>app 名字.serializers.py 没有就创建</p>
 <pre><code class="python">from rest_framework import serializers
 from .models import Lyb
 
@@ -669,15 +677,15 @@ class LybViewSet(viewsets.ModelViewSet):
     queryset = Lyb.objects.all().order_by(&#39;-posttime&#39;) #按时间排序 当然也可以选择其他的排序
     serializer_class =  LybSerializer
 </code></pre>
-<h3 id="获得-model-中的数据-特定条件"><a href="#获得-model-中的数据-特定条件" class="headerlink" title="获得 model 中的数据 特定条件"></a>获得 model 中的数据 特定条件</h3><pre><code class="python">from myapp.models import MyModel
+<h3><span id="获得-model-中的数据-特定条件">获得 model 中的数据 特定条件</span></h3><pre><code class="python">from myapp.models import MyModel
 
 specific_object = MyModel.objects.get(field=value)
 </code></pre>
-<h3 id="获得-model-中的全部数据"><a href="#获得-model-中的全部数据" class="headerlink" title="获得 model 中的全部数据"></a>获得 model 中的全部数据</h3><pre><code class="python">from myapp.models import MyModel
+<h3><span id="获得-model-中的全部数据">获得 model 中的全部数据</span></h3><pre><code class="python">from myapp.models import MyModel
 
 all_data = MyModel.objects.all()
 </code></pre>
-<h3 id="视图中获得对象的值"><a href="#视图中获得对象的值" class="headerlink" title="视图中获得对象的值"></a>视图中获得对象的值</h3><pre><code class="python">import json
+<h3><span id="视图中获得对象的值">视图中获得对象的值</span></h3><pre><code class="python">import json
 from django.http import JsonResponse
 
 def login_view(request):
@@ -694,7 +702,7 @@ def login_view(request):
         &#125;
         return JsonResponse(response_data)
 </code></pre>
-<h3 id="常见写法"><a href="#常见写法" class="headerlink" title="常见写法"></a>常见写法</h3><pre><code class="python">from django.http import JsonResponse
+<h3><span id="常见写法">常见写法</span></h3><pre><code class="python">from django.http import JsonResponse
 from .models import UserModel
 
 def login_view(request):
@@ -715,7 +723,7 @@ def login_view(request):
     # 如果不是 POST 请求，返回错误响应
     return JsonResponse(&#123;&quot;message&quot;: &quot;无效的请求&quot;&#125;, status=400)
 </code></pre>
-<h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><h3 id="VUE-环境配置"><a href="#VUE-环境配置" class="headerlink" title="VUE 环境配置"></a>VUE 环境配置</h3><p>下载 axios</p>
+<h2><span id="vue">VUE</span></h2><h3><span id="vue-环境配置">VUE 环境配置</span></h3><p>下载 axios</p>
 <pre><code class="shell">npm install axios -s
 </code></pre>
 <p>使用 vite 脚手架创建项目 不适用 vue-cli</p>
@@ -838,7 +846,7 @@ export default &#123;
 </code></pre>
 <p>将 django 与 vue 的服务器都启动，正常情况下就可以看到后端传来的数据了。</p>
 <p>这里有个小 bug 使用 vscode ssh 连接的时候网站可能不会发生改变，这并不是代码的问题。可能与电脑&#x2F;虚拟机性能有关。可以进入虚拟机桌面的终端直接运行，不通过 ssh 转发查看效果</p>
-<h3 id="使用-element-plus"><a href="#使用-element-plus" class="headerlink" title="使用 element-plus"></a>使用 element-plus</h3><pre><code class="shell">npm install element-plus --save
+<h3><span id="使用-element-plus">使用 element-plus</span></h3><pre><code class="shell">npm install element-plus --save
 </code></pre>
 <p><strong>main.js 中配置**</strong></p>
 <pre><code class="js">import &#123; createApp &#125; from &#39;vue&#39;

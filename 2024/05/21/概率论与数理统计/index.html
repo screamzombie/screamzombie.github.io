@@ -26,6 +26,14 @@
 <script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
 
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -165,9 +173,9 @@
         <p><strong><del>请使用人脑编译本文的 Latex 公式</del></strong></p>
 <span id="more"></span>
 
-<h1 id="随机事件与概率"><a href="#随机事件与概率" class="headerlink" title="随机事件与概率"></a>随机事件与概率</h1><h2 id="相关概念与符号"><a href="#相关概念与符号" class="headerlink" title="相关概念与符号"></a>相关概念与符号</h2><p><code>基本事件</code>:随机事件最基本的结果 符号 $\omega$ “欧米伽”</p>
+<h1><span id="随机事件与概率">随机事件与概率</span></h1><h2><span id="相关概念与符号">相关概念与符号</span></h2><p><code>基本事件</code>:随机事件最基本的结果 符号 $\omega$ “欧米伽”</p>
 <p><code>样本空间</code>: 一切基本事件的集合 记作 $\Omega$ 也读”欧米伽” 上面的是小写,这是大写</p>
-<h2 id="事件的关系和运算-常见-几个类似的就没写进去了"><a href="#事件的关系和运算-常见-几个类似的就没写进去了" class="headerlink" title="事件的关系和运算(常见,几个类似的就没写进去了)"></a>事件的关系和运算(常见,几个类似的就没写进去了)</h2><table>
+<h2><span id="事件的关系和运算常见几个类似的就没写进去了">事件的关系和运算(常见,几个类似的就没写进去了)</span></h2><table>
 <thead>
 <tr>
 <th>描述</th>
@@ -201,10 +209,10 @@
 <td>n 个事件 $A_1,\dots,A_n$ 仅发生且必发生其中之一</td>
 </tr>
 </tbody></table>
-<h2 id="事件的运算公式-恶心-🤮-小题肯定有一个各种套"><a href="#事件的运算公式-恶心-🤮-小题肯定有一个各种套" class="headerlink" title="事件的运算公式(恶心 🤮,小题肯定有一个各种套)"></a>事件的运算公式(恶心 🤮,小题肯定有一个各种套)</h2><ol>
+<h2><span id="事件的运算公式恶心-小题肯定有一个各种套">事件的运算公式(恶心 🤮,小题肯定有一个各种套)</span></h2><ol>
 <li>吸收律: $\text{若 } A \subset B, \text{ 则 } A \cup B &#x3D; B, \quad AB &#x3D; A;$</li>
 </ol>
-<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><ol>
+<h1><span id="名词解释">名词解释</span></h1><ol>
 <li><p>概率密度函数 (Probability density function)</p>
 <p>人话:所有的点每点的可能性连成的线,连续型单点概率为 0</p>
 </li>
@@ -212,24 +220,24 @@
 <p>简称分布函数,人话:概率密度函数的积分</p>
 </li>
 </ol>
-<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><h3 id="两个事件的加法公式"><a href="#两个事件的加法公式" class="headerlink" title="两个事件的加法公式"></a>两个事件的加法公式</h3><span>
+<h1><span id="事件">事件</span></h1><h2><span id="公式">公式</span></h2><h3><span id="两个事件的加法公式">两个事件的加法公式</span></h3><span>
 $$
 P(A\cup B)=P(A)+P(B)-P(AB)
 $$
 </span>
 
-<h3 id="三个事件的加法公式"><a href="#三个事件的加法公式" class="headerlink" title="三个事件的加法公式"></a>三个事件的加法公式</h3><span>
+<h3><span id="三个事件的加法公式">三个事件的加法公式</span></h3><span>
 $$
 P(A\cup B\cup C)=P(A)+P(B)+ P(C)-P(AB)-P(BC)-P(AC)+P(ABC)
 $$
 </span>
 
-<h1 id="常见一维分布"><a href="#常见一维分布" class="headerlink" title="常见一维分布"></a>常见一维分布</h1><h2 id="伯努利分布"><a href="#伯努利分布" class="headerlink" title="伯努利分布"></a>伯努利分布</h2><p>可以将“伯努利分布”想象为扔可能不均匀的硬币.</p>
-<h2 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h2><p>有多个结果，所有结果发生概率相等的分布，则是均匀分布。想象抛掷一枚匀质骰子，结果为 1 点到 6 点，出现每种点数的可能性相同。均匀分布可以由任意数目 n 的结果定义，甚至可以是连续分布。</p>
-<h2 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h2><p>二项分布可以看成遵循伯努利分布的事件的结果之和。抛掷一枚均质硬币，扔 20 次，有多少次扔出正面</p>
-<h2 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h2><p>泊松分布适合于描述单位时间内随机事件发生的次数的概率分布。如某一服务设施在一定时间内受到的服务请求的次数，电话交换机接到呼叫的次数、汽车站台的候客人数、机器出现的故障数、自然灾害发生的次数、DNA 序列的变异数、放射性原子核的衰变数、激光的光子数分布等等。</p>
+<h1><span id="常见一维分布">常见一维分布</span></h1><h2><span id="伯努利分布">伯努利分布</span></h2><p>可以将“伯努利分布”想象为扔可能不均匀的硬币.</p>
+<h2><span id="均匀分布">均匀分布</span></h2><p>有多个结果，所有结果发生概率相等的分布，则是均匀分布。想象抛掷一枚匀质骰子，结果为 1 点到 6 点，出现每种点数的可能性相同。均匀分布可以由任意数目 n 的结果定义，甚至可以是连续分布。</p>
+<h2><span id="二项分布">二项分布</span></h2><p>二项分布可以看成遵循伯努利分布的事件的结果之和。抛掷一枚均质硬币，扔 20 次，有多少次扔出正面</p>
+<h2><span id="泊松分布">泊松分布</span></h2><p>泊松分布适合于描述单位时间内随机事件发生的次数的概率分布。如某一服务设施在一定时间内受到的服务请求的次数，电话交换机接到呼叫的次数、汽车站台的候客人数、机器出现的故障数、自然灾害发生的次数、DNA 序列的变异数、放射性原子核的衰变数、激光的光子数分布等等。</p>
 <p><img src="/../images/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/image.png" alt="泊松分布"><br><span><br>$$<br>{\displaystyle P(X&#x3D;k)&#x3D;{\frac {e^{-\lambda }\lambda ^{k}}{k!}}}<br>$$<br></span></p>
-<h2 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h2><p>几何分布（英语：Geometric distribution）指的是以下两种离散型概率分布中的一种：</p>
+<h2><span id="几何分布">几何分布</span></h2><p>几何分布（英语：Geometric distribution）指的是以下两种离散型概率分布中的一种：</p>
 <ul>
 <li><p>在伯努利试验中，得到一次成功所需要的试验次数得到一次成功所需要的试验次数 𝑋，X 的值域是{ 1, 2, 3, … }</p>
 </li>
@@ -237,36 +245,33 @@ $$
 </li>
 </ul>
 <p>这两种分布不应该混淆。前一种形式经常被称作 shifted geometric distribution；但是，为了避免歧义，最好明确地说明取值范围。<br><span><br>$$<br>P(X&#x3D;k)&#x3D;(1-p)^{k-1} p, k&#x3D;1,2, \ldots<br>$$<br></span><br>说人话就是，前面都是失败的，直到那一次成功了，因此用这个公式。</p>
-<h2 id="超几何分布"><a href="#超几何分布" class="headerlink" title="超几何分布"></a>超几何分布</h2><p>公式</p>
+<h2><span id="超几何分布">超几何分布</span></h2><p>公式</p>
 <p>$$<br>{p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}}<br>$$</p>
 <p>tips</p>
 <p>虽然几何分布和超几何分布名字相似但是他们有很大的不同,二项分布就像一件事在平面上重复多次。而超几何分布就像，一件事在每个维度上都只做一次</p>
-<h2 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔<br><span><br>$$<br>f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0<br>$$</p>
-</span>
+<h2><span id="指数分布">指数分布</span></h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔<br><span><br>$$<br>f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0<br>$$</span></p>
+
 
 <span>
 $$
-f(x) =0,x<=0
-$$
-
-</span>
+f(x) =0,x<=0 $$ < span>
 ## 正态分布
 
 <p>公式</p>
 <p>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{–\frac{(x \mu)^{2}}{2 \sigma^{2}}},-\infty&lt;x&lt;+\infty<br>$$</p>
-<h1 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h1><p>考研范围内一般只考二维随机变量</p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>设$(X,Y)$是二维随机变量,对于任意的实数$x,y$称二元函数$F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}$记成$P{X\leqslant x,Y\leqslant y}(-\infty&lt;x,y&lt;+\infty)$为随机变量$(X,Y)$的<code>分布函数</code>或者叫随机变量 X,Y 的<code>联合分布函数</code></p>
-<h2 id="二维随机变量的边缘密度函数"><a href="#二维随机变量的边缘密度函数" class="headerlink" title="二维随机变量的边缘密度函数"></a>二维随机变量的边缘密度函数</h2><p>有一个二维随机变量$(X,Y)$的分布函数为$F(X,Y)$则</p>
+<h1><span id="多维随机变量及其分布">多维随机变量及其分布</span></h1><p>考研范围内一般只考二维随机变量</p>
+<h2><span id="概念">概念</span></h2><p>设$(X,Y)$是二维随机变量,对于任意的实数$x,y$称二元函数$F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}$记成$P{X\leqslant x,Y\leqslant y}(-\infty&lt;x,y&lt;+\infty)$为随机变量$(X,Y)$的<code>分布函数</code>或者叫随机变量 X,Y 的<code>联合分布函数</code></p>
+<h2><span id="二维随机变量的边缘密度函数">二维随机变量的边缘密度函数</span></h2><p>有一个二维随机变量$(X,Y)$的分布函数为$F(X,Y)$则</p>
 <p>$F_X(x)&#x3D;P{X\leq x }$是关于 X 的<code>边缘分布函数</code><br>$F_Y(t)&#x3D;P{Y\leq y }$是关于 Y 的<code>边缘分布函数</code></p>
 <p>关系<br>$F_X(x)&#x3D;P{X\leq x }&#x3D;P{X \leq x,Y &lt; + \infty} &#x3D; F(x,+ \infty) &#x3D; \lim_{y \to +\infty} F(x,y)$</p>
 <p>tips:</p>
 <blockquote>
 <p>(X,Y) 可以推出 X,Y 的边缘分布函数,但是反过来不一定成立.只有当 X,Y 相互独立时才能由边缘密度函数反推原本的分布函数</p>
 </blockquote>
-<h1 id="方差-期望和协方差"><a href="#方差-期望和协方差" class="headerlink" title="方差,期望和协方差"></a>方差,期望和协方差</h1><h2 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h2><blockquote>
+<h1><span id="方差期望和协方差">方差,期望和协方差</span></h1><h2><span id="协方差">协方差</span></h2><blockquote>
 <p>协方差(Covariance)在概率论和统计学中用于衡量两个变量的总体误差。它表示的是两个变量的变化趋势是否一致</p>
 </blockquote>
-<h3 id="协方差公式的证明"><a href="#协方差公式的证明" class="headerlink" title="协方差公式的证明"></a>协方差公式的证明</h3><p>$Cov(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]} &#x3D;E(XY)-E(X)E(Y)$</p>
+<h3><span id="协方差公式的证明">协方差公式的证明</span></h3><p>$Cov(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]} &#x3D;E(XY)-E(X)E(Y)$</p>
 <blockquote>
 <p>proof:<br>$Cov(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]}$ 因为$E(X),E(Y)$可以看做常数</p>
 <p>$E{XY- E(Y)X-E(X)Y+E(X)E(Y)}$看做常数提出来</p>
@@ -274,19 +279,19 @@ $$
 <p>$E(xy)-E(x)E(y)-E(x)E(y)+E(x)E(y)$</p>
 <p>$E{XY}-E(Y)E{X}$</p>
 </blockquote>
-<h1 id="随机变量和分布函数"><a href="#随机变量和分布函数" class="headerlink" title="随机变量和分布函数"></a>随机变量和分布函数</h1><h2 id="分布函数"><a href="#分布函数" class="headerlink" title="分布函数"></a>分布函数</h2><ol>
+<h1><span id="随机变量和分布函数">随机变量和分布函数</span></h1><h2><span id="分布函数">分布函数</span></h2><ol>
 <li>单调递增,且右连续</li>
 <li>有$\forall x{_1} x{_2}(x_1 &lt;x_2)有P\lbrace x_1 &lt; X \leq x{_2} \rbrace &#x3D; F(x_2)-F(x_1)$</li>
 </ol>
-<h2 id="常见分布函数"><a href="#常见分布函数" class="headerlink" title="常见分布函数"></a>常见分布函数</h2><h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$$<br>f(x)&#x3D; \begin{cases}\frac{1}{b-a},a&lt;x&lt;b,\0,其他,\end{cases}<br>$$</p>
+<h2><span id="常见分布函数">常见分布函数</span></h2><h3><span id="均匀分布">均匀分布</span></h3><p>$$<br>f(x)&#x3D; \begin{cases}\frac{1}{b-a},a&lt;x&lt;b,\0,其他,\end{cases}<br>$$</p>
 <p>人话:总和为 1,当然越长每个点的概率密度越低就是长这样的.</p>
 <p>分布函数</p>
 <p>$$<br>F( x ) &#x3D; \begin{cases}0 ,&amp; x &lt; a ,\[2ex]\frac{x - a}{b - a},&amp; a \leqslant x &lt; b ,\[2ex]1 ,&amp; x \geqslant b .\end{cases}<br>$$</p>
-<h3 id="指数分布-1"><a href="#指数分布-1" class="headerlink" title="指数分布"></a>指数分布</h3><p>概率密度函数长这样</p>
+<h3><span id="指数分布">指数分布</span></h3><p>概率密度函数长这样</p>
 <p>$$<br>f(x)&#x3D;\left{\begin{matrix}\lambda\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0,\end{matrix}\right.<br>$$</p>
 <p>分布函数长这样</p>
 <p>$$<br>F(x)&#x3D;\left{\begin{matrix}1-\mathrm{e}^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leqslant0.\end{matrix}\right.<br>$$</p>
-<h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><p><strong>一般正态分布</strong>的概率密度函数长这样</p>
+<h3><span id="正态分布">正态分布</span></h3><p><strong>一般正态分布</strong>的概率密度函数长这样</p>
 <p>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}},\quad(-\infty&lt;x&lt;+\infty)<br>$$</p>
 <p>分布函数</p>
 <p>$$<br>F(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^{x}\mathrm{e}^{-\frac{(t-\mu)^{2}}{2\sigma^{2}}}\mathrm{d}t<br>$$</p>
@@ -310,10 +315,10 @@ $$
 <li><p>对于$\forall a&gt;0$ 有$P{|X|\leqslant a}&#x3D;2\Phi(a)-1$</p>
 </li>
 </ol>
-<h3 id="多维随机变量及其分布-1"><a href="#多维随机变量及其分布-1" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>考研中涉及的多为二维随机变量</p>
+<h3><span id="多维随机变量及其分布">多维随机变量及其分布</span></h3><h4><span id="概念">概念</span></h4><p>考研中涉及的多为二维随机变量</p>
 <p>$$<br>F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}\frac{\text{记成}}\Longleftrightarrow\boldsymbol{P}\left{X\leqslant x,Y\leqslant y\right}\left(-\infty&lt;x,y&lt;+\infty\right)<br>$$</p>
 <p>叫二维随机变量的$(X,Y)$的<strong>分布函数</strong>或<strong>联合分布函数</strong></p>
-<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><ol>
+<h4><span id="性质">性质</span></h4><ol>
 <li>$0\leq F(x,y) \leq 1$ 并且每一自变量都是单调不减的</li>
 <li>$F(-\infty ,y) &#x3D; \lim_{x\rightarrow -\infty} &#x3D; 0$</li>
 <li>$F(x ,-\infty) &#x3D; \lim_{y\rightarrow -\infty} &#x3D; 0$</li>
@@ -322,25 +327,25 @@ $$
 <li>x,y 均右连续</li>
 <li>(重点)随机点(X,Y)落在 x1,x2,y1,y2 构成的矩形区域内的概率是<br>$$<br>\begin{aligned}P{(X,Y)\in G}&amp;&#x3D;P{x_{1}&lt;X\leqslant x_{2},y_{1}&lt;Y\leqslant y_{2}}\&amp;&#x3D;F(x_{2},y_{2})-F(x_{2},y_{1})+F(x_{1},y_{1})-F(x_{1},y_{2}).\end{aligned}<br>$$</li>
 </ol>
-<h3 id="边缘密度函数"><a href="#边缘密度函数" class="headerlink" title="边缘密度函数"></a>边缘密度函数</h3><p>所谓边缘密度函数就是一个值取$+\infty$的另外一个是自变量的一条线，虽然是一条线但是不能看做是一维的，而是看做二维空间内的一条线，这与一维随机变量有本质区别。考试主要考两者的相互转换，多维分布转边缘，边缘转多维。如下</p>
+<h3><span id="边缘密度函数">边缘密度函数</span></h3><p>所谓边缘密度函数就是一个值取$+\infty$的另外一个是自变量的一条线，虽然是一条线但是不能看做是一维的，而是看做二维空间内的一条线，这与一维随机变量有本质区别。考试主要考两者的相互转换，多维分布转边缘，边缘转多维。如下</p>
 <p>$$<br>F_{_X}(x)&#x3D;\boldsymbol{P}{X\leq x}&#x3D;\boldsymbol{P}{X\leq x,Y&lt;+\infty}<br>$$</p>
-<h3 id="边缘分布函数"><a href="#边缘分布函数" class="headerlink" title="边缘分布函数"></a>边缘分布函数</h3><p>人话</p>
+<h3><span id="边缘分布函数">边缘分布函数</span></h3><p>人话</p>
 <blockquote>
 <p><strong>边缘分布</strong>（Marginal Distribution）指在概率论和统计学的多维随机变量中，只包含其中部分变量的概率分布。</p>
 </blockquote>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>假如我们有一个两个变量<strong>相关</strong>的概率分布$P(X,Y)$ 其中一个特定变量的边缘分布则为给定其他变量的条件概率分布</p>
+<h4><span id="定义">定义</span></h4><p>假如我们有一个两个变量<strong>相关</strong>的概率分布$P(X,Y)$ 其中一个特定变量的边缘分布则为给定其他变量的条件概率分布</p>
 <p>$$<br>P(x)&#x3D;\sum_yP(x,y)&#x3D;\sum_yP(x|y)P(y)<br>$$</p>
 <blockquote>
 <p>在这个边缘分布中，我们得到只关于一个变量的概率分布，而不再考虑另一变量的影响，实际上进行了降维操作。在实际应用中，例如人工神经网络的神经元互相关联，在计算它们各自的参数的时候，就会使用边缘分布计算得到某一特定神经元（变量）的值</p>
 </blockquote>
-<h1 id="定义随机变量的数字特征"><a href="#定义随机变量的数字特征" class="headerlink" title="定义随机变量的数字特征"></a>定义随机变量的数字特征</h1><h2 id="名词解释-1"><a href="#名词解释-1" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="1-数学期望"><a href="#1-数学期望" class="headerlink" title="1.数学期望"></a>1.数学期望</h3><p>人话:就是平均数，记作$E(X)或者EX$</p>
+<h1><span id="定义随机变量的数字特征">定义随机变量的数字特征</span></h1><h2><span id="名词解释">名词解释</span></h2><h3><span id="1数学期望">1.数学期望</span></h3><p>人话:就是平均数，记作$E(X)或者EX$</p>
 <p>定义:若反常积分$\int_{-\infty}^{+\infty}xf(x)\mathrm{d}x$​ 绝对收敛，则此反常积分的值称为数学期望或者均值</p>
-<h4 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h4><ol>
+<h4><span id="性质">性质</span></h4><ol>
 <li>X 为随机变量，C 是常数。有$E(CX) &#x3D; CE(X)$</li>
 <li>X,Y 是任意两个随机变量，有$E(X\pm Y )&#x3D; E(X) \pm E(Y)$</li>
 <li>若 X，Y 相互独立 有$E(XY)&#x3D;E(X)E(Y)$</li>
 </ol>
-<h3 id="2-方差标准差"><a href="#2-方差标准差" class="headerlink" title="2.方差标准差"></a>2.方差标准差</h3><p>方差计算：每一个值减去平均值再平方再把这些值求个平均值</p>
+<h3><span id="2方差标准差">2.方差标准差</span></h3><p>方差计算：每一个值减去平均值再平方再把这些值求个平均值</p>
 <p>$$<br>\boldsymbol{D}(X) &#x3D; \boldsymbol{E}{[X-\boldsymbol{E}(X)]^2}<br>$$</p>
 <p>标准差计算：方差开根号，方差的算数平方根 标准差的符号是$\sigma(X)$</p>
 <p>$$<br>\sigma(X)&#x3D;\sqrt{\boldsymbol{D}(X)}<br>$$</p>
@@ -348,11 +353,11 @@ $$
 <p>$$<br>X^{*}&#x3D;\frac{X-E(X)}{\sqrt{D(X)}}<br>$$</p>
 <p>有$E(X^{<em>})&#x3D;0,D(X^{</em>})&#x3D;1$</p>
 <ol start="3">
-<li><h3 id="协方差-1"><a href="#协方差-1" class="headerlink" title="协方差"></a>协方差</h3></li>
+<li><h3><span id="协方差">协方差</span></h3></li>
 </ol>
-<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>协方差是反应两个随机变量关系的数值</p>
+<h4><span id="定义">定义</span></h4><p>协方差是反应两个随机变量关系的数值</p>
 <p>$$<br>\mathrm{Cov}(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]}<br>$$</p>
-<h4 id="协方差的公式和性质"><a href="#协方差的公式和性质" class="headerlink" title="协方差的公式和性质"></a>协方差的公式和性质</h4><ol>
+<h4><span id="协方差的公式和性质">协方差的公式和性质</span></h4><ol>
 <li><p>$\mathrm{Cov}(X,Y)&#x3D;E(XY)-E(X)E(Y)$</p>
 </li>
 <li><p>$D(X\pm Y)&#x3D;D(X)+D(Y)\pm2\mathrm{Cov}(X,Y)$</p>
@@ -363,34 +368,34 @@ $$
 </li>
 <li><p>$\mathrm{Cov}(X_1+X_2,Y)&#x3D;\mathrm{Cov}(X_1,Y)+\mathrm{Cov}(X_2,Y)$</p>
 </li>
-<li><h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><p>定义：对于随机变量 X，Y 如果$D(X)D(Y)\neq 0$<br>则称$\rho_{xy}$为其相关系数，如果$\rho_{xy}&#x3D;0$则变量 X，Y 不相关。</p>
+<li><h3><span id="相关系数">相关系数</span></h3><p>定义：对于随机变量 X，Y 如果$D(X)D(Y)\neq 0$<br>则称$\rho_{xy}$为其相关系数，如果$\rho_{xy}&#x3D;0$则变量 X，Y 不相关。</p>
 <p>$$<br>\rho_{xy}&#x3D;\frac{\mathrm{Cov}(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}<br>$$</p>
 </li>
-<li><h3 id="原点矩"><a href="#原点矩" class="headerlink" title="原点矩"></a>原点矩</h3></li>
-<li><h3 id="中心矩"><a href="#中心矩" class="headerlink" title="中心矩"></a>中心矩</h3></li>
+<li><h3><span id="原点矩">原点矩</span></h3></li>
+<li><h3><span id="中心矩">中心矩</span></h3></li>
 </ol>
-<h2 id="常见分布的数字特征"><a href="#常见分布的数字特征" class="headerlink" title="常见分布的数字特征"></a>常见分布的数字特征</h2><h4 id="0-1-分布"><a href="#0-1-分布" class="headerlink" title="0-1 分布"></a>0-1 分布</h4><p>$$E(X)&#x3D;p,\quad D(X)&#x3D;p(1-p)$$</p>
-<h4 id="二项分布-X-sim-B-n-p"><a href="#二项分布-X-sim-B-n-p" class="headerlink" title="二项分布 $X\sim B(n,p)$"></a>二项分布 $X\sim B(n,p)$</h4><p>$$<br>E(X)&#x3D;np,\quad D(X)&#x3D;np(1-p)<br>$$</p>
-<h4 id="泊松分布-X-sim-P-lambda"><a href="#泊松分布-X-sim-P-lambda" class="headerlink" title="泊松分布 $X\sim P(\lambda)$"></a>泊松分布 $X\sim P(\lambda)$</h4><p>$$<br>E(X)&#x3D;\lambda,D(X)&#x3D;\lambda<br>$$</p>
-<h4 id="几何分布-P-X-k-p-1-p-k-1-k-1-2-cdots-0"><a href="#几何分布-P-X-k-p-1-p-k-1-k-1-2-cdots-0" class="headerlink" title="几何分布 $P{X&#x3D;k}&#x3D;p(1-p)^{k-1},k&#x3D;1,2,\cdots,0&lt;p&lt;1$​"></a>几何分布 $P{X&#x3D;k}&#x3D;p(1-p)^{k-1},k&#x3D;1,2,\cdots,0&lt;p&lt;1$​</h4><p>$$<br>E(X)&#x3D;\frac{1}{p},\quad D(X)&#x3D;\frac{1-p}{p^{2}}<br>$$</p>
-<h4 id="均匀分布-X-sim-U-a-b"><a href="#均匀分布-X-sim-U-a-b" class="headerlink" title="均匀分布$X \sim U(a,b)$"></a>均匀分布$X \sim U(a,b)$</h4><p>$$<br>E(x)&#x3D;\frac{a+b}{2}, D(x)&#x3D;\frac{(b-a)^{2}}{12}<br>$$</p>
-<h4 id="指数分布-E-sim-E-lambda"><a href="#指数分布-E-sim-E-lambda" class="headerlink" title="指数分布$E \sim E(\lambda)$"></a>指数分布$E \sim E(\lambda)$</h4><p>$$<br>E(X) &#x3D; \frac{1}{\lambda}, D(x)&#x3D; \frac{1}{\lambda^2}<br>$$</p>
-<h4 id="正态分布-X-sim-N-mu-sigma-2"><a href="#正态分布-X-sim-N-mu-sigma-2" class="headerlink" title="正态分布 $X \sim N(\mu,\sigma^2)$"></a>正态分布 $X \sim N(\mu,\sigma^2)$</h4><p>$$<br>E(X)&#x3D;\mu ,D(X)&#x3D;\sigma^2<br>$$</p>
-<h1 id="大数定律和中心极限定理"><a href="#大数定律和中心极限定理" class="headerlink" title="大数定律和中心极限定理"></a>大数定律和中心极限定理</h1><h2 id="依概率收敛为常数"><a href="#依概率收敛为常数" class="headerlink" title="依概率收敛为常数"></a>依概率收敛为常数</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>考研中涉及到的目前只有收敛到常数,也不是重点</p>
+<h2><span id="常见分布的数字特征">常见分布的数字特征</span></h2><h4><span id="0-1-分布">0-1 分布</span></h4><p>$$E(X)&#x3D;p,\quad D(X)&#x3D;p(1-p)$$</p>
+<h4><span id="二项分布-xsim-bnp">二项分布 $X\sim B(n,p)$</span></h4><p>$$<br>E(X)&#x3D;np,\quad D(X)&#x3D;np(1-p)<br>$$</p>
+<h4><span id="泊松分布-xsim-plambda">泊松分布 $X\sim P(\lambda)$</span></h4><p>$$<br>E(X)&#x3D;\lambda,D(X)&#x3D;\lambda<br>$$</p>
+<h4><span id="几何分布-pxx3dkx3dp1-pk-1kx3d12cdots0ltplt1">几何分布 $P{X&#x3D;k}&#x3D;p(1-p)^{k-1},k&#x3D;1,2,\cdots,0&lt;p&lt;1$​</span></h4><p>$$<br>E(X)&#x3D;\frac{1}{p},\quad D(X)&#x3D;\frac{1-p}{p^{2}}<br>$$</p>
+<h4><span id="均匀分布x-sim-uab">均匀分布$X \sim U(a,b)$</span></h4><p>$$<br>E(x)&#x3D;\frac{a+b}{2}, D(x)&#x3D;\frac{(b-a)^{2}}{12}<br>$$</p>
+<h4><span id="指数分布e-sim-elambda">指数分布$E \sim E(\lambda)$</span></h4><p>$$<br>E(X) &#x3D; \frac{1}{\lambda}, D(x)&#x3D; \frac{1}{\lambda^2}<br>$$</p>
+<h4><span id="正态分布-x-sim-nmusigma2">正态分布 $X \sim N(\mu,\sigma^2)$</span></h4><p>$$<br>E(X)&#x3D;\mu ,D(X)&#x3D;\sigma^2<br>$$</p>
+<h1><span id="大数定律和中心极限定理">大数定律和中心极限定理</span></h1><h2><span id="依概率收敛为常数">依概率收敛为常数</span></h2><h3><span id="定义">定义</span></h3><p>考研中涉及到的目前只有收敛到常数,也不是重点</p>
 <p>定义:设$Y1,Y2,\dots,Y_n,\dots$是一个随机变量序列,a 是一个常数,对于任意给定的整数$\varepsilon$有$\lim_{n\to\infty}\boldsymbol{P}\left{\begin{array}{c|c}Y_n&amp;-a&amp;|&lt;\varepsilon\end{array}\right}&#x3D;1$成立,则可以说此随机变量依概率收敛到这个常数</p>
 <p>不严谨的说法就是在相当大的次数的试验后,类似于无穷级数那样,可以把这个随机变量当做常数了,还有依概率收敛到另一个随机变量,不在考纲内跳过.</p>
-<h3 id="性质-2"><a href="#性质-2" class="headerlink" title="性质"></a>性质</h3><p>若有$X_n\xrightarrow{P}a,Y_n\xrightarrow{P}b$又有$g(x,y)$在$(a,b)$连续<br>有$g(X_n,Y_n)\xrightarrow{P}g(a,b)$</p>
-<h2 id="切比雪夫不等式-近年的重点"><a href="#切比雪夫不等式-近年的重点" class="headerlink" title="切比雪夫不等式(近年的重点)"></a>切比雪夫不等式(近年的重点)</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><p>设随机变量 X 的数学期望和方差都存在对与任意给定的$\varepsilon$总有<br>$\boldsymbol{P}{|X-\boldsymbol{E}X|\geqslant\varepsilon}\leqslant\frac{\boldsymbol{D}X}{\varepsilon^{2}}$或者 $\boldsymbol{P}{|X-\boldsymbol{E}X|&lt;\boldsymbol{\varepsilon}|\geqslant1-\frac{\boldsymbol{D}X}{\boldsymbol{\varepsilon}^{2}}$</p>
-<h3 id="人话"><a href="#人话" class="headerlink" title="人话"></a>人话</h3><p>切比雪夫不等式是经验法则的一般化形式或者说保守的估计,假如我们有一个随机变量 X,我们只知道 E(X)&#x3D;100,D(X)&#x3D;50,X 的具体形状我们不知道.假如我们知道具体形状,算$P{80&lt;X &lt;100 }$就可以采取积分的方式了,但问题是我们不知道,所以这就是切比雪夫不等式的用处了.当我们不知道具体分布时仍然可以求得一个保守的下限</p>
+<h3><span id="性质">性质</span></h3><p>若有$X_n\xrightarrow{P}a,Y_n\xrightarrow{P}b$又有$g(x,y)$在$(a,b)$连续<br>有$g(X_n,Y_n)\xrightarrow{P}g(a,b)$</p>
+<h2><span id="切比雪夫不等式近年的重点">切比雪夫不等式(近年的重点)</span></h2><h3><span id="定义">定义</span></h3><p>设随机变量 X 的数学期望和方差都存在对与任意给定的$\varepsilon$总有<br>$\boldsymbol{P}{|X-\boldsymbol{E}X|\geqslant\varepsilon}\leqslant\frac{\boldsymbol{D}X}{\varepsilon^{2}}$或者 $\boldsymbol{P}{|X-\boldsymbol{E}X|&lt;\boldsymbol{\varepsilon}|\geqslant1-\frac{\boldsymbol{D}X}{\boldsymbol{\varepsilon}^{2}}$</p>
+<h3><span id="人话">人话</span></h3><p>切比雪夫不等式是经验法则的一般化形式或者说保守的估计,假如我们有一个随机变量 X,我们只知道 E(X)&#x3D;100,D(X)&#x3D;50,X 的具体形状我们不知道.假如我们知道具体形状,算$P{80&lt;X &lt;100 }$就可以采取积分的方式了,但问题是我们不知道,所以这就是切比雪夫不等式的用处了.当我们不知道具体分布时仍然可以求得一个保守的下限</p>
 <p>公式:$\boldsymbol{P}{|X-\boldsymbol{E}X|\geqslant\varepsilon}\leqslant\frac{\boldsymbol{D}X}{\varepsilon^{2}}$ 或者</p>
-<h2 id="切比雪夫大数定律"><a href="#切比雪夫大数定律" class="headerlink" title="切比雪夫大数定律"></a>切比雪夫大数定律</h2><h3 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h3><p>假设${X_n }{ n&#x3D;1,2,3\dots }$是相互独立(可以放宽到两两不相关)的随机变量序列(这里的每个${X_i}$不是一个数,而都是一个随机序列),且${DX_i}$存在且一致有上界</p>
-<h1 id="数理统计的基本概念"><a href="#数理统计的基本概念" class="headerlink" title="数理统计的基本概念"></a>数理统计的基本概念</h1><h1 id="参数估计和假设检验"><a href="#参数估计和假设检验" class="headerlink" title="参数估计和假设检验"></a>参数估计和假设检验</h1><h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><h3 id="点估计"><a href="#点估计" class="headerlink" title="点估计"></a>点估计</h3><p>这里设计到三个概念,<code>点估计</code>,<code>估计值</code>与<code>估计量</code></p>
+<h2><span id="切比雪夫大数定律">切比雪夫大数定律</span></h2><h3><span id="定义">定义</span></h3><p>假设${X_n }{ n&#x3D;1,2,3\dots }$是相互独立(可以放宽到两两不相关)的随机变量序列(这里的每个${X_i}$不是一个数,而都是一个随机序列),且${DX_i}$存在且一致有上界</p>
+<h1><span id="数理统计的基本概念">数理统计的基本概念</span></h1><h1><span id="参数估计和假设检验">参数估计和假设检验</span></h1><h2><span id="参数估计">参数估计</span></h2><h3><span id="点估计">点估计</span></h3><p>这里设计到三个概念,<code>点估计</code>,<code>估计值</code>与<code>估计量</code></p>
 <p>点估计:是一种统计方法,简单的说就是目标</p>
 <p>估计量:是为了找到目标而使用的方式</p>
 <p>估计值:是通过上述手段得到的结果</p>
-<h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><p>$$</p>
+<h2><span id="假设检验">假设检验</span></h2><p>$$</p>
 <p>$$</p>
-
+</=0></span>
     </div>
     
     
