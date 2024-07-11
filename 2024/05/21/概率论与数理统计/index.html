@@ -211,7 +211,18 @@
 </tbody></table>
 <h2><span id="事件的运算公式恶心-小题肯定有一个各种套">事件的运算公式(恶心 🤮,小题肯定有一个各种套)</span></h2><ol>
 <li>吸收律: $\text{若 } A \subset B, \text{ 则 } A \cup B &#x3D; B, \quad AB &#x3D; A;$</li>
+<li>交换律: $A \cup B &#x3D; B \cup A, \quad AB &#x3D; BA;$</li>
+<li>结合律: $A \cup B \cup C &#x3D; (A \cup B) \cup C &#x3D; A \cup (B \cup C); \quad ABC &#x3D; (AB)C &#x3D; A(BC);$</li>
+<li>分配律: <span>
+$$
+A(B \cup C) = AB \cup AC;
+A\cup (BC) = (A \cup B)(A \cup C)
+$$
+</span></li>
 </ol>
+<span>
+
+<p>$$<br>(A \cup C)(B \cup C) &#x3D; AB \cup C; \quad A \cap \left( \bigcup_{i&#x3D;1}^{\infty} A_i \right) &#x3D; \bigcup_{i&#x3D;1}^{\infty} (A \cap A_i);<br>$$<br></p></span><br>5. 对偶律:<p></p>
 <h1><span id="名词解释">名词解释</span></h1><ol>
 <li><p>概率密度函数 (Probability density function)</p>
 <p>人话:所有的点每点的可能性连成的线,连续型单点概率为 0</p>
@@ -236,7 +247,10 @@ $$
 <h2><span id="均匀分布">均匀分布</span></h2><p>有多个结果，所有结果发生概率相等的分布，则是均匀分布。想象抛掷一枚匀质骰子，结果为 1 点到 6 点，出现每种点数的可能性相同。均匀分布可以由任意数目 n 的结果定义，甚至可以是连续分布。</p>
 <h2><span id="二项分布">二项分布</span></h2><p>二项分布可以看成遵循伯努利分布的事件的结果之和。抛掷一枚均质硬币，扔 20 次，有多少次扔出正面</p>
 <h2><span id="泊松分布">泊松分布</span></h2><p>泊松分布适合于描述单位时间内随机事件发生的次数的概率分布。如某一服务设施在一定时间内受到的服务请求的次数，电话交换机接到呼叫的次数、汽车站台的候客人数、机器出现的故障数、自然灾害发生的次数、DNA 序列的变异数、放射性原子核的衰变数、激光的光子数分布等等。</p>
-<p><img src="/../images/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/image.png" alt="泊松分布"><br><span><br>$$<br>{\displaystyle P(X&#x3D;k)&#x3D;{\frac {e^{-\lambda }\lambda ^{k}}{k!}}}<br>$$<br></span></p>
+<p><img src="/../images/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/image.png" alt="泊松分布"><br><span></span></p>
+<p>$$<br>{\displaystyle P(X&#x3D;k)&#x3D;{\frac {e^{-\lambda }\lambda ^{k}}{k!}}}<br>$$</p>
+
+
 <h2><span id="几何分布">几何分布</span></h2><p>几何分布（英语：Geometric distribution）指的是以下两种离散型概率分布中的一种：</p>
 <ul>
 <li><p>在伯努利试验中，得到一次成功所需要的试验次数得到一次成功所需要的试验次数 𝑋，X 的值域是{ 1, 2, 3, … }</p>
@@ -244,12 +258,17 @@ $$
 <li><p>在得到第一次成功之前所经历的失败次数 𝑌&#x3D;𝑋−1。<em>Y</em>的值域是{ 0, 1, 2, 3, … }</p>
 </li>
 </ul>
-<p>这两种分布不应该混淆。前一种形式经常被称作 shifted geometric distribution；但是，为了避免歧义，最好明确地说明取值范围。<br><span><br>$$<br>P(X&#x3D;k)&#x3D;(1-p)^{k-1} p, k&#x3D;1,2, \ldots<br>$$<br></span><br>说人话就是，前面都是失败的，直到那一次成功了，因此用这个公式。</p>
+<p>这两种分布不应该混淆。前一种形式经常被称作 shifted geometric distribution；但是，为了避免歧义，最好明确地说明取值范围。<br><span></span></p>
+<p>$$<br>P(X&#x3D;k)&#x3D;(1-p)^{k-1} p, k&#x3D;1,2, \ldots<br>$$</p>
+
+说人话就是，前面都是失败的，直到那一次成功了，因此用这个公式。
+
 <h2><span id="超几何分布">超几何分布</span></h2><p>公式</p>
 <p>$$<br>{p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}}<br>$$</p>
 <p>tips</p>
 <p>虽然几何分布和超几何分布名字相似但是他们有很大的不同,二项分布就像一件事在平面上重复多次。而超几何分布就像，一件事在每个维度上都只做一次</p>
-<h2><span id="指数分布">指数分布</span></h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔<br><span><br>$$<br>f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0<br>$$</span></p>
+<h2><span id="指数分布">指数分布</span></h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔<br><span></span></p>
+<p>$$<br>f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0<br>$$</p>
 
 
 <span>
