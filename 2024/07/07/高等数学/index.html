@@ -179,7 +179,7 @@
 <li>绝对收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$ 收敛,且各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$收敛</li>
 <li>条件收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$收敛 但各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$不收敛</li>
 </ol>
-<h3><span id="一些概念">一些概念</span></h3><p>某个级数是否收敛的必要条件: $\operatorname*{lim}<em>{n\to\infty}u</em>{n}&#x3D;0$ 这是必要条件不是说满足了就一定收敛,而是不满足一定发散</p>
+<h3><span id="一些概念">一些概念</span></h3><p>某个级数是否收敛的必要条件: $\lim_{n\to\infty}u_{n}&#x3D;0$ 这是必要条件不是说满足了就一定收敛,而是不满足一定发散</p>
 <h3><span id="收敛级数的常见运算法则">收敛级数的常见运算法则</span></h3><ol>
 <li><p>$\sum_{n&#x3D;1}^{\infty}\left(\lambda u_{n}+\mu v_{n}\right)&#x3D;\lambda\sum_{n&#x3D;1}^{\infty}u_{n}+\mu\sum_{n&#x3D;1}^{\infty}v_{n}$ 其中$\lambda$ 和 $\mu$都是常数</p>
 </li>
@@ -208,16 +208,16 @@
 <li>比较判别法: $\text{设 } cv_n \geq u_n \geq 0 \ (n \geq N), \ c &gt; 0, \text{ 若 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 收敛，则 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 收敛；若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 发散，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 发散。}$</li>
 </ol>
 <blockquote>
-<p>c是个常数,也就是说,只要某个正向级数收敛了.我要拿它比较另外一个数列虽然它自己比较小,但是我可以把它用常数相乘放大</p>
+<p>c 是个常数,也就是说,只要某个正向级数收敛了.我要拿它比较另外一个数列虽然它自己比较小,但是我可以把它用常数相乘放大</p>
 </blockquote>
 <ol start="2">
 <li><p>利用极限判断正向级数:$\text{设 } u_n &gt; 0, \ v_n &gt; 0, \text{ 若 } \lim_{n \to \infty} \frac{v_n}{u_n} &#x3D; A, \text{ 则有}$</p>
 <ul>
-<li><p>$\text{当 } 0 &lt; A &lt; +\infty \text{ 即 } v_n \sim Au_n \ (n \to \infty) \text{ 时，} \sum_{n&#x3D;1}^{\infty} u_n \text{ 与 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 同时收敛或同时发散；}$</p>
+<li><p>$\text{当 } 0 &lt; A &lt; +\infty \text{ 即 } v_n \sim Au_n \ (n \to \infty) \text{ 时，} \sum_{n&#x3D;1}^{\infty} u_n \text{ 与 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 同时收敛或同时发散；}$ &#x2F;&#x2F;比值是常数说明敛散性相同</p>
 </li>
-<li><p>$\text{当 } A &#x3D; 0 \text{ 即 } v_n &#x3D; o(u_n) \ (n \to \infty) \text{ 时，若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 收敛，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 收敛；}$</p>
+<li><p>$\text{当 } A &#x3D; 0 \text{ 即 } v_n &#x3D; o(u_n) \ (n \to \infty) \text{ 时，若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 收敛，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 收敛；}$ &#x2F;&#x2F;比小的小,大的收敛,小的也收敛</p>
 </li>
-<li><p>$\text{当 } A &#x3D; +\infty \text{ 即 } u_n &#x3D; o(v_n) \ (n \to \infty) \text{ 时，若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 发散，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 发散。}$</p>
+<li><p>$\text{当 } A &#x3D; +\infty \text{ 即 } u_n &#x3D; o(v_n) \ (n \to \infty) \text{ 时，若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 发散，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 发散。}$&#x2F;&#x2F;比大的大,小的发散,大的也发散</p>
 </li>
 </ul>
 </li>
