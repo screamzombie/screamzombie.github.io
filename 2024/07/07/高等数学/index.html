@@ -203,7 +203,25 @@
 <li><p>常用的一个级数 $\sum_{n&#x3D;2}^{\infty}\frac1{n^p\ln^qn}$当$p&gt;1 或p&#x3D;1 且 q &gt; 1$时收敛;当$p&lt;1或p&#x3D;1且 q\leq 1$发散</p>
 </li>
 </ol>
-<h2><span id="正向级数敛散性的判定问题">正向级数敛散性的判定问题</span></h2><p>$\text{若 } u_n \geq 0, \text{ 则称 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 为正项级数。}$</p>
+<h2><span id="正向级数敛散性的判定问题">正向级数敛散性的判定问题</span></h2><p>$\text{若 } u_n \geq 0, \text{ 则称 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 为正项级数。}$ 正向级数收敛的<code>充要条件</code>是有界</p>
+<ol>
+<li>比较判别法: $\text{设 } cv_n \geq u_n \geq 0 \ (n \geq N), \ c &gt; 0, \text{ 若 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 收敛，则 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 收敛；若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 发散，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 发散。}$</li>
+</ol>
+<blockquote>
+<p>c是个常数,也就是说,只要某个正向级数收敛了.我要拿它比较另外一个数列虽然它自己比较小,但是我可以把它用常数相乘放大</p>
+</blockquote>
+<ol start="2">
+<li><p>利用极限判断正向级数:$\text{设 } u_n &gt; 0, \ v_n &gt; 0, \text{ 若 } \lim_{n \to \infty} \frac{v_n}{u_n} &#x3D; A, \text{ 则有}$</p>
+<ul>
+<li><p>$\text{当 } 0 &lt; A &lt; +\infty \text{ 即 } v_n \sim Au_n \ (n \to \infty) \text{ 时，} \sum_{n&#x3D;1}^{\infty} u_n \text{ 与 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 同时收敛或同时发散；}$</p>
+</li>
+<li><p>$\text{当 } A &#x3D; 0 \text{ 即 } v_n &#x3D; o(u_n) \ (n \to \infty) \text{ 时，若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 收敛，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 收敛；}$</p>
+</li>
+<li><p>$\text{当 } A &#x3D; +\infty \text{ 即 } u_n &#x3D; o(v_n) \ (n \to \infty) \text{ 时，若 } \sum_{n&#x3D;1}^{\infty} u_n \text{ 发散，则 } \sum_{n&#x3D;1}^{\infty} v_n \text{ 发散。}$</p>
+</li>
+</ul>
+</li>
+</ol>
 
     </div>
     
