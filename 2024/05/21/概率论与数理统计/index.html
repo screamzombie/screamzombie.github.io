@@ -173,7 +173,7 @@
         <p><strong><del>请使用人脑编译本文的 Latex 公式</del></strong></p>
 <span id="more"></span>
 
-<h1><span id="随机事件与概率">随机事件与概率</span></h1><h2><span id="相关概念与符号">相关概念与符号</span></h2><p><code>基本事件</code>:随机事件最基本的结果 符号 $\omega$ “欧米伽”</p>
+<h1><span id="第一章-随机事件与概率">第一章 随机事件与概率</span></h1><h2><span id="相关概念与符号">相关概念与符号</span></h2><p><code>基本事件</code>:随机事件最基本的结果 符号 $\omega$ “欧米伽”</p>
 <p><code>样本空间</code>: 一切基本事件的集合 记作 $\Omega$ 也读”欧米伽” 上面的是小写,这是大写</p>
 <h2><span id="事件的关系和运算常见几个类似的就没写进去了">事件的关系和运算(常见,几个类似的就没写进去了)</span></h2><table>
 <thead>
@@ -246,7 +246,7 @@ P(A\cup B\cup C)=P(A)+P(B)+ P(C)-P(AB)-P(BC)-P(AC)+P(ABC)
 $$
 </span>
 
-<h1><span id="常见一维分布">常见一维分布</span></h1><h2><span id="伯努利分布">伯努利分布</span></h2><p>可以将“伯努利分布”想象为扔可能不均匀的硬币.</p>
+<h1><span id="第二章-随机变量及分布">第二章 随机变量及分布</span></h1><h2><span id="伯努利分布">伯努利分布</span></h2><p>可以将“伯努利分布”想象为扔可能不均匀的硬币.</p>
 <h2><span id="均匀分布">均匀分布</span></h2><p>有多个结果，所有结果发生概率相等的分布，则是均匀分布。想象抛掷一枚匀质骰子，结果为 1 点到 6 点，出现每种点数的可能性相同。均匀分布可以由任意数目 n 的结果定义，甚至可以是连续分布。</p>
 <h2><span id="二项分布">二项分布</span></h2><p>二项分布可以看成遵循伯努利分布的事件的结果之和。抛掷一枚均质硬币，扔 20 次，有多少次扔出正面</p>
 <h2><span id="泊松分布">泊松分布</span></h2><p>泊松分布适合于描述单位时间内随机事件发生的次数的概率分布。如某一服务设施在一定时间内受到的服务请求的次数，电话交换机接到呼叫的次数、汽车站台的候客人数、机器出现的故障数、自然灾害发生的次数、DNA 序列的变异数、放射性原子核的衰变数、激光的光子数分布等等。</p>
@@ -281,7 +281,15 @@ f(x) =0,x<=0 $$ < span>
 
 <p>公式</p>
 <p>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{–\frac{(x \mu)^{2}}{2 \sigma^{2}}},-\infty&lt;x&lt;+\infty<br>$$</p>
-<h1><span id="多维随机变量及其分布">多维随机变量及其分布</span></h1><p>考研范围内一般只考二维随机变量</p>
+<h2><span id="泊松定理">泊松定理</span></h2><span>
+$$
+P(k, T) = \frac{(\lambda T)^k}{k!} e^{-\lambda T} \quad (\text{注意} (1 + \frac{\alpha}{N})^N \to e^{\alpha} )
+$$
+</span>
+
+
+
+<h1><span id="第三章-多维随机变量及其分布">第三章 多维随机变量及其分布</span></h1><p>考研范围内一般只考二维随机变量</p>
 <h2><span id="概念">概念</span></h2><p>设$(X,Y)$是二维随机变量,对于任意的实数$x,y$称二元函数$F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}$记成$P{X\leqslant x,Y\leqslant y}(-\infty&lt;x,y&lt;+\infty)$为随机变量$(X,Y)$的<code>分布函数</code>或者叫随机变量 X,Y 的<code>联合分布函数</code></p>
 <h2><span id="二维随机变量的边缘密度函数">二维随机变量的边缘密度函数</span></h2><p>有一个二维随机变量$(X,Y)$的分布函数为$F(X,Y)$则</p>
 <p>$F_X(x)&#x3D;P{X\leq x }$是关于 X 的<code>边缘分布函数</code><br>$F_Y(t)&#x3D;P{Y\leq y }$是关于 Y 的<code>边缘分布函数</code></p>
@@ -290,7 +298,7 @@ f(x) =0,x<=0 $$ < span>
 <blockquote>
 <p>(X,Y) 可以推出 X,Y 的边缘分布函数,但是反过来不一定成立.只有当 X,Y 相互独立时才能由边缘密度函数反推原本的分布函数</p>
 </blockquote>
-<h1><span id="方差期望和协方差">方差,期望和协方差</span></h1><h2><span id="协方差">协方差</span></h2><blockquote>
+<h1><span id="第四章-随机变量的数字特征">第四章 随机变量的数字特征</span></h1><h2><span id="协方差">协方差</span></h2><blockquote>
 <p>协方差(Covariance)在概率论和统计学中用于衡量两个变量的总体误差。它表示的是两个变量的变化趋势是否一致</p>
 </blockquote>
 <h3><span id="协方差公式的证明">协方差公式的证明</span></h3><p>$Cov(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]} &#x3D;E(XY)-E(X)E(Y)$</p>
@@ -403,7 +411,7 @@ f(x) =0,x<=0 $$ < span>
 <h4><span id="均匀分布x-sim-uab">均匀分布$X \sim U(a,b)$</span></h4><p>$$<br>E(x)&#x3D;\frac{a+b}{2}, D(x)&#x3D;\frac{(b-a)^{2}}{12}<br>$$</p>
 <h4><span id="指数分布e-sim-elambda">指数分布$E \sim E(\lambda)$</span></h4><p>$$<br>E(X) &#x3D; \frac{1}{\lambda}, D(x)&#x3D; \frac{1}{\lambda^2}<br>$$</p>
 <h4><span id="正态分布-x-sim-nmusigma2">正态分布 $X \sim N(\mu,\sigma^2)$</span></h4><p>$$<br>E(X)&#x3D;\mu ,D(X)&#x3D;\sigma^2<br>$$</p>
-<h1><span id="大数定律和中心极限定理">大数定律和中心极限定理</span></h1><h2><span id="依概率收敛为常数">依概率收敛为常数</span></h2><h3><span id="定义">定义</span></h3><p>考研中涉及到的目前只有收敛到常数,也不是重点</p>
+<h1><span id="第五章-大数定律和中心极限定理">第五章 大数定律和中心极限定理</span></h1><h2><span id="依概率收敛为常数">依概率收敛为常数</span></h2><h3><span id="定义">定义</span></h3><p>考研中涉及到的目前只有收敛到常数,也不是重点</p>
 <p>定义:设$Y1,Y2,\dots,Y_n,\dots$是一个随机变量序列,a 是一个常数,对于任意给定的整数$\varepsilon$有$\lim_{n\to\infty}\boldsymbol{P}\left{\begin{array}{c|c}Y_n&amp;-a&amp;|&lt;\varepsilon\end{array}\right}&#x3D;1$成立,则可以说此随机变量依概率收敛到这个常数</p>
 <p>不严谨的说法就是在相当大的次数的试验后,类似于无穷级数那样,可以把这个随机变量当做常数了,还有依概率收敛到另一个随机变量,不在考纲内跳过.</p>
 <h3><span id="性质">性质</span></h3><p>若有$X_n\xrightarrow{P}a,Y_n\xrightarrow{P}b$又有$g(x,y)$在$(a,b)$连续<br>有$g(X_n,Y_n)\xrightarrow{P}g(a,b)$</p>
@@ -411,7 +419,7 @@ f(x) =0,x<=0 $$ < span>
 <h3><span id="人话">人话</span></h3><p>切比雪夫不等式是经验法则的一般化形式或者说保守的估计,假如我们有一个随机变量 X,我们只知道 E(X)&#x3D;100,D(X)&#x3D;50,X 的具体形状我们不知道.假如我们知道具体形状,算$P{80&lt;X &lt;100 }$就可以采取积分的方式了,但问题是我们不知道,所以这就是切比雪夫不等式的用处了.当我们不知道具体分布时仍然可以求得一个保守的下限</p>
 <p>公式:$\boldsymbol{P}{|X-\boldsymbol{E}X|\geqslant\varepsilon}\leqslant\frac{\boldsymbol{D}X}{\varepsilon^{2}}$ 或者</p>
 <h2><span id="切比雪夫大数定律">切比雪夫大数定律</span></h2><h3><span id="定义">定义</span></h3><p>假设${X_n }{ n&#x3D;1,2,3\dots }$是相互独立(可以放宽到两两不相关)的随机变量序列(这里的每个${X_i}$不是一个数,而都是一个随机序列),且${DX_i}$存在且一致有上界</p>
-<h1><span id="数理统计的基本概念">数理统计的基本概念</span></h1><h1><span id="参数估计和假设检验">参数估计和假设检验</span></h1><h2><span id="参数估计">参数估计</span></h2><h3><span id="点估计">点估计</span></h3><p>这里设计到三个概念,<code>点估计</code>,<code>估计值</code>与<code>估计量</code></p>
+<h1><span id="第六章-数理统计的基本概念">第六章 数理统计的基本概念</span></h1><h1><span id="第七章-参数估计和假设检验">第七章 参数估计和假设检验</span></h1><h2><span id="参数估计">参数估计</span></h2><h3><span id="点估计">点估计</span></h3><p>这里设计到三个概念,<code>点估计</code>,<code>估计值</code>与<code>估计量</code></p>
 <p>点估计:是一种统计方法,简单的说就是目标</p>
 <p>估计量:是为了找到目标而使用的方式</p>
 <p>估计值:是通过上述手段得到的结果</p>
