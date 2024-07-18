@@ -173,6 +173,8 @@
         <p><strong><del>请使用人脑编译本文的 Latex 公式</del></strong></p>
 <span id="more"></span>
 
+<h1><span id="第零章-前提知识">第零章 前提知识</span></h1><h2><span id="等比数列求和公式">等比数列求和公式</span></h2><p>$S_n &#x3D; a_1 \frac{1 - q^n}{1 - q}$​</p>
+<p>​</p>
 <h1><span id="第一章-随机事件与概率">第一章 随机事件与概率</span></h1><h2><span id="相关概念与符号">相关概念与符号</span></h2><p><code>基本事件</code>:随机事件最基本的结果 符号 $\omega$ “欧米伽”</p>
 <p><code>样本空间</code>: 一切基本事件的集合 记作 $\Omega$ 也读”欧米伽” 上面的是小写,这是大写</p>
 <h2><span id="事件的关系和运算常见几个类似的就没写进去了">事件的关系和运算(常见,几个类似的就没写进去了)</span></h2><table>
@@ -217,7 +219,8 @@
 <li><p>结合律: $A \cup B \cup C &#x3D; (A \cup B) \cup C &#x3D; A \cup (B \cup C); \quad ABC &#x3D; (AB)C &#x3D; A(BC);$</p>
 </li>
 <li><p>分配律:<br>$A(B \cup C) &#x3D; AB \cup AC; \quad A \cup (BC) &#x3D; (A \cup B)(A \cup C);$</p>
-<p> $(A \cup C)(B \cup C) &#x3D; AB \cup C; \quad A \cap \left( \bigcup_{i&#x3D;1}^{\infty} A_i \right) &#x3D; \bigcup_{i&#x3D;1}^{\infty} (A \cap A_i);$</p>
+<pre><code>$(A \cup C)(B \cup C) = AB \cup C; \quad A \cap \left( \bigcup_&#123;i=1&#125;^&#123;\infty&#125; A_i \right) = \bigcup_&#123;i=1&#125;^&#123;\infty&#125; (A \cap A_i);$
+</code></pre>
 </li>
 <li><p>对偶律:$\overline{A \cup B} &#x3D; \overline{A} , \overline{B}; \quad \overline{A \cap B} &#x3D; \overline{A} \cup \overline{B}; \quad \overline{\bigcup_{i&#x3D;1}^{n} A_i} &#x3D; \bigcap_{i&#x3D;1}^{n} \overline{A_i}; \quad \overline{\bigcap_{i&#x3D;1}^{n} A_i} &#x3D; \bigcup_{i&#x3D;1}^{n} \overline{A_i};$</p>
 </li>
@@ -266,7 +269,11 @@ $$
 
 说人话就是，前面都是失败的，直到那一次成功了，因此用这个公式。
 
-<h2><span id="超几何分布">超几何分布</span></h2><p>公式<br><span><br>$$<br>{p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}}<br>$$<br></span><br>tips</p>
+<h2><span id="超几何分布">超几何分布</span></h2><p>公式<br><span></span></p>
+<p>$$<br>{p}&#x3D;\frac{C_{M}^{k} C_{N-M}^{n-k}}{C_{N}^{n}}<br>$$</p>
+
+tips
+
 <p>虽然几何分布和超几何分布名字相似但是他们有很大的不同,二项分布就像一件事在平面上重复多次。而超几何分布就像，一件事在每个维度上都只做一次</p>
 <h2><span id="指数分布">指数分布</span></h2><p>指数分布可以用来建模平均发生率恒定、连续、独立的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔<br><span></span></p>
 <p>$$<br>f(x)&#x3D;\lambda e^{-\lambda x},x&gt;0<br>$$</p>
@@ -283,8 +290,6 @@ $$
 P(k, T) = \frac{(\lambda T)^k}{k!} e^{-\lambda T} \quad (\text{注意} (1 + \frac{\alpha}{N})^N \to e^{\alpha} )
 $$
 </span>
-
-
 
 <h1><span id="第三章-多维随机变量及其分布">第三章 多维随机变量及其分布</span></h1><p>考研范围内一般只考二维随机变量</p>
 <h2><span id="概念">概念</span></h2><p>设$(X,Y)$是二维随机变量,对于任意的实数$x,y$称二元函数$F(x,y)&#x3D;\boldsymbol{P}{(X\leqslant x)\cap(Y\leqslant y)}$记成$P{X\leqslant x,Y\leqslant y}(-\infty&lt;x,y&lt;+\infty)$为随机变量$(X,Y)$的<code>分布函数</code>或者叫随机变量 X,Y 的<code>联合分布函数</code></p>
@@ -422,6 +427,94 @@ $$
 <p>估计值:是通过上述手段得到的结果</p>
 <h2><span id="假设检验">假设检验</span></h2><p>$$</p>
 <p>$$</p>
+<h1><span id="附录-1-常见公式与性质">附录 1 常见公式与性质</span></h1><table>
+<thead>
+<tr>
+<th>分布</th>
+<th align="center">概率密度</th>
+<th>分布函数</th>
+<th>期望</th>
+<th>方差</th>
+<th>符号</th>
+<th>英文原名与说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>均匀分布</td>
+<td align="center">$f(x)&#x3D; \begin{cases}\frac{1}{b-a},a&lt;x&lt;b,\0,其他,\end{cases}$</td>
+<td>$F( x ) &#x3D; \begin{cases}0 ,&amp; x &lt; a ,\[2ex]\frac{x - a}{b - a},&amp; a \leqslant x &lt; b ,\[2ex]1 ,&amp; x \geqslant b .\end{cases}$</td>
+<td>$E(x)&#x3D;\frac{a+b}{2}$</td>
+<td>$D(x)&#x3D;\frac{(b-a)^{2}}{12}$</td>
+<td>$(X \sim U(a, b))$</td>
+<td><strong>Uniform Distribution</strong></td>
+</tr>
+<tr>
+<td>几何分布</td>
+<td align="center">$P(X&#x3D;k)&#x3D;(1-p)^{k-1} p, k&#x3D;1,2, \ldots$</td>
+<td>$F(k) &#x3D; P(X \leq k) &#x3D; 1 - (1 - p)^{k}, \quad k &#x3D; 0, 1, 2, \ldots$</td>
+<td>$E(X)&#x3D;\frac{1}{p}$</td>
+<td>$D(X)&#x3D;\frac{1-p}{p^{2}}$</td>
+<td>$ X \sim \text{Geom}(p) $</td>
+<td>假定 K 为第 K 次试验才成功</td>
+</tr>
+<tr>
+<td>超几何分布</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1><span id="附录-2-概率论碎碎念">附录 2 概率论碎碎念</span></h1><ol>
+<li><p>是否有有计算不出来方差或者数学期望的分布？</p>
+<blockquote>
+<p>答：确实存在一些分布可能无法计算出方差或者数学期望，或者这些期望和方差可能是无穷大。这些分布通常具有极重的尾部（heavy tails），即在尾部有较高的概率质量或密度. 柯西分布（Cauchy Distribution）</p>
+<p>柯西分布是一个典型的例子，既没有有限的期望值也没有有限的方差。</p>
+</blockquote>
+</li>
+<li><p>两两不相容:两两不相容（mutually exclusive）在概率论中指的是一组事件中，任意两个事件不能同时发生。也就是说，对于一组事件 $(A_1, A_2, \ldots, A_n)$，如果任意两个事件 $(A_i)$ 和 $(A_j)$ 都满足：<br>$P(A_i \cap A_j) &#x3D; 0 \quad \text{对于所有 } i \neq j$ 那么我们就说这组事件是两两不相容的。</p>
+</li>
+<li><p>不知道叫什么的公式: $E[X(X + Y - 2)] &#x3D; E[XX + XY - 2X]$ 任何情况下都成立,这只是个例子</p>
+</li>
+</ol>
 </=0></span>
     </div>
     
