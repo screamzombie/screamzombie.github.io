@@ -173,11 +173,17 @@
         <p><strong><del>请继续使用人脑编译本文的 Latex 公式</del></strong></p>
 <span id="more"></span>
 
-<h1><span id="无穷级数">无穷级数</span></h1><h2><span id="收敛">收敛</span></h2><h3><span id="常见性质">常见性质</span></h3><p><code>收敛</code>,<code>绝对收敛</code>,<code>条件收敛</code> 是三个不同的概念</p>
+<h1><span id="无穷级数">无穷级数</span></h1><h2><span id="反常积分">反常积分</span></h2><blockquote>
+<p>反常积分并不是这章的知识,不过两者有很多相似的地方<br><span></span></p>
+</blockquote>
+<p>$$<br>\text{将任意反常积分分化为标准型 } \int \frac{1}{x^{\alpha} \ln^{\beta} x} , dx， \<br>\begin{cases}<br>(1) \text{当 } x \to 0 (\text{瑕积分}), \quad<br>\begin{cases}<br>\alpha &lt; 1 \<br>\alpha &#x3D; 1, , \beta &gt; 1<br>\end{cases} \text{, 收敛；} \<br>(2) \text{当 } x \to \infty (\text{无穷区间的反常积分}), \quad<br>\begin{cases}<br>\alpha &gt; 1 \<br>\alpha &#x3D; 1, , \beta &gt; 1<br>\end{cases} \text{, 收敛；} \<br>(3) \text{其他情况均发散！}<br>\end{cases}<br>$$</p>
+
+
+<h2><span id="常数项级数">常数项级数</span></h2><h3><span id="常见性质">常见性质</span></h3><p><code>收敛</code>,<code>绝对收敛</code>,<code>条件收敛</code> 是三个不同的概念</p>
 <ol>
 <li>收敛:$S_n&#x3D;\sum\limits_{k&#x3D;1}^nu_k&#x3D;u_1+u_2+\cdots+u_n,(n&#x3D;1,2,\cdots)$ 当$\lim_{n\to\infty}S_{n}存在$则可以说该数列收敛</li>
 <li>绝对收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$ 收敛,且各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$收敛</li>
-<li>条件收敛:如果$\sum_{n&#x3D;1}^{\infty}a_{n}$收敛 但各项绝对值构成的正项级数$\sum_{n&#x3D;1}^\infty|a_n|$不收敛</li>
+<li>条件收敛的级数的所有正项和负项构成的级数一定发散</li>
 </ol>
 <h3><span id="一些概念">一些概念</span></h3><p>某个级数是否收敛的必要条件: $\lim_{n\to\infty}u_{n}&#x3D;0$ 这是必要条件不是说满足了就一定收敛,而是不满足一定发散</p>
 <h3><span id="收敛级数的常见运算法则">收敛级数的常见运算法则</span></h3><ol>
@@ -239,7 +245,8 @@
 <p>如果这两个条件都满足，则该交错级数收敛。</p>
 <hr>
 <p>有时题目会用常见的 $p$ 级数出题,比如出一个一个很像 $p$ 级数的交错级数 也可以在$n&lt;1$的时候收敛.不是 $p$ 级数只是很像 $p$ 级数 —&gt; 2009 第四题</p>
-
+<h2><span id="幂级数">幂级数</span></h2><h3><span id="什么是幂级数">什么是幂级数?</span></h3><p>形如:$\sum_{n&#x3D;0}^{\infty} a_n x^n &#x3D; a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n + \cdots$ 或者 $\sum_{n&#x3D;0}^{\infty} a_n (x - x_0)^n &#x3D; a_0 + a_1 (x - x_0) + \cdots + a_n (x - x_0)^n + \cdots$</p>
+<h3><span id="阿贝尔定理">阿贝尔定理</span></h3>
     </div>
     
     
