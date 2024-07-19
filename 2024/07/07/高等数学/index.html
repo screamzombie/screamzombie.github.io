@@ -249,7 +249,19 @@ $$
 <p>$\sum_{n&#x3D;1}^{\infty}\frac{1}{n}$ 这个是调和级数是不收敛的,假设我们用比较判别法 $\lim_{n \to \infty} \frac{u_{n+1}}{u_n} &#x3D; \lim_{n \to \infty} \frac{\frac{1}{n+1}}{\frac{1}{n}} &#x3D; \lim_{n \to \infty} \frac{n}{n+1} &#x3D; 1$ 无法判断,注意这不是简单的随便取两项比较大小,而是要判断在无穷大的项数之后</p>
 </blockquote>
 </li>
-<li><p>根判别法<br>$\text{若} \lim_{n \to \infty} \sqrt[n]{u_n} &#x3D; \rho, \text{则} \sum_{n&#x3D;1}^{\infty} u_n \left{<br>\begin{array}{ll}<br>\text{收敛}, &amp; \rho &lt; 1, \<br>\text{发散}, &amp; \rho &gt; 1, \<br>\text{不一定}, &amp; \rho &#x3D; 1.<br>\end{array}<br>\right.$ 就是利用了 p 级数的性质</p>
+<li><p>根判别法</p>
+<span>
+$$
+\text{若} \lim_{n \to \infty} \sqrt[n]{u_n} = \rho, \text{则} \sum_{n=1}^{\infty} u_n \left\{
+\begin{array}{ll}
+\text{收敛}, & \rho < 1, \\
+\text{发散}, & \rho > 1, \\
+\text{不一定}, & \rho = 1.
+\end{array}
+\right.
+$$
+</span>
+就是利用了 p 级数的性质
 </li>
 <li><p>积分判别法:设 f(x)是$[1, +\infty)$上单调减,非负的连续函数.并且 $a_n&#x3D;f(n)$,则$\sum_{n&#x3D;1}^{\infty} a_n$与 $\int_{1}^{+\infty} f(x) , dx$同敛散</p>
 </li>
@@ -263,7 +275,20 @@ $$
 <hr>
 <p>有时题目会用常见的 $p$ 级数出题,比如出一个一个很像 $p$ 级数的交错级数 也可以在$n&lt;1$的时候收敛.不是 $p$ 级数只是很像 $p$ 级数 —&gt; 2009 第四题</p>
 <h2><span id="幂级数">幂级数</span></h2><h3><span id="什么是幂级数">什么是幂级数?</span></h3><p>形如:$\sum_{n&#x3D;0}^{\infty} a_n x^n &#x3D; a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n + \cdots$ 或者 $\sum_{n&#x3D;0}^{\infty} a_n (x - x_0)^n &#x3D; a_0 + a_1 (x - x_0) + \cdots + a_n (x - x_0)^n + \cdots$</p>
-<h3><span id="阿贝尔定理">阿贝尔定理</span></h3>
+<h3><span id="阿贝尔定理">阿贝尔定理</span></h3><ol>
+<li>若$\sum_{n&#x3D;0}^{\infty} a_n x^n$ 在 $x &#x3D; x_0(x_0 \neq 0)$收敛, 则当 $|x| &lt; |x_0|$ 时$\sum_{n&#x3D;0}^{\infty} a_n x^n$ 绝对收敛</li>
+<li>若$\sum_{n&#x3D;0}^{\infty} a_n x^n$ 在 $x &#x3D; x_0$发散, 则当 $|x| &gt; |x_0|$ 时$\sum_{n&#x3D;0}^{\infty} a_n x^n$ 发散</li>
+</ol>
+<h3><span id="幂级数收敛性的三种可能">幂级数收敛性的三种可能</span></h3><span>
+$$
+\begin{cases}
+(1) \text{ 对任何 } x \in (-\infty, +\infty) \text{ 都收敛；} \\
+(2) \text{ 仅在 } x = 0 \text{ 处收敛；} \\
+(3) \text{ 存在一个正数 } R, \text{ 当 } |x| < R \text{ 时绝对收敛，当 } |x| > R \text{ 时发散。}
+\end{cases}
+$$
+
+</span>
     </div>
     
     
