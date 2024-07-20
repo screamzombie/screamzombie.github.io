@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>真题讲解2009~2024 | Res Publica</title>
+    <title>高数,线代和概率论 | Res Publica</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -147,14 +147,14 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>真题讲解2009~2024</h1>
+        <h1>高数,线代和概率论</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/7/19
+            2024/7/20
         </span>
         
         <span class="category">
@@ -170,11 +170,15 @@
     </div>
     
     <div class="content" v-pre>
-        <p>学不完了,嘉人们</p>
-<p><img src="/../images/%E7%9C%9F%E9%A2%98%E8%AF%95%E5%8D%B7/logo.png"></p>
-<span id="more"></span>
-
-<h1><span id="2009-数学一">2009 数学一</span></h1><p><img src="/../images/%E7%9C%9F%E9%A2%98%E8%AF%95%E5%8D%B7/2009/4.png"></p>
+        <h1><span id="微分方程">微分方程</span></h1><h2><span id="一阶线性微分方程">一阶线性微分方程</span></h2><p><strong>方程形式</strong>: $y’ + P(x)y &#x3D; g(x)$</p>
+<p>通解 $y &#x3D; e^{-\int P(x) , dx} \left( \int g(x) e^{\int P(x) , dx} dx + C \right)$</p>
+<h2><span id="二阶常系数齐次微分方程">二阶常系数齐次微分方程</span></h2><p>形式: $y^{‘’} + ay^’ + by &#x3D; 0$</p>
+<p>通解: 设$\lambda^2+a\lambda+b&#x3D;0$为其特征方程,则有$\lambda_{1},\lambda_{2}$为其特征根</p>
+<ol>
+<li>   当 $(\lambda_1 \neq \lambda_2)$ 且均为实数时：<br> $y(x) &#x3D; C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$ </li>
+<li>   当 $\lambda_1 &#x3D; \lambda_2$ 时：<br> $y(x) &#x3D; C_1 e^{\lambda x} + C_2 x e^{\lambda x}$</li>
+<li>   当 $\lambda_1 &#x3D; \alpha + \beta i，\lambda_2 &#x3D; \alpha - \beta i$ 时：<br> $y(x) &#x3D; e^{\alpha x} \left( C_1 \cos(\beta x) + C_2 \sin(\beta x) \right)$</li>
+</ol>
 
     </div>
     
