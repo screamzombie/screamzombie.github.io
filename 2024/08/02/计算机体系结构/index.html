@@ -154,7 +154,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/6/29
+            2024/8/2
         </span>
         
         <span class="category">
@@ -176,7 +176,54 @@
 <span id="more"></span>
 <h1><span id="计算机系统概述">计算机系统概述</span></h1><h2><span id="操作系统的基本特征">操作系统的基本特征</span></h2><p>操作系统的基本特征: 并发，共享，虚拟，异步</p>
 <p>操作系统最基本的两个特征：<strong>并发</strong>，<strong>共享</strong></p>
-
+<blockquote>
+<p>对处理机管理就是对<code>进程</code>的管理</p>
+</blockquote>
+<h2><span id="接口">接口</span></h2><h3><span id="命令接口">命令接口</span></h3><h4><span id="联机命令接口">联机命令接口</span></h4><p>交互式命令接口,适用于<strong>分时</strong>或者<strong>实时</strong> 操作系统</p>
+<h4><span id="脱机命令接口">脱机命令接口</span></h4><p>又叫<code>批处理接口</code>,适用于<strong>批处理系统</strong>,由一组作业控制命令构成.脱机用户不能直接干预</p>
+<blockquote>
+<p>我要是老师就估计在这弄混淆,说批处理接口适用于分时</p>
+</blockquote>
+<h3><span id="程序接口">程序接口</span></h3><p>程序接口由一组<code>系统调用</code>或者叫<code>广义指令</code>.用户在程序中使用<code>系统调用</code>获得各种服务</p>
+<p>使用外部设备,申请分配回收内存 都用到<code>系统调用</code></p>
+<h2><span id="tips">tips</span></h2><p>没有任何软件支持的计算机叫<code>裸机</code>,在最内层,外面一层才是操作系统,覆盖了软件的叫<code>扩充机器</code>或者说<code>虚拟机</code></p>
+<h2><span id="操作系统发展历程">操作系统发展历程</span></h2><h3><span id="手工作业阶段此时还没操作系统">手工作业阶段(此时还没操作系统)</span></h3><p>特征:<code>所有工作都需要人工干预</code></p>
+<p>缺点:<code>用户独占全机资源利用率低</code>,<code>CPU等手工操作</code></p>
+<h3><span id="批处理阶段操作系统出现了">批处理阶段(操作系统出现了)</span></h3><h4><span id="单道批处理">单道批处理</span></h4><p>内存始终保持一道作业，解决<code>人机矛盾以及CPU和io设备速度不匹配的矛盾</code></p>
+<p><code>自动性</code>：无需人干预</p>
+<p><code>顺序性</code>:  按顺序</p>
+<p><code>单道性</code>：一次只有一个</p>
+<h4><span id="多道批处理">多道批处理</span></h4><p>宏观上并行,微观上串行,计算机内存中<code>同时存放</code>多道相互独立的程序</p>
+<blockquote>
+<p>我要是老头就考说程序都放在磁盘里</p>
+</blockquote>
+<p>优点: <code>资源利用率高</code>,<code>系统吞吐量大</code></p>
+<p>缺点:<code>用户相应时间长</code>,<code>不具备人机交互能力</code></p>
+<blockquote>
+<p>就是用户不大能控制</p>
+</blockquote>
+<h3><span id="分时操作系统">分时操作系统</span></h3><p>分时系统:把<code>处理器的运行时间</code>分成很多小片,<code>轮流</code>给人用.</p>
+<p>分时os:多个用户通过<code>终端</code>同时共享一台主机</p>
+<h4><span id="特征">特征</span></h4><ol>
+<li><p>同时性&#x2F;多路性: 即大家都能一起用</p>
+</li>
+<li><p>交互性: 用户能控制计算机,多道批处理就控制不了</p>
+</li>
+<li><p>独立性:大家互不干扰</p>
+</li>
+<li><p>及时性:用户的请求可以再很短时间内获得相应</p>
+<blockquote>
+<p>如果扣字眼的话.第四个可能是考点</p>
+</blockquote>
+</li>
+</ol>
+<h3><span id="实时操作系统">实时操作系统</span></h3><h4><span id="硬实时">硬实时</span></h4><p><code>时间绝对保证</code>,如<code>飞机自动控制系统</code></p>
+<h4><span id="软实时">软实时</span></h4><p>偶尔可以违反时间规定,<code>订票系统</code>,<code>银行管理系统</code></p>
+<h2><span id="操作系统运行环境">操作系统运行环境</span></h2><h3><span id="处理器运行模式">处理器运行模式</span></h3><h4><span id="特权指令">特权指令</span></h4><p>IO指令,置中断指令,取存用于内存保护的寄存器,送程序状态字到程序状态字寄存器</p>
+<h4><span id="非特权指令">非特权指令</span></h4><p>用户可以直接使用,不能直接访问系统的<code>软硬件资源</code>.仅仅可以访问<code>用户的地址空间</code></p>
+<h4><span id="依赖中断的服务">依赖中断的服务</span></h4><p>键盘输入,进程管理和调度,系统功能的调用,设备驱动,文件访问</p>
+<p><strong>中断服务只有一小部分属于内核</strong></p>
+<h3><span id="中断">中断</span></h3>
     </div>
     
     
