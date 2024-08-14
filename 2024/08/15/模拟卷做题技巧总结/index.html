@@ -174,7 +174,15 @@
 <span id="more"></span>
 
 <h2><span id="2022李林3">2022李林3</span></h2><p>$\text{设 }k,C\text{ 均为常数,}\lim_{x\to+\infty}\mathrm{e}^x\left(\int_0^{\sqrt x}\mathrm{e}^{-t^2}\mathrm{d}t+k\right)&#x3D;C,\text{求k,c的值}$</p>
-
+<span>
+$$
+\begin{aligned}
+\text{解}& \text{由}\operatorname*{lim}_{x\to+\infty}\mathrm{e}^{x}=+\infty \text{及已知条件},\text{知}\operatorname*{lim}_{x\to+\infty}\Big(\int_{0}^{\sqrt{x}}\mathrm{e}^{-t^{2}} \mathrm{d}t+k\Big) = 0 ,\text{即} \\
+&k=-\lim_{x\to+\infty}\int_0^{\sqrt{x}}\mathrm{e}^{-t^2}\mathrm{d}t=-\int_0^{+\infty}\mathrm{e}^{-t^2}\mathrm{d}t=-\frac{\sqrt{\pi}}2, \\
+&C=\lim_{x\to+\infty}\mathrm{e}^{x}\Big(\int_{0}^{\sqrt{x}}\mathrm{e}^{-t^{2}} \mathrm{d}t-\frac{\sqrt{\pi}}{2}\Big) = \lim_{x\to+\infty}\frac{\int_{0}^{\sqrt{x}}\mathrm{e}^{-t^{2}} \mathrm{d}t-\frac{\sqrt{\pi}}{2}}{\mathrm{e}^{-x}}=\lim_{x\to+\infty}\frac{\mathrm{e}^{-x}\cdot\frac{1}{2\sqrt{x}}}{-\mathrm{e}^{-x}}=0.
+\end{aligned}
+$$
+</span>
     </div>
     
     
