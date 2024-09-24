@@ -727,7 +727,22 @@
 <p>TCP协议 <code>可靠</code>,<code>有序</code>,<code>无丢失</code>,<code>不重复</code></p>
 <p>TCP协议数据单元称为<code>报文段</code>,TCP首部最短为<code>20B</code></p>
 <h3><span id="tcp计算校验和">TCP计算校验和</span></h3><p>TCP报文段计算校验和同样要加上伪首部,区别是把UDP的伪首部协议字段从17改成6</p>
-<h1><span id="六-应用层">六 应用层</span></h1><h1><span id="附录-一协议名词和概念">附录 (一)协议,名词和概念</span></h1><p><del>说的好像不常见的就不考一样</del></p>
+<h1><span id="六-应用层">六 应用层</span></h1><h2><span id="cx2fs">C&#x2F;S</span></h2><h3><span id="特点">特点</span></h3><p>可扩展性不佳,收服务器硬件和网络带宽限制,服务器支持的客户机数量有限</p>
+<h3><span id="应用案例">应用案例</span></h3><p>Web,文件传输协议<code>FTP</code>,远程登录,电子邮件</p>
+<h2><span id="p2p">P2P</span></h2><h3><span id="特点">特点</span></h3><ol>
+<li>多个客户机中间可以直接共享文档</li>
+<li>可扩展性好</li>
+<li>网络健壮性强</li>
+</ol>
+<h2><span id="域名系统dns重点">域名系统DNS(重点)</span></h2><h3><span id="概述">概述</span></h3><p>DNS使用 <code>53端口</code> <code>C/S模型</code> 协议运行在<code>UDP</code>之上</p>
+<p><a target="_blank" rel="noopener" href="http://www.google.com/">www.google.com</a> 中的com是顶级域名,google是二级域名,www是三级</p>
+<h3><span id="组成">组成</span></h3><p>DNS &#x3D; <code>层次域名空间</code>+<code>域名服务器</code>+<code>解析器</code></p>
+<h3><span id="dns查询">DNS查询</span></h3><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/DNS%E6%9F%A5%E8%AF%A2.png"></p>
+<h3><span id="考点">考点</span></h3><ol>
+<li>在DNS的查询中,由最开始连接的服务器<code>本地域名服务器</code>返回结果</li>
+<li><code>授权域名服务器</code>可以将管辖的主机名转换为ip地址</li>
+</ol>
+<h1><span id="附录-一协议名词和概念">附录 (一)协议,名词和概念</span></h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
