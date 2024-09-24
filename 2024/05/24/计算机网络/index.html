@@ -184,8 +184,8 @@
 <p>边缘部分: 所有连接到因特网上、供用户直接使用的主机组成，用来进行<code>通信</code>和<code>资源共享</code></p>
 <p>核心部分: 大量的<em>网络</em>和连接这些网络的<em>路由器</em>组成 ， 它 为 边 缘 部 分 提 供 <code>连 通 性</code> 和<code> 交 换 服 务</code></p>
 <h3><span id="功能组成我觉得是重点">功能组成：(我觉得是重点)</span></h3><p>计算机网络 &#x3D; 通信子网 + 资源子网</p>
-<p>通信子网 &#x3D; 各种传输介质 + 通信设备 + 相应的网络协议</p>
-<p>资源子网 &#x3D; 实现资源共享功能的设备及其软件的集合</p>
+<p><code>通信子网</code> &#x3D; 各种<code>传输介质</code> + <code>通信设备</code> + 相应的<code>网络协议</code></p>
+<p><code>资源子网</code> &#x3D; 实现资源共享功能的<code>设备及其软件</code>的集合</p>
 <p><strong>通信子网：使网络具有 <em>数据传输_、_交换_、_控制</em> 和 <em>存储</em> 的能力</strong></p>
 <h2><span id="几种网络构型">几种网络构型</span></h2><h3><span id="种类">种类</span></h3><p>总线型网络(建网容易，效率不高)</p>
 <p>星型（便于集中控制和管理，端用户通信必须经过中央设备）</p>
@@ -199,7 +199,7 @@
 <li>处理时延 &#x3D;》 数据在交换节点的存储转发中进行的必要工作花的时间 分析首部，寻找路由等</li>
 <li>排队时延 &#x3D;》 数据进出交换节点都需要排队</li>
 </ul>
-<p>时延带宽积：时延带宽积 &#x3D; 传播时延 * 信道宽度 就像是水管里的水的容量一般</p>
+<p><code>时延带宽积</code>：时延带宽积 &#x3D; 传播时延 * 信道宽度 就像是水管里的水的容量一般</p>
 <p>时延带宽积 考计算！！！！</p>
 <ul>
 <li>信道利用率： 有数据通过的时间&#x2F;总时间</li>
@@ -563,7 +563,7 @@
 </blockquote>
 <p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ppp%E5%B8%A7%E6%A0%BC%E5%BC%8F.png"></p>
 <p>ps 关于<code>CSMA/CD</code>的帧的间隔,已经考了好几次了可能是重点让算</p>
-<h1><span id="网络层">网络层</span></h1><h2><span id="简介">简介</span></h2><h3><span id="一些中继设备">一些中继设备</span></h3><ol>
+<h1><span id="四-网络层">四 网络层</span></h1><h2><span id="简介">简介</span></h2><h3><span id="一些中继设备">一些中继设备</span></h3><ol>
 <li>物理层:转发器,集线器</li>
 <li>数据链路层:网桥, 交换机</li>
 <li>网络层: 路由器</li>
@@ -687,7 +687,7 @@
 <p>移动站在归属网络时使用<code>TCP/IP</code>进行通信</p>
 <p>外地代理向被访网络的移动站发送数据时,使用移动站的<code>MAC地址</code></p>
 </blockquote>
-<h1><span id="传输层">传输层</span></h1><p>传输层的 SAP 是<code>端口</code>,16bit,可以表示<code>65535</code>个不同的端口号</p>
+<h1><span id="五-传输层">五 传输层</span></h1><p>传输层的 SAP 是<code>端口</code>,16bit,可以表示<code>65535</code>个不同的端口号</p>
 <h2><span id="端口号">端口号</span></h2><p>大的说有两类,<code>服务器</code>用的和<code>客户端</code>用的</p>
 <p>其中服务器用的又有两类</p>
 <h3><span id="服务端">服务端</span></h3><blockquote>
@@ -718,7 +718,16 @@
 <li>源端口，在需要对方回信时选用,如果不需要时可以全 0</li>
 <li>长度,UDP 数据报最小长度是 8 仅仅首部</li>
 </ol>
-<h4><span id="udp-校验和计算">UDP 校验和计算</span></h4><h1><span id="附录-一协议名词和概念">附录 (一)协议,名词和概念</span></h1><p><del>说的好像不常见的就不考一样</del></p>
+<h4><span id="udp-校验和计算">UDP 校验和计算</span></h4><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/udp%E6%A3%80%E9%AA%8C%E5%92%8C%E4%BE%8B%E5%AD%90.png"></p>
+<p>下面是UDP数据报格式<br><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/udp%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F.png"></p>
+<p><code>伪首部</code>就是实际在UDP传输过程中不会真的发送的东西,由于IP地址你还是可以获得的 ,因此加入伪首部可以校验的东西更多</p>
+<p>具体操作</p>
+<p>首先按上图那样,将UDP数据报包括数据部分,16位16位的从上写到下,不断相加,如果产生进位,则需要<code>回卷</code>到最后,即进位加到最后一位上面去,如果多次进位则需要多次<code>回卷</code>,最后将结果取<code>反码</code></p>
+<h2><span id="tcp协议">TCP协议</span></h2><h3><span id="tcp协议特点">TCP协议特点</span></h3><p>TCP是建立在<code>不可靠</code>的<code>IP</code>层,的<code>可靠</code>协议</p>
+<p>TCP协议 <code>可靠</code>,<code>有序</code>,<code>无丢失</code>,<code>不重复</code></p>
+<p>TCP协议数据单元称为<code>报文段</code>,TCP首部最短为<code>20B</code></p>
+<h3><span id="tcp计算校验和">TCP计算校验和</span></h3><p>TCP报文段计算校验和同样要加上伪首部,区别是把UDP的伪首部协议字段从17改成6</p>
+<h1><span id="六-应用层">六 应用层</span></h1><h1><span id="附录-一协议名词和概念">附录 (一)协议,名词和概念</span></h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
