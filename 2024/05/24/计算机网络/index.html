@@ -742,7 +742,17 @@
 <li>在DNS的查询中,由最开始连接的服务器<code>本地域名服务器</code>返回结果</li>
 <li><code>授权域名服务器</code>可以将管辖的主机名转换为ip地址</li>
 </ol>
-<h1><span id="附录-一协议名词和概念">附录 (一)协议,名词和概念</span></h1><p><del>说的好像不常见的就不考一样</del></p>
+<h2><span id="ftp">FTP</span></h2><ol>
+<li>采用 C&#x2F;S(客户&#x2F;服务器)的工作方式,使用<code>TCP</code>可靠的传输服务</li>
+<li>一个FTP服务器可为多个客户进程服务</li>
+<li>控制连接:服务器端口号21  数据连接: 服务器端口号20<blockquote>
+<p>控制连接在整个会话期间一直保持打开状态,控制信息都以7位ASCII格式发送</p>
+</blockquote>
+</li>
+</ol>
+<h2><span id="电子邮件">电子邮件</span></h2><p><img src="/../images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6.png"></p>
+<p>SMTP 使用的是TCP连接,端口号为25</p>
+<h2><span id="超文本传输协议http重点">超文本传输协议HTTP(重点)</span></h2><h1><span id="附录-一协议名词和概念">附录 (一)协议,名词和概念</span></h1><p><del>说的好像不常见的就不考一样</del></p>
 <ol>
 <li>数据链路层 以太网最大帧长度 1518 字节</li>
 <li>最大传送单元叫<code>MTU</code> 和最大帧长度不一样 MTU 的范围是 46~1500 字节</li>
