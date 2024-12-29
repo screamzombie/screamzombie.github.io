@@ -170,7 +170,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p>OpenCV 启动</p>
+        <p>OpenCV 启动!</p>
 <span id="more"></span>
 
 <h1><span id="cmake">CMake</span></h1><pre><code class="bash">cmake_minimum_required(VERSION 3.28)
@@ -184,6 +184,21 @@ include_directories($&#123;OpenCV_INCLUDE_DIRS&#125;)
 add_executable(untitled main.cpp)
 
 target_link_libraries(untitled $&#123;OpenCV_LIBS&#125;)
+</code></pre>
+<h1><span id="基础课程">基础课程</span></h1><h2><span id="图像读取与显示">图像读取与显示</span></h2><pre><code class="cpp">
+void ImageThreshold(String str) &#123;
+    Mat image = imread(str,IMREAD_GRAYSCALE); // 加载灰度图像的选项
+    namedWindow(&quot;test&quot;,WINDOW_FREERATIO); // 这个可以用来重新定义窗口名，并且可以让窗口可以拉伸
+    imshow(&quot;test&quot;,image);
+    waitKey(0);
+&#125;
+
+int main() &#123;
+    String str = &quot;../../material/YaeMiko.jpg&quot;;
+    ImageThreshold(str);
+    destroyAllWindows();
+    return 0;
+&#125;
 </code></pre>
 
     </div>
