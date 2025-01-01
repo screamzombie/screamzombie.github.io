@@ -200,6 +200,48 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
+<h2><span id="简单的像素操作">简单的像素操作</span></h2><pre><code class="cpp">void QuickDemo::colorSpace_Demo(cv::Mat &amp;img) &#123;
+    Mat gray, hsv;
+    cvtColor(img, hsv, COLOR_BGR2HSV);
+    cvtColor(img, gray, COLOR_BGR2GRAY);
+    imshow(&quot;HSV&quot;, hsv);
+    imshow(&quot;GRAY&quot;, gray);
+    imwrite(&quot;../../material/HSV.jpg&quot;, hsv);
+    imwrite(&quot;../../material/GRAY.jpg&quot;, gray);
+&#125;
+
+void QuickDemo::mat_creation_demo(cv::Mat &amp;img) &#123;
+    Mat m1, m2;
+    m1 = img.clone();
+    img.copyTo(m2);
+    Mat m3 = Mat::zeros(Size(4, 4), CV_8UC3);
+    m3 = Scalar(214, 214, 147);
+//    std::cout &lt;&lt; m3.rows &lt;&lt; &quot; &quot; &lt;&lt; m3.cols &lt;&lt; std::endl;
+//    std::cout &lt;&lt; m3 &lt;&lt; std::endl;
+    imshow(&quot;m3&quot;, m3);
+&#125;
+
+void QuickDemo::pixel_visit_demo(cv::Mat &amp;img) &#123;
+    int w = img.cols;
+    int h = img.rows;
+    auto dims = img.channels(); //这个就是返回通道数
+    std::cout &lt;&lt; &quot;dims&quot; &lt;&lt; dims &lt;&lt; std::endl;
+    for (auto row = 0; row &lt; h; row++) &#123;
+        for (auto col = 0; col &lt; w; col++) &#123;
+            if (dims == 1) &#123; // 如果是单通道
+                int pv = img.at&lt;uchar&gt;(row, col);
+                img.at&lt;uchar&gt;(row, col)= 255 - pv;
+            &#125; else if (dims == 3) &#123; //3个通道 彩色图像
+                auto bgr = img.at&lt;Vec3b&gt;(row, col);
+                img.at&lt;Vec3b&gt;(row, col)[0] = 255 - bgr[0];
+                img.at&lt;Vec3b&gt;(row, col)[1] = 255 - bgr[0];
+                img.at&lt;Vec3b&gt;(row, col)[2] = 255 - bgr[0];
+            &#125;
+        &#125;
+    &#125;
+    imshow(&quot;pixel read and write&quot;, img);
+&#125;
+</code></pre>
 
     </div>
     
@@ -215,7 +257,7 @@ int main() &#123;
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2024 Res Publica
+            2022 - 2025 Res Publica
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
