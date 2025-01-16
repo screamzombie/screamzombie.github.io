@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: 配置 | Res Publica</title>
+    <title>Vim自用笔记 | Res Publica</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,71 +145,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/C/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                C++
-            </a>
+            <div class="article">
+    <div>
+        <h1>Vim自用笔记</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/1/16
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%85%8D%E7%BD%AE/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                配置
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/408/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                408
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Vim/" style="background: #ff7d73">
+        <span class="category">
+            <a href="/categories/Vim/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -216,28 +169,55 @@
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2024/5/19</div>
-            <a href="/2024/05/19/vue%E5%92%8Cdjango%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">
-                <h3>vue和django的一些配置</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E9%85%8D%E7%BD%AE/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        配置
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>这是我第N+1次开始学VIM</p>
+<span id="more"></span>
+<h2><span id="光标行内移动">光标行内移动</span></h2><ol>
+<li>w 跳到下一个字首，按标点或单词分割</li>
+<li>W 跳到下一个字首，长跳，如end-of-line被认为是一个字</li>
+<li>e 跳到下一个字尾</li>
+<li>E 跳到下一个字尾,长跳</li>
+<li>b 跳到上一个字</li>
+<li>B 跳到上一个字,长跳</li>
+<li>0 跳到行首，屏幕左侧</li>
+<li>^ 跳到行首第一个字符</li>
+<li>$ 跳到行尾</li>
+</ol>
+<h2><span id="光标行间移动">光标行间移动</span></h2><ol>
+<li>gg 跳到文首</li>
+<li>G 跳到文尾</li>
+<li>H 回到最高行</li>
+<li>M 回到中间行</li>
+<li>L 回到最低行</li>
+</ol>
+<h2><span id="删除">删除</span></h2><ol>
+<li>dd 删除光标所在行</li>
+<li>dw 删除一个字</li>
+<li>x 删除当前字符</li>
+</ol>
+<h2><span id="复制">复制</span></h2><ol>
+<li>yy 复制一行</li>
+<li>yw 复制一个字</li>
+<li>y 复制到行末</li>
+</ol>
+<h2><span id="粘贴">粘贴</span></h2><ol>
+<li>p 粘贴到行的下面</li>
+<li>P 粘贴到行的上面</li>
+</ol>
+<h2><span id="插入">插入</span></h2><ol>
+<li>i 当前光标位置进入插入模式</li>
+<li>I 在当前行首进入插入模式</li>
+<li>a 在光标之后进入插入模式(追加模式)</li>
+<li>A 追加模式 光标在行末</li>
+</ol>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -269,6 +249,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
