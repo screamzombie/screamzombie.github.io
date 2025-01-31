@@ -179,13 +179,16 @@
     void playPushButtonClicked();
     void moreInfoPushButtonClicked();
     void closePushButtonClicked();
-
-
 /*
 其他代码
 */
 
 connect(ui-&gt;closePushButton, SIGNAL(clicked()), this, SLOT(closePushButtonClicked())); //槽函数的连接,写到构造函数里
+</code></pre>
+<h1><span id="qt-lambda-实现槽函数">Qt lambda 实现槽函数</span></h1><pre><code class="C++">[捕获列表](形参列表) mutable 异常列表 -&gt; 返回类型
+&#123;
+    函数体
+&#125;
 </code></pre>
 <h1><span id="项目实战">项目实战</span></h1><h2><span id="mp3">MP3</span></h2><h3><span id="实现窗口重新绘制">实现窗口重新绘制</span></h3><pre><code class="C++">public:
     explicit MP3(QWidget *parent = nullptr);
