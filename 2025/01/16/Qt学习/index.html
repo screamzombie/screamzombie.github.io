@@ -170,15 +170,17 @@
     </div>
     
     <div class="content" v-pre>
-        <p>我真的不想学Qt</p>
+        <p>我真的不想学 Qt</p>
 <span id="more"></span>
+
 <h1><span id="槽函数的连接">槽函数的连接</span></h1><blockquote>
-<p>C++这块不如Pyqt一根</p>
+<p>C++这块不如 Pyqt 一根</p>
 </blockquote>
 <pre><code class="cpp">public slots: // 槽函数这块要加这个
     void playPushButtonClicked();
     void moreInfoPushButtonClicked();
     void closePushButtonClicked();
+
 /*
 其他代码
 */
@@ -192,21 +194,82 @@ connect(ui-&gt;closePushButton, SIGNAL(clicked()), this, SLOT(closePushButtonCli
 </code></pre>
 <blockquote>
 <p>返回类型可以省略 编译器会自动推导<br>有三种捕获 值捕获,引用捕获,隐式捕获</p>
+<p>1，值捕获，即使在 lambda 后面改变了该值，在调用 lambda 时，这个值还是捕获时的值。<br>2，引用捕获，在 lambda 后面改变了该值，在调用 lambda 时，这个值不是捕获时的值，而是改变后的值。<br>3，隐式捕获：[&#x3D;]代表全部采用值捕获,[&amp;]代表全部采用引用捕获,[&#x3D;, &amp;val]代表 val 为引用捕获，其余为值捕获,[&amp;,val]代表 val 为值捕获，其余为引用捕获</p>
 </blockquote>
-<p>1，值捕获，即使在lambda后面改变了该值，在调用lambda时，这个值还是捕获时的值。<br>2，引用捕获，在lambda后面改变了该值，在调用lambda时，这个值不是捕获时的值，而是改变后的值。<br>3，隐式捕获：[&#x3D;]代表全部采用值捕获,[&amp;]代表全部采用引用捕获,[&#x3D;, &amp;val]代表val为引用捕获，其余为值捕获,[&amp;,val]代表val为值捕获，其余为引用捕获</p>
-<h1><span id="qt基础知识">Qt基础知识</span></h1><h2><span id="槽函数的三种写法">槽函数的三种写法</span></h2><ol>
-<li>Qt4写法 <pre><code class="C++">connect(ui.binOpen,SIGNAL(clicked),this,SLOT(open())); // 写错了编译器不报错
+<h1><span id="qt-基础知识">Qt 基础知识</span></h1><h2><span id="槽函数的三种写法">槽函数的三种写法</span></h2><ol>
+<li><p>Qt4 写法</p>
+<pre><code class="C++">connect(ui.binOpen,SIGNAL(clicked),this,SLOT(open())); // 写错了编译器不报错
 </code></pre>
 </li>
-<li>Qt5写法<pre><code class="C++"> connect(ui.binOpen,&amp;QPushButton::clicked,this,&amp;Widget::open); //写错了编译器会报错，推荐用这种
+<li><p>Qt5 写法</p>
+<pre><code class="C++"> connect(ui.binOpen,&amp;QPushButton::clicked,this,&amp;Widget::open); //写错了编译器会报错，推荐用这种
 </code></pre>
 </li>
-<li>lambda 表达式写法<pre><code class="C++">connect(ui.binOpen,&amp;QPushButton::clicked,[=]())&#123;
+<li><p>lambda 表达式写法</p>
+<pre><code class="C++">connect(ui.binOpen,&amp;QPushButton::clicked,[=]())&#123;
 
 &#125;
 </code></pre>
 </li>
 </ol>
+<h2><span id="跨控件实现信号传递">跨控件实现信号传递</span></h2><blockquote>
+<p>以前 pyqt 搞这玩意给我搞累死了<br>一些教程也不好好教人,都发视频了还藏一手故意埋坑故记录一下<br>这个例子我没有用 Clion 去做,而是使用 vscode 手动撸.CMakeLists.txt 文件内容如下</p>
+</blockquote>
+<pre><code class="txt">cmake_minimum_required(VERSION 3.28) # 设置 CMake 的最低版本要求为 3.28
+project(EvilMagic)
+set(CMAKE_CXX_STANDARD 17) # 设置 C++ 标准为 C++17
+set(CMAKE_AUTOMOC ON) # 启用自动处理 Qt 的元对象编译（MOC）
+set(CMAKE_AUTORCC ON) # 启用自动处理 Qt 的资源文件编译（RCC）
+set(CMAKE_AUTOUIC ON) # 启用自动处理 Qt 的用户界面文件编译（UIC）
+
+find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED) # 查找并链接 Qt6 的 Core、Gui 和 Widgets 模块
+
+add_executable(
+    EvilMagic
+    main.cpp
+    form.cpp
+    child.cpp
+    form.h
+    child.h
+    form.ui
+    child.ui
+) # 定义可执行文件 QtTest，并列出源文件和用户界面文件
+
+target_link_libraries(EvilMagic Qt::Core Qt::Gui Qt::Widgets) # 链接 Qt6 的 Core、Gui 和 Widgets 模块到可执行文件 QtTest
+</code></pre>
+<p>项目路径如下<br>.<br>├── CMakeLists.txt<br>├── build<br>├── child.cpp<br>├── child.h<br>├── child.ui<br>├── form.cpp<br>├── form.h<br>├── form.ui<br>└── main.cpp<br>核心点有两个第一个是使用 signal 和 emit 关键字,第二个则是在哪里连接.child.h 的代码如下</p>
+<pre><code class="cpp">#ifndef CHILD_H
+#define CHILD_H
+
+#include &lt;QWidget&gt;
+#include &quot;ui_child.h&quot;
+QT_BEGIN_NAMESPACE
+namespace Ui
+&#123;
+    class Child;
+&#125;
+QT_END_NAMESPACE
+
+class child : public QWidget
+&#123;
+    Q_OBJECT
+
+public:
+    explicit child(QWidget *parent = nullptr);
+
+    ~child() override;
+
+public slots:
+    void someEvent();
+signals:
+    void sendMessageToForm(const QString &amp;message); // 添加信号
+
+private:
+    Ui::Child *ui;
+&#125;;
+
+#endif // CHILD_H
+</code></pre>
 <h1><span id="项目实战">项目实战</span></h1><h2><span id="mp3">MP3</span></h2><h3><span id="实现窗口重新绘制">实现窗口重新绘制</span></h3><pre><code class="C++">public:
     explicit MP3(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent * event);//就放到public这里就可以了,当你拖动窗口时会自动调用这个函数,让我想到了python的魔法方法
