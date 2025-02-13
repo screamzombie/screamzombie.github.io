@@ -270,6 +270,78 @@ private:
 
 #endif // CHILD_H
 </code></pre>
+<p>child.cpp 的代码如下</p>
+<pre><code class="cpp">#include &quot;child.h&quot;
+
+child::child(QWidget *parent) : QWidget(parent),
+                                ui(new Ui::Child)
+&#123;
+    ui-&gt;setupUi(this);
+    connect(ui-&gt;pushButton, &amp;QPushButton::clicked, this, &amp;child::someEvent);
+&#125;
+
+child::~child()
+&#123;
+    delete ui;
+&#125;
+
+// 示例：在某个事件中发射信号
+void child::someEvent()
+&#123;
+    emit sendMessageToForm(&quot;Hello from child!&quot;);
+&#125;
+</code></pre>
+<p>form.h 以及 form.cpp 的代码如下</p>
+<pre><code class="cpp">#ifndef FORM_H
+#define FORM_H
+
+#include &lt;QWidget&gt;
+#include &quot;ui_form.h&quot;
+QT_BEGIN_NAMESPACE
+namespace Ui
+&#123;
+    class Form;
+&#125;
+QT_END_NAMESPACE
+
+class form : public QWidget
+&#123;
+    Q_OBJECT
+
+public:
+    explicit form(QWidget *parent = nullptr);
+
+    ~form() override;
+
+public slots:
+    void receiveMessageFromChild(const QString &amp;message);  // 添加槽函数
+
+private:
+    Ui::Form *ui;
+&#125;;
+
+#endif // FORM_H
+</code></pre>
+<pre><code class="cpp">#include &quot;form.h&quot;
+#include &lt;QDebug&gt;
+form::form(QWidget *parent)
+    : QWidget(parent), ui(new Ui::Form)
+&#123;
+    ui-&gt;setupUi(this);
+&#125;
+
+form::~form()
+&#123;
+    delete ui;
+&#125;
+
+void form::receiveMessageFromChild(const QString &amp;message)
+&#123;
+    this-&gt;ui-&gt;lineEdit-&gt;setText(message);
+    qDebug() &lt;&lt; &quot;Received message from child: &quot; &lt;&lt; message;
+    // ui-&gt;label-&gt;setText(message);  // 假设form中有一个label用于显示消息
+&#125;
+</code></pre>
 <h1><span id="项目实战">项目实战</span></h1><h2><span id="mp3">MP3</span></h2><h3><span id="实现窗口重新绘制">实现窗口重新绘制</span></h3><pre><code class="C++">public:
     explicit MP3(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent * event);//就放到public这里就可以了,当你拖动窗口时会自动调用这个函数,让我想到了python的魔法方法
@@ -289,6 +361,7 @@ private:
 <pre><code class="C++">    this-&gt;setFixedSize(this-&gt;geometry().size()); //设置窗口大小 不允许随便拖动
     this-&gt;setWindowFlags(Qt::FramelessWindowHint); //隐藏窗口标题栏
 </code></pre>
+<p>关键点有两个 第一个是注意 QtNameSpace里面的名称,还有就是QtCreator创建ui文件默认的对象名字是form 需要修改</p>
 
     </div>
     
