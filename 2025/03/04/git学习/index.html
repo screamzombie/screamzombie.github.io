@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>categories | Res Publica</title>
+    <title>git常用命令 | Res Publica</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,36 +145,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/C/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                C++
-            </a>
+            <div class="article">
+    <div>
+        <h1>git常用命令</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/4
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -179,51 +167,22 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E9%85%8D%E7%BD%AE/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                配置
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/408/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                408
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Vim/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Vim
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                前端
-            </a>
-        </span>
-        
-        
     </div>
+    
+    <div class="content" v-pre>
+        <p>列举了一些常用的git命令和自己遇到的一些问题<br>&lt;—more—&gt;</p>
+<h2><span id="本地修改了但是无法推送到远程">本地修改了，但是无法推送到远程</span></h2><p>明明本地修改了，但是远程仓库却提示是干净的。需要使用</p>
+<pre><code class="shell">git rm -r --cached [你的项目]
+</code></pre>
+<p>强制删除git缓存后就好了</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -255,6 +214,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
