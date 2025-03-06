@@ -170,7 +170,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p>vue和django的一些配置</p>
+        <p>vue 和 django 的一些配置</p>
 <span id="more"></span>
 
 <h1><span id="环境配置">环境配置</span></h1><h2><span id="django-安装">Django 安装</span></h2><p>python 3.11 之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
@@ -278,7 +278,7 @@ select user,host from user;    ## 查看用户访问端口
 │   ├── migrations                        [不动]数据库变更记录
 │   │   └── __init__.py
 │   ├── models.py                         [重要]对数据库进行操作
-│   ├── tests.py                          
+│   ├── tests.py
 │   └── views.py                          [重要,经常修改]函数
 ├── manage.py
 └── mysite
@@ -732,25 +732,25 @@ def login_view(request):
 <p>vue 项目的 index.html 如下</p>
 <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-        &lt;title&gt;vue-django&lt;/title&gt;
-        &lt;link
-            href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css&quot;
-            rel=&quot;stylesheet&quot;
-            integrity=&quot;sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD&quot;
-            crossorigin=&quot;anonymous&quot;
-        /&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        hello
-        &lt;div class=&quot;container&quot;&gt;
-            &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;script type=&quot;module&quot; src=&quot;/src/main.js&quot;&gt;&lt;/script&gt;
-        &lt;!-- 注意这一行 type和src的路径都要打 --&gt;
-    &lt;/body&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;title&gt;vue-django&lt;/title&gt;
+    &lt;link
+      href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css&quot;
+      rel=&quot;stylesheet&quot;
+      integrity=&quot;sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD&quot;
+      crossorigin=&quot;anonymous&quot;
+    /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    hello
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script type=&quot;module&quot; src=&quot;/src/main.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 注意这一行 type和src的路径都要打 --&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <p>把 main.js 中无用的代码删除</p>
@@ -761,86 +761,86 @@ createApp(App).mount(&#39;#app&#39;)
 </code></pre>
 <p>创建一个组件（组件名随意我这里的例子交 lyb）这边是前端向后端要数据的核心部分</p>
 <pre><code class="vue">&lt;template&gt;
-    &lt;div class=&quot;row&quot;&gt;
-        &lt;div class=&quot;col-md-8&quot;&gt;
-            &lt;table class=&quot;table&quot;&gt;
-                &lt;thead&gt;
-                    &lt;tr&gt;
-                        &lt;th&gt;标题&lt;/th&gt;
-                        &lt;th&gt;作者&lt;/th&gt;
-                        &lt;th&gt;内容&lt;/th&gt;
-                    &lt;/tr&gt;
-                &lt;/thead&gt;
-                &lt;tbody&gt;
-                    &lt;tr v-for=&quot;item in ly_list&quot; :key=&quot;item.url&quot;&gt;
-                        //循环显示元素
-                        &lt;td&gt;&#123;&#123; item.title &#125;&#125;&lt;/td&gt;
-                        &lt;td&gt;&#123;&#123; item.author &#125;&#125;&lt;/td&gt;
-                        &lt;td&gt;&#123;&#123; item.content &#125;&#125;&lt;/td&gt;
-                        &lt;td&gt;测试&lt;/td&gt;
-                        &lt;td&gt;
-                            &lt;button class=&quot;btn btn-success&quot; title=&quot;编辑&quot;&gt;
-                                &lt;i&gt;&lt;/i&gt;
-                            &lt;/button&gt;
-                            &lt;button class=&quot;btn btn-danger&quot; title=&quot;删除&quot;&gt;
-                                &lt;i&gt;&lt;/i&gt;
-                            &lt;/button&gt;
-                        &lt;/td&gt;
-                    &lt;/tr&gt;
-                &lt;/tbody&gt;
-            &lt;/table&gt;
-        &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-8&quot;&gt;
+      &lt;table class=&quot;table&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;标题&lt;/th&gt;
+            &lt;th&gt;作者&lt;/th&gt;
+            &lt;th&gt;内容&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr v-for=&quot;item in ly_list&quot; :key=&quot;item.url&quot;&gt;
+            //循环显示元素
+            &lt;td&gt;&#123;&#123; item.title &#125;&#125;&lt;/td&gt;
+            &lt;td&gt;&#123;&#123; item.author &#125;&#125;&lt;/td&gt;
+            &lt;td&gt;&#123;&#123; item.content &#125;&#125;&lt;/td&gt;
+            &lt;td&gt;测试&lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class=&quot;btn btn-success&quot; title=&quot;编辑&quot;&gt;
+                &lt;i&gt;&lt;/i&gt;
+              &lt;/button&gt;
+              &lt;button class=&quot;btn btn-danger&quot; title=&quot;删除&quot;&gt;
+                &lt;i&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
     &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/template&gt;
 &lt;script&gt;
-import axios from &#39;axios&#39; //导入axios库
-import &#123; reactive, onMounted, toRefs &#125; from &#39;vue&#39; //这三个都要导入
-export default &#123;
+  import axios from &#39;axios&#39; //导入axios库
+  import &#123; reactive, onMounted, toRefs &#125; from &#39;vue&#39; //这三个都要导入
+  export default &#123;
     name: &#39;lyb&#39;,
     setup() &#123;
-        let base_url = &#39;http://127.0.0.1:8000/api/lyb/&#39; //这是django服务器的地址就是rest_framework提供数据的网址，
-        const state = reactive(&#123;
-            ly_list: [], //用来接数据
-        &#125;)
-        const getLyb = () =&gt; &#123;
-            axios
-                .get(base_url)
-                .then((res) =&gt; &#123;
-                    //发送请求
-                    console.log(&#39;成功&#39;)
-                    state.ly_list = res.data
-                    console.log(res.data)
-                &#125;)
-                .catch((err) =&gt; &#123;
-                    console.log(err)
-                &#125;)
-        &#125;
-        onMounted(() =&gt; &#123;
-            getLyb() //需要onMounted挂载
-        &#125;)
+      let base_url = &#39;http://127.0.0.1:8000/api/lyb/&#39; //这是django服务器的地址就是rest_framework提供数据的网址，
+      const state = reactive(&#123;
+        ly_list: [] //用来接数据
+      &#125;)
+      const getLyb = () =&gt; &#123;
+        axios
+          .get(base_url)
+          .then((res) =&gt; &#123;
+            //发送请求
+            console.log(&#39;成功&#39;)
+            state.ly_list = res.data
+            console.log(res.data)
+          &#125;)
+          .catch((err) =&gt; &#123;
+            console.log(err)
+          &#125;)
+      &#125;
+      onMounted(() =&gt; &#123;
+        getLyb() //需要onMounted挂载
+      &#125;)
 
-        return &#123;
-            ...toRefs(state), //这段也要加上
-        &#125;
-    &#125;,
-&#125;
+      return &#123;
+        ...toRefs(state) //这段也要加上
+      &#125;
+    &#125;
+  &#125;
 &lt;/script&gt;
 </code></pre>
 <p>最后在 APP.vue 中注册一下</p>
 <pre><code class="vue">&lt;template&gt;
-    &lt;div class=&quot;row&quot;&gt;
-        &lt;lyb /&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;lyb /&gt;
+  &lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
-import lyb from &#39;./components/Lyb.vue&#39;
-export default &#123;
+  import lyb from &#39;./components/Lyb.vue&#39;
+  export default &#123;
     name: &#39;App&#39;,
     components: &#123;
-        lyb,
-    &#125;,
-&#125;
+      lyb
+    &#125;
+  &#125;
 &lt;/script&gt;
 </code></pre>
 <p>将 django 与 vue 的服务器都启动，正常情况下就可以看到后端传来的数据了。</p>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: 408 | Res Publica</title>
+    <title>TypeScript学习 | Res Publica</title>
     <meta name="author" content="rainbow" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,6 +42,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,82 +145,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/C/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                C++
-            </a>
+            <div class="article">
+    <div>
+        <h1>TypeScript学习</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/6
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B9%E6%9E%9C/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                苹果
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                计算机技术
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%85%8D%E7%BD%AE/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                配置
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/408/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                408
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/Vim/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Vim
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -227,28 +169,37 @@
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2024/5/24</div>
-            <a href="/2024/05/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                <h3>计算机网络</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/408/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        408
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>Hello TypeScript</p>
+<span id="more"></span>
+
+<h1><span id="typescript-基础">TypeScript 基础</span></h1><h2><span id="如何在终端运行-ts">如何在终端运行 Ts</span></h2><ol>
+<li>安装 ts</li>
+</ol>
+<pre><code class="shell">   npm install -g typescript
+</code></pre>
+<ol start="2">
+<li>将 .ts 文件编译成 .js 文件</li>
+</ol>
+<pre><code class="shell">tsc test.ts // 会在当前目录下生成对应的 test.js 文件
+</code></pre>
+<ol start="3">
+<li>运行 .js 文件</li>
+</ol>
+<pre><code class="shell">node test.js
+</code></pre>
+<p>也可以使用<code>ts-node</code>直接运行<code>.ts</code>文件</p>
+<pre><code class="shell">npm install -g typescript ts-node
+ts-node test.ts
+</code></pre>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -280,6 +231,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

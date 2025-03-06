@@ -342,10 +342,10 @@ void form::receiveMessageFromChild(const QString &amp;message)
     // ui-&gt;label-&gt;setText(message);  // 假设form中有一个label用于显示消息
 &#125;
 </code></pre>
-<h2><span id="clion配置include路径">Clion配置include路径</span></h2><p>因为Qt ui文件对应的ui_xxx.h 是自动生成的所以一开始没有，尽管你跑代码可以跑出来。但是clion不知道，所以你需要告诉他<br>有这么一个路径。这里我采取的方式是使用CMakeLists</p>
+<h2><span id="clion-配置-include-路径">Clion 配置 include 路径</span></h2><p>因为 Qt ui 文件对应的 ui_xxx.h 是自动生成的所以一开始没有，尽管你跑代码可以跑出来。但是 clion 不知道，所以你需要告诉他<br>有这么一个路径。这里我采取的方式是使用 CMakeLists</p>
 <pre><code class="txt">include_directories($&#123;CMAKE_BINARY_DIR&#125;/hLayout_autogen/include)
 </code></pre>
-<p>其中{CMAKE_BINARY_DIR}是一个内置变量，表示cmake在的目录</p>
+<p>其中{CMAKE_BINARY_DIR}是一个内置变量，表示 cmake 在的目录</p>
 <h2><span id="实现窗口重新绘制">实现窗口重新绘制</span></h2><pre><code class="C++">public:
     explicit MP3(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent * event);//就放到public这里就可以了,当你拖动窗口时会自动调用这个函数,让我想到了python的魔法方法
@@ -365,7 +365,7 @@ void form::receiveMessageFromChild(const QString &amp;message)
 <pre><code class="C++">    this-&gt;setFixedSize(this-&gt;geometry().size()); //设置窗口大小 不允许随便拖动
     this-&gt;setWindowFlags(Qt::FramelessWindowHint); //隐藏窗口标题栏
 </code></pre>
-<p>关键点有两个 第一个是注意 QtNameSpace里面的名称,还有就是QtCreator创建ui文件默认的对象名字是form 需要修改</p>
+<p>关键点有两个 第一个是注意 QtNameSpace 里面的名称,还有就是 QtCreator 创建 ui 文件默认的对象名字是 form 需要修改</p>
 
     </div>
     
