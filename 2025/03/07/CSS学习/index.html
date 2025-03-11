@@ -154,7 +154,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/3/4
+            2025/3/7
         </span>
         
         <span class="category">
@@ -179,6 +179,29 @@
 </ol>
 <pre><code class="CSS">&lt;p style=&quot;color:red&quot;&gt;我是内联样式&lt;/p&gt;
 </code></pre>
+<ol start="2">
+<li>内部样式</li>
+</ol>
+<pre><code class="HTML">&lt;head&gt;
+    &lt;style&gt;
+    h1&#123;
+        background:red;
+    &#125;
+    &lt;/style&gt;
+&lt;head&gt;
+</code></pre>
+<p>单个页面的 CSS 代码具有统一性，比较常见的写法，多个页面中容易造成混乱 3. 外部样式<br>使用<code>&lt;link&gt;</code>标签链接到样式表</p>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/style.css&quot; /&gt;
+</code></pre>
+<h2><span id="选择器">选择器</span></h2><ol>
+<li>全局选择器<br>可以与任何元素匹配,优先级最低,一般做样式初始化<pre><code class="html">*&#123; margin:0; padding:0; &#125;
+</code></pre>
+</li>
+<li>元素选择器(类似这样的,只要用了这个标签就一定被渲染上)<br><del>任何邪恶终将绳之以法</del><pre><code class="html">p&#123; font-size:14px; &#125;
+</code></pre>
+</li>
+<li></li>
+</ol>
 
     </div>
     
