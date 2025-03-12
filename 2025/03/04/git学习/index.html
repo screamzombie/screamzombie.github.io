@@ -179,6 +179,14 @@
 </code></pre>
 <h3><span id="切换分支">切换分支</span></h3><pre><code class="shell">git checkout [new_branch]
 </code></pre>
+<h3><span id="合并分支">合并分支</span></h3><p>先切换到主分支上,执行</p>
+<pre><code class="shell">git merge [your_want_branch]
+</code></pre>
+<p>这样你选的分支就会合并到你当前所在的分支上了</p>
+<h3><span id="合并分支的另一种方式-rebase">合并分支的另一种方式 rebase</span></h3><p>这个也是一种方式,效果是把你的修改”复制”到另一个分支上,看起来代码是线性提交的(实际上是平行工作的)</p>
+<p>先切换到你的其他分支比如<code>bugFix</code>,执行下面的命令,你在<code>bugFix</code>上的修改就会到<code>main</code>分支上了</p>
+<pre><code class="shell">git rebase main
+</code></pre>
 
     </div>
     
