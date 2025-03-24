@@ -201,7 +201,13 @@
 <p>即在 Python 中 多线程只能使用一个 CPU</p>
 </blockquote>
 <p><strong>多协程 Coroutine (asyncio)</strong><br>优点:内存开销最少,启动协程数量最多<br>缺点:目前库有限制,代码实现复杂<br>适用于 IO 密集型计算,需要超多任务运行,但有线程库支持的场景</p>
-<h3><span id="python-全局解释器锁-gil">Python 全局解释器锁 GIL</span></h3>
+<h3><span id="python-全局解释器锁-gil-global-interpreter-lock">Python 全局解释器锁 GIL (Global Interpreter Lock)</span></h3><p>是 Python 用于同步线程的一种机制,使得任何时刻仅有一个线程在执行</p>
+<p><strong>如何应对 GIL</strong></p>
+<ol>
+<li>多线程 <code>threading</code>请多用于<code>IO密集型计算</code>,因为在<code>I/O</code>期间,线程会释放 GIL.但是如果多线程用于<code>CPU密集型计算</code>只会更加拖累速度</li>
+<li>使用<code>multiprocessing</code>的多进程机制实现并行计算,利用多核 CPU 优势</li>
+</ol>
+
     </div>
     
     
