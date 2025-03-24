@@ -174,11 +174,34 @@
 <span id="more"></span>
 
 <h1><span id="python-进阶">Python 进阶</span></h1><h2><span id="多线程技术">多线程技术</span></h2><h3><span id="python-对于并发编程的支持">Python 对于并发编程的支持</span></h3><ol>
-<li>多线程:<code>threading</code> 利用 CPU 和 IO 可以同时执行的原理,让 CPU 不会干等待 IO 完成</li>
-<li>多进程:<code>multiprocessing</code>,利用多核 CPU 的能力,真正的并行执行任务</li>
-<li>异步 ID:<code>asyncio</code>,在<strong>单线程</strong>利用 CPU 和 IO 同时执行的原理,实现函数异步执行</li>
+<li><p>多线程:<code>threading</code> 利用 CPU 和 IO 可以同时执行的原理,让 CPU 不会干等待 IO 完成</p>
+</li>
+<li><p>多进程:<code>multiprocessing</code>,利用多核 CPU 的能力,真正的并行执行任务</p>
+</li>
+<li><p>异步 ID:<code>asyncio</code>,在<strong>单线程</strong>利用 CPU 和 IO 同时执行的原理,实现函数异步执行</p>
+</li>
+<li><p>使用<code>Lock</code> 对资源加锁,防止冲突访问</p>
+</li>
+<li><p>使用<code>Queue</code>实现不同线程&#x2F;进程之间的数据通信,实现生产者消费者模式</p>
+</li>
+<li><p>使用线程池<code>Pool</code>&#x2F;进程池<code>Pool</code>,简化线程&#x2F;进程的任务提交,等待结束,获取结果</p>
+</li>
 </ol>
-
+<h3><span id="python-并发编程的三种方式">Python 并发编程的三种方式</span></h3><ol>
+<li>多线程 <code>Thread</code></li>
+<li>多进程 <code>Process</code></li>
+<li>多协程 <code>Coroutine</code></li>
+</ol>
+<blockquote>
+<p>一个<code>进程</code>中可以启动多个<code>线程</code>,一个<code>线程</code>中又可以启动多个<code>协程</code></p>
+</blockquote>
+<h4><span id="对比">对比</span></h4><p><strong>多进程 Process(multiprocessing)</strong><br>优点:可以利用多核 CPU 并行计算<br>缺点:占用资源最多,可启动数目比线程少<br>适用于 CPU 密集型计算</p>
+<p><strong>多线程 Thread(threading)</strong><br>优点:更加轻量<br>缺点:相比进程,多线程只能并发执行,不能利用多 CPU(GIL),相比协程启动数目有限制,占用内存资源,有切换开销<br>适用于 IO 密集型计算</p>
+<blockquote>
+<p>即在 Python 中 多线程只能使用一个 CPU</p>
+</blockquote>
+<p><strong>多协程 Coroutine (asyncio)</strong><br>优点:内存开销最少,启动协程数量最多<br>缺点:目前库有限制,代码实现复杂<br>适用于 IO 密集型计算,需要超多任务运行,但有线程库支持的场景</p>
+<h3><span id="python-全局解释器锁-gil">Python 全局解释器锁 GIL</span></h3>
     </div>
     
     
