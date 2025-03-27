@@ -3,7 +3,7 @@ title: only apple can do
 categories: 苹果
 ---
 
-![only apple can do](../images/kuke.png)
+![only apple can do](../images/封面图/only_apple_can_do.png)
 
 <!-- more -->
 
@@ -48,3 +48,16 @@ grabber_client connect_failed: Connection refused
 所以解决方案是关闭设置中的使用`caps`切换`ABC`输入法,然后当你想从中文切换到英文时,在`拼`下按一下`cpas`没错这才是普通的模式切换,按`shift`依旧可以大写.
 
 你无法通过长按`cpas`进入到大写模式了,但是你可以切换输入法`ABC`在这里面按一下`cpas`进行大小写切换,这就和普通的英文输入法无二了
+
+# 使用中断挂载与抹除硬盘
+
+https://qizhanming.com/blog/2021/12/13/how-to-use-diskutil-format-flash-disk-on-macos
+
+# Mac 恢复键盘长按
+
+https://zihengcat.github.io/2018/08/02/simple-ways-to-set-macos-consecutive-input/
+
+# Linux apt 安装
+
+推荐一个好用的 apt 软件 `aptitude` 先用 apt 安装这个软件 再用它去下载包
+可以自动解决依赖问题

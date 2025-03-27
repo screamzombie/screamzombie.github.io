@@ -2,7 +2,9 @@
 title: vue和django的一些配置
 categories: 配置
 ---
-vue和django的一些配置
+
+vue 和 django 的一些配置
+
 <!-- more -->
 
 # 环境配置
@@ -207,7 +209,7 @@ python manage.py startapp xxxx
 │   ├── migrations                        [不动]数据库变更记录
 │   │   └── __init__.py
 │   ├── models.py                         [重要]对数据库进行操作
-│   ├── tests.py                          
+│   ├── tests.py
 │   └── views.py                          [重要,经常修改]函数
 ├── manage.py
 └── mysite
@@ -252,7 +254,6 @@ from app01 import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
 
-    # www.xxxx.com/index/  ->就会执行对应的函数
     path('index/',views.index)
 
 ]
@@ -787,25 +788,25 @@ vue 项目的 index.html 如下
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>vue-django</title>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-			crossorigin="anonymous"
-		/>
-	</head>
-	<body>
-		hello
-		<div class="container">
-			<div id="app"></div>
-		</div>
-		<script type="module" src="/src/main.js"></script>
-		<!-- 注意这一行 type和src的路径都要打 -->
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>vue-django</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    hello
+    <div class="container">
+      <div id="app"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <!-- 注意这一行 type和src的路径都要打 -->
+  </body>
 </html>
 ```
 
@@ -822,69 +823,69 @@ createApp(App).mount('#app')
 
 ```vue
 <template>
-	<div class="row">
-		<div class="col-md-8">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>标题</th>
-						<th>作者</th>
-						<th>内容</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr v-for="item in ly_list" :key="item.url">
-						//循环显示元素
-						<td>{{ item.title }}</td>
-						<td>{{ item.author }}</td>
-						<td>{{ item.content }}</td>
-						<td>测试</td>
-						<td>
-							<button class="btn btn-success" title="编辑">
-								<i></i>
-							</button>
-							<button class="btn btn-danger" title="删除">
-								<i></i>
-							</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>作者</th>
+            <th>内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in ly_list" :key="item.url">
+            //循环显示元素
+            <td>{{ item.title }}</td>
+            <td>{{ item.author }}</td>
+            <td>{{ item.content }}</td>
+            <td>测试</td>
+            <td>
+              <button class="btn btn-success" title="编辑">
+                <i></i>
+              </button>
+              <button class="btn btn-danger" title="删除">
+                <i></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>
 <script>
-import axios from 'axios' //导入axios库
-import { reactive, onMounted, toRefs } from 'vue' //这三个都要导入
-export default {
-	name: 'lyb',
-	setup() {
-		let base_url = 'http://127.0.0.1:8000/api/lyb/' //这是django服务器的地址就是rest_framework提供数据的网址，
-		const state = reactive({
-			ly_list: [], //用来接数据
-		})
-		const getLyb = () => {
-			axios
-				.get(base_url)
-				.then((res) => {
-					//发送请求
-					console.log('成功')
-					state.ly_list = res.data
-					console.log(res.data)
-				})
-				.catch((err) => {
-					console.log(err)
-				})
-		}
-		onMounted(() => {
-			getLyb() //需要onMounted挂载
-		})
+  import axios from 'axios' //导入axios库
+  import { reactive, onMounted, toRefs } from 'vue' //这三个都要导入
+  export default {
+    name: 'lyb',
+    setup() {
+      let base_url = 'http://127.0.0.1:8000/api/lyb/' //这是django服务器的地址就是rest_framework提供数据的网址，
+      const state = reactive({
+        ly_list: [] //用来接数据
+      })
+      const getLyb = () => {
+        axios
+          .get(base_url)
+          .then((res) => {
+            //发送请求
+            console.log('成功')
+            state.ly_list = res.data
+            console.log(res.data)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      }
+      onMounted(() => {
+        getLyb() //需要onMounted挂载
+      })
 
-		return {
-			...toRefs(state), //这段也要加上
-		}
-	},
-}
+      return {
+        ...toRefs(state) //这段也要加上
+      }
+    }
+  }
 </script>
 ```
 
@@ -892,19 +893,19 @@ export default {
 
 ```vue
 <template>
-	<div class="row">
-		<lyb />
-	</div>
+  <div class="row">
+    <lyb />
+  </div>
 </template>
 
 <script>
-import lyb from './components/Lyb.vue'
-export default {
-	name: 'App',
-	components: {
-		lyb,
-	},
-}
+  import lyb from './components/Lyb.vue'
+  export default {
+    name: 'App',
+    components: {
+      lyb
+    }
+  }
 </script>
 ```
 
