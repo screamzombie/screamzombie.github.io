@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>RAG检索增强生成 | Res Publica</title>
+    <meta name="author" content="rainbow" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/myavatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>RES PUBLICA</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;RES PUBLICA</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>RAG检索增强生成</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/27
+        </span>
+        
+        <span class="category">
+            <a href="/categories/LLM/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                LLM
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>你的部队每时每刻都在伤亡,我的虫群无穷无尽</p>
+<span id="more"></span>
+
+<h1><span id="hello-world">Hello World</span></h1><p>一个简单的RAG的例子</p>
+<pre><code class="python3">import re
+import jieba
+import torch
+import numpy as np
+import requests
+from typing import List, Tuple
+from rank_bm25 import BM25Okapi
+from langchain_core.documents import Document
+from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+
+class DeepSeekLLM:
+    def __init__(self, api_key: str, api_url: str = &quot;https://api.deepseek.com/v1/chat/completions&quot;):
+        self.api_key = api_key
+        self.api_url = api_url
+
+    def generate(self, query: str, docs: List[str]) -&gt; str:
+        context = &quot;\n\n&quot;.join(docs)
+        prompt = (
+            &quot;你是一个精通魔法道具的助手，请根据提供的资料回答用户的问题。\n&quot;
+            f&quot;用户问题：&#123;query&#125;\n\n&quot;
+            f&quot;相关资料：\n&#123;context&#125;\n\n&quot;
+            &quot;请根据以上资料，用简洁明了的语言回答用户的问题。&quot;
+        )
+        payload = &#123;
+            &quot;model&quot;: &quot;deepseek-chat&quot;,
+            &quot;messages&quot;: [&#123;&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt&#125;],
+            &quot;temperature&quot;: 0.7
+        &#125;
+        headers = &#123;
+            &quot;Authorization&quot;: f&quot;Bearer &#123;self.api_key&#125;&quot;,
+            &quot;Content-Type&quot;: &quot;application/json&quot;
+        &#125;
+        response = requests.post(self.api_url, headers=headers, json=payload)
+        result = response.json()
+        return result[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
+
+    def generate_without_context(self, query: str) -&gt; str:
+        prompt = (
+            &quot;你是一个精通魔法道具的助手，请回答下列问题：\n&quot;
+            f&quot;&#123;query&#125;\n&quot;
+            &quot;请尽可能根据你的知识进行回答。&quot;
+        )
+        payload = &#123;
+            &quot;model&quot;: &quot;deepseek-chat&quot;,
+            &quot;messages&quot;: [&#123;&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt&#125;],
+            &quot;temperature&quot;: 0.7
+        &#125;
+        headers = &#123;
+            &quot;Authorization&quot;: f&quot;Bearer &#123;self.api_key&#125;&quot;,
+            &quot;Content-Type&quot;: &quot;application/json&quot;
+        &#125;
+        response = requests.post(self.api_url, headers=headers, json=payload)
+        result = response.json()
+        return result[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
+
+
+# 1. 加载知识库
+def parse_herb_txt(file_path: str) -&gt; List[str]:
+    with open(file_path, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+        raw_text = f.read()
+
+    entries = raw_text.strip().split(&quot;-&quot;)
+    cleaned_chunks = []
+
+    for entry in entries:
+        lines = [line.strip() for line in entry.strip().splitlines() if line.strip()]
+        if not lines:
+            continue
+
+        herb_name = re.sub(r&quot;[&#123;&#125;]&quot;, &quot;&quot;, lines[0])
+        content = &quot;\n&quot;.join(lines[1:])
+        full_text = f&quot;【药名】：&#123;herb_name&#125;\n&#123;content&#125;&quot;
+        cleaned_chunks.append(full_text)
+
+    return cleaned_chunks
+
+
+# 2. 重排序模型（BGE）
+class BGEReranker:
+    def __init__(self, model_name=&quot;BAAI/bge-reranker-base&quot;):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
+        self.model.eval()
+
+    def rerank(self, query: str, docs: list[str]) -&gt; list[tuple[str, float]]:
+        pairs = [(query, doc) for doc in docs]
+        inputs = self.tokenizer(pairs, padding=True, truncation=True, return_tensors=&quot;pt&quot;, max_length=512)
+
+        with torch.no_grad():
+            scores = self.model(**inputs).logits.squeeze().tolist()
+
+        if isinstance(scores, float):
+            scores = [scores]
+
+        ranked = sorted(zip(docs, scores), key=lambda x: x[1], reverse=True)
+        return ranked
+
+
+# 3. 主检索器（向量 + BM25 多路召回）
+class EnhancedRetriever:
+    def __init__(self, chunks: List[str]):
+        self.chunks = chunks
+        self.documents = [Document(page_content=chunk) for chunk in chunks]
+        # 向量检索初始化
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name=&quot;shibing624/text2vec-base-chinese&quot;,
+            model_kwargs=&#123;&quot;device&quot;: &quot;cpu&quot;&#125;,
+            encode_kwargs=&#123;&quot;normalize_embeddings&quot;: False&#125;
+        )
+        self.vector_db = FAISS.from_documents(self.documents, self.embeddings)
+        # BM25 初始化
+        self.tokenized_chunks = [list(jieba.cut(doc)) for doc in chunks]
+        self.bm25 = BM25Okapi(self.tokenized_chunks)
+        self.reranker = BGEReranker()
+
+    def search(self, query: str, vector_k=5, bm25_k=5) -&gt; List[Tuple[str, float]]:
+        # 向量检索
+        vector_results = self.vector_db.similarity_search_with_score(query, k=vector_k)
+        vector_docs = [doc[0].page_content for doc in vector_results]
+
+        # BM25 检索
+        bm25_tokens = list(jieba.cut(query))
+        bm25_scores = self.bm25.get_scores(bm25_tokens)
+        top_bm25_indices = np.argsort(bm25_scores)[::-1][:bm25_k]
+        bm25_docs = [self.chunks[i] for i in top_bm25_indices]
+
+        # 合并结果 + 去重
+        combined_docs = list(dict.fromkeys(vector_docs + bm25_docs))  # 去重保序
+
+        # 用 BGE 重排
+        reranked = self.reranker.rerank(query, combined_docs)
+        return reranked
+
+
+# 4. 主流程
+if __name__ == &quot;__main__&quot;:
+    LLM = DeepSeekLLM(api_key=&quot;sk-b8407fdb04ab4546bf166e9ddef4a7f6&quot;)
+    HERB_TXT_PATH = &quot;queer.txt&quot;
+    print(&quot; 正在加载知识库...&quot;)
+    chunks = parse_herb_txt(HERB_TXT_PATH)
+    print(f&quot; 成功载入 &#123;len(chunks)&#125; 个知识条目&quot;)
+
+    retriever = EnhancedRetriever(chunks)
+
+    while True:
+        query = input(&quot;\n 请输入你的问题（输入 q 退出）：&quot;).strip()
+        if query.lower() == &quot;q&quot;:
+            break
+
+        results = retriever.search(query, vector_k=10, bm25_k=10)
+
+        print(&quot;检索结果评分如下（已重排序）：&quot;)
+        for i, (doc, score) in enumerate(results):
+            print(f&quot;[&#123;i+1&#125;] 分数: &#123;score:.4f&#125;&quot;)
+            print(doc)
+            print(&quot;-&quot; * 60)
+
+        # 选前3条用于生成回答
+        top_docs = [doc for doc, _ in results[:3]]
+        print(&quot;正在生成回答&quot;)
+        rag_answer = LLM.generate(query, top_docs)
+        raw_answer = LLM.generate_without_context(query)    
+        print(&quot;RAG模型回答：&quot;)
+        print(rag_answer)
+        print(&quot;原始模型回答（无上下文）：&quot;)
+        print(raw_answer)
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Res Publica
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;rainbow
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

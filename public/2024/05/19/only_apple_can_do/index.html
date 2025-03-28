@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>only apple can do | Res Publica</title>
+    <meta name="author" content="rainbow" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/myavatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>RES PUBLICA</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;RES PUBLICA</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>only apple can do</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/19
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E8%8B%B9%E6%9E%9C/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                苹果
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><img src="/../images/%E5%B0%81%E9%9D%A2%E5%9B%BE/only_apple_can_do.png" alt="only apple can do"></p>
+<span id="more"></span>
+
+<h1><span id="适用于苹果芯片了吗">适用于苹果芯片了吗</span></h1><p><a target="_blank" rel="noopener" href="https://isapplesiliconready.com/zh">https://isapplesiliconready.com/zh</a></p>
+<h1><span id="调整-dock-动画速度">调整 dock 动画速度</span></h1><p>原链接</p>
+<p><a target="_blank" rel="noopener" href="https://cn.appflix.cc/how-to-remove-animation-and-delay-in-dock-on-mac/">https://cn.appflix.cc/how-to-remove-animation-and-delay-in-dock-on-mac/</a></p>
+<pre><code class="shell">defaults write com.apple.dock autohide-time-modifier -float 0.25;
+
+killall Dock
+</code></pre>
+<h1><span id="解决其他品牌的耳机蓝牙连接后自动播放音乐">解决其他品牌的耳机蓝牙连接后自动播放音乐</span></h1><pre><code class="shell">launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+</code></pre>
+<h1><span id="karabiner-无法连接键盘">karabiner 无法连接键盘</span></h1><pre><code class="shell">grabber_client connect_failed: Connection refused
+</code></pre>
+<p>一般会打出这样的 log。设置中重新设置登录项和后台就好了</p>
+<h1><span id="mac-切换输入法失灵问题">mac 切换输入法失灵问题</span></h1><p><strong>解决方案</strong><br><del>更换搜狗输入法</del></p>
+<p>诚然使用<code>caps</code>键对中英文进行切换是一个好的想法,但是苹果默认的切换实际上是切换输入法,没错 <code>拼</code>是一个输入法<code>ABC</code>是另一个输入法,<br>所以默认情况下按<code>caps</code>进行切换时,实际上是切换了输入法,而不是一个在一个输入法里面进行了中英文切换,如果打字速度比较快,尤其是刚刚按下<code>caps</code>后就立即进行输入,系统反应不过来切换就容易失败.</p>
+<p>所以解决方案是关闭设置中的使用<code>caps</code>切换<code>ABC</code>输入法,然后当你想从中文切换到英文时,在<code>拼</code>下按一下<code>cpas</code>没错这才是普通的模式切换,按<code>shift</code>依旧可以大写.</p>
+<p>你无法通过长按<code>cpas</code>进入到大写模式了,但是你可以切换输入法<code>ABC</code>在这里面按一下<code>cpas</code>进行大小写切换,这就和普通的英文输入法无二了</p>
+<h1><span id="使用中断挂载与抹除硬盘">使用中断挂载与抹除硬盘</span></h1><p><a target="_blank" rel="noopener" href="https://qizhanming.com/blog/2021/12/13/how-to-use-diskutil-format-flash-disk-on-macos">https://qizhanming.com/blog/2021/12/13/how-to-use-diskutil-format-flash-disk-on-macos</a></p>
+<h1><span id="mac-恢复键盘长按">Mac 恢复键盘长按</span></h1><p><a target="_blank" rel="noopener" href="https://zihengcat.github.io/2018/08/02/simple-ways-to-set-macos-consecutive-input/">https://zihengcat.github.io/2018/08/02/simple-ways-to-set-macos-consecutive-input/</a></p>
+<h1><span id="linux-apt-安装">Linux apt 安装</span></h1><p>推荐一个好用的 apt 软件 <code>aptitude</code> 先用 apt 安装这个软件 再用它去下载包<br>可以自动解决依赖问题</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Res Publica
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;rainbow
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

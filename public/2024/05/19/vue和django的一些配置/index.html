@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>vue和django的一些配置 | Res Publica</title>
+    <meta name="author" content="rainbow" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/myavatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>RES PUBLICA</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;RES PUBLICA</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>vue和django的一些配置</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/5/19
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%85%8D%E7%BD%AE/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                配置
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>vue 和 django 的一些配置</p>
+<span id="more"></span>
+
+<h1><span id="环境配置">环境配置</span></h1><h2><span id="django-安装">Django 安装</span></h2><p>python 3.11 之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
+<p>首先使用这个命令创建一个 python 虚拟环境 <code>venv</code>是虚拟环境名字 后面的是路径可以自己找一个目录放进去</p>
+<pre><code class="shell">python -m venv /path/to/new/virtual/environment
+</code></pre>
+<p>接着进去这个刚刚创建好的目录去 source 它<br>比如我的电脑目前的虚拟环境地址在</p>
+<pre><code class="shell">~/.venv/
+</code></pre>
+<p>执行这个命令</p>
+<pre><code class="shell">source ~/.venv/bin/activate
+</code></pre>
+<p>这样这个终端的环境就变成虚拟环境 python 了</p>
+<p>如果不使用虚拟环境 pip 安装<code>Django</code>会直接报错，其他的一些包也是同理</p>
+<pre><code class="shell">pip install django
+</code></pre>
+<p>运行服务器</p>
+<pre><code class="shell">python manager.py runserver
+</code></pre>
+<h2><span id="django-连接-mysql">Django 连接 MySQL</span></h2><p>MySQL 数据库可以使用命令行直接安装</p>
+<pre><code class="shell">sudo apt install mysql-server
+</code></pre>
+<p>Django 与 mysql 通讯需要使用 pymysql 这个库（比较老了），新的库配置环境有些问题所以比较推荐使用这个</p>
+<pre><code class="shell">sudo pip install pymysql
+</code></pre>
+<p>下载好模块后需要在项目的<code>__init__.py</code>中配置。注意是项目的<code>__init__</code>不是 app 下的。</p>
+<pre><code class="python">import pymysql
+pymysql.install_as_MySQLdb()
+</code></pre>
+<p>接着修改 settings.py 中的 DATABASES 条目</p>
+<p>这是 Django 默认的 使用自带的 sqlite3 数据库</p>
+<pre><code class="python">DATABASES = &#123;
+    &#39;default&#39;: &#123;
+        &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
+        &#39;NAME&#39;: BASE_DIR / &#39;db.sqlite3&#39;,
+    &#125;
+&#125;
+</code></pre>
+<p>我们修改一下，以使用 MySQL</p>
+<pre><code class="python">DATABASES = &#123;
+    &#39;default&#39;: &#123;
+        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+        &#39;NAME&#39;: &#39;&#39;,
+        &#39;USER&#39;:&#39;root&#39;,
+        &#39;PASSWORD&#39;:&#39;123456&#39;,
+        &#39;HOST&#39;:&#39;localhost&#39;,
+        &#39;PORT&#39;:&#39;3306&#39;,
+    &#125;
+&#125;
+</code></pre>
+<h3><span id="服务器-mysql-连接-navicat">服务器 MySQL 连接 navicat</span></h3><p>首先登录数据库</p>
+<pre><code class="shell">mysql -uroot -p    ## 以root登录数据库
+</code></pre>
+<p>查看一下当前端口</p>
+<pre><code class="shell">use mysql;    ## 选择mysql数据库
+select user,host from user;    ## 查看用户访问端口
+</code></pre>
+<p><strong>说明</strong>：root 用户默认的是 localhost，说明只允许从本地登录 mysql 服务。而我们要从远程以 root 用户连接数据库，就必须修改 host 的值，改为**’%’**：允许任何 ip 访问。</p>
+<pre><code class="shell">update user set host = &#39;%&#39; where user = &#39;root&#39;;
+</code></pre>
+<p>再次查看</p>
+<pre><code class="shell">mysql&gt; select user,host from user;    ## 查看用户访问端口
++------------------+-----------+
+| user             | host      |
++------------------+-----------+
+| root             | %         |
+| debian-sys-maint | localhost |
+| mysql.infoschema | localhost |
+| mysql.session    | localhost |
+| mysql.sys        | localhost |
++------------------+-----------+
+5 rows in set (0.00 sec)
+</code></pre>
+<p>这样就表示允许任何 ip 访问了</p>
+<pre><code class="shell">FLUSH PRIVILEGES;    ## 刷新服务配置项
+</code></pre>
+<p>刷新一下</p>
+<p>接着设置一个远程用户的登录密码</p>
+<pre><code class="shell"> ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;root_pwd&#39;; ## 授权root远程登录 后面的root_pwd代表登录密码
+</code></pre>
+<p>这里的 root_pwd 是自己填的 我写的是 123456</p>
+<h2><span id="django-与-vue-的通讯">Django 与 Vue 的通讯</span></h2><h3><span id="配置-cnpm">配置 cnpm</span></h3><pre><code class="shell">sudo npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<pre><code class="shell">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>以后安装 npm 的包都可以使用去安装</p>
+<pre><code class="shell">cnpm install [name]
+</code></pre>
+<p>使用 vite 创建项目也会有这个问题可以考虑下面的命令进行换源</p>
+<p>查看 npm 的镜像地址</p>
+<pre><code class="shell">npm config get registry
+</code></pre>
+<p>使用 taobao 镜像地址</p>
+<pre><code class="shell">npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<h1><span id="项目运行">项目运行</span></h1><h2><span id="django-篇">Django 篇</span></h2><h3><span id="创建项目">创建项目</span></h3><pre><code class="shell">django-admin startproject xxxx
+</code></pre>
+<h3><span id="创建-app">创建 APP</span></h3><p>进入项目后</p>
+<pre><code class="shell">python manage.py startapp xxxx
+</code></pre>
+<h3><span id="项目目录">项目目录</span></h3><pre><code class="shell">├── app01
+│   ├── admin.py                          [不动]自带的默认的后台管理功能
+│   ├── apps.py                           [不动]app启动类
+│   ├── __init__.py
+│   ├── migrations                        [不动]数据库变更记录
+│   │   └── __init__.py
+│   ├── models.py                         [重要]对数据库进行操作
+│   ├── tests.py
+│   └── views.py                          [重要,经常修改]函数
+├── manage.py
+└── mysite
+    ├── asgi.py
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-38.pyc
+    │   └── settings.cpython-38.pyc
+    ├── settings.py
+    ├── urls.py                           [URL-&gt;函数]
+    └── wsgi.py
+</code></pre>
+<h3><span id="app-注册">APP 注册</span></h3><p>创建好的 APP 不能直接使用需要注册后才可以，小型项目的话一般只需要一个 APP 就可以了。注册需要在项目名的<code>seetings.py</code>中注册</p>
+<p>在这个<code>mysite</code>的项目中就是<code>mysite.settings.py</code></p>
+<pre><code class="python">INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;app01.apps.App01Config&#39;, #这里也可以直接简写为app01
+]
+</code></pre>
+<h3><span id="编写-url-和视图函数的对应关系">编写 URL 和视图函数的对应关系</span></h3><p>在 urls.py 中编写 路径是<code>mysite.urls.py</code></p>
+<pre><code class="python">from django.contrib import admin
+from django.urls import path
+
+
+from app01 import views
+urlpatterns = [
+    # path(&#39;admin/&#39;, admin.site.urls),
+
+    path(&#39;index/&#39;,views.index)
+
+]
+</code></pre>
+<p>下面即是 app01.views.py 的内容</p>
+<pre><code class="python">from django.shortcuts import render,HttpResponse
+
+# Create your views here.
+
+def index(request): #默认有一个参数 request
+    return HttpResponse(&quot;Hello&quot;)
+</code></pre>
+<h3><span id="模板路径问题">模板路径问题</span></h3><p>下面是使用 <code>django-admin</code> start project 创建的项目可以看到 DIRS 里面是空的，如果我们有一个 template 这里是放在 APP01 的文件夹里面</p>
+<pre><code class="shell">
+├── app01
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       └── __init__.cpython-38.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-38.pyc
+│   │   ├── apps.cpython-38.pyc
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── models.cpython-38.pyc
+│   │   └── views.cpython-38.pyc
+│   ├── templates
+│   │   └── user_list.html
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+</code></pre>
+<pre><code class="python">TEMPLATES = [
+    &#123;
+        &#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;,
+        &#39;DIRS&#39;: [],
+        &#39;APP_DIRS&#39;: True,
+        &#39;OPTIONS&#39;: &#123;
+            &#39;context_processors&#39;: [
+                &#39;django.template.context_processors.debug&#39;,
+                &#39;django.template.context_processors.request&#39;,
+                &#39;django.contrib.auth.context_processors.auth&#39;,
+                &#39;django.contrib.messages.context_processors.messages&#39;,
+            ],
+        &#125;,
+    &#125;,
+]
+</code></pre>
+<p>Django 会根据注册的 APP 顺序依次查找 template 文件夹</p>
+<pre><code class="python">
+INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;app01.apps.App01Config&#39;,
+]
+</code></pre>
+<p>但是如果使用 pycharm 就会在 TEMPLATES 这里面加上一句</p>
+<pre><code class="python"> &#39;DIRS&#39;: [], # 命令行创建 建议使用这种 这样每个模板都被APP归类
+ &#39;DIRS&#39;: [os.path.join(BASE_DIR,&#39;templates&#39;)], # 使用pycharm会变成这样
+</code></pre>
+<p>pycharm 这样的结果就是 django 会优先在项目根目录去寻找 template</p>
+<h3><span id="静态文件cssjs图片的引入">静态文件(css,js,图片)的引入</span></h3><pre><code class="html">&#123;% load static %&#125;
+&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;标题&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;这是用户列表&lt;/h1&gt;
+    &lt;img src=&quot;&#123;% static 'img/ming_ri_xiang.png' %&#125;&quot;&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3><span id="django-模板语法">Django 模板语法</span></h3><p>响应式的那种，就是在 HTML 中留一些位置，之后用数据对这些位置进行处理</p>
+<pre><code class="html">&#123;% load static %&#125;
+&lt;!DOCTYPE html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;标题&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;&#123;% static 'plugins/bootstrap/css/bootstrap.css'%&#125;&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;这是用户列表&lt;/h1&gt;
+    &lt;!-- &lt;img src=&quot;&#123;% static 'img/ming_ri_xiang.png' %&#125;&quot;&gt; --&gt;
+    &lt;input type=&quot;text&quot; class=&quot;btn btn-primary&quot; value=&quot;新建&quot;&gt;
+    &lt;div&gt;&#123;&#123; n1 &#125;&#125;&lt;/div&gt;
+    &lt;div&gt;&#123;&#123;n2.0&#125;&#125;&lt;/div&gt;
+    &lt;div&gt;&#123;&#123;n2.1&#125;&#125;&#123;&#123;n2.2&#125;&#125;&lt;/div&gt;
+    &lt;div&gt;
+        &#123;% for item in n2 %&#125;
+		<span>&#123;&#123; item &#125;&#125;</span>
+		&#123;% endfor %&#125;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;hr /&gt;
+&#123;&#123;n3.salary&#125;&#125;
+
+&lt;ul&gt;
+    &#123;% for item in n3.keys %&#125;
+	<li>&#123;&#123; item &#125;&#125;</li>
+	&#123;% endfor %&#125;
+&lt;/ul&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>后台 views</p>
+<pre><code class="python">from django.shortcuts import render,HttpResponse
+
+# Create your views here.
+
+def index(request): #默认有一个参数 request
+    name = &quot;长门有希大萌神&quot; #这里可以通过python从数据库里面读数据
+    roles = [&#39;A&#39;,&#39;B&#39;,&#39;C&#39;]
+    user_info = &#123;&quot;name&quot;:&quot;qw&quot;,&quot;salary&quot;:10000,&quot;role&quot;:&quot;CTO&quot;&#125;
+    return render(request,&quot;index.html&quot;,&#123;&quot;n1&quot;:name,&quot;n2&quot;:roles,&quot;n3&quot;:user_info&#125;)
+
+def user_list(request):
+    return render(request,&quot;user_list.html&quot;)
+
+def user_add(request):
+    return HttpResponse(&quot;添加用户&quot;)
+</code></pre>
+<h3><span id="请求和响应">请求和响应</span></h3><pre><code class="python">def something(request):
+    #请求的三种方式
+    print(request.method) #获得请求方式
+    print(&quot;URL=&gt; &quot;,request.GET) #在URL上传值
+    print(&quot;POST=&gt; &quot;,request.POST)#在请求体中返回数据
+
+    #响应
+    # return HttpResponse(&quot;添加用户&quot;)
+    # return render(request,&quot;user_list.html&quot;)
+
+    return redirect(&quot;https://www.baidu.com&quot;) # 让浏览器重定向到其他页面
+</code></pre>
+<h3><span id="django-与数据库交互">Django 与数据库交互</span></h3><p>连接好数据库后，打开 app01 下的 models.py</p>
+<pre><code class="python">from django.db import models
+
+# Create your models here.
+class UserInfo(models.Model):
+    user = models.CharField(max_length=32)
+    pwd = models.CharField(max_length=32)
+</code></pre>
+<p>这样就会在我们的数据库中创建一个名为 UserInfo 的表，且有两个字段 user 和 pwd，当然这个时候只是设计好，下面几个命令执行完后才会真正开始创建</p>
+<p>运行下面这个命令来创建数据库表</p>
+<pre><code class="shell">python manage.py makemigrations
+</code></pre>
+<p>再输入命令</p>
+<pre><code class="shell">python manage.py migrate
+</code></pre>
+<h1><span id="前后端交互">前后端交互</span></h1><h2><span id="django">Django</span></h2><h3><span id="django-setting-文件配置">Django setting 文件配置</span></h3><p>django 想要与 Vue 进行交互需要 RestFramework，还有 cors-headers 这两个插件</p>
+<pre><code class="shell">pip install djangorestframework
+pip install django-cors-headers
+</code></pre>
+<p>安装在 django 的根目录下的 setting 文件中进行 app 注册</p>
+<pre><code class="python">INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;rest_framework&#39;,
+    &#39;corsheaders&#39;,
+    &#39;lyb&#39;,
+]
+</code></pre>
+<p>因为前端与后端进行交互设计一个跨域保护的问题，后端使用 django-cors-headers 插件</p>
+<pre><code class="python">MIDDLEWARE = [
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;corsheaders.middleware.CorsMiddleware&#39;, # 注意顺序
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
+]
+</code></pre>
+<p>接着继续编辑 setting 文件，增加这两个配置</p>
+<pre><code class="python">ROOT_URLCONF = &#39;backends.urls&#39; # 后端项目的总路由路径
+CORS_ORIGIN_ALLOW_ALL = True #这是允许所有的跨域请求
+</code></pre>
+<p>至此后端的 setting 文件配置完成</p>
+<p>总配置文件如下 backends.settings.py</p>
+<pre><code class="python">&quot;&quot;&quot;
+Django settings for backends project.
+
+Generated by &#39;django-admin startproject&#39; using Django 5.0.1.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/5.0/topics/settings/
+
+For the full list of settings and their values, see
+https://docs.djangoproject.com/en/5.0/ref/settings/
+&quot;&quot;&quot;
+
+from pathlib import Path
+
+# Build paths inside the project like this: BASE_DIR / &#39;subdir&#39;.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = &#39;django-insecure-#fz@#++_qt+!=&amp;)tt2&amp;%uui8d)pmh=ko0v18midrnv8vfud@^*&#39;
+
+# SECURITY WARNING: don&#39;t run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
+
+# Application definition
+
+INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;rest_framework&#39;,
+    &#39;corsheaders&#39;,
+    &#39;lyb&#39;,
+]
+
+MIDDLEWARE = [
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;corsheaders.middleware.CorsMiddleware&#39;,
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
+]
+
+ROOT_URLCONF = &#39;backends.urls&#39;
+CORS_ORIGIN_ALLOW_ALL = True
+TEMPLATES = [
+    &#123;
+        &#39;BACKEND&#39;: &#39;django.template.backends.django.DjangoTemplates&#39;,
+        &#39;DIRS&#39;: [],
+        &#39;APP_DIRS&#39;: True,
+        &#39;OPTIONS&#39;: &#123;
+            &#39;context_processors&#39;: [
+                &#39;django.template.context_processors.debug&#39;,
+                &#39;django.template.context_processors.request&#39;,
+                &#39;django.contrib.auth.context_processors.auth&#39;,
+                &#39;django.contrib.messages.context_processors.messages&#39;,
+            ],
+        &#125;,
+    &#125;,
+]
+
+WSGI_APPLICATION = &#39;backends.wsgi.application&#39;
+
+
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+DATABASES = &#123;
+    &#39;default&#39;: &#123;
+        &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
+        &#39;NAME&#39;: BASE_DIR / &#39;db.sqlite3&#39;,
+    &#125;
+&#125;
+
+
+# Password validation
+# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
+AUTH_PASSWORD_VALIDATORS = [
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#39;,
+    &#125;,
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.MinimumLengthValidator&#39;,
+    &#125;,
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.CommonPasswordValidator&#39;,
+    &#125;,
+    &#123;
+        &#39;NAME&#39;: &#39;django.contrib.auth.password_validation.NumericPasswordValidator&#39;,
+    &#125;,
+]
+
+
+# Internationalization
+# https://docs.djangoproject.com/en/5.0/topics/i18n/
+
+LANGUAGE_CODE = &#39;en-us&#39;
+
+TIME_ZONE = &#39;UTC&#39;
+
+USE_I18N = True
+
+USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
+
+STATIC_URL = &#39;static/&#39;
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = &#39;django.db.models.BigAutoField&#39;
+</code></pre>
+<h3><span id="django-的总路由配置">Django 的总路由配置</span></h3><pre><code class="python">from django.contrib import admin
+from django.urls import path,include
+from rest_framework import routers    #这些都要引用
+from lyb.views import LybViewSet      #这些都要引用
+
+router = routers.DefaultRouter()
+router.register(r&#39;lyb&#39;,LybViewSet)    #这个lyb是你的app
+
+urlpatterns = [
+    path(&#39;admin/&#39;, admin.site.urls),   #这句可以删掉
+    path(&#39;api/&#39;,include(router.urls))  #这句是与自己的app的配置有关
+]
+</code></pre>
+<h3><span id="django-配置序列化">Django 配置序列化</span></h3><p>app 名字.serializers.py 没有就创建</p>
+<pre><code class="python">from rest_framework import serializers
+from .models import Lyb
+
+class LybSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Lyb
+        fields = &quot;__all__&quot; #所有的字段都序列化
+</code></pre>
+<p>models.py 中的内容 ，<em>虽然不是前后端交互必要的但是因为是一个案例于是留下来</em></p>
+<pre><code class="python">from django.db import models
+
+# Create your models here.
+class Lyb(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+    content = models.TextField()
+    posttime = models.DateTimeField(auto_now_add=True)
+</code></pre>
+<p>下面的是 views 的内容</p>
+<pre><code class="python">from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Lyb #导入自己的appmodel
+from .serializers import LybSerializer # 导入序列化器
+class LybViewSet(viewsets.ModelViewSet):
+    queryset = Lyb.objects.all().order_by(&#39;-posttime&#39;) #按时间排序 当然也可以选择其他的排序
+    serializer_class =  LybSerializer
+</code></pre>
+<h3><span id="获得-model-中的数据-特定条件">获得 model 中的数据 特定条件</span></h3><pre><code class="python">from myapp.models import MyModel
+
+specific_object = MyModel.objects.get(field=value)
+</code></pre>
+<h3><span id="获得-model-中的全部数据">获得 model 中的全部数据</span></h3><pre><code class="python">from myapp.models import MyModel
+
+all_data = MyModel.objects.all()
+</code></pre>
+<h3><span id="视图中获得对象的值">视图中获得对象的值</span></h3><pre><code class="python">import json
+from django.http import JsonResponse
+
+def login_view(request):
+    if request.method == &#39;POST&#39;:
+        data = json.loads(request.body)
+        username = data.get(&#39;username&#39;)
+        password = data.get(&#39;password&#39;)
+        # 进行登录逻辑处理
+        # ...
+        # 返回响应数据
+        response_data = &#123;
+            &#39;message&#39;: &#39;登录成功&#39;,
+            &#39;username&#39;: username,
+        &#125;
+        return JsonResponse(response_data)
+</code></pre>
+<h3><span id="常见写法">常见写法</span></h3><pre><code class="python">from django.http import JsonResponse
+from .models import UserModel
+
+def login_view(request):
+    if request.method == &quot;POST&quot;:
+        # 获取请求中的用户名和密码
+        username = request.POST.get(&quot;username&quot;)
+        password = request.POST.get(&quot;password&quot;)
+
+        # 在这里进行用户登录验证逻辑
+        try:
+            user = UserModel.objects.get(userName=username, passWord=password)
+            # 用户登录成功
+            return JsonResponse(&#123;&quot;message&quot;: &quot;登录成功&quot;&#125;)
+        except UserModel.DoesNotExist:
+            # 用户名或密码不正确，登录失败
+            return JsonResponse(&#123;&quot;message&quot;: &quot;用户名或密码不正确&quot;&#125;, status=401)
+
+    # 如果不是 POST 请求，返回错误响应
+    return JsonResponse(&#123;&quot;message&quot;: &quot;无效的请求&quot;&#125;, status=400)
+</code></pre>
+<h2><span id="vue">VUE</span></h2><h3><span id="vue-环境配置">VUE 环境配置</span></h3><p>下载 axios</p>
+<pre><code class="shell">npm install axios -s
+</code></pre>
+<p>使用 vite 脚手架创建项目 不适用 vue-cli</p>
+<pre><code class="shell">npm init vite-app &lt;project-name&gt;
+</code></pre>
+<p>vue 中默认的代码很多都是没用的因此我们删除</p>
+<p>vue 项目的 index.html 如下</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;title&gt;vue-django&lt;/title&gt;
+    &lt;link
+      href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css&quot;
+      rel=&quot;stylesheet&quot;
+      integrity=&quot;sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD&quot;
+      crossorigin=&quot;anonymous&quot;
+    /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    hello
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script type=&quot;module&quot; src=&quot;/src/main.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 注意这一行 type和src的路径都要打 --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>把 main.js 中无用的代码删除</p>
+<pre><code class="js">import &#123; createApp &#125; from &#39;vue&#39;
+import App from &#39;./App.vue&#39;
+
+createApp(App).mount(&#39;#app&#39;)
+</code></pre>
+<p>创建一个组件（组件名随意我这里的例子交 lyb）这边是前端向后端要数据的核心部分</p>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-8&quot;&gt;
+      &lt;table class=&quot;table&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;标题&lt;/th&gt;
+            &lt;th&gt;作者&lt;/th&gt;
+            &lt;th&gt;内容&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr v-for=&quot;item in ly_list&quot; :key=&quot;item.url&quot;&gt;
+            //循环显示元素
+            &lt;td&gt;&#123;&#123; item.title &#125;&#125;&lt;/td&gt;
+            &lt;td&gt;&#123;&#123; item.author &#125;&#125;&lt;/td&gt;
+            &lt;td&gt;&#123;&#123; item.content &#125;&#125;&lt;/td&gt;
+            &lt;td&gt;测试&lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class=&quot;btn btn-success&quot; title=&quot;编辑&quot;&gt;
+                &lt;i&gt;&lt;/i&gt;
+              &lt;/button&gt;
+              &lt;button class=&quot;btn btn-danger&quot; title=&quot;删除&quot;&gt;
+                &lt;i&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  import axios from &#39;axios&#39; //导入axios库
+  import &#123; reactive, onMounted, toRefs &#125; from &#39;vue&#39; //这三个都要导入
+  export default &#123;
+    name: &#39;lyb&#39;,
+    setup() &#123;
+      let base_url = &#39;http://127.0.0.1:8000/api/lyb/&#39; //这是django服务器的地址就是rest_framework提供数据的网址，
+      const state = reactive(&#123;
+        ly_list: [] //用来接数据
+      &#125;)
+      const getLyb = () =&gt; &#123;
+        axios
+          .get(base_url)
+          .then((res) =&gt; &#123;
+            //发送请求
+            console.log(&#39;成功&#39;)
+            state.ly_list = res.data
+            console.log(res.data)
+          &#125;)
+          .catch((err) =&gt; &#123;
+            console.log(err)
+          &#125;)
+      &#125;
+      onMounted(() =&gt; &#123;
+        getLyb() //需要onMounted挂载
+      &#125;)
+
+      return &#123;
+        ...toRefs(state) //这段也要加上
+      &#125;
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p>最后在 APP.vue 中注册一下</p>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;lyb /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import lyb from &#39;./components/Lyb.vue&#39;
+  export default &#123;
+    name: &#39;App&#39;,
+    components: &#123;
+      lyb
+    &#125;
+  &#125;
+&lt;/script&gt;
+</code></pre>
+<p>将 django 与 vue 的服务器都启动，正常情况下就可以看到后端传来的数据了。</p>
+<p>这里有个小 bug 使用 vscode ssh 连接的时候网站可能不会发生改变，这并不是代码的问题。可能与电脑&#x2F;虚拟机性能有关。可以进入虚拟机桌面的终端直接运行，不通过 ssh 转发查看效果</p>
+<h3><span id="使用-element-plus">使用 element-plus</span></h3><pre><code class="shell">npm install element-plus --save
+</code></pre>
+<p><strong>main.js 中配置**</strong></p>
+<pre><code class="js">import &#123; createApp &#125; from &#39;vue&#39;
+import App from &#39;./App.vue&#39;
+import &#39;./index.css&#39;
+import ElementPlus from &#39;element-plus&#39;
+import &#39;element-plus/dist/index.css&#39;
+
+const app = createApp(App)
+app.use(ElementPlus).mount(&#39;#app&#39;)
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Res Publica
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;rainbow
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

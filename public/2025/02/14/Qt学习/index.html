@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Qt学习 | Res Publica</title>
+    <meta name="author" content="rainbow" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/myavatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>RES PUBLICA</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;RES PUBLICA</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Qt学习</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/2/14
+        </span>
+        
+        <span class="category">
+            <a href="/categories/C/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                C++
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>我真的不想学 Qt</p>
+<span id="more"></span>
+
+<h1><span id="槽函数的连接">槽函数的连接</span></h1><blockquote>
+<p>C++这块不如 Pyqt 一根</p>
+</blockquote>
+<pre><code class="cpp">public slots: // 槽函数这块要加这个
+    void playPushButtonClicked();
+    void moreInfoPushButtonClicked();
+    void closePushButtonClicked();
+
+/*
+其他代码
+*/
+
+connect(ui-&gt;closePushButton, SIGNAL(clicked()), this, SLOT(closePushButtonClicked())); //槽函数的连接,写到构造函数里
+</code></pre>
+<h1><span id="qt-lambda-实现槽函数">Qt lambda 实现槽函数</span></h1><pre><code class="C++">[捕获列表](形参列表) mutable 异常列表 -&gt; 返回类型
+&#123;
+    函数体
+&#125;
+</code></pre>
+<blockquote>
+<p>返回类型可以省略 编译器会自动推导<br>有三种捕获 值捕获,引用捕获,隐式捕获</p>
+<p>1，值捕获，即使在 lambda 后面改变了该值，在调用 lambda 时，这个值还是捕获时的值。<br>2，引用捕获，在 lambda 后面改变了该值，在调用 lambda 时，这个值不是捕获时的值，而是改变后的值。<br>3，隐式捕获：[&#x3D;]代表全部采用值捕获,[&amp;]代表全部采用引用捕获,[&#x3D;, &amp;val]代表 val 为引用捕获，其余为值捕获,[&amp;,val]代表 val 为值捕获，其余为引用捕获</p>
+</blockquote>
+<h1><span id="qt-基础知识">Qt 基础知识</span></h1><h2><span id="槽函数的三种写法">槽函数的三种写法</span></h2><ol>
+<li><p>Qt4 写法</p>
+<pre><code class="C++">connect(ui.binOpen,SIGNAL(clicked),this,SLOT(open())); // 写错了编译器不报错
+</code></pre>
+</li>
+<li><p>Qt5 写法</p>
+<pre><code class="C++"> connect(ui.binOpen,&amp;QPushButton::clicked,this,&amp;Widget::open); //写错了编译器会报错，推荐用这种
+</code></pre>
+</li>
+<li><p>lambda 表达式写法</p>
+<pre><code class="C++">connect(ui.binOpen,&amp;QPushButton::clicked,[=]())&#123;
+
+&#125;
+</code></pre>
+</li>
+</ol>
+<h2><span id="跨控件实现信号传递">跨控件实现信号传递</span></h2><blockquote>
+<p>以前 pyqt 搞这玩意给我搞累死了<br>一些教程也不好好教人,都发视频了还藏一手故意埋坑故记录一下<br>这个例子我没有用 Clion 去做,而是使用 vscode 手动撸.CMakeLists.txt 文件内容如下</p>
+</blockquote>
+<pre><code class="txt">cmake_minimum_required(VERSION 3.28) # 设置 CMake 的最低版本要求为 3.28
+project(EvilMagic)
+set(CMAKE_CXX_STANDARD 17) # 设置 C++ 标准为 C++17
+set(CMAKE_AUTOMOC ON) # 启用自动处理 Qt 的元对象编译（MOC）
+set(CMAKE_AUTORCC ON) # 启用自动处理 Qt 的资源文件编译（RCC）
+set(CMAKE_AUTOUIC ON) # 启用自动处理 Qt 的用户界面文件编译（UIC）
+
+find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED) # 查找并链接 Qt6 的 Core、Gui 和 Widgets 模块
+
+add_executable(
+    EvilMagic
+    main.cpp
+    form.cpp
+    child.cpp
+    form.h
+    child.h
+    form.ui
+    child.ui
+) # 定义可执行文件 QtTest，并列出源文件和用户界面文件
+
+target_link_libraries(EvilMagic Qt::Core Qt::Gui Qt::Widgets) # 链接 Qt6 的 Core、Gui 和 Widgets 模块到可执行文件 QtTest
+</code></pre>
+<p>项目路径如下<br>.<br>├── CMakeLists.txt<br>├── build<br>├── child.cpp<br>├── child.h<br>├── child.ui<br>├── form.cpp<br>├── form.h<br>├── form.ui<br>└── main.cpp<br>核心点有两个第一个是使用 signal 和 emit 关键字,第二个则是在哪里连接.child.h 的代码如下</p>
+<pre><code class="cpp">#ifndef CHILD_H
+#define CHILD_H
+
+#include &lt;QWidget&gt;
+#include &quot;ui_child.h&quot;
+QT_BEGIN_NAMESPACE
+namespace Ui
+&#123;
+    class Child;
+&#125;
+QT_END_NAMESPACE
+
+class child : public QWidget
+&#123;
+    Q_OBJECT
+
+public:
+    explicit child(QWidget *parent = nullptr);
+
+    ~child() override;
+
+public slots:
+    void someEvent();
+signals:
+    void sendMessageToForm(const QString &amp;message); // 添加信号
+
+private:
+    Ui::Child *ui;
+&#125;;
+
+#endif // CHILD_H
+</code></pre>
+<p>child.cpp 的代码如下</p>
+<pre><code class="cpp">#include &quot;child.h&quot;
+
+child::child(QWidget *parent) : QWidget(parent),
+                                ui(new Ui::Child)
+&#123;
+    ui-&gt;setupUi(this);
+    connect(ui-&gt;pushButton, &amp;QPushButton::clicked, this, &amp;child::someEvent);
+&#125;
+
+child::~child()
+&#123;
+    delete ui;
+&#125;
+
+// 示例：在某个事件中发射信号
+void child::someEvent()
+&#123;
+    emit sendMessageToForm(&quot;Hello from child!&quot;);
+&#125;
+</code></pre>
+<p>form.h 以及 form.cpp 的代码如下</p>
+<pre><code class="cpp">#ifndef FORM_H
+#define FORM_H
+
+#include &lt;QWidget&gt;
+#include &quot;ui_form.h&quot;
+QT_BEGIN_NAMESPACE
+namespace Ui
+&#123;
+    class Form;
+&#125;
+QT_END_NAMESPACE
+
+class form : public QWidget
+&#123;
+    Q_OBJECT
+
+public:
+    explicit form(QWidget *parent = nullptr);
+
+    ~form() override;
+
+public slots:
+    void receiveMessageFromChild(const QString &amp;message);  // 添加槽函数
+
+private:
+    Ui::Form *ui;
+&#125;;
+
+#endif // FORM_H
+</code></pre>
+<pre><code class="cpp">#include &quot;form.h&quot;
+#include &lt;QDebug&gt;
+form::form(QWidget *parent)
+    : QWidget(parent), ui(new Ui::Form)
+&#123;
+    ui-&gt;setupUi(this);
+&#125;
+
+form::~form()
+&#123;
+    delete ui;
+&#125;
+
+void form::receiveMessageFromChild(const QString &amp;message)
+&#123;
+    this-&gt;ui-&gt;lineEdit-&gt;setText(message);
+    qDebug() &lt;&lt; &quot;Received message from child: &quot; &lt;&lt; message;
+    // ui-&gt;label-&gt;setText(message);  // 假设form中有一个label用于显示消息
+&#125;
+</code></pre>
+<h2><span id="clion-配置-include-路径">Clion 配置 include 路径</span></h2><p>因为 Qt ui 文件对应的 ui_xxx.h 是自动生成的所以一开始没有，尽管你跑代码可以跑出来。但是 clion 不知道，所以你需要告诉他<br>有这么一个路径。这里我采取的方式是使用 CMakeLists</p>
+<pre><code class="txt">include_directories($&#123;CMAKE_BINARY_DIR&#125;/hLayout_autogen/include)
+</code></pre>
+<p>其中{CMAKE_BINARY_DIR}是一个内置变量，表示 cmake 在的目录</p>
+<h2><span id="实现窗口重新绘制">实现窗口重新绘制</span></h2><pre><code class="C++">public:
+    explicit MP3(QWidget *parent = nullptr);
+    void paintEvent(QPaintEvent * event);//就放到public这里就可以了,当你拖动窗口时会自动调用这个函数,让我想到了python的魔法方法
+    /*其他代码
+    */
+</code></pre>
+<pre><code class="C++">    void MP3::paintEvent(QPaintEvent *event) &#123;
+    QPainter painter(this);
+    painter.drawPixmap(0, 0, width(), height(),
+                       QPixmap(&quot;/Users/rainbow/workspace/clionProjects/QT6DemoMP3/resource/background.jpg&quot;)); //这里我写的是绝对路径
+//    qDebug(&quot;hello?&quot;); //如果你拖动窗口,你就会发现在不停的输出hello
+&#125;
+</code></pre>
+<blockquote>
+<p>一些其他的代码,虽然我觉的这样记会把计算机变成一个文科生的工作</p>
+</blockquote>
+<pre><code class="C++">    this-&gt;setFixedSize(this-&gt;geometry().size()); //设置窗口大小 不允许随便拖动
+    this-&gt;setWindowFlags(Qt::FramelessWindowHint); //隐藏窗口标题栏
+</code></pre>
+<p>关键点有两个 第一个是注意 QtNameSpace 里面的名称,还有就是 QtCreator 创建 ui 文件默认的对象名字是 form 需要修改</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Res Publica
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;rainbow
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
