@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="vue 和 django 的一些配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue和django的一些配置">
+<meta property="og:url" content="http://example.com/2025/04/02/vue%E5%92%8Cdjango%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue 和 django 的一些配置">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-02T05:44:02.139Z">
+<meta property="article:modified_time" content="2025-04-02T05:44:02.139Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>vue和django的一些配置 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>rainbow</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="vue和django的一些配置"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-02 13:44" pubdate>
+          April 2, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">vue和django的一些配置</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>vue 和 django 的一些配置</p>
+<span id="more"></span>
+
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="Django-安装"><a href="#Django-安装" class="headerlink" title="Django 安装"></a>Django 安装</h2><p>python 3.11 之后需要使用虚拟环境安装，否则就会报错。具体的做法是这样的</p>
+<p>首先使用这个命令创建一个 python 虚拟环境 <code>venv</code>是虚拟环境名字 后面的是路径可以自己找一个目录放进去</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python -m venv /path/to/new/virtual/environment<br></code></pre></td></tr></table></figure>
+
+<p>接着进去这个刚刚创建好的目录去 source 它<br>比如我的电脑目前的虚拟环境地址在</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">~/.venv/<br></code></pre></td></tr></table></figure>
+
+<p>执行这个命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source ~/.venv/bin/activate<br></code></pre></td></tr></table></figure>
+
+<p>这样这个终端的环境就变成虚拟环境 python 了</p>
+<p>如果不使用虚拟环境 pip 安装<code>Django</code>会直接报错，其他的一些包也是同理</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip install django<br></code></pre></td></tr></table></figure>
+
+<p>运行服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python manager.py runserver<br></code></pre></td></tr></table></figure>
+
+<h2 id="Django-连接-MySQL"><a href="#Django-连接-MySQL" class="headerlink" title="Django 连接 MySQL"></a>Django 连接 MySQL</h2><p>MySQL 数据库可以使用命令行直接安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install mysql-server<br></code></pre></td></tr></table></figure>
+
+<p>Django 与 mysql 通讯需要使用 pymysql 这个库（比较老了），新的库配置环境有些问题所以比较推荐使用这个</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pip install pymysql<br></code></pre></td></tr></table></figure>
+
+<p>下载好模块后需要在项目的<code>__init__.py</code>中配置。注意是项目的<code>__init__</code>不是 app 下的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pymysql<br>pymysql.install_as_MySQLdb()<br></code></pre></td></tr></table></figure>
+
+<p>接着修改 settings.py 中的 DATABASES 条目</p>
+<p>这是 Django 默认的 使用自带的 sqlite3 数据库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">DATABASES = &#123;<br>    <span class="hljs-string">&#x27;default&#x27;</span>: &#123;<br>        <span class="hljs-string">&#x27;ENGINE&#x27;</span>: <span class="hljs-string">&#x27;django.db.backends.sqlite3&#x27;</span>,<br>        <span class="hljs-string">&#x27;NAME&#x27;</span>: BASE_DIR / <span class="hljs-string">&#x27;db.sqlite3&#x27;</span>,<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们修改一下，以使用 MySQL</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">DATABASES = &#123;<br>    <span class="hljs-string">&#x27;default&#x27;</span>: &#123;<br>        <span class="hljs-string">&#x27;ENGINE&#x27;</span>: <span class="hljs-string">&#x27;django.db.backends.mysql&#x27;</span>,<br>        <span class="hljs-string">&#x27;NAME&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>        <span class="hljs-string">&#x27;USER&#x27;</span>:<span class="hljs-string">&#x27;root&#x27;</span>,<br>        <span class="hljs-string">&#x27;PASSWORD&#x27;</span>:<span class="hljs-string">&#x27;123456&#x27;</span>,<br>        <span class="hljs-string">&#x27;HOST&#x27;</span>:<span class="hljs-string">&#x27;localhost&#x27;</span>,<br>        <span class="hljs-string">&#x27;PORT&#x27;</span>:<span class="hljs-string">&#x27;3306&#x27;</span>,<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="服务器-MySQL-连接-navicat"><a href="#服务器-MySQL-连接-navicat" class="headerlink" title="服务器 MySQL 连接 navicat"></a>服务器 MySQL 连接 navicat</h3><p>首先登录数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mysql -uroot -p    ## 以root登录数据库<br></code></pre></td></tr></table></figure>
+
+<p>查看一下当前端口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">use mysql;    ## 选择mysql数据库<br>select user,host from user;    ## 查看用户访问端口<br></code></pre></td></tr></table></figure>
+
+<p><strong>说明</strong>：root 用户默认的是 localhost，说明只允许从本地登录 mysql 服务。而我们要从远程以 root 用户连接数据库，就必须修改 host 的值，改为**’%’**：允许任何 ip 访问。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">update user set host = &#x27;%&#x27; where user = &#x27;root&#x27;;<br></code></pre></td></tr></table></figure>
+
+<p>再次查看</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash"><span class="hljs-keyword">select</span> user,host from user;    <span class="hljs-comment">## 查看用户访问端口</span></span><br>+------------------+-----------+<br>| user             | host      |<br>+------------------+-----------+<br>| root             | %         |<br>| debian-sys-maint | localhost |<br>| mysql.infoschema | localhost |<br>| mysql.session    | localhost |<br>| mysql.sys        | localhost |<br>+------------------+-----------+<br>5 rows in set (0.00 sec)<br><br></code></pre></td></tr></table></figure>
+
+<p>这样就表示允许任何 ip 访问了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">FLUSH PRIVILEGES;    ## 刷新服务配置项<br></code></pre></td></tr></table></figure>
+
+<p>刷新一下</p>
+<p>接着设置一个远程用户的登录密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;root_pwd&#x27;; ## 授权root远程登录 后面的root_pwd代表登录密码<br></code></pre></td></tr></table></figure>
+
+<p>这里的 root_pwd 是自己填的 我写的是 123456</p>
+<h2 id="Django-与-Vue-的通讯"><a href="#Django-与-Vue-的通讯" class="headerlink" title="Django 与 Vue 的通讯"></a>Django 与 Vue 的通讯</h2><h3 id="配置-cnpm"><a href="#配置-cnpm" class="headerlink" title="配置 cnpm"></a>配置 cnpm</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo npm config set registry https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure>
+
+<p>以后安装 npm 的包都可以使用去安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cnpm install [name]<br></code></pre></td></tr></table></figure>
+
+<p>使用 vite 创建项目也会有这个问题可以考虑下面的命令进行换源</p>
+<p>查看 npm 的镜像地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm config get registry<br></code></pre></td></tr></table></figure>
+
+<p>使用 taobao 镜像地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm config set registry https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure>
+
+<h1 id="项目运行"><a href="#项目运行" class="headerlink" title="项目运行"></a>项目运行</h1><h2 id="Django-篇"><a href="#Django-篇" class="headerlink" title="Django 篇"></a>Django 篇</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">django-admin startproject xxxx<br></code></pre></td></tr></table></figure>
+
+<h3 id="创建-APP"><a href="#创建-APP" class="headerlink" title="创建 APP"></a>创建 APP</h3><p>进入项目后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python manage.py startapp xxxx<br></code></pre></td></tr></table></figure>
+
+<h3 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell">├── app01<br>│   ├── admin.py                          [不动]自带的默认的后台管理功能<br>│   ├── apps.py                           [不动]app启动类<br>│   ├── __init__.py<br>│   ├── migrations                        [不动]数据库变更记录<br>│   │   └── __init__.py<br>│   ├── models.py                         [重要]对数据库进行操作<br>│   ├── tests.py<br>│   └── views.py                          [重要,经常修改]函数<br>├── manage.py<br>└── mysite<br>    ├── asgi.py<br>    ├── __init__.py<br>    ├── __pycache__<br>    │   ├── __init__.cpython-38.pyc<br>    │   └── settings.cpython-38.pyc<br>    ├── settings.py<br>    ├── urls.py                           [URL-&gt;函数]<br>    └── wsgi.py<br></code></pre></td></tr></table></figure>
+
+<h3 id="APP-注册"><a href="#APP-注册" class="headerlink" title="APP 注册"></a>APP 注册</h3><p>创建好的 APP 不能直接使用需要注册后才可以，小型项目的话一般只需要一个 APP 就可以了。注册需要在项目名的<code>seetings.py</code>中注册</p>
+<p>在这个<code>mysite</code>的项目中就是<code>mysite.settings.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">INSTALLED_APPS = [<br>    <span class="hljs-string">&#x27;django.contrib.admin&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.auth&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.contenttypes&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.sessions&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.messages&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.staticfiles&#x27;</span>,<br>    <span class="hljs-string">&#x27;app01.apps.App01Config&#x27;</span>, <span class="hljs-comment">#这里也可以直接简写为app01</span><br>]<br></code></pre></td></tr></table></figure>
+
+<h3 id="编写-URL-和视图函数的对应关系"><a href="#编写-URL-和视图函数的对应关系" class="headerlink" title="编写 URL 和视图函数的对应关系"></a>编写 URL 和视图函数的对应关系</h3><p>在 urls.py 中编写 路径是<code>mysite.urls.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin<br><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path<br><br><br><span class="hljs-keyword">from</span> app01 <span class="hljs-keyword">import</span> views<br>urlpatterns = [<br>    <span class="hljs-comment"># path(&#x27;admin/&#x27;, admin.site.urls),</span><br><br>    path(<span class="hljs-string">&#x27;index/&#x27;</span>,views.index)<br><br>]<br></code></pre></td></tr></table></figure>
+
+<p>下面即是 app01.views.py 的内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render,HttpResponse<br><br><span class="hljs-comment"># Create your views here.</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">request</span>): <span class="hljs-comment">#默认有一个参数 request</span><br>    <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">&quot;Hello&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="模板路径问题"><a href="#模板路径问题" class="headerlink" title="模板路径问题"></a>模板路径问题</h3><p>下面是使用 <code>django-admin</code> start project 创建的项目可以看到 DIRS 里面是空的，如果我们有一个 template 这里是放在 APP01 的文件夹里面</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><br>├── app01<br>│   ├── admin.py<br>│   ├── apps.py<br>│   ├── __init__.py<br>│   ├── migrations<br>│   │   ├── __init__.py<br>│   │   └── __pycache__<br>│   │       └── __init__.cpython-38.pyc<br>│   ├── models.py<br>│   ├── __pycache__<br>│   │   ├── admin.cpython-38.pyc<br>│   │   ├── apps.cpython-38.pyc<br>│   │   ├── __init__.cpython-38.pyc<br>│   │   ├── models.cpython-38.pyc<br>│   │   └── views.cpython-38.pyc<br>│   ├── templates<br>│   │   └── user_list.html<br>│   ├── tests.py<br>│   └── views.py<br>├── db.sqlite3<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">TEMPLATES = [<br>    &#123;<br>        <span class="hljs-string">&#x27;BACKEND&#x27;</span>: <span class="hljs-string">&#x27;django.template.backends.django.DjangoTemplates&#x27;</span>,<br>        <span class="hljs-string">&#x27;DIRS&#x27;</span>: [],<br>        <span class="hljs-string">&#x27;APP_DIRS&#x27;</span>: <span class="hljs-literal">True</span>,<br>        <span class="hljs-string">&#x27;OPTIONS&#x27;</span>: &#123;<br>            <span class="hljs-string">&#x27;context_processors&#x27;</span>: [<br>                <span class="hljs-string">&#x27;django.template.context_processors.debug&#x27;</span>,<br>                <span class="hljs-string">&#x27;django.template.context_processors.request&#x27;</span>,<br>                <span class="hljs-string">&#x27;django.contrib.auth.context_processors.auth&#x27;</span>,<br>                <span class="hljs-string">&#x27;django.contrib.messages.context_processors.messages&#x27;</span>,<br>            ],<br>        &#125;,<br>    &#125;,<br>]<br><br></code></pre></td></tr></table></figure>
+
+<p>Django 会根据注册的 APP 顺序依次查找 template 文件夹</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>INSTALLED_APPS = [<br>    <span class="hljs-string">&#x27;django.contrib.admin&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.auth&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.contenttypes&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.sessions&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.messages&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.staticfiles&#x27;</span>,<br>    <span class="hljs-string">&#x27;app01.apps.App01Config&#x27;</span>,<br>]<br></code></pre></td></tr></table></figure>
+
+<p>但是如果使用 pycharm 就会在 TEMPLATES 这里面加上一句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;DIRS&#x27;</span>: [], <span class="hljs-comment"># 命令行创建 建议使用这种 这样每个模板都被APP归类</span><br><span class="hljs-string">&#x27;DIRS&#x27;</span>: [os.path.join(BASE_DIR,<span class="hljs-string">&#x27;templates&#x27;</span>)], <span class="hljs-comment"># 使用pycharm会变成这样</span><br></code></pre></td></tr></table></figure>
+
+<p>pycharm 这样的结果就是 django 会优先在项目根目录去寻找 template</p>
+<h3 id="静态文件-css-js-图片-的引入"><a href="#静态文件-css-js-图片-的引入" class="headerlink" title="静态文件(css,js,图片)的引入"></a>静态文件(css,js,图片)的引入</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html">&#123;% load static %&#125;<br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>这是用户列表<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;% static &#x27;img/ming_ri_xiang.png&#x27; %&#125;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Django-模板语法"><a href="#Django-模板语法" class="headerlink" title="Django 模板语法"></a>Django 模板语法</h3><p>响应式的那种，就是在 HTML 中留一些位置，之后用数据对这些位置进行处理</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs html">&#123;% load static %&#125;<br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% static &#x27;plugins/bootstrap/css/bootstrap.css&#x27;%&#125;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>这是用户列表<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- &lt;img src=&quot;&#123;% static &#x27;img/ming_ri_xiang.png&#x27; %&#125;&quot;&gt; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;新建&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;&#123; n1 &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;&#123;n2.0&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;&#123;n2.1&#125;&#125;&#123;&#123;n2.2&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>		&#123;% for item in n2 %&#125;<br>		<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>		&#123;% endfor %&#125;<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span><br>&#123;&#123;n3.salary&#125;&#125;<br><br><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>	&#123;% for item in n3.keys %&#125;<br>	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>	&#123;% endfor %&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>后台 views</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render,HttpResponse<br><br><span class="hljs-comment"># Create your views here.</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">request</span>): <span class="hljs-comment">#默认有一个参数 request</span><br>    name = <span class="hljs-string">&quot;长门有希大萌神&quot;</span> <span class="hljs-comment">#这里可以通过python从数据库里面读数据</span><br>    roles = [<span class="hljs-string">&#x27;A&#x27;</span>,<span class="hljs-string">&#x27;B&#x27;</span>,<span class="hljs-string">&#x27;C&#x27;</span>]<br>    user_info = &#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;qw&quot;</span>,<span class="hljs-string">&quot;salary&quot;</span>:<span class="hljs-number">10000</span>,<span class="hljs-string">&quot;role&quot;</span>:<span class="hljs-string">&quot;CTO&quot;</span>&#125;<br>    <span class="hljs-keyword">return</span> render(request,<span class="hljs-string">&quot;index.html&quot;</span>,&#123;<span class="hljs-string">&quot;n1&quot;</span>:name,<span class="hljs-string">&quot;n2&quot;</span>:roles,<span class="hljs-string">&quot;n3&quot;</span>:user_info&#125;)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">user_list</span>(<span class="hljs-params">request</span>):<br>    <span class="hljs-keyword">return</span> render(request,<span class="hljs-string">&quot;user_list.html&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">user_add</span>(<span class="hljs-params">request</span>):<br>    <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">&quot;添加用户&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="请求和响应"><a href="#请求和响应" class="headerlink" title="请求和响应"></a>请求和响应</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">something</span>(<span class="hljs-params">request</span>):<br>    <span class="hljs-comment">#请求的三种方式</span><br>    <span class="hljs-built_in">print</span>(request.method) <span class="hljs-comment">#获得请求方式</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;URL=&gt; &quot;</span>,request.GET) <span class="hljs-comment">#在URL上传值</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;POST=&gt; &quot;</span>,request.POST)<span class="hljs-comment">#在请求体中返回数据</span><br><br>    <span class="hljs-comment">#响应</span><br>    <span class="hljs-comment"># return HttpResponse(&quot;添加用户&quot;)</span><br>    <span class="hljs-comment"># return render(request,&quot;user_list.html&quot;)</span><br><br>    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&quot;https://www.baidu.com&quot;</span>) <span class="hljs-comment"># 让浏览器重定向到其他页面</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Django-与数据库交互"><a href="#Django-与数据库交互" class="headerlink" title="Django 与数据库交互"></a>Django 与数据库交互</h3><p>连接好数据库后，打开 app01 下的 models.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models<br><br><span class="hljs-comment"># Create your models here.</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserInfo</span>(models.Model):<br>    user = models.CharField(max_length=<span class="hljs-number">32</span>)<br>    pwd = models.CharField(max_length=<span class="hljs-number">32</span>)<br></code></pre></td></tr></table></figure>
+
+<p>这样就会在我们的数据库中创建一个名为 UserInfo 的表，且有两个字段 user 和 pwd，当然这个时候只是设计好，下面几个命令执行完后才会真正开始创建</p>
+<p>运行下面这个命令来创建数据库表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python manage.py makemigrations<br></code></pre></td></tr></table></figure>
+
+<p>再输入命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python manage.py migrate<br></code></pre></td></tr></table></figure>
+
+<h1 id="前后端交互"><a href="#前后端交互" class="headerlink" title="前后端交互"></a>前后端交互</h1><h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><h3 id="Django-setting-文件配置"><a href="#Django-setting-文件配置" class="headerlink" title="Django setting 文件配置"></a>Django setting 文件配置</h3><p>django 想要与 Vue 进行交互需要 RestFramework，还有 cors-headers 这两个插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip install djangorestframework<br>pip install django-cors-headers<br></code></pre></td></tr></table></figure>
+
+<p>安装在 django 的根目录下的 setting 文件中进行 app 注册</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">INSTALLED_APPS = [<br>    <span class="hljs-string">&#x27;django.contrib.admin&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.auth&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.contenttypes&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.sessions&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.messages&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.staticfiles&#x27;</span>,<br>    <span class="hljs-string">&#x27;rest_framework&#x27;</span>,<br>    <span class="hljs-string">&#x27;corsheaders&#x27;</span>,<br>    <span class="hljs-string">&#x27;lyb&#x27;</span>,<br>]<br></code></pre></td></tr></table></figure>
+
+<p>因为前端与后端进行交互设计一个跨域保护的问题，后端使用 django-cors-headers 插件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">MIDDLEWARE = [<br>    <span class="hljs-string">&#x27;django.middleware.security.SecurityMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;corsheaders.middleware.CorsMiddleware&#x27;</span>, <span class="hljs-comment"># 注意顺序</span><br>    <span class="hljs-string">&#x27;django.middleware.common.CommonMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;</span>,<br>]<br></code></pre></td></tr></table></figure>
+
+<p>接着继续编辑 setting 文件，增加这两个配置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">ROOT_URLCONF = <span class="hljs-string">&#x27;backends.urls&#x27;</span> <span class="hljs-comment"># 后端项目的总路由路径</span><br>CORS_ORIGIN_ALLOW_ALL = <span class="hljs-literal">True</span> <span class="hljs-comment">#这是允许所有的跨域请求</span><br></code></pre></td></tr></table></figure>
+
+<p>至此后端的 setting 文件配置完成</p>
+<p>总配置文件如下 backends.settings.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">Django settings for backends project.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Generated by &#x27;django-admin startproject&#x27; using Django 5.0.1.</span><br><span class="hljs-string"></span><br><span class="hljs-string">For more information on this file, see</span><br><span class="hljs-string">https://docs.djangoproject.com/en/5.0/topics/settings/</span><br><span class="hljs-string"></span><br><span class="hljs-string">For the full list of settings and their values, see</span><br><span class="hljs-string">https://docs.djangoproject.com/en/5.0/ref/settings/</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><span class="hljs-keyword">from</span> pathlib <span class="hljs-keyword">import</span> Path<br><br><span class="hljs-comment"># Build paths inside the project like this: BASE_DIR / &#x27;subdir&#x27;.</span><br>BASE_DIR = Path(__file__).resolve().parent.parent<br><br><br><span class="hljs-comment"># Quick-start development settings - unsuitable for production</span><br><span class="hljs-comment"># See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/</span><br><br><span class="hljs-comment"># SECURITY WARNING: keep the secret key used in production secret!</span><br>SECRET_KEY = <span class="hljs-string">&#x27;django-insecure-#fz@#++_qt+!=&amp;)tt2&amp;%uui8d)pmh=ko0v18midrnv8vfud@^*&#x27;</span><br><br><span class="hljs-comment"># SECURITY WARNING: don&#x27;t run with debug turned on in production!</span><br>DEBUG = <span class="hljs-literal">True</span><br><br>ALLOWED_HOSTS = []<br><br><br><span class="hljs-comment"># Application definition</span><br><br>INSTALLED_APPS = [<br>    <span class="hljs-string">&#x27;django.contrib.admin&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.auth&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.contenttypes&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.sessions&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.messages&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.staticfiles&#x27;</span>,<br>    <span class="hljs-string">&#x27;rest_framework&#x27;</span>,<br>    <span class="hljs-string">&#x27;corsheaders&#x27;</span>,<br>    <span class="hljs-string">&#x27;lyb&#x27;</span>,<br>]<br><br>MIDDLEWARE = [<br>    <span class="hljs-string">&#x27;django.middleware.security.SecurityMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;corsheaders.middleware.CorsMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.middleware.common.CommonMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;</span>,<br>    <span class="hljs-string">&#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;</span>,<br>]<br><br>ROOT_URLCONF = <span class="hljs-string">&#x27;backends.urls&#x27;</span><br>CORS_ORIGIN_ALLOW_ALL = <span class="hljs-literal">True</span><br>TEMPLATES = [<br>    &#123;<br>        <span class="hljs-string">&#x27;BACKEND&#x27;</span>: <span class="hljs-string">&#x27;django.template.backends.django.DjangoTemplates&#x27;</span>,<br>        <span class="hljs-string">&#x27;DIRS&#x27;</span>: [],<br>        <span class="hljs-string">&#x27;APP_DIRS&#x27;</span>: <span class="hljs-literal">True</span>,<br>        <span class="hljs-string">&#x27;OPTIONS&#x27;</span>: &#123;<br>            <span class="hljs-string">&#x27;context_processors&#x27;</span>: [<br>                <span class="hljs-string">&#x27;django.template.context_processors.debug&#x27;</span>,<br>                <span class="hljs-string">&#x27;django.template.context_processors.request&#x27;</span>,<br>                <span class="hljs-string">&#x27;django.contrib.auth.context_processors.auth&#x27;</span>,<br>                <span class="hljs-string">&#x27;django.contrib.messages.context_processors.messages&#x27;</span>,<br>            ],<br>        &#125;,<br>    &#125;,<br>]<br><br>WSGI_APPLICATION = <span class="hljs-string">&#x27;backends.wsgi.application&#x27;</span><br><br><br><span class="hljs-comment"># Database</span><br><span class="hljs-comment"># https://docs.djangoproject.com/en/5.0/ref/settings/#databases</span><br><br>DATABASES = &#123;<br>    <span class="hljs-string">&#x27;default&#x27;</span>: &#123;<br>        <span class="hljs-string">&#x27;ENGINE&#x27;</span>: <span class="hljs-string">&#x27;django.db.backends.sqlite3&#x27;</span>,<br>        <span class="hljs-string">&#x27;NAME&#x27;</span>: BASE_DIR / <span class="hljs-string">&#x27;db.sqlite3&#x27;</span>,<br>    &#125;<br>&#125;<br><br><br><span class="hljs-comment"># Password validation</span><br><span class="hljs-comment"># https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators</span><br><br>AUTH_PASSWORD_VALIDATORS = [<br>    &#123;<br>        <span class="hljs-string">&#x27;NAME&#x27;</span>: <span class="hljs-string">&#x27;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#x27;</span>,<br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&#x27;NAME&#x27;</span>: <span class="hljs-string">&#x27;django.contrib.auth.password_validation.MinimumLengthValidator&#x27;</span>,<br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&#x27;NAME&#x27;</span>: <span class="hljs-string">&#x27;django.contrib.auth.password_validation.CommonPasswordValidator&#x27;</span>,<br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&#x27;NAME&#x27;</span>: <span class="hljs-string">&#x27;django.contrib.auth.password_validation.NumericPasswordValidator&#x27;</span>,<br>    &#125;,<br>]<br><br><br><span class="hljs-comment"># Internationalization</span><br><span class="hljs-comment"># https://docs.djangoproject.com/en/5.0/topics/i18n/</span><br><br>LANGUAGE_CODE = <span class="hljs-string">&#x27;en-us&#x27;</span><br><br>TIME_ZONE = <span class="hljs-string">&#x27;UTC&#x27;</span><br><br>USE_I18N = <span class="hljs-literal">True</span><br><br>USE_TZ = <span class="hljs-literal">True</span><br><br><br><span class="hljs-comment"># Static files (CSS, JavaScript, Images)</span><br><span class="hljs-comment"># https://docs.djangoproject.com/en/5.0/howto/static-files/</span><br><br>STATIC_URL = <span class="hljs-string">&#x27;static/&#x27;</span><br><br><span class="hljs-comment"># Default primary key field type</span><br><span class="hljs-comment"># https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field</span><br><br>DEFAULT_AUTO_FIELD = <span class="hljs-string">&#x27;django.db.models.BigAutoField&#x27;</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="Django-的总路由配置"><a href="#Django-的总路由配置" class="headerlink" title="Django 的总路由配置"></a>Django 的总路由配置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin<br><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path,include<br><span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> routers    <span class="hljs-comment">#这些都要引用</span><br><span class="hljs-keyword">from</span> lyb.views <span class="hljs-keyword">import</span> LybViewSet      <span class="hljs-comment">#这些都要引用</span><br><br>router = routers.DefaultRouter()<br>router.register(<span class="hljs-string">r&#x27;lyb&#x27;</span>,LybViewSet)    <span class="hljs-comment">#这个lyb是你的app</span><br><br>urlpatterns = [<br>    path(<span class="hljs-string">&#x27;admin/&#x27;</span>, admin.site.urls),   <span class="hljs-comment">#这句可以删掉</span><br>    path(<span class="hljs-string">&#x27;api/&#x27;</span>,include(router.urls))  <span class="hljs-comment">#这句是与自己的app的配置有关</span><br>]<br></code></pre></td></tr></table></figure>
+
+<h3 id="Django-配置序列化"><a href="#Django-配置序列化" class="headerlink" title="Django 配置序列化"></a>Django 配置序列化</h3><p>app 名字.serializers.py 没有就创建</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> serializers<br><span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> Lyb<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">LybSerializer</span>(serializers.HyperlinkedModelSerializer):<br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:<br>        model = Lyb<br>        fields = <span class="hljs-string">&quot;__all__&quot;</span> <span class="hljs-comment">#所有的字段都序列化</span><br></code></pre></td></tr></table></figure>
+
+<p>models.py 中的内容 ，<em>虽然不是前后端交互必要的但是因为是一个案例于是留下来</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models<br><br><span class="hljs-comment"># Create your models here.</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Lyb</span>(models.Model):<br>    title = models.CharField(max_length=<span class="hljs-number">100</span>)<br>    author = models.CharField(max_length=<span class="hljs-number">50</span>)<br>    content = models.TextField()<br>    posttime = models.DateTimeField(auto_now_add=<span class="hljs-literal">True</span>)<br></code></pre></td></tr></table></figure>
+
+<p>下面的是 views 的内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render<br><span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> viewsets<br><span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> Lyb <span class="hljs-comment">#导入自己的appmodel</span><br><span class="hljs-keyword">from</span> .serializers <span class="hljs-keyword">import</span> LybSerializer <span class="hljs-comment"># 导入序列化器</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">LybViewSet</span>(viewsets.ModelViewSet):<br>    queryset = Lyb.objects.<span class="hljs-built_in">all</span>().order_by(<span class="hljs-string">&#x27;-posttime&#x27;</span>) <span class="hljs-comment">#按时间排序 当然也可以选择其他的排序</span><br>    serializer_class =  LybSerializer<br></code></pre></td></tr></table></figure>
+
+<h3 id="获得-model-中的数据-特定条件"><a href="#获得-model-中的数据-特定条件" class="headerlink" title="获得 model 中的数据 特定条件"></a>获得 model 中的数据 特定条件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> myapp.models <span class="hljs-keyword">import</span> MyModel<br><br>specific_object = MyModel.objects.get(field=value)<br></code></pre></td></tr></table></figure>
+
+<h3 id="获得-model-中的全部数据"><a href="#获得-model-中的全部数据" class="headerlink" title="获得 model 中的全部数据"></a>获得 model 中的全部数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> myapp.models <span class="hljs-keyword">import</span> MyModel<br><br>all_data = MyModel.objects.<span class="hljs-built_in">all</span>()<br></code></pre></td></tr></table></figure>
+
+<h3 id="视图中获得对象的值"><a href="#视图中获得对象的值" class="headerlink" title="视图中获得对象的值"></a>视图中获得对象的值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> JsonResponse<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">login_view</span>(<span class="hljs-params">request</span>):<br>    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&#x27;POST&#x27;</span>:<br>        data = json.loads(request.body)<br>        username = data.get(<span class="hljs-string">&#x27;username&#x27;</span>)<br>        password = data.get(<span class="hljs-string">&#x27;password&#x27;</span>)<br>        <span class="hljs-comment"># 进行登录逻辑处理</span><br>        <span class="hljs-comment"># ...</span><br>        <span class="hljs-comment"># 返回响应数据</span><br>        response_data = &#123;<br>            <span class="hljs-string">&#x27;message&#x27;</span>: <span class="hljs-string">&#x27;登录成功&#x27;</span>,<br>            <span class="hljs-string">&#x27;username&#x27;</span>: username,<br>        &#125;<br>        <span class="hljs-keyword">return</span> JsonResponse(response_data)<br></code></pre></td></tr></table></figure>
+
+<h3 id="常见写法"><a href="#常见写法" class="headerlink" title="常见写法"></a>常见写法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> JsonResponse<br><span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> UserModel<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">login_view</span>(<span class="hljs-params">request</span>):<br>    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&quot;POST&quot;</span>:<br>        <span class="hljs-comment"># 获取请求中的用户名和密码</span><br>        username = request.POST.get(<span class="hljs-string">&quot;username&quot;</span>)<br>        password = request.POST.get(<span class="hljs-string">&quot;password&quot;</span>)<br><br>        <span class="hljs-comment"># 在这里进行用户登录验证逻辑</span><br>        <span class="hljs-keyword">try</span>:<br>            user = UserModel.objects.get(userName=username, passWord=password)<br>            <span class="hljs-comment"># 用户登录成功</span><br>            <span class="hljs-keyword">return</span> JsonResponse(&#123;<span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;登录成功&quot;</span>&#125;)<br>        <span class="hljs-keyword">except</span> UserModel.DoesNotExist:<br>            <span class="hljs-comment"># 用户名或密码不正确，登录失败</span><br>            <span class="hljs-keyword">return</span> JsonResponse(&#123;<span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;用户名或密码不正确&quot;</span>&#125;, status=<span class="hljs-number">401</span>)<br><br>    <span class="hljs-comment"># 如果不是 POST 请求，返回错误响应</span><br>    <span class="hljs-keyword">return</span> JsonResponse(&#123;<span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;无效的请求&quot;</span>&#125;, status=<span class="hljs-number">400</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><h3 id="VUE-环境配置"><a href="#VUE-环境配置" class="headerlink" title="VUE 环境配置"></a>VUE 环境配置</h3><p>下载 axios</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install axios -s<br></code></pre></td></tr></table></figure>
+
+<p>使用 vite 脚手架创建项目 不适用 vue-cli</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm init vite-app &lt;project-name&gt;<br></code></pre></td></tr></table></figure>
+
+<p>vue 中默认的代码很多都是没用的因此我们删除</p>
+<p>vue 项目的 index.html 如下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>vue-django<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span></span><br><span class="hljs-tag">      <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span></span><br><span class="hljs-tag">    /&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    hello<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/src/main.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 注意这一行 type和src的路径都要打 --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>把 main.js 中无用的代码删除</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><br><span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>创建一个组件（组件名随意我这里的例子交 lyb）这边是前端向后端要数据的核心部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div class=&quot;row&quot;&gt;<br>    &lt;div class=&quot;col-md-8&quot;&gt;<br>      &lt;table class=&quot;table&quot;&gt;<br>        &lt;thead&gt;<br>          &lt;tr&gt;<br>            &lt;th&gt;标题&lt;/th&gt;<br>            &lt;th&gt;作者&lt;/th&gt;<br>            &lt;th&gt;内容&lt;/th&gt;<br>          &lt;/tr&gt;<br>        &lt;/thead&gt;<br>        &lt;tbody&gt;<br>          &lt;tr v-for=&quot;item in ly_list&quot; :key=&quot;item.url&quot;&gt;<br>            //循环显示元素<br>            &lt;td&gt;&#123;&#123; item.title &#125;&#125;&lt;/td&gt;<br>            &lt;td&gt;&#123;&#123; item.author &#125;&#125;&lt;/td&gt;<br>            &lt;td&gt;&#123;&#123; item.content &#125;&#125;&lt;/td&gt;<br>            &lt;td&gt;测试&lt;/td&gt;<br>            &lt;td&gt;<br>              &lt;button class=&quot;btn btn-success&quot; title=&quot;编辑&quot;&gt;<br>                &lt;i&gt;&lt;/i&gt;<br>              &lt;/button&gt;<br>              &lt;button class=&quot;btn btn-danger&quot; title=&quot;删除&quot;&gt;<br>                &lt;i&gt;&lt;/i&gt;<br>              &lt;/button&gt;<br>            &lt;/td&gt;<br>          &lt;/tr&gt;<br>        &lt;/tbody&gt;<br>      &lt;/table&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>  import axios from &#x27;axios&#x27; //导入axios库<br>  import &#123; reactive, onMounted, toRefs &#125; from &#x27;vue&#x27; //这三个都要导入<br>  export default &#123;<br>    name: &#x27;lyb&#x27;,<br>    setup() &#123;<br>      let base_url = &#x27;http://127.0.0.1:8000/api/lyb/&#x27; //这是django服务器的地址就是rest_framework提供数据的网址，<br>      const state = reactive(&#123;<br>        ly_list: [] //用来接数据<br>      &#125;)<br>      const getLyb = () =&gt; &#123;<br>        axios<br>          .get(base_url)<br>          .then((res) =&gt; &#123;<br>            //发送请求<br>            console.log(&#x27;成功&#x27;)<br>            state.ly_list = res.data<br>            console.log(res.data)<br>          &#125;)<br>          .catch((err) =&gt; &#123;<br>            console.log(err)<br>          &#125;)<br>      &#125;<br>      onMounted(() =&gt; &#123;<br>        getLyb() //需要onMounted挂载<br>      &#125;)<br><br>      return &#123;<br>        ...toRefs(state) //这段也要加上<br>      &#125;<br>    &#125;<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p>最后在 APP.vue 中注册一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div class=&quot;row&quot;&gt;<br>    &lt;lyb /&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>  import lyb from &#x27;./components/Lyb.vue&#x27;<br>  export default &#123;<br>    name: &#x27;App&#x27;,<br>    components: &#123;<br>      lyb<br>    &#125;<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p>将 django 与 vue 的服务器都启动，正常情况下就可以看到后端传来的数据了。</p>
+<p>这里有个小 bug 使用 vscode ssh 连接的时候网站可能不会发生改变，这并不是代码的问题。可能与电脑&#x2F;虚拟机性能有关。可以进入虚拟机桌面的终端直接运行，不通过 ssh 转发查看效果</p>
+<h3 id="使用-element-plus"><a href="#使用-element-plus" class="headerlink" title="使用 element-plus"></a>使用 element-plus</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install element-plus --save<br></code></pre></td></tr></table></figure>
+
+<p><strong>main.js 中配置**</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./index.css&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementPlus</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%85%8D%E7%BD%AE/" class="category-chain-item">配置</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>vue和django的一些配置</div>
+      <div>http://example.com/2025/04/02/vue和django的一些配置/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 2, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/02/TypeScript%E5%AD%A6%E4%B9%A0/" title="TypeScript学习">
+                        <span class="hidden-mobile">TypeScript学习</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

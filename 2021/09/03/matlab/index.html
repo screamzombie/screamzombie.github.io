@@ -1,0 +1,871 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="MATLAB 的安装MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB教程">
+<meta property="og:url" content="http://example.com/2021/09/03/matlab/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MATLAB 的安装MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-02T17:27:00.000Z">
+<meta property="article:modified_time" content="2025-04-02T05:44:02.116Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>MATLAB教程 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>rainbow</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="MATLAB教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-09-03 01:27" pubdate>
+          September 3, 2021 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">MATLAB教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="MATLAB-的安装"><a href="#MATLAB-的安装" class="headerlink" title="MATLAB 的安装"></a>MATLAB 的安装</h1><p>MATLAB 是一个收费软件并且价格对学生党来说过于昂贵。这里使用的是一个破解版的。</p>
+<span id="more"></span>
+
+<h1 id="勇敢的第一步"><a href="#勇敢的第一步" class="headerlink" title="勇敢的第一步"></a>勇敢的第一步</h1><h2 id="使用-MATLAB-进行第一个运算"><a href="#使用-MATLAB-进行第一个运算" class="headerlink" title="使用 MATLAB 进行第一个运算"></a>使用 MATLAB 进行第一个运算</h2><p>创建变量</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">a</span> = <span class="hljs-number">1</span><span class="hljs-comment">;</span><br><span class="hljs-attr">b</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span><span class="hljs-comment">;4,5,6;7,8,9];</span><br></code></pre></td></tr></table></figure>
+
+<p>当不指定输出变量时，MATLAB 使用变量 ans （answer 的缩写）存储计算结果。</p>
+<p>如果以英文分号（;）结束语句，MATLAB 会执行计算，但会在命令窗口中隐藏对应的输出值。</p>
+<p>创建矩阵的另一种方法是使用函数，如产生一组 1、0 或随机数。例如，创建一个由 0 组成的 5×1 列向量</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">z</span> = zeros(<span class="hljs-number">5</span>,<span class="hljs-number">1</span>)<br><br><span class="hljs-attribute">z</span> = <span class="hljs-number">5</span>×<span class="hljs-number">1</span><br>	<span class="hljs-attribute">0</span><br>	<span class="hljs-attribute">0</span><br>	<span class="hljs-attribute">0</span><br>	<span class="hljs-attribute">0</span><br>	<span class="hljs-attribute">0</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-tag">a</span> = <span class="hljs-selector-attr">[1 2 3; 4 5 6; 7 8 10]</span><br><span class="hljs-selector-tag">a</span> + <span class="hljs-number">10</span><br><span class="hljs-function"><span class="hljs-title">sin</span><span class="hljs-params">(a)</span></span><br></code></pre></td></tr></table></figure>
+
+<p>上面这段代码运行的结果是</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs subunit">ans =<br><br>   0.841470984807897   0.909297426825682   0.141120008059867<br>  <span class="hljs-string">-0</span>.756802495307928  <span class="hljs-string">-0</span>.958924274663138  <span class="hljs-string">-0</span>.279415498198926<br>   0.656986598718789   0.989358246623382  <span class="hljs-string">-0</span>.544021110889370<br></code></pre></td></tr></table></figure>
+
+<p>注意在 MATLAB 中如果式子的值没有返回给一个变量，那么他会保存在一个叫 ans 的自带的变量中</p>
+<h3 id="转置矩阵"><a href="#转置矩阵" class="headerlink" title="转置矩阵"></a>转置矩阵</h3><p><strong>如果要使用转置矩阵请在变量的右上角加一个’</strong><br>例如<code>a&#39;</code></p>
+<p><strong>转置矩阵的定义:</strong><br><em>将矩阵的行列互换得到的新矩阵称为转置矩阵，转置矩阵的行列式不变</em></p>
+<h3 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h3><p>使用*号来完成两个矩阵之间的乘法运算。没错就是我们在《线性代数》中学到的那样</p>
+<p><strong>inv(a)会返回一个矩阵的逆矩阵</strong></p>
+<p><strong>逆矩阵：</strong><br><em>设 A 是一个 n 阶矩阵，若存在另一个 n 阶矩阵 B，使得： AB&#x3D;BA&#x3D;E ，则称方阵 A 可逆，并称方阵 B 是 A 的逆矩阵。</em></p>
+<p><strong>矩阵乘法:</strong><br><em>矩阵相乘最重要的方法是一般矩阵乘积。它只有在第一个矩阵的列数（column）和第二个矩阵的行数（row）相同时才有意义 。一般单指矩阵乘积时，指的便是一般矩阵乘积。一个 m×n 的矩阵就是 m×n 个数排成 m 行 n 列的一个数阵</em></p>
+<p>我感觉我已经不认识“矩”这个字了&#x3D; &#x3D;</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">a</span> <span class="hljs-operator">=</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><span class="hljs-comment">; 4 5 6; 7 8 10]</span><br><span class="hljs-attribute">p</span> <span class="hljs-operator">=</span> a*inv(a)<br></code></pre></td></tr></table></figure>
+
+<h3 id="设置数值格式"><a href="#设置数值格式" class="headerlink" title="设置数值格式"></a>设置数值格式</h3><p>在上面这个代码中，你的答案可能是下面两种之一</p>
+<p>长这样</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">p</span> =<br><br>    <span class="hljs-attribute">1</span>.<span class="hljs-number">0000</span>   -<span class="hljs-number">0</span>.<span class="hljs-number">0000</span>   -<span class="hljs-number">0</span>.<span class="hljs-number">0000</span><br>    <span class="hljs-attribute">0</span>.<span class="hljs-number">0000</span>    <span class="hljs-number">1</span>.<span class="hljs-number">0000</span>   -<span class="hljs-number">0</span>.<span class="hljs-number">0000</span><br>    <span class="hljs-attribute">0</span>.<span class="hljs-number">0000</span>   -<span class="hljs-number">0</span>.<span class="hljs-number">0000</span>    <span class="hljs-number">1</span>.<span class="hljs-number">0000</span><br></code></pre></td></tr></table></figure>
+
+<p>或者是长这样</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">p</span> =<br><br>   <span class="hljs-attribute">1</span>.<span class="hljs-number">000000000000000</span>  -<span class="hljs-number">0</span>.<span class="hljs-number">000000000000000</span>  -<span class="hljs-number">0</span>.<span class="hljs-number">000000000000000</span><br>   <span class="hljs-attribute">0</span>.<span class="hljs-number">000000000000001</span>   <span class="hljs-number">0</span>.<span class="hljs-number">999999999999999</span>  -<span class="hljs-number">0</span>.<span class="hljs-number">000000000000000</span><br>   <span class="hljs-attribute">0</span>.<span class="hljs-number">000000000000002</span>  -<span class="hljs-number">0</span>.<span class="hljs-number">000000000000003</span>   <span class="hljs-number">1</span>.<span class="hljs-number">000000000000000</span><br></code></pre></td></tr></table></figure>
+
+<p>其中出现第二种情况的原因是，之前有设置过数值格式<br>使用<br>在代码的第一行加上</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-built_in">format</span> <span class="hljs-keyword">short</span><br></code></pre></td></tr></table></figure>
+
+<p>答案就会变成第一种的样子了。<br>我们并不需要每次都进行设置，一旦设置过后。它将会被保存下来，直到我们再次更改设置。</p>
+<p><strong>数据格式只影响数字的显示，而不影响 MATLAB 对结果的运算或保存。</strong></p>
+<h3 id="矩阵乘法-1"><a href="#矩阵乘法-1" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h3><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">a</span> <span class="hljs-operator">=</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><span class="hljs-comment">; 4 5 6; 7 8 10];</span><br><span class="hljs-attribute">p</span> <span class="hljs-operator">=</span> a*a<br></code></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">p</span> =<br><br>    <span class="hljs-attribute">30</span>    <span class="hljs-number">36</span>    <span class="hljs-number">45</span><br>    <span class="hljs-attribute">66</span>    <span class="hljs-number">81</span>   <span class="hljs-number">102</span><br>   <span class="hljs-attribute">109</span>   <span class="hljs-number">134</span>   <span class="hljs-number">169</span><br></code></pre></td></tr></table></figure>
+
+<p>矩阵数乘</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">a</span> <span class="hljs-operator">=</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><span class="hljs-comment">; 4 5 6; 7 8 10];</span><br><span class="hljs-attribute">p</span> <span class="hljs-operator">=</span> a.*a<br></code></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">p</span> =<br><br>     <span class="hljs-attribute">1</span>     <span class="hljs-number">4</span>     <span class="hljs-number">9</span><br>    <span class="hljs-attribute">16</span>    <span class="hljs-number">25</span>    <span class="hljs-number">36</span><br>    <span class="hljs-attribute">49</span>    <span class="hljs-number">64</span>   <span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="数组-矩阵的拼合"><a href="#数组-矩阵的拼合" class="headerlink" title="数组&#x2F;矩阵的拼合"></a>数组&#x2F;矩阵的拼合</h2><h3 id="两种不同的拼接方式"><a href="#两种不同的拼接方式" class="headerlink" title="两种不同的拼接方式"></a>两种不同的拼接方式</h3><p>在线性代数中我们已经知道了<strong>分块矩阵</strong>的概念。类似的在 MATLAB 中我们也可以把数组进行拼接</p>
+<p><strong>分块矩阵</strong><br><em>分块矩阵是一个矩阵， 它是把矩阵分别按照横竖分割成一些小的子矩阵 。 然后把每个小矩阵看成一个元素。</em></p>
+<p>MATLAB 中有两种不同的数组拼接方式<br>第一种水平拼接，就是左右拼在一起啦(｡・&#96;ω´･)</p>
+<p>仔细想想这个我们创建矩阵的时候使用<code>,</code>是不是一个道理呀<br>把俩个小矩阵看成两个元素就可以</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs tap">a = [1<span class="hljs-number"> 2 </span>3;<span class="hljs-number"> 4 </span>5 6;<span class="hljs-number"> 7 </span>8 10];<br>p = [a,a]<br></code></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs apache"><br><span class="hljs-attribute">p</span> =<br><br>     <span class="hljs-attribute">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-attribute">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>     <span class="hljs-attribute">7</span>     <span class="hljs-number">8</span>    <span class="hljs-number">10</span>     <span class="hljs-number">7</span>     <span class="hljs-number">8</span>    <span class="hljs-number">10</span><br><br></code></pre></td></tr></table></figure>
+
+<p>第二种则是竖直拼接，也就是上下拼在一起啦</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">a</span> <span class="hljs-operator">=</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><span class="hljs-comment">; 4 5 6; 7 8 10];</span><br><span class="hljs-attribute">p</span> <span class="hljs-operator">=</span> [a<span class="hljs-comment">;a]</span><br></code></pre></td></tr></table></figure>
+
+<p>结果是</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">p</span> =<br><br>     <span class="hljs-attribute">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-attribute">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>     <span class="hljs-attribute">7</span>     <span class="hljs-number">8</span>    <span class="hljs-number">10</span><br>     <span class="hljs-attribute">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-attribute">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>     <span class="hljs-attribute">7</span>     <span class="hljs-number">8</span>    <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="复数的表示"><a href="#复数的表示" class="headerlink" title="复数的表示"></a>复数的表示</h2><p>我相信各位大佬复数的定义都没有忘记</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">sqrt</span><span class="hljs-params">(-<span class="hljs-number">1</span>)</span></span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ans</span> =<br><br>   <span class="hljs-attribute">0</span>.<span class="hljs-number">0000</span> + <span class="hljs-number">1</span>.<span class="hljs-number">0000</span>i<br></code></pre></td></tr></table></figure>
+
+<p>如果想要表示数的虚部可以使用 <code>i</code> 或<code>j</code>。<br>像这样</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">c</span> = [<span class="hljs-number">3</span>+<span class="hljs-number">4</span>i, <span class="hljs-number">4</span>+<span class="hljs-number">3</span>j<span class="hljs-comment">; -i, 10j]</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">c</span> =<br><br>   <span class="hljs-attribute">3</span>.<span class="hljs-number">0000</span> + <span class="hljs-number">4</span>.<span class="hljs-number">0000</span>i   <span class="hljs-number">4</span>.<span class="hljs-number">0000</span> + <span class="hljs-number">3</span>.<span class="hljs-number">0000</span>i<br>   <span class="hljs-attribute">0</span>.<span class="hljs-number">0000</span> - <span class="hljs-number">1</span>.<span class="hljs-number">0000</span>i   <span class="hljs-number">0</span>.<span class="hljs-number">0000</span> +<span class="hljs-number">10</span>.<span class="hljs-number">0000</span>i<br></code></pre></td></tr></table></figure>
+
+<p>使用 i 或者使用 j，不会有任何不同。完全看个人喜好</p>
+<h2 id="从数组中进行搜索"><a href="#从数组中进行搜索" class="headerlink" title="从数组中进行搜索"></a>从数组中进行搜索</h2><p>在过去所学的计算机语言中我们已经接触过了二维数组，它们往往有很方便的得到某一行某一列所有元素的方法比如</p>
+<p>C++</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> numbers[<span class="hljs-number">3</span>][<span class="hljs-number">3</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)<br>       cout &lt;&lt; numbers[<span class="hljs-number">2</span>][i] &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">ls = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]]<br><span class="hljs-built_in">print</span>(ls[<span class="hljs-number">2</span>])<br></code></pre></td></tr></table></figure>
+
+<p>Java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> rainbow.demo;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span>[][] array = &#123; &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> &#125;, &#123; <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span> &#125;, &#123; <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span> &#125; &#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j : array[<span class="hljs-number">2</span>]) &#123;<br>      System.out.println(j);<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Scala</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dim2B</span></span>(rows : <span class="hljs-type">Int</span>)=&#123;<br>      <span class="hljs-keyword">val</span> d2  = <span class="hljs-keyword">new</span> <span class="hljs-type">Array</span>[<span class="hljs-type">ArrayBuffer</span>[<span class="hljs-type">Int</span>]](rows)<br>      <span class="hljs-keyword">for</span> (k &lt;<span class="hljs-number">-0</span> until rows ) &#123;<br>        d2(k) = <span class="hljs-keyword">new</span> <span class="hljs-type">ArrayBuffer</span>[<span class="hljs-type">Int</span>]()<br>      &#125;<br>      d2<br>&#125;<br><span class="hljs-keyword">val</span> index = dim2B(<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<p>C#</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Csharp"><span class="hljs-keyword">using</span> System;<br><span class="hljs-keyword">namespace</span> <span class="hljs-title">Work</span><br>&#123;<br><br>   <span class="hljs-keyword">class</span> <span class="hljs-title">MyMain</span><br>    &#123;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span><br>        &#123;<br>            <span class="hljs-built_in">int</span>[,] arrray1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">int</span>[<span class="hljs-number">3</span>,<span class="hljs-number">3</span>] &#123; &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;, &#123;<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>&#125;,&#123; <span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>&#125; &#125;;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)<br>            &#123;<br>                Console.WriteLine(arrray1[<span class="hljs-number">2</span>,i]);<br>            &#125;<br>            Console.ReadLine();<br>        &#125;<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="查找某一个元素"><a href="#查找某一个元素" class="headerlink" title="查找某一个元素"></a>查找某一个元素</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">A = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>;<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>;<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>];<br>A(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB"><span class="hljs-built_in">ans</span> =<br><br>     <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="查找列或者行"><a href="#查找列或者行" class="headerlink" title="查找列或者行"></a>查找列或者行</h3><p><strong>遍历一整行</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">A = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>;<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>;<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]<br>A(<span class="hljs-number">1</span>,:)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">ans</span> <span class="hljs-operator">=</span><br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>遍历一整列</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">A = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>;<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>;<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]<br>A(:,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB"><span class="hljs-built_in">ans</span> =<br><br>     <span class="hljs-number">2</span><br>     <span class="hljs-number">5</span><br>     <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="工作空间变量"><a href="#工作空间变量" class="headerlink" title="工作空间变量"></a>工作空间变量</h2><p>使用<code>whos</code>查看工作区的内容，也就是查看变量</p>
+<h1 id="输出-Hello-World"><a href="#输出-Hello-World" class="headerlink" title="输出 Hello World"></a>输出 Hello World</h1><h2 id="字符串数组中的文本"><a href="#字符串数组中的文本" class="headerlink" title="字符串数组中的文本"></a>字符串数组中的文本</h2><p>MATLAB 也支持对文本的操作。通过这样的方式创建一个字符串，或者说将文本分配给变量。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">line = <span class="hljs-string">&quot;hello world&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>如果文本包含双引号，请在变量的定义中使用两个双引号。类似于 C 语言中使用%%输出百分号。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">q = <span class="hljs-string">&quot;My ablity is &quot;&quot;Dirty Deeds Done Dirt Cheap&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>显示效果</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">q</span> <span class="hljs-operator">=</span><br><br>    <span class="hljs-string">&quot;My ablity is &quot;</span>Dirty Deeds Done Dirt Cheap<span class="hljs-string">&quot;&quot;</span><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h2><p>使用加号进行字符串拼接，就像你在 JAVA 和 Python 中做到的那样</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile">str1 = <span class="hljs-string">&quot;I &quot;</span><br>str1 + <span class="hljs-string">&quot;LOVE YOU&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="strlength"><a href="#strlength" class="headerlink" title="strlength"></a>strlength</h2><p>还记的 C 语言中我们怎样求一个字符串的长度的嘛？！<br>使用 string.h 头文件中的 strlen 函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">char</span> str1[<span class="hljs-number">100</span>] =<span class="hljs-string">&quot;hello world&quot;</span>;<br>    <span class="hljs-type">int</span> length = <span class="hljs-built_in">strlen</span>(str1);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,length)l;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>不过在 MATLAB 中我们也有类似的函数 叫 strlength<br>使用方法和 C 语言的 strlen 十分类似<br>这里直接举 MATLAB 官方手册的例子</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">A = [<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;bb&quot;</span>,<span class="hljs-string">&quot;ccc&quot;</span>; <span class="hljs-string">&quot;dddd&quot;</span>,<span class="hljs-string">&quot;eeeeee&quot;</span>,<span class="hljs-string">&quot;fffffff&quot;</span>]<br><br>A =<br>	<span class="hljs-number">2</span>×<span class="hljs-number">3</span> string array<br>	<span class="hljs-string">&quot;a&quot;</span>     <span class="hljs-string">&quot;bb&quot;</span>      <span class="hljs-string">&quot;ccc&quot;</span><br>	<span class="hljs-string">&quot;dddd&quot;</span>  <span class="hljs-string">&quot;eeeeee&quot;</span>  <span class="hljs-string">&quot;fffffff&quot;</span><br>strlength(A)<br><br><span class="hljs-built_in">ans</span> =<br>	<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br>	<span class="hljs-number">4</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span><br><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="MATLAB-中的函数"><a href="#MATLAB-中的函数" class="headerlink" title="MATLAB 中的函数"></a>MATLAB 中的函数</h1><p>函数是一个我们非常熟悉的概念，甚至后面还出现了函数式编程的语言 <strong>scala</strong><br>MATLAB 中的函数有两种 第一种是内置的，第二种是用户自定义的。<br>囿于篇幅，我们不讨论 MATLAB 自带的函数，想要了解的话可以去官网查看原文文档。<br>MATLAB 有中文文档。<br>我们需要进行讨论和学习的是第二种情况</p>
+<h2 id="如何创建和使用自己定义函数"><a href="#如何创建和使用自己定义函数" class="headerlink" title="如何创建和使用自己定义函数"></a>如何创建和使用自己定义函数</h2><p>在别的高级编程语言中，我们要定义一个函数只需要使用如下的语句例如这些<br>(随便写的没有分行)</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Myfunction</span>()</span>&#123;<br>    ·······<br>&#125;<br><br><span class="hljs-function">def <span class="hljs-title">my_select_paper_window</span>(<span class="hljs-params">self, paper</span>):</span><br><span class="hljs-function">    pass</span><br><span class="hljs-function"></span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Say</span>()</span><br>&#123;<br>    ······<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>但是在 MATLAB 中情况有了些许不同<br>我们先创建一个文件叫 myfunction.m 名字可以自己取<br>创建函数类似这样的写法</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span> = <span class="hljs-title">j</span><span class="hljs-params">(x)</span></span><br>    y = x*x+<span class="hljs-number">5</span>;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+
+<p>调用函数必须保证两个文件在同一个目录下</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">t</span> <span class="hljs-operator">=</span> myfunction(<span class="hljs-number">3</span>)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="二维图像和三维图像绘制"><a href="#二维图像和三维图像绘制" class="headerlink" title="二维图像和三维图像绘制"></a>二维图像和三维图像绘制</h1><h2 id="二维图像"><a href="#二维图像" class="headerlink" title="二维图像"></a>二维图像</h2><p>使用<code>plot</code> 函数来创建一个二维曲线图。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs matlab">x = <span class="hljs-number">0</span>:<span class="hljs-built_in">pi</span>/<span class="hljs-number">100</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;<br>y = <span class="hljs-built_in">sin</span>(x);<br>xlabel(<span class="hljs-string">&#x27;x&#x27;</span>)<br>ylabel(<span class="hljs-string">&#x27;sin(x)&#x27;</span>)<br>title(<span class="hljs-string">&#x27;Plot of the Sine Function&#x27;</span>)<br><span class="hljs-built_in">plot</span>(x,y,<span class="hljs-string">&#x27;g:*&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>x 的三个元素分别是 开始的坐标，拐点数量，结束的坐标,plot 中第三个元素表示使用绿线进行标识</p>
+<h2 id="多个函数图像在一个图中"><a href="#多个函数图像在一个图中" class="headerlink" title="多个函数图像在一个图中"></a>多个函数图像在一个图中</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">x = <span class="hljs-number">0</span>:<span class="hljs-built_in">pi</span>/<span class="hljs-number">100</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;<br>y = <span class="hljs-built_in">sin</span>(x);<br><span class="hljs-built_in">plot</span>(x,y)<br><span class="hljs-built_in">hold</span> on<br>y2 = <span class="hljs-built_in">cos</span>(x);<br><span class="hljs-built_in">plot</span>(x,y2,<span class="hljs-string">&#x27;:&#x27;</span>)<br><span class="hljs-built_in">legend</span>(<span class="hljs-string">&#x27;sin&#x27;</span>,<span class="hljs-string">&#x27;cos&#x27;</span>)<br><span class="hljs-built_in">hold</span> off<br></code></pre></td></tr></table></figure>
+
+<p>使用 hold on ，握住这个图像，然后往里面添加新的图像。hold off 松手之后图像一齐绘制出来</p>
+<h2 id="三维图像"><a href="#三维图像" class="headerlink" title="三维图像"></a>三维图像</h2><p>早在《高等数学》中我们就已经接触过多元函数的概念了。<br>比较常见的是由 x,y,z 组成的一个三维空间内的曲面<br>使用 MATLAB 可以很方便的帮我们绘制图像<br>接下来是一段代码</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">[X,Y] = <span class="hljs-built_in">meshgrid</span>(<span class="hljs-number">-2</span>:<span class="hljs-number">.2</span>:<span class="hljs-number">2</span>);<br>Z = X .* <span class="hljs-built_in">exp</span>(-X.^<span class="hljs-number">2</span> - Y.^<span class="hljs-number">2</span>);<br>surf(X,Y,Z)<br></code></pre></td></tr></table></figure>
+
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><p><strong>meshgrid</strong><br>[X,Y] &#x3D; meshgrid(x,y)<br>[X,Y] &#x3D; meshgrid(x)<br>[X,Y,Z] &#x3D; meshgrid(x,y,z)<br>[X,Y,Z] &#x3D; meshgrid(x)<br><strong>Description</strong><br><em>example</em><br>[X,Y] &#x3D; meshgrid(x,y) returns 2-D grid coordinates based on the coordinates contained in vectors x and y. X is a matrix where each row is a copy of x, and Y is a matrix where each column is a copy of y. The grid represented by the coordinates X and Y has length(y) rows and length(x) columns.</p>
+<p><em>example</em><br>[X,Y] &#x3D; meshgrid(x) is the same as [X,Y] &#x3D; meshgrid(x,x), returning square grid coordinates with grid size length(x)-by-length(x).</p>
+<p><em>example</em><br>[X,Y,Z] &#x3D; meshgrid(x,y,z) returns 3-D grid coordinates defined by the vectors x, y, and z. The grid represented by X, Y, and Z has size length(y)-by-length(x)-by-length(z).</p>
+<p><em>example</em><br>[X,Y,Z] &#x3D; meshgrid(x) is the same as [X,Y,Z] &#x3D; meshgrid(x,x,x), returning 3-D grid coordinates with grid size length(x)-by-length(x)-by-length(x).</p>
+<p><strong><em>上面的内容是 MATLAB 官方手册中对这个函数的解释</em></strong><br>说人话就是<strong>用两个坐标轴上的点在平面上画格。</strong><br>不理解不要紧我们来看一下这个例子</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">x=[<span class="hljs-number">-3</span>:<span class="hljs-number">1</span>:<span class="hljs-number">3</span>];<br>y=[<span class="hljs-number">-2</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>];<br>[X,Y]= <span class="hljs-built_in">meshgrid</span>(x,y)<br></code></pre></td></tr></table></figure>
+
+<p>运行结果是</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">X =<br><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br><br><br>Y =<br><br>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span><br>    <span class="hljs-number">-1</span>    <span class="hljs-number">-1</span>    <span class="hljs-number">-1</span>    <span class="hljs-number">-1</span>    <span class="hljs-number">-1</span>    <span class="hljs-number">-1</span>    <span class="hljs-number">-1</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span><br>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<p>仔细看 X 和 Y 。X 是 -3 到 +3，Y 是 -2 到 +2。<br>是不是有点明白了<br>再看一段代码</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">x=[<span class="hljs-number">-3</span>:<span class="hljs-number">2</span>:<span class="hljs-number">3</span>];<br>y=[<span class="hljs-number">-2</span>:<span class="hljs-number">2</span>:<span class="hljs-number">2</span>];<br>[X,Y]= <span class="hljs-built_in">meshgrid</span>(x,y)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB"><br>X =<br><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span><br>    <span class="hljs-number">-3</span>    <span class="hljs-number">-1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span><br>Y =<br><br>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span>    <span class="hljs-number">-2</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span>     <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<p>原来中间的数字是 step 啊<br>所以我们可以说函数的形参规则是[start:step:end]<br>第一个参数是开始，第二个参数是每次改变的坐标，第三个参数则是在哪截止</p>
+<p><strong>三维空间的情况</strong><br>类似的上面这个例子也可以用在三维空间中</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">x = [<span class="hljs-number">-3</span>:<span class="hljs-number">1</span>:<span class="hljs-number">3</span>];<br>y = [<span class="hljs-number">-2</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>];<br>z = [<span class="hljs-number">-4</span>:<span class="hljs-number">1</span>:<span class="hljs-number">4</span>]<br>[X,Y,Z] = <span class="hljs-built_in">meshgrid</span>(x,y,z)<br></code></pre></td></tr></table></figure>
+
+<p>效果也是和上面的类似，不过是三维的由于答案比较长，就不放在这里了。</p>
+<p>最后最后上面这么多说人话就是用 MATLAB 的方式建立去建立一个坐标。<br>虽然并不是我们所熟悉的笛卡尔坐标系就是了。<br><strong>surf 函数</strong><br>surf 函数和与之一起使用的 mesh 函数用于在三维空间显示曲面。<br>surf 函数用于彩色显示出连接线和表面。</p>
+<p><strong>mesh 函数</strong><br>mesh 函数用于产生表面的线框，并且只标记的点之间的连线线框着色。</p>
+<h2 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h2><p>使用 subplot 函数在同一个窗口的不同子区域中显示多个绘图。</p>
+<p><strong>语法</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">subplot(m,n,p)  <span class="hljs-comment">%先只看第一个就好了</span><br>subplot(m,n,p,<span class="hljs-string">&#x27;replace&#x27;</span>)<br>subplot(m,n,p,<span class="hljs-string">&#x27;align&#x27;</span>)<br>subplot(m,n,p,ax)<br>subplot(<span class="hljs-string">&#x27;Position&#x27;</span>,pos)<br>subplot(**_,Name,Value)<br>ax = subplot(_**)<br>subplot(ax)<br></code></pre></td></tr></table></figure>
+
+<p><em>subplot(m,n,p) 将当前图窗划分为 m×n 网格，并在 p 指定的位置创建坐标区。MATLAB® 按行号对子图位置进行编号。第一个子图是第一行的第一列，第二个子图是第一行的第二列，依此类推。如果指定的位置已存在坐标区，则此命令会将该坐标区设为当前坐标区。</em></p>
+<p>示例</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">t = <span class="hljs-number">0</span>:<span class="hljs-built_in">pi</span>/<span class="hljs-number">10</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;<br>[X,Y,Z] = cylinder(<span class="hljs-number">4</span>*<span class="hljs-built_in">cos</span>(t));<br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>); mesh(X); title(<span class="hljs-string">&#x27;X&#x27;</span>);<br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>); mesh(Y); title(<span class="hljs-string">&#x27;Y&#x27;</span>);<br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); mesh(Z); title(<span class="hljs-string">&#x27;Z&#x27;</span>);<br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>); mesh(X,Y,Z); title(<span class="hljs-string">&#x27;X,Y,Z&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<h1 id="程序脚本"><a href="#程序脚本" class="headerlink" title="程序脚本"></a>程序脚本</h1><h2 id="怎样创建一个脚本？"><a href="#怎样创建一个脚本？" class="headerlink" title="怎样创建一个脚本？"></a>怎样创建一个脚本？</h2><p>在主流 linux 系统中我们往往使用如下命令创建一个文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SHELL">touch hello.cpp<br></code></pre></td></tr></table></figure>
+
+<p>类似的在 MATLAB 的终端中使用</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">edit</span> your_file_name.m<br></code></pre></td></tr></table></figure>
+
+<p>这样就创建了一个名字是 your*file_name.m 的 m 文件<br>当然了，你可以起别的名字。<br>***人不能 至少不应该_** 我还是觉的敲代码的程序员更帅气一点。<br>如果你非要用鼠标去右键创建文件。那也是可以的</p>
+<h2 id="开始编写我们的脚本"><a href="#开始编写我们的脚本" class="headerlink" title="开始编写我们的脚本"></a>开始编写我们的脚本</h2><h3 id="怎样输出变量"><a href="#怎样输出变量" class="headerlink" title="怎样输出变量"></a>怎样输出变量</h3><p>相信你肯定学过这样那样的输出手段比如</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">std</span>::cout &lt;&lt; <span class="hljs-string">&quot;我是C++的输出&quot;</span>;<br>System.out.println(<span class="hljs-string">&quot;我叫java&quot;</span>);<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;俺是python&quot;</span>)<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;我是C语言\n&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>在 MATLAB 中使用<code>disp()</code>来输出一个变量</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">t = <span class="hljs-string">&quot;灰烬大人,愿您能找到安歇的港湾&quot;</span>;<br><span class="hljs-built_in">disp</span>(t)<br></code></pre></td></tr></table></figure>
+
+<p>终端输出效果是</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-meta prompt_">&gt;&gt;</span> hello<br>灰烬大人，愿您能找到安歇的港湾<br></code></pre></td></tr></table></figure>
+
+<p>至于为什么前面有个 hello 那是因为我这个文件名就叫 hello。你起一个<strong>Dark Souls</strong>也可以</p>
+<p>有些同学总想搞个大新闻······（子弹滞销帮帮我们）</p>
+<p>说不对啊，我一开始没有使用<code>disp()</code>它也有输出啊。<br>那是因为 MATLAB 有多种输出变量的方式，主要包括以下几类：</p>
+<p><strong>第一种:</strong><br>语句后面不加分号“；”，这是直接输出数值的比较简单的方法。</p>
+<p><strong>第二种</strong><br>disp(a)直接在命令窗口显示 a 变量，这种方法输出和第一种差不多。</p>
+<p><strong>第三种</strong><br>fprintf(‘a&#x3D;%f’,a)格式控制输出：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">a = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br><span class="hljs-built_in">fprintf</span>(<span class="hljs-string">&quot;a = %d\n&quot;</span>,a);<br></code></pre></td></tr></table></figure>
+
+<h2 id="分支、跳转与循环"><a href="#分支、跳转与循环" class="headerlink" title="分支、跳转与循环"></a>分支、跳转与循环</h2><p>我想没人看的出来这个标题名是在 neta 《病毒、枪炮与细菌》这本书吧。</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>必须要提的概念是代码块，这是几乎所有的编程语言中都有的概念。<br>先来看这段代码。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A = [<span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span>;<span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span>;<span class="hljs-number">9</span> <span class="hljs-number">7</span> <span class="hljs-number">9</span>];<br>B = <span class="hljs-built_in">max</span>(A,[],<span class="hljs-number">2</span>);<br>B2 = B(:)&#x27;<br>C = <span class="hljs-built_in">min</span>(A,[],<span class="hljs-number">1</span>);<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = B2<br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span> = C<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">i</span>==<span class="hljs-built_in">j</span>)<br>            <span class="hljs-built_in">i</span><br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+
+<p>注意到，每个 if 或者 for 的后面都有一个 end。<br>没错 end 正是用来区分代码块的标志。整体的代码风格我感觉和 python 很接近。<br>让我们直接在实例中学习吧：</p>
+<p><em>求 1 到 100 内所有的偶数和</em></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab">s = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">2</span>:<span class="hljs-number">2</span>:<span class="hljs-number">100</span><br>    s = s + <span class="hljs-built_in">i</span>;<br><span class="hljs-keyword">end</span><br>s<br></code></pre></td></tr></table></figure>
+
+<p><em>打印 2 到 100 所有的素数</em></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">2</span> : <span class="hljs-number">100</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span> = <span class="hljs-number">2</span> : <span class="hljs-number">100</span><br>        <span class="hljs-keyword">if</span> (~<span class="hljs-built_in">mod</span>(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>))<br>           <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">j</span> &gt; (<span class="hljs-built_in">i</span>/<span class="hljs-built_in">j</span>))<br>        fprintf(<span class="hljs-string">&#x27;%d is prime \n&#x27;</span>, <span class="hljs-built_in">i</span>);<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+
+<p><em>求水仙花数</em></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">m=<span class="hljs-number">100</span>:<span class="hljs-number">999</span>;<br>m1=<span class="hljs-built_in">rem</span>(m,<span class="hljs-number">10</span>);<span class="hljs-comment">%求个位数</span><br>m2=<span class="hljs-built_in">rem</span>(<span class="hljs-built_in">fix</span>(m/<span class="hljs-number">10</span>),<span class="hljs-number">10</span>); <span class="hljs-comment">%求十位数</span><br>m3=<span class="hljs-built_in">fix</span>(m/<span class="hljs-number">100</span>); <span class="hljs-comment">%求百位数</span><br>k=<span class="hljs-built_in">find</span>(m==m1.^<span class="hljs-number">3</span>+m2.^<span class="hljs-number">3</span>+m3.^<span class="hljs-number">3</span>); <span class="hljs-comment">%find(一维向量) 得出一维向量的下标序号</span><br>s=m(k);<br>s<br></code></pre></td></tr></table></figure>
+
+<p><strong>说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>max(A,[],2)</td>
+<td>求矩阵中每一行的最大值</td>
+</tr>
+<tr>
+<td>min(A,[],2)</td>
+<td>求矩阵中每一行的最小值</td>
+</tr>
+<tr>
+<td>max(A,[],1)</td>
+<td>求矩阵中每一列的最大值</td>
+</tr>
+<tr>
+<td>min(A,[],1)</td>
+<td>求矩阵中每一列的最小值</td>
+</tr>
+</tbody></table>
+<h2 id="输入语句"><a href="#输入语句" class="headerlink" title="输入语句"></a>输入语句</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs matlab">n =<span class="hljs-number">10</span>;<br><span class="hljs-keyword">while</span> <span class="hljs-built_in">true</span>;<br>    n=input(<span class="hljs-string">&#x27;请输入n=&#x27;</span>);<br>    <span class="hljs-keyword">if</span> n==<span class="hljs-number">10</span>;<br>        <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">end</span>;<br>    <span class="hljs-built_in">disp</span>(<span class="hljs-string">&quot;输入错误&quot;</span>);<br><span class="hljs-keyword">end</span>;<br><span class="hljs-built_in">disp</span>(<span class="hljs-string">&quot;恭喜输入正确&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/" class="category-chain-item">编程技术</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>MATLAB教程</div>
+      <div>http://example.com/2021/09/03/matlab/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 3, 2021</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/04/02/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

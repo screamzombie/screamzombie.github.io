@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="坑啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fast踩坑记录">
+<meta property="og:url" content="http://example.com/2025/04/02/FastGPT%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="坑啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-02T05:44:02.112Z">
+<meta property="article:modified_time" content="2025-04-02T05:44:02.112Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Fast踩坑记录 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>rainbow</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Fast踩坑记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-02 13:44" pubdate>
+          April 2, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Fast踩坑记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>坑啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+<span id="more"></span>
+
+<h1 id="env-local-记录"><a href="#env-local-记录" class="headerlink" title="env.local 记录"></a>env.local 记录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs shell">LOG_DEPTH=3<br><span class="hljs-meta prompt_"># </span><span class="language-bash">默认用户密码，用户名为 root，每次重启时会自动更新。</span><br>DEFAULT_ROOT_PSW=123456<br><span class="hljs-meta prompt_"># </span><span class="language-bash">数据库最大连接数</span><br>DB_MAX_LINK=5<br><span class="hljs-meta prompt_"># </span><span class="language-bash">token</span><br>TOKEN_KEY=dfdasfdas<br><span class="hljs-meta prompt_"># </span><span class="language-bash">文件阅读时的密钥</span><br>FILE_TOKEN_KEY=filetokenkey<br><span class="hljs-meta prompt_"># </span><span class="language-bash">root key, 最高权限</span><br>ROOT_KEY=fdafasd<br><span class="hljs-meta prompt_"># </span><span class="language-bash">openai 基本地址，可用作中转。</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">OPENAI_BASE_URL=https://api.openai.com/v1</span><br>OPENAI_BASE_URL=http://localhost:4000/v1<br>CHAT_API_KEY=&lt;你的令牌&gt;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">OpenAI API Key</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">CHAT_API_KEY=sk-xxxx</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">ai proxy api</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">AIPROXY_API_ENDPOINT=http://localhost:4000/v1</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">AIPROXY_API_TOKEN=</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">强制将图片转成 <span class="hljs-built_in">base64</span> 传递给模型</span><br>MULTIPLE_DATA_TO_BASE64=true<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">mongo 数据库连接参数，本地开发连接远程数据库时，可能需要增加 directConnection=<span class="hljs-literal">true</span> 参数，才能连接上。</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">MONGODB_URI=mongodb://username:password@0.0.0.0:27017/fastgpt?authSource=admin</span><br>MONGODB_URI=mongodb://localhost:27017/fastgpt?directConnection=true<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">向量库优先级: pg &gt; milvus</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">PG 向量库连接参数</span><br>PG_URL=postgresql://qwerty:123456@localhost:5432/postgres<br><span class="hljs-meta prompt_"># </span><span class="language-bash">milvus 向量库连接参数</span><br>MILVUS_ADDRESS=<br>MILVUS_TOKEN=<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">code sandbox url</span><br>SANDBOX_URL=http://localhost:3001<br><span class="hljs-meta prompt_"># </span><span class="language-bash">商业版地址</span><br>PRO_URL=<br><span class="hljs-meta prompt_"># </span><span class="language-bash">页面的地址，用于自动补全相对路径资源的 domain，注意后面不要跟 /</span><br>FE_DOMAIN=http://localhost:3000<br><span class="hljs-meta prompt_"># </span><span class="language-bash">文件域名，也是指向 FastGPT 服务，但是如果希望内容足够安全，可以独立分配一个域名，避免高危文件读取到主域名的内容。</span><br>FILE_DOMAIN=http://localhost:3000<br><span class="hljs-meta prompt_"># </span><span class="language-bash">二级路由，需要打包时候就确定</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">NEXT_PUBLIC_BASE_URL=/fastai</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">日志等级: debug, info, warn, error</span><br>LOG_LEVEL=debug<br>STORE_LOG_LEVEL=warn<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">安全配置</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">启动 IP 限流(<span class="hljs-literal">true</span>)，部分接口增加了 ip 限流策略，防止非正常请求操作。</span><br>USE_IP_LIMIT=false<br><span class="hljs-meta prompt_"># </span><span class="language-bash">工作流最大运行次数，避免极端的死循环情况</span><br>WORKFLOW_MAX_RUN_TIMES=500<br><span class="hljs-meta prompt_"># </span><span class="language-bash">循环最大运行次数，避免极端的死循环情况</span><br>WORKFLOW_MAX_LOOP_TIMES=50<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">对话日志推送服务</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-comment"># 日志服务地址</span></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">CHAT_LOG_URL=http://localhost:8080</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-comment"># 日志推送间隔</span></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">CHAT_LOG_INTERVAL=10000</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-comment"># 日志来源ID前缀</span></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">CHAT_LOG_SOURCE_ID_PREFIX=fastgpt-</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">自定义跨域，不配置时，默认都允许跨域（逗号分割）</span><br>ALLOWED_ORIGINS=<br>DEBUG_MODEL_REQUEST=true<br></code></pre></td></tr></table></figure>
+
+<h1 id="配置mongodb-community-7-0"><a href="#配置mongodb-community-7-0" class="headerlink" title="配置mongodb-community@7.0"></a>配置<a href="mailto:&#109;&#111;&#x6e;&#x67;&#x6f;&#x64;&#98;&#x2d;&#99;&#111;&#109;&#x6d;&#x75;&#x6e;&#105;&#x74;&#x79;&#x40;&#x37;&#x2e;&#x30;">mongodb-community@7.0</a></h1><h2 id="正常安装"><a href="#正常安装" class="headerlink" title="正常安装"></a>正常安装</h2><ol>
+<li><p>使用 Homebrew 安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew tap mongodb/brew<br>brew install mongodb-community@7.0<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>启动<strong>MongoDB</strong>服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew services start mongodb/brew/mongodb-community@7.0<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>(可选)检查服务状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew services list<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="错误记录"><a href="#错误记录" class="headerlink" title="错误记录"></a>错误记录</h2><h3 id="mongodb-状态为-error"><a href="#mongodb-状态为-error" class="headerlink" title="mongodb 状态为 error"></a>mongodb 状态为 error</h3><ol>
+<li><p>日志中提到.plist 文件中存在问题,手动查看内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community@7.0.plist<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>手动启动 mongodb</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">/opt/homebrew/bin/mongod --dbpath /opt/homebrew/var/mongodb --logpath ~/mongod.log<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>最终解决方式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo rm /tmp/mongodb-27017.sock<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>出现这个问题是上次的 mongodb 可能未正常退出,导致有一个配置在这里,新创建的话没有权限,加 sudo 也不会解决问题的.删除对应的文件即可</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="安装-Mongosh"><a href="#安装-Mongosh" class="headerlink" title="安装 Mongosh"></a>安装 Mongosh</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install mongosh<br></code></pre></td></tr></table></figure>
+
+<h2 id="启动事务功能"><a href="#启动事务功能" class="headerlink" title="启动事务功能"></a>启动事务功能</h2><p>FastGPT 启动时会执行 MongoDB 的事务操作（如 insertOne），<strong>这些操作只在副本集或 mongos 模式下支持</strong>，否则会报错：</p>
+<blockquote>
+<p>Transaction numbers are only allowed on a replica set member or mongos</p>
+</blockquote>
+<ol>
+<li><p>修改本地的配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /opt/homebrew/etc/mongod.conf<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>添加以下内容</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">replication:<br>  replSetName: rs0<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>最终配置文件如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemLog:<br>  destination: file<br>  path: /opt/homebrew/var/log/mongodb/mongo.log<br>  logAppend: true<br>storage:<br>  dbPath: /opt/homebrew/var/mongodb<br>net:<br>  bindIp: 127.0.0.1, ::1<br>  ipv6: true<br>replication:<br>  replSetName: rs0<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="修改-env-local"><a href="#修改-env-local" class="headerlink" title="修改 env.local"></a>修改 env.local</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">MONGODB_URI=mongodb://localhost:27017/fastgpt?directConnection=true<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>默认不需要密码</p>
+</blockquote>
+<h1 id="配置-postgresql-14"><a href="#配置-postgresql-14" class="headerlink" title="配置 postgresql@14"></a>配置 postgresql@14</h1><h2 id="正常安装-postgresql"><a href="#正常安装-postgresql" class="headerlink" title="正常安装 postgresql"></a>正常安装 postgresql</h2><ol>
+<li><p>brew 安装数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install postgresql@14<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>启动数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew services start postgresql@14<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="可能需要做的"><a href="#可能需要做的" class="headerlink" title="可能需要做的"></a>可能需要做的</h2><ol>
+<li><p>初始化数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">initdb --locale=C -E UTF-8 /opt/homebrew/var/postgresql@14<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="安装-PGvector"><a href="#安装-PGvector" class="headerlink" title="安装 PGvector"></a>安装 PGvector</h2><ol>
+<li><p>进入数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">psql -U $(whoami) -d postgres<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>输入命令,装插件是全局装的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> EXTENSION IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> vector;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看效果</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">\dx<br></code></pre></td></tr></table></figure>
+<blockquote>
+<pre><code class="hljs">    List of installed extensions
+</code></pre>
+<p>Name | Version | Schema | Description<br>———+———+————+————————————–<br>plpgsql | 1.0 | pg_catalog | PL&#x2F;pgSQL procedural language<br>vector | 0.8.0 | public | vector data type and ivfflat and hnsw</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="修改-env-local-配置文件"><a href="#修改-env-local-配置文件" class="headerlink" title="修改 env.local 配置文件"></a>修改 env.local 配置文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">PG_URL=postgresql://qwerty:123456@localhost:5432/postgres<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中<code>qwerty</code>是你的用户名<code>123456</code>是你设置的密码<code>postgres</code>是你创建的数据库</p>
+</blockquote>
+<h1 id="配置-OneAPI"><a href="#配置-OneAPI" class="headerlink" title="配置 OneAPI"></a>配置 OneAPI</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git clone https://github.com/songquanpeng/one-api.git<br></code></pre></td></tr></table></figure>
+
+<h2 id="构建前端"><a href="#构建前端" class="headerlink" title="构建前端"></a>构建前端</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd one-api/web/default<br>npm install<br>npm run build<br></code></pre></td></tr></table></figure>
+
+<h2 id="构建后端"><a href="#构建后端" class="headerlink" title="构建后端"></a>构建后端</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd ../..<br>go mod download<br>go build -ldflags &quot;-s -w&quot; -o one-api<br></code></pre></td></tr></table></figure>
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">chmod u+x one-api<br>./one-api --port 3000 --log-dir ./logs<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>我们的端口要 3001 或者其他的 3000 被 FastGPT 占用了,因此这里的 3000 可以改为 4000<br>你也可以在终端输入下面的命令检查是否可用</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><br>curl http://localhost:4000/v1/chat/completions \                                 ░▒▓ 127 х │ base Py │ 15:33:06<br>  -H &quot;Authorization: Bearer 你的令牌&quot; \<br>  -H &quot;Content-Type: application/json&quot; \<br>  -d &#x27;&#123;<br>    &quot;model&quot;: &quot;deepseek-chat&quot;,<br>    &quot;messages&quot;: [&#123;&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;你好&quot;&#125;]<br>  &#125;&#x27;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>但是 FastGPT 的<strong>聊天</strong>根本不走这里,只是用 OneAPI 的部分功能,这块配不配置都没问题,关键是<strong>渠道</strong>和<strong>令牌</strong>。即 OneAPI 的聊天根本不需要配置</p>
+</blockquote>
+<h2 id="修改-env-local-1"><a href="#修改-env-local-1" class="headerlink" title="修改 env.local"></a>修改 env.local</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">OPENAI_BASE_URL=http://localhost:4000/v1<br>CHAT_API_KEY=你的令牌<br><span class="hljs-meta prompt_"># </span><span class="language-bash">OpenAI API Key</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">CHAT_API_KEY=sk-xxxx</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">ai proxy api</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">AIPROXY_API_ENDPOINT=http://localhost:4000/v1</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">AIPROXY_API_TOKEN=</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意,注释掉 AIPROXY_API</p>
+<p>CHAT_API_KEY 就是你搞来的令牌</p>
+</blockquote>
+<h2 id="FastGPT-的一些设置"><a href="#FastGPT-的一些设置" class="headerlink" title="FastGPT 的一些设置"></a>FastGPT 的一些设置</h2><blockquote>
+<p>如果你注释了 <em>AIPROXY_API_ENDPOINT</em> 那么这里的渠道和日志你一点就错但是不必理会</p>
+<p>此外,向量化的时候终端会报错,说连接拒绝什么的.但是不要紧它那个走的<em>AIPROXY_API_ENDPOINT</em> ,随后会走 OneAPI,你依旧可以完成运行,向量化速度很慢,所以不要放大段文字.</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/" class="category-chain-item">配置记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Fast踩坑记录</div>
+      <div>http://example.com/2025/04/02/FastGPT踩坑记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 2, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/04/02/only_apple_can_do/" title="only apple can do">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">only apple can do</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/02/%E6%91%98%E6%8A%84/" title="摘抄">
+                        <span class="hidden-mobile">摘抄</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
