@@ -19,23 +19,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="调包，这是一项古老而又现代的技艺。">
+    <meta name="description" content="Even the darkest night will end and the sun will rise.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LLM调包记录">
-<meta property="og:url" content="http://example.com/2025/04/08/LLM%E8%B0%83%E5%8C%85%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="摘抄">
+<meta property="og:url" content="http://example.com/2025/04/14/%E6%91%98%E6%8A%84/index.html">
 <meta property="og:site_name" content="rainbow的小窝">
-<meta property="og:description" content="调包，这是一项古老而又现代的技艺。">
+<meta property="og:description" content="Even the darkest night will end and the sun will rise.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-04-08T09:36:31.550Z">
-<meta property="article:modified_time" content="2025-04-09T03:38:22.373Z">
+<meta property="article:published_time" content="2025-04-14T03:09:49.298Z">
+<meta property="article:modified_time" content="2025-04-14T03:09:49.298Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="编程">
-<meta property="article:tag" content="教程">
+<meta property="article:tag" content="摘抄">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LLM调包记录 - rainbow的小窝</title>
+  <title>摘抄 - rainbow的小窝</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LLM调包记录"></span>
+            <span id="subtitle" data-typed-text="摘抄"></span>
           
         </div>
 
@@ -212,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-08 17:36" pubdate>
-          April 8, 2025 pm
+        <time datetime="2025-04-14 11:09" pubdate>
+          April 14, 2025 am
         </time>
       </span>
     
@@ -224,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          150 words
+          1 words
         
       </span>
     
@@ -235,7 +234,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -272,24 +271,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LLM调包记录</h1>
+            <h1 id="seo-header">摘抄</h1>
             
             
               <div class="markdown-body">
                 
-                <p>调包，这是一项古老而又现代的技艺。</p>
+                <p>Even the darkest night will end and the sun will rise.</p>
 <span id="more"></span>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">Traceback (most recent call last):<br>  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;<br>ImportError: cannot import name &#x27;init_empty_weights&#x27; from &#x27;transformers.modeling_utils&#x27; (/opt/anaconda3/envs/EvilMagic/lib/python3.12/site-packages/transformers/modeling_utils.py)<br></code></pre></td></tr></table></figure>
 
-<p>出现这种情况是因为<code>transformers</code> 升级不完全是一个破损版本,甚至可能的原因是镜像污染 比如清华源 </p>
-<p>任何邪恶终将绳之以法!</p>
-<p>解决方案如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create -n rag_realclean python=3.10 -y<br>conda activate rag_realclean<br><br>pip install --no-cache-dir --upgrade transformers -i https://pypi.org/simple<br>pip install torch<br></code></pre></td></tr></table></figure>
-
-<p>重点在：–no-cache-dir 强制跳过所有 pip 缓存！</p>
-<p>验证是否生效</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python -c &quot;from transformers.modeling_utils import init_empty_weights; print(&#x27;transformers 完全 OK！&#x27;)&quot;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -309,7 +299,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/" class="category-chain-item">配置记录</a>
+  <a href="/categories/%E5%B9%BB%E6%83%B3%E5%85%B7%E8%B1%A1%E5%8C%96/" class="category-chain-item">幻想具象化</a>
   
   
 
@@ -324,9 +314,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%BC%96%E7%A8%8B/" class="print-no-link">#编程</a>
-      
-        <a href="/tags/%E6%95%99%E7%A8%8B/" class="print-no-link">#教程</a>
+        <a href="/tags/%E6%91%98%E6%8A%84/" class="print-no-link">#摘抄</a>
       
     </div>
   
@@ -338,8 +326,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LLM调包记录</div>
-      <div>http://example.com/2025/04/08/LLM调包记录/</div>
+      <div>摘抄</div>
+      <div>http://example.com/2025/04/14/摘抄/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +339,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>April 8, 2025</div>
+          <div>April 14, 2025</div>
         </div>
       
       
@@ -387,8 +375,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/EvilMagic%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" title="EvilMagic项目实战">
-                        <span class="hidden-mobile">EvilMagic项目实战</span>
+                      <a href="/2025/04/14/LLM%E8%B0%83%E5%8C%85%E8%AE%B0%E5%BD%95/" title="LLM调包记录">
+                        <span class="hidden-mobile">LLM调包记录</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
