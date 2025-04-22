@@ -27,7 +27,7 @@
 <meta property="og:description" content="vue 和 django 的一些配置">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-02T05:44:02.139Z">
-<meta property="article:modified_time" content="2025-04-18T01:32:30.696Z">
+<meta property="article:modified_time" content="2025-04-22T03:07:10.885Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.7k words
+          4k words
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          31 mins
+          34 mins
         
       </span>
     
@@ -458,6 +458,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python3">python manage.py makemigrations --empty app01<br></code></pre></td></tr></table></figure>
 
 <p>接着正常执行就好了</p>
+<h2 id="DJango-配置路由"><a href="#DJango-配置路由" class="headerlink" title="DJango 配置路由"></a>DJango 配置路由</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># urls</span><br>path(<span class="hljs-string">&#x27;chat/&lt;uuid:conv_uuid&gt;/&#x27;</span>, views.get_conversation, name=<span class="hljs-string">&#x27;get_conversation&#x27;</span>),<br><br><span class="hljs-comment"># views</span><br><span class="hljs-meta">@require_POST</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_conversation</span>(<span class="hljs-params">request, conv_uuid</span>):    <br>    <span class="hljs-keyword">try</span>:<br>        payload = json.loads(request.body)        <br>    <span class="hljs-keyword">except</span> json.JSONDecodeError:<br>        <span class="hljs-keyword">return</span> JsonResponse(&#123;<span class="hljs-string">&#x27;code&#x27;</span>: <span class="hljs-string">&#x27;error&#x27;</span>, <span class="hljs-string">&#x27;message&#x27;</span>: <span class="hljs-string">&#x27;无效的 JSON&#x27;</span>&#125;, status=<span class="hljs-number">400</span>)<br><br>    <span class="hljs-comment"># 从请求体中提取 user_id</span><br>    raw_uid = (payload.get(<span class="hljs-string">&#x27;user_id&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-string">&#x27;&#x27;</span>).strip()<br><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> raw_uid:<br>        <span class="hljs-keyword">return</span> JsonResponse(&#123;<span class="hljs-string">&#x27;code&#x27;</span>: <span class="hljs-string">&#x27;error&#x27;</span>, <span class="hljs-string">&#x27;message&#x27;</span>: <span class="hljs-string">&#x27;缺少 user_id&#x27;</span>&#125;, status=<span class="hljs-number">400</span>)<br><br>    <span class="hljs-keyword">try</span>:<br>        user_uuid = uuid.UUID(raw_uid)<br>    <span class="hljs-keyword">except</span> ValueError:<br>        <span class="hljs-keyword">return</span> JsonResponse(&#123;<span class="hljs-string">&#x27;code&#x27;</span>: <span class="hljs-string">&#x27;error&#x27;</span>, <span class="hljs-string">&#x27;message&#x27;</span>: <span class="hljs-string">&#x27;user_id 格式错误&#x27;</span>&#125;, status=<span class="hljs-number">400</span>)<br><br>    <span class="hljs-comment"># 使用 ORM 查询对话记录</span><br>    conversation = Conversation.objects.<span class="hljs-built_in">filter</span>(user__id=user_uuid, uuid=conv_uuid).first()<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> conversation:<br>        <span class="hljs-keyword">return</span> JsonResponse(&#123;<span class="hljs-string">&#x27;code&#x27;</span>: <span class="hljs-string">&#x27;error&#x27;</span>, <span class="hljs-string">&#x27;message&#x27;</span>: <span class="hljs-string">&#x27;对话不存在&#x27;</span>&#125;, status=<span class="hljs-number">404</span>)<br><br>    <span class="hljs-keyword">return</span> JsonResponse(&#123;<br>        <span class="hljs-string">&#x27;code&#x27;</span>: <span class="hljs-string">&#x27;success&#x27;</span>,<br>        <span class="hljs-string">&#x27;conversation&#x27;</span>: &#123;<br>            <span class="hljs-string">&#x27;uuid&#x27;</span>: <span class="hljs-built_in">str</span>(conversation.uuid),<br>            <span class="hljs-string">&#x27;title&#x27;</span>: conversation.title,<br>            <span class="hljs-string">&#x27;ai_type&#x27;</span>: conversation.ai_type,<br>            <span class="hljs-string">&#x27;task_type&#x27;</span>: conversation.task_type,<br>            <span class="hljs-string">&#x27;messages&#x27;</span>: json.loads(conversation.messages) <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(conversation.messages, <span class="hljs-built_in">str</span>) <span class="hljs-keyword">else</span> conversation.messages,<br>            <span class="hljs-string">&#x27;created_at&#x27;</span>: conversation.created_at.isoformat(),<br>            <span class="hljs-string">&#x27;updated_at&#x27;</span>: conversation.updated_at.isoformat(),<br>        &#125;<br>    &#125;)<br></code></pre></td></tr></table></figure>
+
+<p>&#x2F;<a href="uuid:conv_uuid">uuid:conv_uuid</a>&#x2F; 这一部分表示是一个类型约束,会把url对应的部分作为conv_uuid字段填进去,会检查是否为uuid类型的.看起来和TS很像,TS也是冒号不过类型放后面</p>
 
                 
               </div>
