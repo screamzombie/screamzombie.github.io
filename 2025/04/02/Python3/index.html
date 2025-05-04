@@ -27,7 +27,7 @@
 <meta property="og:description" content="人生苦短,我用 Python">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-02T05:44:02.128Z">
-<meta property="article:modified_time" content="2025-05-02T11:21:21.035Z">
+<meta property="article:modified_time" content="2025-05-02T15:55:39.263Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="教程">
@@ -347,7 +347,7 @@
 <p>使用方式</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(Color.RED)        <span class="hljs-comment"># Color.RED</span><br><span class="hljs-built_in">print</span>(Color.RED.name)   <span class="hljs-comment"># &#x27;RED&#x27;</span><br><span class="hljs-built_in">print</span>(Color.RED.value)  <span class="hljs-comment"># 1</span><br></code></pre></td></tr></table></figure>
 <p>遍历与自动赋值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> enum <span class="hljs-keyword">import</span> Enum, auto<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Status</span>(<span class="hljs-title class_ inherited__">Enum</span>):<br>    STARTED = auto()<br>    RUNNING = auto()<br>    FINISHED = auto()<br>    <br><span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> Color:<br>    <span class="hljs-built_in">print</span>(color.name, color.value)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> enum <span class="hljs-keyword">import</span> Enum, auto<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Status</span>(<span class="hljs-title class_ inherited__">Enum</span>):<br>    STARTED = auto()<br>    RUNNING = auto()<br>    FINISHED = auto()<br><br><span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> Color:<br>    <span class="hljs-built_in">print</span>(color.name, color.value)<br></code></pre></td></tr></table></figure>
 
                 
               </div>
